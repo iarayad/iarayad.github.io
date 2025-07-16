@@ -1,0 +1,21 @@
+project:
+  type: website
+
+website:
+  title: "Home"
+  navbar:
+    left:
+      - about.qmd
+
+format:
+  html:
+    theme:
+      - minty
+    css: styles.css
+    toc: true
+
+execute:
+  freeze: auto
+
+
+

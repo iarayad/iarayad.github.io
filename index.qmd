@@ -1,0 +1,49 @@
+---
+title: "About me"
+image: images/profile.png
+about:
+  template: solana
+  links:
+    - icon: github
+      text: GitHub
+      href: https://github.com/iarayad
+    - icon: person-badge
+      text: ORCID
+      href: https://orcid.org/0000-0002-2948-4198
+    - icon: mortarboard
+      text: Google Scholar
+      href: https://scholar.google.com/citations?user=xmd5QkcAAAAJ
+    - icon: envelope
+      text: Email
+      href: mailto:iarayaday@gmail.com
+---
+
+Hi! I am Isidora Araya Day, currently a PhD student in the [Quantum Tinkerer group](http://quantumtinkerer.group/) at TU Delft.
+My research interests..........................................
+
+
+## Research
+
+## Pymablock
+
+::: {.columns}
+
+::: {.column width="40%"}
+![](images/logo.svg){width=150px}
+
+
+See [📖 Docs](https://pymablock.readthedocs.io/) and [💻 Repo](https://github.com/quantum-tinkerer/pymablock)
+:::
+
+::: {.column width="10%"}
+:::
+
+::: {.column width="50%"}
+Pymablock is a Python package that constructs effective models using quasi-degenerate perturbation theory. It handles both numerical and symbolic inputs ✨, and it efficiently block-diagonalizes Hamiltonians with multivariate perturbations to arbitrary order.
+
+
+:::
+
+:::
+
+
