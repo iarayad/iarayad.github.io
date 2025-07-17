@@ -59,6 +59,9 @@ Currently, I am a PhD student in the [Quantum Tinkerer group](http://quantumtink
 :::
 :::
 
+:::
+:::
+
 ::: {.quarto-footer}
 This website is made with [Quarto](https://quarto.org).
 :::
