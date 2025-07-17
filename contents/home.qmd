@@ -47,7 +47,7 @@ Currently, I am a PhD student in the [Quantum Tinkerer group](http://quantumtink
 
 ::: {.project-content}
 
-**Pymablock** is a Python package that constructs effective models using **quasi-degenerate perturbation theory**. It's efficient and it deals with symbolic and numerical inputs ✨. Check it out!
+[Pymablock]{.pymablock} is a Python package that constructs effective models using **quasi-degenerate perturbation theory**. It's efficient and it deals with symbolic and numerical inputs ✨. Check it out!
 :::
 
 ::: {.project-links}
@@ -63,7 +63,7 @@ Currently, I am a PhD student in the [Quantum Tinkerer group](http://quantumtink
 :::
 
 ::: {.quarto-footer}
-This website is made with [Quarto](https://quarto.org).
+I made this with [Quarto](https://quarto.org).
 :::
 
 
