@@ -1,6 +1,6 @@
 ---
 title: "About me"
-image: images/profile.png
+image: contents/images/profile.png
 about:
   template: solana
   links:
