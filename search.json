@@ -1,19 +1,5 @@
 [
   {
-    "objectID": "contents/home.html",
-    "href": "contents/home.html",
-    "title": "About me",
-    "section": "",
-    "text": "Hi! I am Isidora Araya Day, a theoretical condensed matter physicist working on mesoscopic physics, topology and quantum transport.\nCurrently, I am a PhD student in the Quantum Tinkerer group at TU Delft, working with Anton Akhmerov and Michael Wimmer."
-  },
-  {
-    "objectID": "contents/home.html#my-interests",
-    "href": "contents/home.html#my-interests",
-    "title": "About me",
-    "section": "My interests",
-    "text": "My interests\n\n\nMesoscopic superconductivity\n\n\nTopological phases of matter\n\n\nOpen source software\n\n\nPymablock is a Python package that constructs effective models using quasi-degenerate perturbation theory. It’s efficient and it deals with symbolic and numerical inputs ✨. Check it out!\n\n\n📖 Documentation 💻 GitHub Repository"
-  },
-  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "About me",
@@ -24,6 +10,20 @@
     "objectID": "index.html#my-interests",
     "href": "index.html#my-interests",
     "title": "About me",
+    "section": "My interests",
+    "text": "My interests\n\n\nMesoscopic superconductivity\n\n\nTopological phases of matter\n\n\nOpen source software\n\n\nPymablock is a Python package that constructs effective models using quasi-degenerate perturbation theory. It’s efficient and it deals with symbolic and numerical inputs ✨. Check it out!\n\n\n📖 Documentation 💻 GitHub Repository"
+  },
+  {
+    "objectID": "contents/home.html",
+    "href": "contents/home.html",
+    "title": "Home",
+    "section": "",
+    "text": "Hi! I am Isidora Araya Day, a theoretical condensed matter physicist working on mesoscopic physics, topology and quantum transport.\nCurrently, I am a PhD student in the Quantum Tinkerer group at TU Delft, working with Anton Akhmerov and Michael Wimmer."
+  },
+  {
+    "objectID": "contents/home.html#my-interests",
+    "href": "contents/home.html#my-interests",
+    "title": "Home",
     "section": "My interests",
     "text": "My interests\n\n\nMesoscopic superconductivity\n\n\nTopological phases of matter\n\n\nOpen source software\n\n\nPymablock is a Python package that constructs effective models using quasi-degenerate perturbation theory. It’s efficient and it deals with symbolic and numerical inputs ✨. Check it out!\n\n\n📖 Documentation 💻 GitHub Repository"
   }
