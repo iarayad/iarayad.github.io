@@ -1,1 +1,23 @@
 /* css styles */
+
+/* Quarto footer positioned at bottom right */
+.quarto-footer {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  font-size: 0.8rem;
+  color: #6c757d;
+  padding: 5px 10px;
+  border-radius: 4px;
+  z-index: 1000;
+}
+
+.quarto-footer a {
+  color: #6c757d;
+  text-decoration: none;
+}
+
+.quarto-footer a:hover {
+  color: #495057;
+  text-decoration: underline;
+}
