@@ -18,32 +18,44 @@ about:
       href: mailto:iarayaday@gmail.com
 ---
 
-Hi! I am Isidora Araya Day, currently a PhD student in the [Quantum Tinkerer group](http://quantumtinkerer.group/) at TU Delft.
-My research interests..........................................
-hello!
+::: {.hero-section}
+Hi! I am **Isidora Araya Day**, currently a PhD student in the [Quantum Tinkerer group](http://quantumtinkerer.group/) at TU Delft.
 
-## Research
-
-## Pymablock
-
-::: {.columns}
-
-::: {.column width="40%"}
-![](images/logo.svg){width=150px}
-
-
-See [📖 Docs](https://pymablock.readthedocs.io/) and [💻 Repo](https://github.com/quantum-tinkerer/pymablock)
+I work on theory of condensed matter physics; some of my research interests and projects are summarized below.
 :::
 
-::: {.column width="10%"}
+::: {.research-section}
+## My interests
+
+::: {.research-grid}
+
+::: {.research-card}
+### Mesoscopic superconductivity
 :::
 
-::: {.column width="50%"}
-Pymablock is a Python package that constructs effective models using quasi-degenerate perturbation theory. It handles both numerical and symbolic inputs ✨, and it efficiently block-diagonalizes Hamiltonians with multivariate perturbations to arbitrary order.
+
+::: {.research-card}
+### Topological phases of matter
+:::
+
+
+::: {.research-card}
+### Open source software
+
+::: {.project-container}
+
+::: {.project-content}
+
+**Pymablock** is a Python package that constructs effective models using **quasi-degenerate perturbation theory**. It's efficient and it deals with symbolic and numerical inputs ✨. Check it out!
+:::
+
+::: {.project-links}
+[📖 Documentation](https://pymablock.readthedocs.io/){.btn .btn-primary}
+[💻 GitHub Repository](https://github.com/quantum-tinkerer/pymablock){.btn .btn-outline-primary}
+:::
 
 
 :::
-
 :::
 
 
