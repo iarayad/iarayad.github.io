@@ -27,3 +27,29 @@
   color: #495057;
   text-decoration: underline;
 }
+
+/* Adjust text font size */
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.6rem;
+}
+
+h3 {
+  font-size: 1.4rem;
+}
+
+body {
+  font-size: 1.1rem;
+}
+
+
+
+
+/* Darker link highlighting */
+a {
+  color: rgb(51, 140, 115);
+}
+

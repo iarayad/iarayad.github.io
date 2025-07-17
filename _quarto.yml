@@ -9,7 +9,8 @@ website:
   site-url: "https://iarayad.github.io/"
   navbar:
     left:
-      - contents/about.qmd
+      - contents/research.qmd
+    right:
       - contents/letschat.qmd
   page-navigation: true
 
@@ -19,7 +20,7 @@ format:
       - minty
     page-layout: full
     css: styles.css
-    toc: true
+    # toc: true
     backgroundcolor: "#f8f9fa"
 
 execute:

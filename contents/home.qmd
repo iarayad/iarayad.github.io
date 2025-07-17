@@ -1,22 +1,3 @@
----
-title: "About me"
-image: contents/images/profile.png
-about:
-  template: solana
-  links:
-    - icon: github
-      text: GitHub
-      href: https://github.com/iarayad
-    - icon: mortarboard
-      text: Google Scholar
-      href: https://scholar.google.com/citations?user=xmd5QkcAAAAJ
-    - icon: person-badge
-      text: ORCID
-      href: https://orcid.org/0000-0002-2948-4198
-    - icon: envelope
-      text: Email
-      href: mailto:iarayaday@gmail.com
----
 
 ::: {.hero-section}
 Hi! I am **Isidora Araya Day**, a theoretical condensed matter physicist working on mesoscopic physics, topology and quantum transport.
@@ -65,5 +46,6 @@ Currently, I am a PhD student in the [Quantum Tinkerer group](http://quantumtink
 ::: {.quarto-footer}
 I made this with [Quarto](https://quarto.org).
 :::
+
 
 

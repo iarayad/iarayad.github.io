@@ -1,5 +1,21 @@
 ---
-title: "Home"
+title: "About me"
+image: contents/images/profile.png
+about:
+  template: solana
+  links:
+    - icon: github
+      text: GitHub
+      href: https://github.com/iarayad
+    - icon: mortarboard
+      text: Google Scholar
+      href: https://scholar.google.com/citations?user=xmd5QkcAAAAJ
+    - icon: person-badge
+      text: ORCID
+      href: https://orcid.org/0000-0002-2948-4198
+    - icon: envelope
+      text: Email
+      href: mailto:iarayaday@gmail.com
 ---
 
 {{< include contents/home.qmd >}}
