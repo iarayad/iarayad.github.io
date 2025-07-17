@@ -1,11 +1,14 @@
 project:
   type: website
+  output-dir: _site
 
 website:
   title: "Home"
+  site-url: "https://iarayad.github.io/"
   navbar:
     left:
-      - about.qmd
+      - contents/about.qmd
+  page-navigation: true
 
 format:
   html:

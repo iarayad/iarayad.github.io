@@ -1,0 +1,69 @@
+---
+title: "About me"
+image: images/profile.png
+about:
+  template: solana
+  links:
+    - icon: github
+      text: GitHub
+      href: https://github.com/iarayad
+    - icon: mortarboard
+      text: Google Scholar
+      href: https://scholar.google.com/citations?user=xmd5QkcAAAAJ
+    - icon: person-badge
+      text: ORCID
+      href: https://orcid.org/0000-0002-2948-4198
+    - icon: envelope
+      text: Email
+      href: mailto:iarayaday@gmail.com
+---
+
+::: {.hero-section}
+Hi! I am **Isidora Araya Day**, a theoretical condensed matter physicist working on mesoscopic physics, topology and quantum transport.
+
+Currently, I am a PhD student in the [Quantum Tinkerer group](http://quantumtinkerer.group/) at TU Delft, working with [Anton Akhmerov](https://antonakhmerov.org/) and [Michael Wimmer](https://michaelwimmer.org/).
+:::
+
+::: {.research-section}
+## My interests
+
+
+::: {.research-grid}
+
+::: {.research-card}
+### Mesoscopic superconductivity
+:::
+
+
+::: {.research-card}
+### Topological phases of matter
+:::
+
+
+::: {.research-card}
+### Open source software
+
+::: {.project-container}
+
+::: {.project-content}
+
+**Pymablock** is a Python package that constructs effective models using **quasi-degenerate perturbation theory**. It's efficient and it deals with symbolic and numerical inputs ✨. Check it out!
+:::
+
+::: {.project-links}
+[📖 Documentation](https://pymablock.readthedocs.io/){.btn .btn-primary}
+[💻 GitHub Repository](https://github.com/quantum-tinkerer/pymablock){.btn .btn-outline-primary}
+:::
+
+
+:::
+:::
+
+:::
+:::
+
+::: {.quarto-footer}
+This website is made with [Quarto](https://quarto.org).
+:::
+
+
