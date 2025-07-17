@@ -1,5 +1,11 @@
 /* css styles */
 
+/* Style for Pymablock mentions */
+.pymablock {
+  color: #8b4aa0ff;
+  font-weight: bold;
+}
+
 /* Quarto footer positioned at bottom right */
 .quarto-footer {
   position: fixed;
