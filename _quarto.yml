@@ -11,11 +11,12 @@ format:
   html:
     theme:
       - minty
+    page-layout: full
     css: styles.css
     toc: true
+    backgroundcolor: "#f8f9fa"
 
 execute:
   freeze: auto
-
 
 

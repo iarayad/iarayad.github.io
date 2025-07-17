@@ -1,5 +1,6 @@
 ---
 title: "About me"
+draft: true
 ---
 
 ## Interactive Function Plot
@@ -80,3 +81,5 @@ fig.update_yaxes(showgrid=True, gridwidth=1, gridcolor='lightgray')
 
 fig.show()
 ```
+
+

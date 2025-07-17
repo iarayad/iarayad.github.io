@@ -7,25 +7,26 @@ about:
     - icon: github
       text: GitHub
       href: https://github.com/iarayad
-    - icon: person-badge
-      text: ORCID
-      href: https://orcid.org/0000-0002-2948-4198
     - icon: mortarboard
       text: Google Scholar
       href: https://scholar.google.com/citations?user=xmd5QkcAAAAJ
+    - icon: person-badge
+      text: ORCID
+      href: https://orcid.org/0000-0002-2948-4198
     - icon: envelope
       text: Email
       href: mailto:iarayaday@gmail.com
 ---
 
 ::: {.hero-section}
-Hi! I am **Isidora Araya Day**, currently a PhD student in the [Quantum Tinkerer group](http://quantumtinkerer.group/) at TU Delft.
+Hi! I am **Isidora Araya Day**, a theoretical condensed matter physicist working on mesoscopic physics, topology and quantum transport.
 
-I work on theory of condensed matter physics; some of my research interests and projects are summarized below.
+Currently, I am a PhD student in the [Quantum Tinkerer group](http://quantumtinkerer.group/) at TU Delft, working with [Anton Akhmerov](https://antonakhmerov.org/) and [Michael Wimmer](https://michaelwimmer.org/).
 :::
 
 ::: {.research-section}
 ## My interests
+
 
 ::: {.research-grid}
 
@@ -56,6 +57,10 @@ I work on theory of condensed matter physics; some of my research interests and 
 
 
 :::
+:::
+
+::: {.quarto-footer}
+This website is made with [Quarto](https://quarto.org).
 :::
 
 
