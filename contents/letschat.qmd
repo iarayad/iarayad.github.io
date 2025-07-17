@@ -1,0 +1,63 @@
+---
+title: "Let's chat! 👋"
+draft: true
+---
+
+
+::: {.alert .alert-info .text-center}
+Hey! It often happens at conferences that there's so many people and we don't know what they work on and how to start. Let me help you start a conversation!
+:::
+
+## 💬 Conversation starters
+
+::: {.row}
+::: {.col-md-6}
+::: {.card .mb-3}
+::: {.card-body}
+::: {.card-title}
+📚 **My favorite theory paper**
+:::
+[Scattering approach to adiabatic pumping](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.58.R10135) by Piet Brouwer.
+:::
+:::
+:::
+
+::: {.col-md-6}
+::: {.card .mb-3}
+::: {.card-body}
+::: {.card-title}
+🔬 **My favorite experimental paper**
+:::
+*Coming soon - ask me about it!*
+:::
+:::
+:::
+:::
+
+::: {.row}
+::: {.col-md-6}
+::: {.card .mb-3}
+::: {.card-body}
+::: {.card-title}
+💻 **My favorite software package**
+:::
+[Kwant](https://kwant-project.org/) - for quantum transport simulations
+:::
+:::
+:::
+
+::: {.col-md-6}
+::: {.card .mb-3}
+::: {.card-body}
+::: {.card-title}
+🤝 **What I am looking for**
+:::
+Exchanging ideas, learning about your work, and open to one-off collaborations!
+:::
+:::
+:::
+:::
+
+::: {.alert .alert-success .text-center .mt-4}
+**🎉 Spotted me at a conference?** Just mention any of these topics and we'll have plenty to discuss!
+:::

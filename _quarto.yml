@@ -1,6 +1,8 @@
 project:
   type: website
   output-dir: _site
+  resources:
+    - google71bbe46973ffb153.html
 
 website:
   title: "Home"
@@ -8,6 +10,7 @@ website:
   navbar:
     left:
       - contents/about.qmd
+      - contents/letschat.qmd
   page-navigation: true
 
 format:
