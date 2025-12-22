@@ -15,7 +15,7 @@ website:
     search: true
   page-navigation: true
   # page-footer:
-  #   center: 
+  #   center:
   #     - text: "About"
   #       href: contents/home.qmd
 
@@ -30,5 +30,3 @@ format:
 
 execute:
   freeze: auto
-
-
