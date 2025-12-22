@@ -1,9 +1,9 @@
 ---
 title: "Research"
-draft: true
+draft: false
 listing:
   id: sample-listings
-  contents: 
+  contents:
     - data/publications.yml
   fields:
     - id
@@ -83,5 +83,3 @@ Check it out!
 
 ::: {#sample-listings}
 :::
-
-
