@@ -14,10 +14,9 @@ website:
       - contents/letschat.qmd
     search: true
   page-navigation: true
-  # page-footer:
-  #   center:
-  #     - text: "About"
-  #       href: contents/home.qmd
+  page-footer:
+    center:
+      - text: "📧 iarayaday@gmail.com"
 
 format:
   html:
