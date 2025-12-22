@@ -42,7 +42,7 @@ h3 {
 }
 
 body {
-  font-size: 1.1rem;
+  font-size: 1.05rem;
 }
 
 
@@ -51,4 +51,236 @@ body {
 /* Darker link highlighting */
 a {
   color: rgb(51, 140, 115);
+}
+
+.trajectory-section {
+  margin: 2rem auto;
+  padding: 1.65rem;
+  background: #ffffff;
+  border-radius: 1.5rem;
+  box-shadow: 0 20px 45px rgba(20, 44, 56, 0.08);
+}
+
+.trajectory-section h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 1.4rem;
+}
+
+.trajectory-stepper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.stepper-track {
+  position: relative;
+  height: 3.5rem;
+  margin-bottom: 0.35rem;
+}
+
+.stepper-track::before {
+  content: "";
+  position: absolute;
+  top: 1.6rem;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: rgba(51, 140, 115, 0.2);
+  border-radius: 999px;
+}
+
+.stepper-track-fill {
+  position: absolute;
+  top: 1.6rem;
+  left: 0;
+  height: 4px;
+  width: var(--step-progress, 0%);
+  background: linear-gradient(90deg, rgb(51, 140, 115), rgb(28, 99, 87));
+  border-radius: 999px;
+  transition: width 320ms ease;
+  transform: translateY(-50%);
+}
+
+.stepper-nodes {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  pointer-events: none;
+  padding: 0 0.3rem;
+}
+
+.stepper-node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  min-width: 0;
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #3a4b51;
+}
+
+.stepper-node-year {
+  font-weight: 600;
+}
+
+.stepper-node-dot {
+  width: 0.85rem;
+  height: 0.85rem;
+  border-radius: 50%;
+  border: 3px solid #1c6357;
+  background: #fff;
+  box-shadow: 0 0 0 6px rgba(51, 140, 115, 0.08);
+  margin-top: 0.4rem;
+}
+
+.stepper-node.is-complete .stepper-node-dot {
+  background: #1c6357;
+  border-color: #1c6357;
+  box-shadow: 0 0 0 6px rgba(28, 99, 87, 0.15);
+}
+
+.stepper-node.is-active .stepper-node-year {
+  color: #1c6357;
+}
+
+.stepper-buttons {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 0.65rem;
+}
+
+.stepper-btn {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.7rem;
+  padding: 0.75rem 0.75rem;
+  border: none;
+  border-radius: 0.75rem;
+  background: rgba(255, 255, 255, 0.85);
+  box-shadow: 0 8px 16px rgba(14, 28, 36, 0.08);
+  text-align: left;
+  cursor: pointer;
+  transition: transform 200ms ease, box-shadow 200ms ease, background 200ms ease;
+}
+
+.stepper-btn:focus-visible {
+  outline: 3px solid rgba(51, 140, 115, 0.35);
+  outline-offset: 3px;
+}
+
+.stepper-btn.is-active {
+  background: linear-gradient(125deg, rgba(51, 140, 115, 0.15), rgba(28, 99, 87, 0.15));
+  transform: translateY(-2px);
+  box-shadow: 0 12px 22px rgba(20, 44, 56, 0.12);
+}
+
+.stepper-sequence {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.65rem;
+  height: 1.65rem;
+  border-radius: 50%;
+  font-weight: 600;
+  font-size: 0.75rem;
+  color: rgb(255, 255, 255);
+  background: rgb(51, 140, 115);
+  transition: background 200ms ease;
+}
+
+.stepper-btn:not(.is-active) .stepper-sequence {
+  background: rgba(51, 140, 115, 0.45);
+}
+
+.stepper-copy strong {
+  display: block;
+  font-size: 0.85rem;
+}
+
+.stepper-copy small {
+  display: block;
+  font-size: 0.68rem;
+  color: #5f6c74;
+}
+
+.stepper-panels {
+  border-radius: 1rem;
+  background: #f7fbfa;
+  padding: 1.05rem;
+  box-shadow: inset 0 0 0 1px rgba(51, 140, 115, 0.08);
+}
+
+.stepper-panel {
+  display: none;
+  animation: fadeSlideIn 260ms ease;
+  font-size: 0.9rem;
+  line-height: 1.35;
+}
+
+.stepper-panel.is-active {
+  display: block;
+}
+
+.stepper-panel-heading {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.6rem;
+  margin-bottom: 0.75rem;
+}
+
+.stepper-panel-period {
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgb(51, 140, 115);
+  margin-bottom: 0;
+}
+
+.stepper-panel-list {
+  margin-top: 1rem;
+  padding-left: 1rem;
+  display: grid;
+  gap: 0.25rem;
+  font-size: 0.9rem;
+}
+
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 900px) {
+  .trajectory-section {
+    padding: 1.35rem 1rem;
+  }
+
+  .stepper-buttons {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .stepper-btn {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .stepper-panels {
+    padding: 0.9rem;
+    font-size: 0.88rem;
+  }
 }

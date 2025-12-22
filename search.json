@@ -4,28 +4,42 @@
     "href": "contents/home.html",
     "title": "Home",
     "section": "",
-    "text": "Hi!👋 I am Isidora Araya Day, a theoretical condensed matter physicist working on mesoscopic superconductivity, topology, and quantum transport.\n📍 Currently at DIPC in San Sebastián, Spain, as a postdoc with Adolfo Grushin.\n💻 I did my PhD in the Quantum Tinkerer group at TU Delft, The Netherlands, where I worked with Anton Akhmerov and Michael Wimmer."
+    "text": "Hi!👋 I am Isidora Araya Day, a theoretical condensed matter physicist working on mesoscopic superconductivity, topology, and quantum transport.\n📍 Currently at DIPC in San Sebastián, Spain, as a postdoc with Adolfo Grushin.\n💻 I did my PhD in the Quantum Tinkerer group at TU Delft, The Netherlands, where I worked with Anton Akhmerov and Michael Wimmer.\n\n\nI love working on problems that require combining analytics and numerics. One of my favorite projects so far was developing Pymablock, a Python package to do quantum mechanical perturbation theory efficiently, to any order, and with any number of subspaces.\n\n📖 Documentation 💻 GitHub Repository\n\nCheck out my research page to learn more!"
   },
   {
     "objectID": "contents/home.html#my-interests",
     "href": "contents/home.html#my-interests",
     "title": "Home",
-    "section": "My interests",
-    "text": "My interests\nI love working on problems that require combining analytics and numerics. One of my favorite projects so far was developing Pymablock, a Python package to do quantum mechanical perturbation theory efficiently, to any order, and with any number of subspaces.\n\n📖 Documentation 💻 GitHub Repository\n\nCheck out my research page to learn more!"
+    "section": "",
+    "text": "I love working on problems that require combining analytics and numerics. One of my favorite projects so far was developing Pymablock, a Python package to do quantum mechanical perturbation theory efficiently, to any order, and with any number of subspaces.\n\n📖 Documentation 💻 GitHub Repository\n\nCheck out my research page to learn more!"
+  },
+  {
+    "objectID": "contents/home.html#my-journey-so-far",
+    "href": "contents/home.html#my-journey-so-far",
+    "title": "Home",
+    "section": "My journey so far",
+    "text": "My journey so far\n{{&lt; trajectory-stepper &gt;}}"
   },
   {
     "objectID": "index.html",
     "href": "index.html",
     "title": "About me",
     "section": "",
-    "text": "Hi!👋 I am Isidora Araya Day, a theoretical condensed matter physicist working on mesoscopic superconductivity, topology, and quantum transport.\n📍 Currently at DIPC in San Sebastián, Spain, as a postdoc with Adolfo Grushin.\n💻 I did my PhD in the Quantum Tinkerer group at TU Delft, The Netherlands, where I worked with Anton Akhmerov and Michael Wimmer."
+    "text": "Hi!👋 I am Isidora Araya Day, a theoretical condensed matter physicist working on mesoscopic superconductivity, topology, and quantum transport.\n📍 Currently at DIPC in San Sebastián, Spain, as a postdoc with Adolfo Grushin.\n💻 I did my PhD in the Quantum Tinkerer group at TU Delft, The Netherlands, where I worked with Anton Akhmerov and Michael Wimmer.\n\n\nI love working on problems that require combining analytics and numerics. One of my favorite projects so far was developing Pymablock, a Python package to do quantum mechanical perturbation theory efficiently, to any order, and with any number of subspaces.\n\n📖 Documentation 💻 GitHub Repository\n\nCheck out my research page to learn more!"
   },
   {
     "objectID": "index.html#my-interests",
     "href": "index.html#my-interests",
     "title": "About me",
-    "section": "My interests",
-    "text": "My interests\nI love working on problems that require combining analytics and numerics. One of my favorite projects so far was developing Pymablock, a Python package to do quantum mechanical perturbation theory efficiently, to any order, and with any number of subspaces.\n\n📖 Documentation 💻 GitHub Repository\n\nCheck out my research page to learn more!"
+    "section": "",
+    "text": "I love working on problems that require combining analytics and numerics. One of my favorite projects so far was developing Pymablock, a Python package to do quantum mechanical perturbation theory efficiently, to any order, and with any number of subspaces.\n\n📖 Documentation 💻 GitHub Repository\n\nCheck out my research page to learn more!"
+  },
+  {
+    "objectID": "index.html#my-journey-so-far",
+    "href": "index.html#my-journey-so-far",
+    "title": "About me",
+    "section": "My journey so far",
+    "text": "My journey so far\n{{&lt; trajectory-stepper &gt;}}"
   },
   {
     "objectID": "contents/research.html",
