@@ -17,9 +17,20 @@ jobs:
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
 
-      - name: Render and Publish
+      - name: Install pixi
+        uses: prefix-dev/setup-pixi@v0
+
+      - name: Sync pixi environment
+        run: pixi install
+
+      - name: Render with pixi
+        run: pixi run quarto render
+
+      - name: Publish rendered site
         uses: quarto-dev/quarto-actions/publish@v2
         with:
           target: gh-pages
+          path: _site
+          render: false
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
