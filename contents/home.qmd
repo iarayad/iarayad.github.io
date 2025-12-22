@@ -7,9 +7,6 @@ Hi!👋 I am **Isidora Araya Day**, a theoretical condensed matter physicist wor
 
 💻 I did my PhD in the [Quantum Tinkerer group](http://quantumtinkerer.group/) at TU Delft, The Netherlands, where I worked with [Anton Akhmerov](https://antonakhmerov.org/) and [Michael Wimmer](https://michaelwimmer.org/).
 
-:::
-
-
 ::: {.research-section}
 ## My interests
 
@@ -23,6 +20,16 @@ One of my favorite projects so far was developing Pymablock, a Python package to
 
 Check out my [research page](research.html) to learn more!
 :::
+
+:::
+
+::: {.trajectory-section data-scroll-reveal="true"}
+## My journey so far
+
+{{< trajectory-stepper >}}
+:::
+
+
 
 ::: {.quarto-footer}
 I made this with [Quarto](https://quarto.org).

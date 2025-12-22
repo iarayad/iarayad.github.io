@@ -1,0 +1,61 @@
+trajectory:
+  - id: bachelors
+    order: 1
+    label: "BSc. Physics"
+    place: "University of Chile"
+    period: "2015 → 2019"
+    heading: "BSc. Physics"
+    summary: >-
+      ...
+    bullets:
+      - ...
+  - id: internship1
+    order: 2
+    label: "Experimental Internship"
+    place: "University of Waterloo"
+    period: "2018"
+    heading: "Research internship"
+    summary: >-
+      Three-month long internship at the **Institute for Quantum Computing (IQC)** of the University of Waterloo.
+    bullets:
+      - ...
+  - id: masters
+    order: 3
+    label: "MSc. Applied Physics"
+    place: "TU Delft"
+    period: "2019 → 2021"
+    heading: "MSc. Applied Physics"
+    summary: >-
+      I followed the Quantum Computing track in Qutech.
+    bullets:
+      - ...
+  - id: internship2
+    order: 4
+    label: "Theory internship"
+    place: "Max Planck Institute"
+    period: "2021"
+    heading: "Research at MPS-PKS Dresden"
+    summary: >-
+      ...
+    bullets:
+      - ...
+  - id: internship3
+    order: 5
+    label: "Research visit"
+    place: "Cornell University"
+    period: "2024"
+    heading: "Visit to an experimental lab"
+    summary: >-
+      I visited Valla Fatemi's group in Cornell University for one month.
+    bullets:
+      - ...
+  - id: phd
+    order: 6
+    label: "PhD. Condensed Matter Physics"
+    place: "TU Delft"
+    period: "2021 → 2025"
+    heading: "PhD · Quantum Tinkerer group"
+    summary: >-
+      ...
+    bullets:
+      - ...

@@ -24,6 +24,7 @@ format:
       - minty
     page-layout: full
     css: styles.css
+    scroll-reveal: true
     # toc: true
     backgroundcolor: "#f8f9fa"
 
