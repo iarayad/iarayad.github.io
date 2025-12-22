@@ -12,7 +12,12 @@ website:
       - contents/research.qmd
     right:
       - contents/letschat.qmd
+    search: true
   page-navigation: true
+  # page-footer:
+  #   center: 
+  #     - text: "About"
+  #       href: contents/home.qmd
 
 format:
   html:

@@ -1,47 +1,28 @@
 
 ::: {.hero-section}
-Hi! I am **Isidora Araya Day**, a theoretical condensed matter physicist working on mesoscopic physics, topology and quantum transport.
 
-Currently, I am a PhD student in the [Quantum Tinkerer group](http://quantumtinkerer.group/) at TU Delft, working with [Anton Akhmerov](https://antonakhmerov.org/) and [Michael Wimmer](https://michaelwimmer.org/).
+Hi!👋 I am **Isidora Araya Day**, a theoretical condensed matter physicist working on **mesoscopic superconductivity, topology, and quantum transport**.
+
+📍 Currently at DIPC in San Sebastián, Spain, postdoc with Adolfo Grushin.
+
+💻 I did my PhD in the [Quantum Tinkerer group](http://quantumtinkerer.group/) at TU Delft, The Netherlands, where I worked with [Anton Akhmerov](https://antonakhmerov.org/) and [Michael Wimmer](https://michaelwimmer.org/).
+
 :::
+
 
 ::: {.research-section}
 ## My interests
 
-
-::: {.research-grid}
-
-::: {.research-card}
-### Mesoscopic superconductivity
-:::
-
-
-::: {.research-card}
-### Topological phases of matter
-:::
-
-
-::: {.research-card}
-### Open source software
-
-::: {.project-container}
-
-::: {.project-content}
-
-[Pymablock]{.pymablock} is a Python package that constructs effective models using **quasi-degenerate perturbation theory**. It's efficient and it deals with symbolic and numerical inputs ✨. Check it out!
-:::
+I love working on problems that require combining analytics and numerics.
+One of my favorite projects so far was developing a Pymablock, Python package to do quantum mechanical perturbation theory efficiently, to any order, and with any number of subspaces.
 
 ::: {.project-links}
 [📖 Documentation](https://pymablock.readthedocs.io/){.btn .btn-primary}
 [💻 GitHub Repository](https://github.com/quantum-tinkerer/pymablock){.btn .btn-outline-primary}
 :::
 
-
-:::
-:::
-
-:::
-:::
+Check out my [research page](research.html) to learn more!
+::: 
 
 ::: {.quarto-footer}
 I made this with [Quarto](https://quarto.org).
