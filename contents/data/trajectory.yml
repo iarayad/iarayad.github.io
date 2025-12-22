@@ -5,36 +5,41 @@ trajectory:
     place: "University of Chile"
     period: "2015 → 2019"
     summary: >-
-      ...
+      I completed my bachelor's degree in physics at the University of Chile.
     bullets:
-      - ...
+      - I also took computer science courses on algorithms, data structures, discrete mathematics, and software.
+      - I worked as a teaching assistant in several physics courses for first-year undergraduates and high-school students.
+      - I participated in the faculty's student council for a year.
   - id: internship1
     order: 2
     label: "Experimental Internship"
     place: "University of Waterloo"
     period: "2018"
     summary: >-
-      Three-month long internship at the **Institute for Quantum Computing (IQC)** of the University of Waterloo.
+      I visited the **Institute for Quantum Computing (IQC)** of the University of Waterloo for three months.
     bullets:
-      - ...
+      - Participated at USEQIP, a quantum computing summer school.
+      - Worked at an MBE lab using XPS and ARPES techniques to characterize 2D materials.
   - id: masters
     order: 3
     label: "MSc. Applied Physics"
     place: "TU Delft"
     period: "2019 → 2021"
     summary: >-
-      I followed the Quantum Computing track in Qutech.
+      I earned a QuTech Scholarship to pursue a master's degree at TU Delft, where I followed the Quantum Computing track.
     bullets:
-      - ...
+      - I took courses on mesoscopic physics, quantum information, and quantum hardware.
+      - I participated in the Northwestern European Regional Programming Contest as part of the TU Delft team.
+      - My master's thesis was on topological defects in crystalline topological insulators.
   - id: internship2
     order: 4
     label: "Theory research internship"
     place: "Max Planck Institute"
     period: "2021"
     summary: >-
-      ...
+      I spent a summer in Dresden working with the group of Ashley Cook on topological phases.
     bullets:
-      - ...
+      - null
   - id: phd
     order: 5
     label: "PhD. Condensed Matter Physics"

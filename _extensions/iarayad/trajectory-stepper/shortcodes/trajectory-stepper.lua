@@ -39,11 +39,28 @@ local function slugify(text, fallback)
   return slug
 end
 
+local function sanitize_text(value)
+  if value == nil then
+    return nil
+  end
+  local text = stringify(value)
+  if type(text) ~= "string" then
+    text = tostring(text or "")
+  end
+  if text:match('%S') then
+    return escape_html(text)
+  end
+  return nil
+end
+
 local function meta_to_strings(value)
   local items = {}
   if type(value) == "table" then
     for _, entry in ipairs(value) do
-      table.insert(items, escape_html(stringify(entry)))
+      local cleaned = sanitize_text(entry)
+      if cleaned then
+        table.insert(items, cleaned)
+      end
     end
   end
   return items
