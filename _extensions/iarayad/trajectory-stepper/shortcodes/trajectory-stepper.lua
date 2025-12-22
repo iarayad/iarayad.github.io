@@ -100,54 +100,45 @@ end
 
 local function render(entries)
   local html = {}
+  local purple_ids = { bachelors = true, masters = true, phd = true }
   table.insert(html, '<div class="trajectory-stepper" data-stepper>')
   table.insert(html, '  <div class="stepper-track" aria-hidden="true">')
   table.insert(html, '    <div class="stepper-track-fill"></div>')
-  table.insert(html, '    <div class="stepper-nodes">')
+  table.insert(html, '    <div class="stepper-nodes" role="tablist" aria-label="Academic and professional journey timeline">')
   for idx, entry in ipairs(entries) do
     local year = entry.start_year ~= '' and entry.start_year or '&nbsp;'
-    table.insert(html, string.format('      <span class="stepper-node" data-step-index="%d">', idx - 1))
-    table.insert(html, string.format('        <span class="stepper-node-year">%s</span>', year))
-    table.insert(html, '        <span class="stepper-node-dot"></span>')
-    table.insert(html, '      </span>')
-  end
-  table.insert(html, '    </div>')
-  table.insert(html, '  </div>')
-  table.insert(html, '  <div class="stepper-buttons" role="tablist" aria-label="Academic and professional journey">')
-  for idx, entry in ipairs(entries) do
-    local seq = string.format("%02d", idx)
-    local tab_id = 'trajectory-tab-' .. entry.id
     local panel_id = 'trajectory-' .. entry.id
+    local node_id = 'trajectory-node-' .. entry.id
     local is_active = idx == 1
-    local btn_classes = 'stepper-btn' .. (is_active and ' is-active' or '')
+    local is_purple = purple_ids[entry.id] or false
+    local node_classes = 'stepper-node' .. (is_active and ' is-active' or '') .. (is_purple and ' is-purple' or '')
     local aria_selected = is_active and 'true' or 'false'
     local tabindex = is_active and '' or ' tabindex="-1"'
-    table.insert(html, string.format('    <button id="%s" class="%s" role="tab" type="button" data-target="%s" aria-controls="%s" aria-selected="%s"%s>', tab_id, btn_classes, panel_id, panel_id, aria_selected, tabindex))
-    table.insert(html, string.format('      <span class="stepper-sequence">%s</span>', seq))
-    table.insert(html, '      <span class="stepper-copy">')
-    table.insert(html, string.format('        <strong>%s</strong>', entry.label))
-    if entry.place ~= '' then
-      table.insert(html, string.format('        <small>%s</small>', entry.place))
-    end
-    table.insert(html, '      </span>')
-    table.insert(html, '    </button>')
+    table.insert(html, string.format('      <button id="%s" class="%s" type="button" role="tab" data-step-index="%d" data-target="%s" aria-controls="%s" aria-selected="%s"%s>', node_id, node_classes, idx - 1, panel_id, panel_id, aria_selected, tabindex))
+    table.insert(html, string.format('        <span class="stepper-node-year">%s</span>', year))
+    table.insert(html, '        <span class="stepper-node-dot" aria-hidden="true"></span>')
+    table.insert(html, '      </button>')
   end
+  table.insert(html, '    </div>')
   table.insert(html, '  </div>')
   table.insert(html, '  <div class="stepper-panels">')
   for idx, entry in ipairs(entries) do
     local panel_id = 'trajectory-' .. entry.id
-    local tab_id = 'trajectory-tab-' .. entry.id
+    local node_id = 'trajectory-node-' .. entry.id
     local is_active = idx == 1
     local panel_classes = 'stepper-panel' .. (is_active and ' is-active' or '')
     local aria_hidden = is_active and 'false' or 'true'
-    table.insert(html, string.format('    <section id="%s" class="%s" role="tabpanel" aria-labelledby="%s" aria-hidden="%s">', panel_id, panel_classes, tab_id, aria_hidden))
-    if entry.period ~= '' or entry.heading ~= '' then
+    table.insert(html, string.format('    <section id="%s" class="%s" role="tabpanel" aria-labelledby="%s" aria-hidden="%s">', panel_id, panel_classes, node_id, aria_hidden))
+    if entry.period ~= '' or entry.label ~= '' or entry.place ~= '' then
       table.insert(html, '      <div class="stepper-panel-heading">')
       if entry.period ~= '' then
         table.insert(html, string.format('        <p class="stepper-panel-period">%s</p>', entry.period))
       end
-      if entry.heading ~= '' then
-        table.insert(html, string.format('        <h3>%s</h3>', entry.heading))
+      if entry.label ~= '' then
+        table.insert(html, string.format('        <h3 class="stepper-panel-title">%s</h3>', entry.label))
+      end
+      if entry.place ~= '' then
+        table.insert(html, string.format('        <p class="stepper-panel-subtitle">%s</p>', entry.place))
       end
       table.insert(html, '      </div>')
     end
@@ -173,19 +164,12 @@ local stepper_script = [[
 const initTrajectoryStepper = () => {
   const steppers = document.querySelectorAll('[data-stepper]');
   steppers.forEach((stepper) => {
-    const buttons = stepper.querySelectorAll('.stepper-btn');
     const panels = stepper.querySelectorAll('.stepper-panel');
     const trackFill = stepper.querySelector('.stepper-track-fill');
     const nodes = stepper.querySelectorAll('.stepper-node');
+    if (!nodes.length) return;
 
     const setActive = (index) => {
-      buttons.forEach((btn, idx) => {
-        const isActive = idx === index;
-        btn.classList.toggle('is-active', isActive);
-        btn.setAttribute('aria-selected', String(isActive));
-        btn.setAttribute('tabindex', isActive ? '0' : '-1');
-      });
-
       panels.forEach((panel, idx) => {
         const isActive = idx === index;
         panel.classList.toggle('is-active', isActive);
@@ -193,29 +177,41 @@ const initTrajectoryStepper = () => {
       });
 
       nodes.forEach((node, idx) => {
-        node.classList.toggle('is-active', idx === index);
+        const isActive = idx === index;
+        node.classList.toggle('is-active', isActive);
         node.classList.toggle('is-complete', idx <= index);
+        node.setAttribute('aria-selected', String(isActive));
+        node.setAttribute('tabindex', isActive ? '0' : '-1');
       });
 
       if (trackFill) {
-        const progress = buttons.length > 1 ? (index / (buttons.length - 1)) * 100 : 100;
+        const progress = nodes.length > 1 ? (index / (nodes.length - 1)) * 100 : 100;
         trackFill.style.setProperty('--step-progress', `${progress}%`);
       }
     };
 
-    buttons.forEach((button, index) => {
-      button.addEventListener('click', () => setActive(index));
-      button.addEventListener('keydown', (event) => {
-        if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return;
-        event.preventDefault();
-        const lastIndex = buttons.length - 1;
+    nodes.forEach((node, index) => {
+      node.addEventListener('click', () => setActive(index));
+      node.addEventListener('keydown', (event) => {
+        const interactiveKeys = ['ArrowLeft', 'ArrowRight', 'Home', 'End', 'Enter', ' '];
+        if (!interactiveKeys.includes(event.key)) return;
+        const lastIndex = nodes.length - 1;
         let nextIndex = index;
         if (event.key === 'ArrowLeft') nextIndex = Math.max(0, index - 1);
         if (event.key === 'ArrowRight') nextIndex = Math.min(lastIndex, index + 1);
         if (event.key === 'Home') nextIndex = 0;
         if (event.key === 'End') nextIndex = lastIndex;
-        buttons[nextIndex].focus();
-        setActive(nextIndex);
+
+        if (['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) {
+          event.preventDefault();
+          nodes[nextIndex].focus();
+          setActive(nextIndex);
+        }
+
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          setActive(index);
+        }
       });
     });
 

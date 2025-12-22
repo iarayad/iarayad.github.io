@@ -83,7 +83,7 @@ a {
 .stepper-track::before {
   content: "";
   position: absolute;
-  top: 1.6rem;
+  top: 2.6rem;
   left: 0;
   right: 0;
   height: 4px;
@@ -93,7 +93,7 @@ a {
 
 .stepper-track-fill {
   position: absolute;
-  top: 1.6rem;
+  top: 2.6rem;
   left: 0;
   height: 4px;
   width: var(--step-progress, 0%);
@@ -109,7 +109,6 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  pointer-events: none;
   padding: 0 0.3rem;
 }
 
@@ -117,16 +116,29 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.35rem;
+  gap: 0.1rem;
   min-width: 0;
   font-size: 0.68rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: #3a4b51;
+  pointer-events: auto;
+  background: none;
+  border: none;
+  padding: 0.35rem 0.25rem;
+  cursor: pointer;
+  font: inherit;
+}
+
+.stepper-node:focus-visible {
+  outline: 3px solid rgba(51, 140, 115, 0.45);
+  outline-offset: 4px;
+  border-radius: 0.5rem;
 }
 
 .stepper-node-year {
   font-weight: 600;
+  margin-bottom: -0.2rem;
 }
 
 .stepper-node-dot {
@@ -147,6 +159,21 @@ a {
 
 .stepper-node.is-active .stepper-node-year {
   color: #1c6357;
+}
+
+.stepper-node.is-purple .stepper-node-dot {
+  border-color: #984eca;
+  box-shadow: 0 0 0 6px rgba(123, 77, 194, 0.15);
+}
+
+.stepper-node.is-purple.is-complete .stepper-node-dot {
+  background: #984eca;
+  border-color: #984eca;
+  box-shadow: 0 0 0 6px rgba(123, 77, 194, 0.25);
+}
+
+.stepper-node.is-purple.is-active .stepper-node-year {
+  color: #984eca;
 }
 
 .stepper-buttons {
@@ -185,7 +212,7 @@ a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 1.65rem;
+  gap: 0.6rem;
   height: 1.65rem;
   border-radius: 50%;
   font-weight: 600;
@@ -201,6 +228,7 @@ a {
 
 .stepper-copy strong {
   display: block;
+  margin-bottom: 0.15rem;
   font-size: 0.85rem;
 }
 
@@ -234,6 +262,19 @@ a {
   justify-content: space-between;
   gap: 0.6rem;
   margin-bottom: 0.75rem;
+}
+
+.stepper-panel-title {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1f2f35;
+}
+
+.stepper-panel-subtitle {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #5f6c74;
 }
 
 .stepper-panel-period {

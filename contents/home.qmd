@@ -28,5 +28,5 @@ Check out my [research page](contents/research.html) to learn more!
 
 
 ::: {.quarto-footer}
-I made this with [Quarto](https://quarto.org).
+I made this with [Quarto](https://quarto.org) and [Github Copilot](https://github.com/features/copilot).
 :::

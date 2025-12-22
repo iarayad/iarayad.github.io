@@ -39,23 +39,23 @@ trajectory:
       ...
     bullets:
       - ...
-  - id: internship3
-    order: 5
-    label: "Research visit"
-    place: "Cornell University"
-    period: "2024"
-    heading: "Visit to an experimental lab"
-    summary: >-
-      I visited Valla Fatemi's group in Cornell University for one month.
-    bullets:
-      - ...
   - id: phd
-    order: 6
+    order: 5
     label: "PhD. Condensed Matter Physics"
     place: "TU Delft"
     period: "2021 → 2025"
     heading: "PhD · Quantum Tinkerer group"
     summary: >-
       ...
+    bullets:
+      - ...
+  - id: internship3
+    order: 6
+    label: "Research visit"
+    place: "Cornell University"
+    period: "2024"
+    heading: "Visit to an experimental lab"
+    summary: >-
+      I visited Valla Fatemi's group in Cornell University for one month.
     bullets:
       - ...
