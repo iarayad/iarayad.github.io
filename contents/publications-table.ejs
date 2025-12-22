@@ -1,0 +1,40 @@
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>arXiv ID</th>
+      <th>Title</th>
+      <th>Authors</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% for (const item of items) { %>
+    <tr>
+      <td>
+        <a href="https://arxiv.org/abs/<%= item.id %>" target="_blank" style="color: #0066cc; text-decoration: underline;">
+          <%= item.id %>
+        </a>
+      </td>
+      <td><%= item.title %></td>
+      <td>
+        <%
+        let authors = item.authors;
+        if (typeof authors === 'string') {
+          authors = authors.replace(/Isidora Araya Day/g, '**Isidora Araya Day**');
+          authors = authors.replace(/Isidora Araya(?!\s+Day)/g, '**Isidora Araya**');
+        } else if (Array.isArray(authors)) {
+          authors = authors.map(author => {
+            if (author === 'Isidora Araya Day') {
+              return '**Isidora Araya Day**';
+            } else if (author === 'Isidora Araya') {
+              return '**Isidora Araya**';
+            }
+            return author;
+          }).join(', ');
+        }
+        %>
+        <%- authors %>
+      </td>
+    </tr>
+    <% } %>
+  </tbody>
+</table>
