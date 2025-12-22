@@ -129,134 +129,96 @@ ul.task-list li input[type="checkbox"] {
 <div class="trajectory-stepper" data-stepper="">
   <div class="stepper-track" aria-hidden="true">
     <div class="stepper-track-fill"></div>
-    <div class="stepper-nodes">
-      <span class="stepper-node" data-step-index="0">
+    <div class="stepper-nodes" role="tablist" aria-label="Academic and professional journey timeline">
+      <button id="trajectory-node-bachelors" class="stepper-node is-active is-purple" type="button" role="tab" data-step-index="0" data-target="trajectory-bachelors" aria-controls="trajectory-bachelors" aria-selected="true">
         <span class="stepper-node-year">2015</span>
-        <span class="stepper-node-dot"></span>
-      </span>
-      <span class="stepper-node" data-step-index="1">
+        <span class="stepper-node-dot" aria-hidden="true"></span>
+      </button>
+      <button id="trajectory-node-internship1" class="stepper-node" type="button" role="tab" data-step-index="1" data-target="trajectory-internship1" aria-controls="trajectory-internship1" aria-selected="false" tabindex="-1">
         <span class="stepper-node-year">2018</span>
-        <span class="stepper-node-dot"></span>
-      </span>
-      <span class="stepper-node" data-step-index="2">
+        <span class="stepper-node-dot" aria-hidden="true"></span>
+      </button>
+      <button id="trajectory-node-masters" class="stepper-node is-purple" type="button" role="tab" data-step-index="2" data-target="trajectory-masters" aria-controls="trajectory-masters" aria-selected="false" tabindex="-1">
         <span class="stepper-node-year">2019</span>
-        <span class="stepper-node-dot"></span>
-      </span>
-      <span class="stepper-node" data-step-index="3">
+        <span class="stepper-node-dot" aria-hidden="true"></span>
+      </button>
+      <button id="trajectory-node-internship2" class="stepper-node" type="button" role="tab" data-step-index="3" data-target="trajectory-internship2" aria-controls="trajectory-internship2" aria-selected="false" tabindex="-1">
         <span class="stepper-node-year">2021</span>
-        <span class="stepper-node-dot"></span>
-      </span>
-      <span class="stepper-node" data-step-index="4">
+        <span class="stepper-node-dot" aria-hidden="true"></span>
+      </button>
+      <button id="trajectory-node-phd" class="stepper-node is-purple" type="button" role="tab" data-step-index="4" data-target="trajectory-phd" aria-controls="trajectory-phd" aria-selected="false" tabindex="-1">
+        <span class="stepper-node-year">2021</span>
+        <span class="stepper-node-dot" aria-hidden="true"></span>
+      </button>
+      <button id="trajectory-node-internship3" class="stepper-node" type="button" role="tab" data-step-index="5" data-target="trajectory-internship3" aria-controls="trajectory-internship3" aria-selected="false" tabindex="-1">
         <span class="stepper-node-year">2024</span>
-        <span class="stepper-node-dot"></span>
-      </span>
-      <span class="stepper-node" data-step-index="5">
-        <span class="stepper-node-year">2021</span>
-        <span class="stepper-node-dot"></span>
-      </span>
+        <span class="stepper-node-dot" aria-hidden="true"></span>
+      </button>
     </div>
   </div>
-  <div class="stepper-buttons" role="tablist" aria-label="Academic and professional journey">
-    <button id="trajectory-tab-bachelors" class="stepper-btn is-active" role="tab" type="button" data-target="trajectory-bachelors" aria-controls="trajectory-bachelors" aria-selected="true">
-      <span class="stepper-sequence">01</span>
-      <span class="stepper-copy">
-        <strong>BSc. Physics</strong>
-        <small>University of Chile</small>
-      </span>
-    </button>
-    <button id="trajectory-tab-internship1" class="stepper-btn" role="tab" type="button" data-target="trajectory-internship1" aria-controls="trajectory-internship1" aria-selected="false" tabindex="-1">
-      <span class="stepper-sequence">02</span>
-      <span class="stepper-copy">
-        <strong>Experimental Internship</strong>
-        <small>University of Waterloo</small>
-      </span>
-    </button>
-    <button id="trajectory-tab-masters" class="stepper-btn" role="tab" type="button" data-target="trajectory-masters" aria-controls="trajectory-masters" aria-selected="false" tabindex="-1">
-      <span class="stepper-sequence">03</span>
-      <span class="stepper-copy">
-        <strong>MSc. Applied Physics</strong>
-        <small>TU Delft</small>
-      </span>
-    </button>
-    <button id="trajectory-tab-internship2" class="stepper-btn" role="tab" type="button" data-target="trajectory-internship2" aria-controls="trajectory-internship2" aria-selected="false" tabindex="-1">
-      <span class="stepper-sequence">04</span>
-      <span class="stepper-copy">
-        <strong>Theory internship</strong>
-        <small>Max Planck Institute</small>
-      </span>
-    </button>
-    <button id="trajectory-tab-internship3" class="stepper-btn" role="tab" type="button" data-target="trajectory-internship3" aria-controls="trajectory-internship3" aria-selected="false" tabindex="-1">
-      <span class="stepper-sequence">05</span>
-      <span class="stepper-copy">
-        <strong>Research visit</strong>
-        <small>Cornell University</small>
-      </span>
-    </button>
-    <button id="trajectory-tab-phd" class="stepper-btn" role="tab" type="button" data-target="trajectory-phd" aria-controls="trajectory-phd" aria-selected="false" tabindex="-1">
-      <span class="stepper-sequence">06</span>
-      <span class="stepper-copy">
-        <strong>PhD. Condensed Matter Physics</strong>
-        <small>TU Delft</small>
-      </span>
-    </button>
-  </div>
   <div class="stepper-panels">
-    <section id="trajectory-bachelors" class="stepper-panel is-active" role="tabpanel" aria-labelledby="trajectory-tab-bachelors" aria-hidden="false">
+    <section id="trajectory-bachelors" class="stepper-panel is-active" role="tabpanel" aria-labelledby="trajectory-node-bachelors" aria-hidden="false">
       <div class="stepper-panel-heading">
         <p class="stepper-panel-period">2015 → 2019</p>
-        <h3 class="anchored">BSc. Physics</h3>
+        <h3 class="stepper-panel-title anchored">BSc. Physics</h3>
+        <p class="stepper-panel-subtitle">University of Chile</p>
       </div>
       <p>…</p>
       <ul class="stepper-panel-list">
         <li>…</li>
       </ul>
     </section>
-    <section id="trajectory-internship1" class="stepper-panel" role="tabpanel" aria-labelledby="trajectory-tab-internship1" aria-hidden="true">
+    <section id="trajectory-internship1" class="stepper-panel" role="tabpanel" aria-labelledby="trajectory-node-internship1" aria-hidden="true">
       <div class="stepper-panel-heading">
         <p class="stepper-panel-period">2018</p>
-        <h3 class="anchored">Research internship</h3>
+        <h3 class="stepper-panel-title anchored">Experimental Internship</h3>
+        <p class="stepper-panel-subtitle">University of Waterloo</p>
       </div>
       <p>Three-month long internship at the Institute for Quantum Computing (IQC) of the University of Waterloo.</p>
       <ul class="stepper-panel-list">
         <li>…</li>
       </ul>
     </section>
-    <section id="trajectory-masters" class="stepper-panel" role="tabpanel" aria-labelledby="trajectory-tab-masters" aria-hidden="true">
+    <section id="trajectory-masters" class="stepper-panel" role="tabpanel" aria-labelledby="trajectory-node-masters" aria-hidden="true">
       <div class="stepper-panel-heading">
         <p class="stepper-panel-period">2019 → 2021</p>
-        <h3 class="anchored">MSc. Applied Physics</h3>
+        <h3 class="stepper-panel-title anchored">MSc. Applied Physics</h3>
+        <p class="stepper-panel-subtitle">TU Delft</p>
       </div>
       <p>I followed the Quantum Computing track in Qutech.</p>
       <ul class="stepper-panel-list">
         <li>…</li>
       </ul>
     </section>
-    <section id="trajectory-internship2" class="stepper-panel" role="tabpanel" aria-labelledby="trajectory-tab-internship2" aria-hidden="true">
+    <section id="trajectory-internship2" class="stepper-panel" role="tabpanel" aria-labelledby="trajectory-node-internship2" aria-hidden="true">
       <div class="stepper-panel-heading">
         <p class="stepper-panel-period">2021</p>
-        <h3 class="anchored">Research at MPS-PKS Dresden</h3>
+        <h3 class="stepper-panel-title anchored">Theory internship</h3>
+        <p class="stepper-panel-subtitle">Max Planck Institute</p>
       </div>
       <p>…</p>
       <ul class="stepper-panel-list">
         <li>…</li>
       </ul>
     </section>
-    <section id="trajectory-internship3" class="stepper-panel" role="tabpanel" aria-labelledby="trajectory-tab-internship3" aria-hidden="true">
-      <div class="stepper-panel-heading">
-        <p class="stepper-panel-period">2024</p>
-        <h3 class="anchored">Visit to an experimental lab</h3>
-      </div>
-      <p>I visited Valla Fatemi’s group in Cornell University for one month.</p>
-      <ul class="stepper-panel-list">
-        <li>…</li>
-      </ul>
-    </section>
-    <section id="trajectory-phd" class="stepper-panel" role="tabpanel" aria-labelledby="trajectory-tab-phd" aria-hidden="true">
+    <section id="trajectory-phd" class="stepper-panel" role="tabpanel" aria-labelledby="trajectory-node-phd" aria-hidden="true">
       <div class="stepper-panel-heading">
         <p class="stepper-panel-period">2021 → 2025</p>
-        <h3 class="anchored">PhD · Quantum Tinkerer group</h3>
+        <h3 class="stepper-panel-title anchored">PhD. Condensed Matter Physics</h3>
+        <p class="stepper-panel-subtitle">TU Delft</p>
       </div>
       <p>…</p>
+      <ul class="stepper-panel-list">
+        <li>…</li>
+      </ul>
+    </section>
+    <section id="trajectory-internship3" class="stepper-panel" role="tabpanel" aria-labelledby="trajectory-node-internship3" aria-hidden="true">
+      <div class="stepper-panel-heading">
+        <p class="stepper-panel-period">2024</p>
+        <h3 class="stepper-panel-title anchored">Research visit</h3>
+        <p class="stepper-panel-subtitle">Cornell University</p>
+      </div>
+      <p>I visited Valla Fatemi’s group in Cornell University for one month.</p>
       <ul class="stepper-panel-list">
         <li>…</li>
       </ul>
@@ -267,19 +229,12 @@ ul.task-list li input[type="checkbox"] {
 const initTrajectoryStepper = () => {
   const steppers = document.querySelectorAll('[data-stepper]');
   steppers.forEach((stepper) => {
-    const buttons = stepper.querySelectorAll('.stepper-btn');
     const panels = stepper.querySelectorAll('.stepper-panel');
     const trackFill = stepper.querySelector('.stepper-track-fill');
     const nodes = stepper.querySelectorAll('.stepper-node');
+    if (!nodes.length) return;
 
     const setActive = (index) => {
-      buttons.forEach((btn, idx) => {
-        const isActive = idx === index;
-        btn.classList.toggle('is-active', isActive);
-        btn.setAttribute('aria-selected', String(isActive));
-        btn.setAttribute('tabindex', isActive ? '0' : '-1');
-      });
-
       panels.forEach((panel, idx) => {
         const isActive = idx === index;
         panel.classList.toggle('is-active', isActive);
@@ -287,29 +242,41 @@ const initTrajectoryStepper = () => {
       });
 
       nodes.forEach((node, idx) => {
-        node.classList.toggle('is-active', idx === index);
+        const isActive = idx === index;
+        node.classList.toggle('is-active', isActive);
         node.classList.toggle('is-complete', idx <= index);
+        node.setAttribute('aria-selected', String(isActive));
+        node.setAttribute('tabindex', isActive ? '0' : '-1');
       });
 
       if (trackFill) {
-        const progress = buttons.length > 1 ? (index / (buttons.length - 1)) * 100 : 100;
+        const progress = nodes.length > 1 ? (index / (nodes.length - 1)) * 100 : 100;
         trackFill.style.setProperty('--step-progress', `${progress}%`);
       }
     };
 
-    buttons.forEach((button, index) => {
-      button.addEventListener('click', () => setActive(index));
-      button.addEventListener('keydown', (event) => {
-        if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return;
-        event.preventDefault();
-        const lastIndex = buttons.length - 1;
+    nodes.forEach((node, index) => {
+      node.addEventListener('click', () => setActive(index));
+      node.addEventListener('keydown', (event) => {
+        const interactiveKeys = ['ArrowLeft', 'ArrowRight', 'Home', 'End', 'Enter', ' '];
+        if (!interactiveKeys.includes(event.key)) return;
+        const lastIndex = nodes.length - 1;
         let nextIndex = index;
         if (event.key === 'ArrowLeft') nextIndex = Math.max(0, index - 1);
         if (event.key === 'ArrowRight') nextIndex = Math.min(lastIndex, index + 1);
         if (event.key === 'Home') nextIndex = 0;
         if (event.key === 'End') nextIndex = lastIndex;
-        buttons[nextIndex].focus();
-        setActive(nextIndex);
+
+        if (['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) {
+          event.preventDefault();
+          nodes[nextIndex].focus();
+          setActive(nextIndex);
+        }
+
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          setActive(index);
+        }
       });
     });
 
@@ -326,7 +293,7 @@ if (document.readyState !== 'loading') {
 
 </section>
 <div class="quarto-footer">
-<p>I made this with <a href="https://quarto.org">Quarto</a>.</p>
+<p>I made this with <a href="https://quarto.org">Quarto</a> and <a href="https://github.com/features/copilot">Github Copilot</a>.</p>
 </div>
 
 
