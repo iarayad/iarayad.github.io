@@ -17,10 +17,12 @@ One of my favorite projects so far was developing **Pymablock**, an open-source 
 
 Check out my [research page](contents/research.html) to learn more!
 
+### My journey so far
+
+
 :::
 
 ::: {.trajectory-section data-scroll-reveal="true"}
-## My journey so far
 
 {{< trajectory-stepper >}}
 :::
