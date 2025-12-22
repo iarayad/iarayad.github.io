@@ -7,19 +7,15 @@ Hi!👋 I am **Isidora Araya Day**, a theoretical condensed matter physicist wor
 
 💻 I did my PhD in the [Quantum Tinkerer group](http://quantumtinkerer.group/) at TU Delft, The Netherlands, where I worked with [Anton Akhmerov](https://antonakhmerov.org/) and [Michael Wimmer](https://michaelwimmer.org/).
 
-::: {.research-section}
-## My interests
-
 I love working on problems that require combining analytics and numerics.
-One of my favorite projects so far was developing Pymablock, a Python package to do quantum mechanical perturbation theory efficiently, to any order, and with any number of subspaces.
+One of my favorite projects so far was developing **Pymablock**, an open-source Python package to do quantum mechanical perturbation theory efficiently, to any order, and with any number of subspaces.
 
 ::: {.project-links}
 [📖 Documentation](https://pymablock.readthedocs.io/){.btn .btn-primary}
 [💻 GitHub Repository](https://github.com/quantum-tinkerer/pymablock){.btn .btn-outline-primary}
 :::
 
-Check out my [research page](research.html) to learn more!
-:::
+Check out my [research page](contents/research.html) to learn more!
 
 :::
 
