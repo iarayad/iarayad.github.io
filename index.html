@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.8.26">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -32,13 +32,14 @@ ul.task-list li input[type="checkbox"] {
 <meta name="quarto:offset" content="./">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-bfe39d925dc07273d18b3740064bcea3.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-69ec9fc8518bc023eeaac149b6927117.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -132,30 +133,17 @@ ul.task-list li input[type="checkbox"] {
 </div>
       <div class="about-contents"><main class="content column-page" id="quarto-document-content">
 <div class="hero-section">
-<p>Hi! I am <strong>Isidora Araya Day</strong>, a theoretical condensed matter physicist working on mesoscopic physics, topology and quantum transport.</p>
-<p>Currently, I am a PhD student in the <a href="http://quantumtinkerer.group/">Quantum Tinkerer group</a> at TU Delft, working with <a href="https://antonakhmerov.org/">Anton Akhmerov</a> and <a href="https://michaelwimmer.org/">Michael Wimmer</a>.</p>
+<p>Hi!👋 I am <strong>Isidora Araya Day</strong>, a theoretical condensed matter physicist working on <strong>mesoscopic superconductivity, topology, and quantum transport</strong>.</p>
+<p>📍 Currently at DIPC in San Sebastián, Spain, postdoc with Adolfo Grushin.</p>
+<p>💻 I did my PhD in the <a href="http://quantumtinkerer.group/">Quantum Tinkerer group</a> at TU Delft, The Netherlands, where I worked with <a href="https://antonakhmerov.org/">Anton Akhmerov</a> and <a href="https://michaelwimmer.org/">Michael Wimmer</a>.</p>
 </div>
 <section id="my-interests" class="level2 research-section">
 <h2 data-anchor-id="my-interests">My interests</h2>
-<div class="research-grid">
-<section id="mesoscopic-superconductivity" class="level3 research-card">
-<h3 data-anchor-id="mesoscopic-superconductivity">Mesoscopic superconductivity</h3>
-</section>
-<section id="topological-phases-of-matter" class="level3 research-card">
-<h3 data-anchor-id="topological-phases-of-matter">Topological phases of matter</h3>
-</section>
-<section id="open-source-software" class="level3 research-card">
-<h3 data-anchor-id="open-source-software">Open source software</h3>
-<div class="project-container">
-<div class="project-content">
-<p><span class="pymablock">Pymablock</span> is a Python package that constructs effective models using <strong>quasi-degenerate perturbation theory</strong>. It’s efficient and it deals with symbolic and numerical inputs ✨. Check it out!</p>
-</div>
+<p>I love working on problems that require combining analytics and numerics. One of my favorite projects so far was developing a Pymablock, Python package to do quantum mechanical perturbation theory efficiently, to any order, and with any number of subspaces.</p>
 <div class="project-links">
 <p><a href="https://pymablock.readthedocs.io/" class="btn btn-primary">📖 Documentation</a> <a href="https://github.com/quantum-tinkerer/pymablock" class="btn btn-outline-primary">💻 GitHub Repository</a></p>
 </div>
-</div>
-</section>
-</div>
+<p>Check out my <a href="research.html">research page</a> to learn more!</p>
 </section>
 <div class="quarto-footer">
 <p>I made this with <a href="https://quarto.org">Quarto</a>.</p>
@@ -213,13 +201,14 @@ ul.task-list li input[type="checkbox"] {
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
