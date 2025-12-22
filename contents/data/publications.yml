@@ -1,0 +1,155 @@
+- abstract: A common technique in the study of complex quantum-mechanical systems
+    is to reduce the number of degrees of freedom in the Hamiltonian by using quasi-degenerate
+    perturbation theory. While the Schrieffer--Wolff transformation achieves this
+    and constructs an effective Hamiltonian, its scaling is suboptimal, and implementing
+    it efficiently is both challenging and error-prone. We introduce an algorithm
+    for constructing an equivalent effective Hamiltonian as well as a Python package,
+    Pymablock, that implements it. Our algorithm combines an optimal asymptotic scaling
+    with a range of other improvements. The package supports numerical and analytical
+    calculations of any order and it is designed to be interoperable with any other
+    packages for specifying the Hamiltonian. We demonstrate how the package handles
+    constructing a k.p model, analyses a superconducting qubit, and computes the low-energy
+    spectrum of a large tight-binding model. We also compare its performance with
+    reference calculations and demonstrate its efficiency.
+  authors:
+  - Isidora Araya Day
+  - Sebastian Miles
+  - Hugo K. Kerstens
+  - Daniel Varjas
+  - Anton R. Akhmerov
+  id: '2404.03728'
+  on_arxiv: 2024-04-04
+  title: 'Pymablock: an algorithm and a package for quasi-degenerate perturbation
+    theory'
+  data: 'https://zenodo.org/records/example1'
+- abstract: We demonstrate that Andreev modes that propagate along a transparent Josephson
+    junction have a perfect transmission at the point where three junctions meet.
+    The chirality and the number of quantized transmission channels is determined
+    by the topology of the Fermi surface and the vorticity of the superconducting
+    phase differences at the trijunction. We explain this chiral adiabatic transmission
+    (CAT) as a consequence of the adiabatic evolution of the scattering modes both
+    in momentum and real space. We identify an effective energy barrier that guarantees
+    quantized transmission. We expect that CAT is observable in nonlocal conductance
+    and thermal transport measurements. Furthermore, because it does not rely on particle-hole
+    symmetry, CAT is also possible to observe directly in metamaterials.
+  authors:
+  - Isidora Araya Day
+  - Kostas Vilkelis
+  - Antonio L. R. Manesco
+  - A. Mert Bozkurt
+  - Valla Fatemi
+  - Anton R. Akhmerov
+  id: '2311.17160'
+  on_arxiv: 2023-11-28
+  title: Chiral adiabatic transmission protected by Fermi surface topology
+- abstract: We derive a $\mathbb{Z}_4$ topological invariant that extends beyond symmetry
+    eigenvalues and Wilson loops and classifies two-dimensional insulators with a
+    $C_4 \mathcal{T}$ symmetry. To formulate this invariant, we consider an irreducible
+    Brillouin zone and constrain the spectrum of the open Wilson lines that compose
+    its boundary. We fix the gauge ambiguity of the Wilson lines by using the Pfaffian
+    at high symmetry momenta. As a result, we distinguish the four $C_4 \mathcal{T}$-protected
+    atomic insulators, each of which is adiabatically connected to a different atomic
+    limit. We establish the correspondence between the invariant and the obstructed
+    phases by constructing both the atomic limit Hamiltonians and a $C_4 \mathcal{T}$-symmetric
+    model that interpolates between them. The phase diagram shows that $C_4 \mathcal{T}$
+    insulators allow $\pm 1$ and $2$ changes of the invariant, where the latter is
+    overlooked by symmetry indicators.
+  authors:
+  - Isidora Araya Day
+  - Anastasiia Varentcova
+  - Daniel Varjas
+  - Anton R. Akhmerov
+  doi: 10.21468/SciPostPhys.15.3.114
+  id: '2209.00029'
+  journal: SciPost Phys.
+  journal_url: http://dx.doi.org/10.21468/scipostphys.15.3.114
+  on_arxiv: 2022-08-31
+  page: '114'
+  published: 2023-09-25
+  title: Pfaffian invariant identifies magnetic obstructed atomic insulators
+  vol: '15'
+- abstract: We show that topological defects in quadrupole insulators do not host
+    quantized fractional charges, contrary to what their Wannier representation indicates.
+    In particular, we test the charge quantization hypothesis based on the Wannier
+    representation of a parametric defect and a disclination. Against the expectations,
+    we find that the local charge density decays as $\sim 1/r^2$ with distance, leading
+    to a diverging defect charge. We identify sublattice symmetry and not higher order
+    topology as the origin of the previously reported charge quantization.
+  authors:
+  - Isidora Araya Day
+  - Anton R. Akhmerov
+  - Daniel Varjas
+  doi: 10.21468/SciPostPhysCore.5.4.053
+  id: '2202.07675'
+  journal: SciPost Phys. Core
+  journal_url: http://dx.doi.org/10.21468/scipostphyscore.5.4.053
+  on_arxiv: 2022-02-15
+  page: '053'
+  published: 2022-12-15
+  title: Topological defects in a double-mirror quadrupole insulator displace diverging
+    charge
+  vol: '5'
+- abstract: We report on an experimental, theoretical and numerical study of slanted
+    snaking of spatially localized parametrically excited waves on the surface of
+    a water-surfactant mixture in a Hele-Shaw cell. We demonstrate experimentally
+    the presence of a hysteretic transition to spatially extended parametrically excited
+    surface waves when the acceleration amplitude is varied, as well as the presence
+    of spatially localized waves exhibiting slanted snaking. The latter extend outside
+    the hysteresis loop. We attribute this behavior to the presence of a conserved
+    quantity, the liquid volume, and introduce a universal model based on symmetry
+    arguments, which couples the wave amplitude with such a conserved quantity. The
+    model captures both the observed slanted snaking and the presence of localized
+    waves outside the hysteresis loop, as demonstrated by numerical integration of
+    the model equations.
+  authors:
+  - Bastián Pradenas
+  - Isidora Araya
+  - Marcel G. Clerc
+  - Claudio Falcón
+  - Punit Gandhi
+  - Edgar Knobloch
+  doi: 10.1103/PhysRevFluids.2.064401
+  id: '1609.00703'
+  journal: Phys. Rev. Fluids
+  journal_url: http://dx.doi.org/10.1103/physrevfluids.2.064401
+  on_arxiv: 2016-09-02
+  page: '064401'
+  published: 2017-06-21
+  title: Slanted snaking of localized Faraday waves
+  vol: '2'
+- abstract: We propose an architecture for bit flip error correction of Andreev spins
+    that is protected by Kramers' degeneracy. Specifically, we show that a coupling
+    network of linear inductors results in a static Hamiltonian composed of the stabilizers
+    of a bit flip code. Thereby, without detuning from the Kramers' point, reflectometry
+    off a single coupled resonator accomplishes a projective measurement of multiple
+    stabilizers. We further show how circuit-mediated spin couplings enable error
+    correction operations and a complete set of logical quantum gates. The concept
+    is experimentally feasible.
+  authors:
+  - Haoran Lu
+  - Isidora Araya Day
+  - Anton R. Akhmerov
+  - Bernard van Heck
+  - Valla Fatemi
+  id: '2412.16116'
+  on_arxiv: 2024-12-20
+  title: Kramers-protected hardware-efficient error correction with Andreev spin qubits
+- abstract: The surface states of intrinsic higher order topological phases are protected
+    by the spatial symmetries of a finite sample. This property makes the existing
+    scattering theory of topological invariants inapplicable because the scattering
+    geometry is either incompatible with the symmetry or does not probe the bulk topology.
+    We resolve this obstacle by using a symmetric scattering geometry that probes
+    transport from the inside to the outside of the sample. We demonstrate that the
+    intrinsic higher order topology is captured by the flux dependence of the reflection
+    matrix. Our finding follows from identifying the spectral flow of a flux line
+    as a signature of higher order topology. We show how this scattering approach
+    applies to several examples of higher order topological insulators and superconductors.
+    Our theory provides an alternative approach for proving bulk--edge correspondence
+    in intrinsic higher order topological phases, especially in presence of disorder.
+  authors:
+  - R. Johanna Zijderveld
+  - Isidora Araya Day
+  - Anton R. Akhmerov
+  id: '2412.15333'
+  on_arxiv: 2024-12-19
+  title: Scattering theory of higher order topological phases
