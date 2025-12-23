@@ -1,0 +1,50 @@
+- date: 2024-08-16
+  event: "CCMR Symposium on Hybrid Superconductivity"
+  location: "Cornell University, Ithaca, USA"
+  role: "Invited talk"
+  title: "Chiral adiabatic transmission protected by Fermi surface topology"
+- date: 2024-07-31
+  event: "Condensed Matter Seminar"
+  location: "MIT, Boston, USA"
+  role: "Department seminar"
+  title: "Chiral adiabatic transmission protected by Fermi surface topology"
+- date: 2024-05-30
+  event: "Condensed Matter Journal Club"
+  location: "University of Zurich, Zurich, Switzerland"
+  role: "Guest speaker"
+  title: "Chiral adiabatic transmission protected by Fermi surface topology"
+- date: 2024-01-24
+  event: "NWO Physics Conference"
+  location: "Veldhoven, Netherlands"
+  role: "Contributed talk"
+  title: "Chiral adiabatic transmission protected by Fermi surface topology"
+- date: 2023-11-15
+  event: "Speakers' Corner, Virtual Science Forum"
+  location: "Online"
+  role: "Contributed talk"
+  title: "Pymablock: a software package for constructing effective models"
+- date: 2023-08-01
+  event: "Grete Hermann Network Workshop"
+  location: "Würzburg, Germany"
+  role: "Contributed talk"
+  title: "Pfaffian invariant identifies magnetic obstructed atomic insulators"
+- date: 2023-07-23
+  event: "Condensed Matter Seminar"
+  location: "University of Manchester, Manchester, United Kingdom"
+  role: "Seminar speaker"
+  title: "Pfaffian invariant identifies magnetic obstructed atomic insulators"
+- date: 2022-10-17
+  event: "Condensed Matter Seminar"
+  location: "Max Planck Institute for the Physics of Complex Systems, Dresden, Germany"
+  role: "Seminar speaker"
+  title: "Pfaffian invariant identifies magnetic obstructed atomic insulators"
+- date: 2022-10-07
+  event: "Speakers' Corner, Virtual Science Forum"
+  location: "Online"
+  role: "Contributed talk"
+  title: "Pfaffian invariant identifies magnetic obstructed atomic insulators"
+- date: 2022-03-09
+  event: "Speakers' Corner, Virtual Science Forum"
+  location: "Online"
+  role: "Contributed talk"
+  title: "Topological defects in a double-mirror quadrupole insulator displace diverging charge"

@@ -326,3 +326,45 @@ a {
     font-size: 0.88rem;
   }
 }
+
+.listing-toggle {
+  margin: 1.75rem 0;
+  padding: 0.4rem 0;
+}
+
+.listing-toggle summary {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #1f2f35;
+  cursor: pointer;
+  list-style: none;
+  position: relative;
+}
+
+.listing-toggle summary::-webkit-details-marker {
+  display: none;
+}
+
+.listing-toggle summary::after {
+  content: "▸";
+  font-size: 1rem;
+  margin-left: auto;
+  color: #5a6b72;
+  transition: transform 180ms ease;
+}
+
+.listing-toggle[open] summary::after {
+  transform: rotate(90deg);
+}
+
+.listing-toggle[open] {
+  border-color: transparent;
+  box-shadow: none;
+}
+
+.listing-toggle > :not(summary) {
+  margin-top: 1rem;
+}

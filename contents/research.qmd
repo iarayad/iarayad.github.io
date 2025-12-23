@@ -2,17 +2,34 @@
 title: "Research"
 draft: false
 listing:
-  id: sample-listings
-  contents:
-    - data/publications.yml
-  fields:
-    - id
-    - title
-    - authors
-  field-display-names:
-    id: "arXiv ID"
-  template: publications-table.ejs
-  type: table
+  - id: sample-listings
+    contents:
+      - data/publications.yml
+    fields:
+      - id
+      - title
+      - authors
+    field-display-names:
+      id: "arXiv ID"
+    template: publications-table.ejs
+    type: table
+  - id: talks-listings
+    contents:
+      - data/talks.yaml
+    fields:
+      - date
+      - event
+      - title
+      - location
+      - role
+    field-display-names:
+      date: "Date"
+      event: "Event"
+      title: "Talk"
+      location: "Location"
+      role: "Role"
+    template: talks-table.ejs
+    type: table
 ---
 
 
@@ -29,7 +46,16 @@ Mesoscopic systems often benefit from this approach: they are small enough to be
 :::
 
 
-## Publications
+<details class="listing-toggle">
+<summary>📚 Publications</summary>
 
 ::: {#sample-listings}
 :::
+</details>
+
+<details class="listing-toggle">
+<summary>🎤 Talks</summary>
+
+::: {#talks-listings}
+:::
+</details>
