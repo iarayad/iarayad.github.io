@@ -1,0 +1,57 @@
+topics:
+  - title: "Mesoscopic superconductivity"
+    indicator_label: "Mesoscopic superconductivity"
+    figure: "images/research-mesoscopic.png"
+    figure_alt: "Stylized mesoscopic superconducting device diagram"
+    body:
+      - >-
+        Two-dimensional devices offer the possibility of combining different materials such that different properties combine and give rise to tailored phenomena.
+      - >-
+        For example, placing a superconductor in close proximity to a semiconductor turns the latter into a superconductor via the proximity effect, and allows to design Josephson junctions with highly tunable properties.
+      - >-
+        My colleagues and I found that superconducting trijunctions can host [chiral protected transport of Andreev bound states](https://scipost.org/10.21468/SciPostPhys.18.3.098).
+    buttons:
+      - label: "📄 Paper"
+        href: "https://scipost.org/10.21468/SciPostPhys.18.3.098"
+      - label: "💻 GitHub Repository"
+        href: "https://zenodo.org/records/15048045"
+  - title: "Topological phases of matter"
+    indicator_label: "Topological phases"
+    figure: "images/research-topological.png"
+    figure_alt: "Concentric topological interference rings"
+    body:
+      - >-
+        Protected transport also naturally arises in topological phases of matter, where conduction channels are robust while the bulk remains insulating and symmetry-protected.
+        A Chern insulator, for example, hosts two counter-propagating edge states that may not disappear unless the bulk undergoes a delocalization transition.
+        A powerful tool to characterize these phases are scattering invariants, which rely on a transport setup to probe the topological properties of a system.
+      - >-
+        Johanna, Anton, and I recently generalized these invariants to phases protected by spatial symmetries, which may or may not host conducting protected modes.
+    buttons:
+      - label: "📄 Paper"
+        href: "https://scipost.org/10.21468/SciPostPhys.19.2.058"
+      - label: "💻 GitHub Repository"
+        href: "https://zenodo.org/records/15553181"
+  - title: "Open-source software"
+    indicator_label: "Open-source software"
+    figure: "images/research-software.svg"
+    figure_alt: "Terminal window running pymablock iterations"
+    body:
+      - >-
+        Complex quantum mechanical systems with too many degrees of freedom are often impossible to solve analytically, and sometimes even numerically.
+        Constructing an effective model that captures the essential physics of the system is then the key to making progress.
+        A common approach is to use the Schrieffer–Wolff transformation to block-diagonalize the Hamiltonian perturbatively, separating the low-energy subspace from the rest.
+        This is, however, standard and yet tedious.
+        Even worse, Schrieffer–Wolff transformations scale poorly with the perturbative order of the Hamiltonian, and they are limited to two subspaces.
+      - >-
+        My colleagues and I developed an efficient algorithm and a Python package that automates this process.
+        [Pymablock]{.pymablock} works with any number of subspaces, any number of perturbative orders, and it can handle both symbolic and numerical inputs ✨.
+    buttons:
+      - label: "📖 Documentation"
+        href: "https://pymablock.readthedocs.io/"
+        classes: "btn btn-primary"
+      - label: "💻 GitHub Repository"
+        href: "https://github.com/quantum-tinkerer/pymablock"
+        classes: "btn btn-outline-primary"
+      - label: "📄 Paper"
+        href: "https://scipost.org/10.21468/SciPostPhysCodeb.50"
+        classes: "btn btn-outline-primary"
