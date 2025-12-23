@@ -47,14 +47,14 @@ Mesoscopic systems often benefit from this approach: they are small enough to be
 
 
 <details class="listing-toggle">
-<summary>📚 Publications</summary>
+<summary>Publications</summary>
 
 ::: {#sample-listings}
 :::
 </details>
 
 <details class="listing-toggle">
-<summary>🎤 Talks</summary>
+<summary>Talks</summary>
 
 ::: {#talks-listings}
 :::

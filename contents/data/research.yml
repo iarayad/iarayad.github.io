@@ -1,5 +1,5 @@
 topics:
-  - title: "Mesoscopic superconductivity"
+  - title: "🔨 Mesoscopic superconductivity"
     indicator_label: "Mesoscopic superconductivity"
     figure: "images/research-mesoscopic.png"
     figure_alt: "Stylized mesoscopic superconducting device diagram"
@@ -15,7 +15,7 @@ topics:
         href: "https://scipost.org/10.21468/SciPostPhys.18.3.098"
       - label: "💻 GitHub Repository"
         href: "https://zenodo.org/records/15048045"
-  - title: "Topological phases of matter"
+  - title: "🪢 Topological phases of matter"
     indicator_label: "Topological phases"
     figure: "images/research-topological.png"
     figure_alt: "Concentric topological interference rings"
@@ -31,7 +31,7 @@ topics:
         href: "https://scipost.org/10.21468/SciPostPhys.19.2.058"
       - label: "💻 GitHub Repository"
         href: "https://zenodo.org/records/15553181"
-  - title: "Open-source software"
+  - title: "💻 Open-source software"
     indicator_label: "Open-source software"
     figure: "images/research-software.svg"
     figure_alt: "Terminal window running pymablock iterations"
@@ -43,7 +43,7 @@ topics:
         This is, however, standard and yet tedious.
         Even worse, Schrieffer–Wolff transformations scale poorly with the perturbative order of the Hamiltonian, and they are limited to two subspaces.
       - >-
-        My colleagues and I developed an efficient algorithm and a Python package that automates this process.
+        My colleagues and I developed an efficient algorithm and a Python package 📦 that automates this process.
         [Pymablock]{.pymablock} works with any number of subspaces, any number of perturbative orders, and it can handle both symbolic and numerical inputs ✨.
     buttons:
       - label: "📖 Documentation"
