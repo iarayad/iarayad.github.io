@@ -98,6 +98,34 @@ ul.task-list li input[type="checkbox"] {
       window['quarto-listing-loaded']();
     }
   })
+  
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-talks-listings .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-date','listing-event','listing-title','listing-location','listing-role',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] }],
+      
+      searchColumns: ["listing-date","listing-event","listing-location","listing-role","listing-title"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-talks-listings'] = new List('listing-talks-listings', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
   </script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
@@ -407,10 +435,12 @@ symbolic and numerical inputs ✨.</p>
 </div>
 </div>
 </div></section>
-<section id="publications" class="level2">
-<h2 class="anchored" data-anchor-id="publications">Publications</h2>
+<details class="listing-toggle">
+<summary>
+📚 Publications
+</summary>
 <div id="listing-sample-listings" class="quarto-listing quarto-listing-container-custom">
-<table class="table table-striped">
+<table class="table">
 <thead>
 <tr>
 <th>
@@ -506,10 +536,211 @@ R. Johanna Zijderveld, <strong>Isidora Araya Day</strong>, Anton R. Akhmerov
 </table>
 <div class="listing-no-matching d-none">No matching items</div>
 </div>
+</details>
+<details class="listing-toggle">
+<summary>
+🎤 Talks
+</summary>
+<div id="listing-talks-listings" class="quarto-listing quarto-listing-container-custom">
+<table class="table talks-table">
+<thead>
+<tr>
+<th>
+Date
+</th>
+<th>
+Event
+</th>
+<th>
+Talk
+</th>
+<th>
+Location
+</th>
+<th>
+Role
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+Aug 16, 2024
+</td>
+<td>
+CCMR Symposium on Hybrid Superconductivity
+</td>
+<td>
+Chiral adiabatic transmission protected by Fermi surface topology
+</td>
+<td>
+Cornell University, Ithaca, USA
+</td>
+<td>
+Invited talk
+</td>
+</tr>
+<tr>
+<td>
+Jul 31, 2024
+</td>
+<td>
+Condensed Matter Seminar
+</td>
+<td>
+Chiral adiabatic transmission protected by Fermi surface topology
+</td>
+<td>
+MIT, Boston, USA
+</td>
+<td>
+Department seminar
+</td>
+</tr>
+<tr>
+<td>
+May 30, 2024
+</td>
+<td>
+Condensed Matter Journal Club
+</td>
+<td>
+Chiral adiabatic transmission protected by Fermi surface topology
+</td>
+<td>
+University of Zurich, Zurich, Switzerland
+</td>
+<td>
+Guest speaker
+</td>
+</tr>
+<tr>
+<td>
+Jan 24, 2024
+</td>
+<td>
+NWO Physics Conference
+</td>
+<td>
+Chiral adiabatic transmission protected by Fermi surface topology
+</td>
+<td>
+Veldhoven, Netherlands
+</td>
+<td>
+Contributed talk
+</td>
+</tr>
+<tr>
+<td>
+Nov 15, 2023
+</td>
+<td>
+Speakers’ Corner, Virtual Science Forum
+</td>
+<td>
+Pymablock: a software package for constructing effective models
+</td>
+<td>
+Online
+</td>
+<td>
+Contributed talk
+</td>
+</tr>
+<tr>
+<td>
+Aug 1, 2023
+</td>
+<td>
+Grete Hermann Network Workshop
+</td>
+<td>
+Pfaffian invariant identifies magnetic obstructed atomic insulators
+</td>
+<td>
+Würzburg, Germany
+</td>
+<td>
+Contributed talk
+</td>
+</tr>
+<tr>
+<td>
+Jul 23, 2023
+</td>
+<td>
+Condensed Matter Seminar
+</td>
+<td>
+Pfaffian invariant identifies magnetic obstructed atomic insulators
+</td>
+<td>
+University of Manchester, Manchester, United Kingdom
+</td>
+<td>
+Seminar speaker
+</td>
+</tr>
+<tr>
+<td>
+Oct 17, 2022
+</td>
+<td>
+Condensed Matter Seminar
+</td>
+<td>
+Pfaffian invariant identifies magnetic obstructed atomic insulators
+</td>
+<td>
+Max Planck Institute for the Physics of Complex Systems, Dresden, Germany
+</td>
+<td>
+Seminar speaker
+</td>
+</tr>
+<tr>
+<td>
+Oct 7, 2022
+</td>
+<td>
+Speakers’ Corner, Virtual Science Forum
+</td>
+<td>
+Pfaffian invariant identifies magnetic obstructed atomic insulators
+</td>
+<td>
+Online
+</td>
+<td>
+Contributed talk
+</td>
+</tr>
+<tr>
+<td>
+Mar 9, 2022
+</td>
+<td>
+Speakers’ Corner, Virtual Science Forum
+</td>
+<td>
+Topological defects in a double-mirror quadrupole insulator displace diverging charge
+</td>
+<td>
+Online
+</td>
+<td>
+Contributed talk
+</td>
+</tr>
+</tbody>
+</table>
+<div class="listing-no-matching d-none">No matching items</div>
+</div>
+</details>
 
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
