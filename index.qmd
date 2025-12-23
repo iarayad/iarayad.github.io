@@ -15,7 +15,7 @@ about:
       href: https://orcid.org/0000-0002-2948-4198
     - icon: envelope
       text: Email
-      href: mailto:iarayaday@gmail.com
+      href: mailto:isidora@araya.day
 ---
 
 {{< include contents/home.qmd >}}

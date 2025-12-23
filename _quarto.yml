@@ -5,7 +5,7 @@ project:
     - google71bbe46973ffb153.html
 
 website:
-  title: "Home"
+  title: "About me"
   site-url: "https://iarayad.github.io/"
   navbar:
     left:
@@ -16,7 +16,7 @@ website:
   page-navigation: true
   page-footer:
     center:
-      - text: "📧 iarayaday@gmail.com"
+      - text: "📧 isidora (at) araya.day"
 
 format:
   html:
