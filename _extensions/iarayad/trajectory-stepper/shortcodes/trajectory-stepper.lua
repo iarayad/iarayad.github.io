@@ -39,18 +39,47 @@ local function slugify(text, fallback)
   return slug
 end
 
-local function sanitize_text(value)
+local function extract_markdown_text(value)
   if value == nil then
     return nil
+  end
+  local vtype = pandoc.utils.type(value)
+  if vtype == "Inlines" then
+    local doc = pandoc.Pandoc({ pandoc.Plain(value) })
+    local markdown = pandoc.write(doc, "markdown")
+    return markdown and markdown:gsub('^%s+', ''):gsub('%s+$', '') or nil
+  elseif vtype == "Blocks" then
+    local doc = pandoc.Pandoc(value)
+    local markdown = pandoc.write(doc, "markdown")
+    return markdown and markdown:gsub('^%s+', ''):gsub('%s+$', '') or nil
   end
   local text = stringify(value)
   if type(text) ~= "string" then
     text = tostring(text or "")
   end
-  if text:match('%S') then
+  return text
+end
+
+local function sanitize_text(value)
+  local text = extract_markdown_text(value)
+  if text and text:match('%S') then
     return escape_html(text)
   end
   return nil
+end
+
+local function convert_markdown_links(text)
+  if not text or text == '' then
+    return text
+  end
+  local function build_link(label, url)
+    local link_label = label ~= '' and label or url
+    return string.format('<a href="%s" class="trajectory-inline-link no-external" target="_blank" rel="noopener">%s</a>', url, link_label)
+  end
+  local converted = text:gsub('%[(.-)%]%((https?://[^%s)]+)%)', function(label, url)
+    return build_link(label, url)
+  end)
+  return converted
 end
 
 local function meta_to_strings(value)
@@ -160,12 +189,12 @@ local function render(entries)
       table.insert(html, '      </div>')
     end
     if entry.summary ~= '' then
-      table.insert(html, string.format('      <p>%s</p>', entry.summary))
+      table.insert(html, string.format('      <p>%s</p>', convert_markdown_links(entry.summary)))
     end
     if #entry.bullets > 0 then
       table.insert(html, '      <ul class="stepper-panel-list">')
       for _, bullet in ipairs(entry.bullets) do
-        table.insert(html, string.format('        <li>%s</li>', bullet))
+        table.insert(html, string.format('        <li>%s</li>', convert_markdown_links(bullet)))
       end
       table.insert(html, '      </ul>')
     end

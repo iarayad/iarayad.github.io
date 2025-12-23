@@ -30,7 +30,7 @@ trajectory:
     bullets:
       - Took courses on mesoscopic physics, quantum information, and quantum hardware.
       - Participated in the Northwestern European Regional Programming Contest as part of the TU Delft team.
-      - Worked as a teaching assistant in solid state physics and quantum information courses.
+      - Worked as a teaching assistant in [solid state physics](https://solidstate.quantumtinkerer.tudelft.nl/) and quantum information courses.
       - My master's thesis was on topological defects in crystalline topological insulators.
   - id: internship2
     order: 4
@@ -47,19 +47,19 @@ trajectory:
     place: "TU Delft"
     period: "2021 → 2025"
     summary: >-
-      I got a Casimir NanoFront grant to do my PhD in QuTech.
+      I got a Casimir NanoFront grant to do my PhD in [QuTech](https://qutech.nl/).
       During this time I had the opportunity to improve my coding skills, work collaboratively, and learn about open science practices ✨.
     bullets:
       - Worked on Andreev physics, topological invariants, and mesoscopic physics (see Research ☝️).
-      - Developed an open-source Python package, Pymablock.
-      - Worked as a teaching assistant of the solid state physics course.
+      - Developed an open-source Python package, [Pymablock](https://pymablock.readthedocs.io/).
+      - Worked as a teaching assistant of the [solid state physics](https://solidstate.quantumtinkerer.tudelft.nl/) course.
   - id: internship3
     order: 6
     label: "Research visit at an experimental lab"
     place: "Cornell University"
     period: "2024"
     summary: >-
-      I visited and collaborated with Valla Fatemi's group in Ithaca for a month.
+      I visited and collaborated with [Valla Fatemi's group](https://fatemilab.aep.cornell.edu/) in Ithaca for a month.
     bullets:
       - Worked on a read-out scheme for Andreev spin qubits using inductive dispersive sensing.
-      - Optimized time-dependent pulses for qubit control using the Krotov Python package.
+      - Optimized time-dependent pulses for qubit control using the [Krotov Python package](https://qucontrol.github.io/krotov/v1.0.0/01_overview.html).
