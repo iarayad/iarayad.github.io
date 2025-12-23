@@ -194,28 +194,219 @@ window.Quarto = {
 <h2 class="anchored" data-anchor-id="my-interests">My interests</h2>
 <p>I enjoy thinking about problems that require combining analytical insight with equations only a computer can solve. Mesoscopic systems often benefit from this approach: they are small enough to behave quantum mechanically, and yet large enough to require several degrees of freedom to describe them.</p>
 <div class="research-grid">
-<section id="mesoscopic-superconductivity" class="level3 research-card">
-<h3 class="anchored" data-anchor-id="mesoscopic-superconductivity">Mesoscopic superconductivity</h3>
-<p>Two-dimensional devices offer the possibility of combining different materials such that different properties combine and give rise to tailored phenomena. For example, placing a superconductor in close proximity to a semiconductor turns the latter into a superconductor via the proximity effect, and allows to design Josephson junctions with highly tunable properties. My colleagues and I found that superconducting trijunctions can host <a href="https://scipost.org/10.21468/SciPostPhys.18.3.098">chiral protected transport of Andreev bound states</a>.</p>
-</section>
-<section id="topological-phases-of-matter" class="level3 research-card">
-<h3 class="anchored" data-anchor-id="topological-phases-of-matter">Topological phases of matter</h3>
-<p>Protected transport also naturally arises in topological phases of matter, where conduction channels are robust while the bulk remains insulating and symmetry-protected. A Chern insulator, for example, hosts two counter-propagating edge states that may not disappear unless the bulk undergoes a delocalization transition. A powerful tool to characterize these phases are scattering invariants, which rely on a transport setup to probe the topological properties of a system. Johanna, Anton, and I recently generalized these invariants to phases protected by spatial symmetries, which may or may not host conducting protected modes. Check out our paper on the <a href="https://scipost.org/10.21468/SciPostPhys.19.2.058">Scattering theory of higher-order topological phases</a>!</p>
-</section>
-<section id="open-source-software" class="level3 research-card">
-<h3 class="anchored" data-anchor-id="open-source-software">Open source software</h3>
-<div class="project-container">
-<div class="project-content">
-<p>Complex quantum mechanical systems with too many degrees of freedom are often impossible to solve analytically, and sometimes even numerically. Constructing an effective model that captures the essential physics of the system is then the key to making progress. A common approach is to use the Schrieffer–Wolff transformation to block-diagonalize the Hamiltonian perturbatively, separating the low-energy subspace from the rest. This is, however, standard and yet tedious. Even worse, Schrieffer–Wolff transformations scale poorly with the perturbative order of the Hamiltonian, and they are limited to two subspaces.</p>
-<p>My colleagues and I developed an efficient algorithm and a Python package that automates this process. <span class="pymablock">Pymablock</span> works with any number of subspaces, any number of perturbative orders, and it can handle both symbolic and numerical inputs ✨. Check it out!</p>
+<style>
+.research-carousel-shell {
+  position: relative;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.research-carousel-shell .carousel,
+.research-carousel-shell .carousel-inner,
+.research-carousel-shell .carousel-item,
+.research-card.card {
+  width: 100%;
+}
+
+.research-card.card {
+  border-radius: 1.25rem;
+}
+
+.card-nav-control {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.92rem;
+  letter-spacing: 0.02em;
+  border: none;
+  background: transparent;
+  color: #5e6a76;
+  padding: 0.2rem 0.55rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: color 180ms ease, transform 180ms ease;
+}
+
+.card-nav-control:hover {
+  color: #338c73;
+  transform: translateY(-1px);
+}
+
+.card-nav-control:focus-visible {
+  outline: 2px solid rgba(51, 140, 115, 0.45);
+  outline-offset: 3px;
+}
+
+.card-nav-control .bi {
+  font-size: 1.35rem;
+  line-height: 1;
+}
+
+.research-card .card-nav-hints {
+  font-size: 0.92rem;
+  letter-spacing: 0.01em;
+  margin-bottom: 1.15rem;
+}
+
+.research-card-payload {
+  display: flex;
+  gap: 1.75rem;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+.research-card-figure {
+  flex: 0 0 240px;
+  max-width: 320px;
+}
+
+.research-card-figure img {
+  width: 100%;
+  height: auto;
+  border-radius: 1rem;
+}
+
+.research-card-copy {
+  flex: 1 1 320px;
+}
+
+@media (max-width: 768px) {
+  .card-nav-hints {
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+  .research-card-payload {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .research-card-figure {
+    flex: 0 0 auto;
+    width: 100%;
+    max-width: none;
+  }
+}
+</style>
+
+<div class="research-carousel-shell">
+  <div id="research-carousel-1" class="carousel carousel-dark slide" data-bs-interval="false" data-bs-touch="true" aria-label="Research focus carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <div class="research-card card shadow-sm border-0">
+        <div class="card-body">
+          <div class="card-nav-hints d-flex justify-content-between align-items-center mb-3">
+            <button class="card-nav-control card-nav-prev" type="button" data-bs-target="#research-carousel-1" data-bs-slide="prev" aria-label="Previous research topic">
+              <i class="bi bi-arrow-left-short"></i> Open-source software
+            </button>
+            <button class="card-nav-control card-nav-next" type="button" data-bs-target="#research-carousel-1" data-bs-slide="next" aria-label="Next research topic">
+              Topological phases of matter <i class="bi bi-arrow-right-short"></i>
+            </button>
+          </div>
+          <div class="research-card-payload">
+            <div class="research-card-figure">
+              <img src="images/research-mesoscopic.png" alt="Stylized mesoscopic superconducting device diagram" loading="lazy" decoding="async">
+            </div>
+            <div class="research-card-copy">
+              <h3 class="h4 anchored">Mesoscopic superconductivity</h3>
+              <p>Two-dimensional devices offer the possibility of combining different
+materials such that different properties combine and give rise to
+tailored phenomena.</p>
+              <p>For example, placing a superconductor in close proximity to a
+semiconductor turns the latter into a superconductor via the proximity
+effect, and allows to design Josephson junctions with highly tunable
+properties.</p>
+              <p>My colleagues and I found that superconducting trijunctions can host
+chiral protected transport of Andreev bound states.</p>
+              <div class="d-flex flex-wrap gap-2 mt-4">
+                <a class="btn btn-outline-primary" href="https://scipost.org/10.21468/SciPostPhys.18.3.098">📄 Paper</a>
+                <a class="btn btn-outline-primary" href="https://zenodo.org/records/15048045">💻 GitHub Repository</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <div class="research-card card shadow-sm border-0">
+        <div class="card-body">
+          <div class="card-nav-hints d-flex justify-content-between align-items-center mb-3">
+            <button class="card-nav-control card-nav-prev" type="button" data-bs-target="#research-carousel-1" data-bs-slide="prev" aria-label="Previous research topic">
+              <i class="bi bi-arrow-left-short"></i> Mesoscopic superconductivity
+            </button>
+            <button class="card-nav-control card-nav-next" type="button" data-bs-target="#research-carousel-1" data-bs-slide="next" aria-label="Next research topic">
+              Open-source software <i class="bi bi-arrow-right-short"></i>
+            </button>
+          </div>
+          <div class="research-card-payload">
+            <div class="research-card-figure">
+              <img src="images/research-topological.png" alt="Concentric topological interference rings" loading="lazy" decoding="async">
+            </div>
+            <div class="research-card-copy">
+              <h3 class="h4 anchored">Topological phases of matter</h3>
+              <p>Protected transport also naturally arises in topological phases of
+matter, where conduction channels are robust while the bulk remains
+insulating and symmetry-protected. A Chern insulator, for example, hosts
+two counter-propagating edge states that may not disappear unless the
+bulk undergoes a delocalization transition. A powerful tool to
+characterize these phases are scattering invariants, which rely on a
+transport setup to probe the topological properties of a system.</p>
+              <p>Johanna, Anton, and I recently generalized these invariants to phases
+protected by spatial symmetries, which may or may not host conducting
+protected modes.</p>
+              <div class="d-flex flex-wrap gap-2 mt-4">
+                <a class="btn btn-outline-primary" href="https://scipost.org/10.21468/SciPostPhys.19.2.058">📄 Paper</a>
+                <a class="btn btn-outline-primary" href="https://zenodo.org/records/15553181">💻 GitHub Repository</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <div class="research-card card shadow-sm border-0">
+        <div class="card-body">
+          <div class="card-nav-hints d-flex justify-content-between align-items-center mb-3">
+            <button class="card-nav-control card-nav-prev" type="button" data-bs-target="#research-carousel-1" data-bs-slide="prev" aria-label="Previous research topic">
+              <i class="bi bi-arrow-left-short"></i> Topological phases of matter
+            </button>
+            <button class="card-nav-control card-nav-next" type="button" data-bs-target="#research-carousel-1" data-bs-slide="next" aria-label="Next research topic">
+              Mesoscopic superconductivity <i class="bi bi-arrow-right-short"></i>
+            </button>
+          </div>
+          <div class="research-card-payload">
+            <div class="research-card-figure">
+              <img src="images/research-software.svg" alt="Terminal window running pymablock iterations" loading="lazy" decoding="async">
+            </div>
+            <div class="research-card-copy">
+              <h3 class="h4 anchored">Open-source software</h3>
+              <p>Complex quantum mechanical systems with too many degrees of freedom
+are often impossible to solve analytically, and sometimes even
+numerically. Constructing an effective model that captures the essential
+physics of the system is then the key to making progress. A common
+approach is to use the Schrieffer–Wolff transformation to
+block-diagonalize the Hamiltonian perturbatively, separating the
+low-energy subspace from the rest. This is, however, standard and yet
+tedious. Even worse, Schrieffer–Wolff transformations scale poorly with
+the perturbative order of the Hamiltonian, and they are limited to two
+subspaces.</p>
+              <p>My colleagues and I developed an efficient algorithm and a Python
+package that automates this process. Pymablock works with any number of
+subspaces, any number of perturbative orders, and it can handle both
+symbolic and numerical inputs ✨.</p>
+              <div class="d-flex flex-wrap gap-2 mt-4">
+                <a class="btn btn-primary" href="https://pymablock.readthedocs.io/">📖 Documentation</a>
+                <a class="btn btn-outline-primary" href="https://github.com/quantum-tinkerer/pymablock">💻 GitHub Repository</a>
+                <a class="btn btn-outline-primary" href="https://scipost.org/10.21468/SciPostPhysCodeb.50">📄 Paper</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-<div class="project-links">
-<p><a href="https://pymablock.readthedocs.io/" class="btn btn-primary">📖 Documentation</a> <a href="https://github.com/quantum-tinkerer/pymablock" class="btn btn-outline-primary">💻 GitHub Repository</a></p>
 </div>
-</div>
-</section>
-</div>
-</section>
+</div></section>
 <section id="publications" class="level2">
 <h2 class="anchored" data-anchor-id="publications">Publications</h2>
 <div id="listing-sample-listings" class="quarto-listing quarto-listing-container-custom">
