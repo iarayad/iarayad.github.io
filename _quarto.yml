@@ -3,6 +3,7 @@ project:
   output-dir: _site
   resources:
     - google71bbe46973ffb153.html
+    - publickey.asc
 
 website:
   title: "About me"
@@ -17,6 +18,8 @@ website:
   page-footer:
     center:
       - text: "📧 isidora (at) araya.day"
+      - text: "Get my GPG key"
+        href: publickey.asc
 
 format:
   html:
