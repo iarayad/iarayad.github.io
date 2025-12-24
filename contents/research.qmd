@@ -11,7 +11,7 @@ listing:
       - authors
     field-display-names:
       id: "arXiv ID"
-    template: publications-table.ejs
+    template: ejs/publications-table.ejs
     type: table
   - id: talks-listings
     contents:
@@ -28,7 +28,7 @@ listing:
       title: "Talk"
       location: "Location"
       role: "Role"
-    template: talks-table.ejs
+    template: ejs/talks-table.ejs
     type: table
 ---
 
