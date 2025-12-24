@@ -3,6 +3,7 @@
   location: "Cornell University, Ithaca, USA"
   role: "Invited talk"
   title: "Chiral adiabatic transmission protected by Fermi surface topology"
+  # slides: "slides/sample-talk.html"
 - date: 2024-07-31
   event: "Condensed Matter Seminar"
   location: "MIT, Boston, USA"

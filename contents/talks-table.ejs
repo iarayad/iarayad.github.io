@@ -13,7 +13,11 @@
     <tr>
       <td><%= new Date(item.date).getFullYear() %></td>
       <td><%= item.event %></td>
-      <td><%= item.title %></td>
+      <td>
+        <%= item.title %> <% if (item.slides) { %>
+          <a href="<%= item.slides %>" aria-label="View slides" style="margin-left: 0.35rem; text-decoration: none;">👩‍🏫🔍</a>
+        <% } %>
+      </td>
       <td><%= item.location %></td>
       <td><%= item.role %></td>
     </tr>
