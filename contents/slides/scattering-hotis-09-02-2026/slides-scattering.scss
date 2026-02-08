@@ -1,0 +1,249 @@
+/*-- scss:defaults --*/
+$presentation-font-size-root: 26px;
+$presentation-h1-font-size: 1.6em;
+$presentation-h2-font-size: 1.4em;
+$presentation-h3-font-size: 0.9em;
+$presentation-h4-font-size: 0.8em;
+$presentation-line-height: 1.35;
+
+$presentation-heading-color: #2b2b2b;
+$body-color: #2b2b2b;
+$body-bg: #fdf8ec;
+$link-color: #2f5e5e;
+
+/*-- scss:rules --*/
+.reveal {
+  letter-spacing: 0.01em;
+}
+
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4 {
+  letter-spacing: 0.01em;
+  text-transform: none;
+}
+
+.reveal p,
+.reveal li {
+  font-size: 0.95em;
+}
+
+.reveal .subtitle {
+  font-size: 0.7em;
+}
+
+.reveal .caption {
+  font-size: 0.8em;
+  color: #666;
+}
+
+.reference-stack {
+  margin-top: 0.3rem;
+  text-align: right;
+}
+
+.reference {
+  font-size: 0.6em;
+  color: #666;
+}
+
+.reveal {
+  line-height: 1.2;
+}
+
+.reveal .slides section {
+  text-align: left;
+}
+
+.reveal .slides section:not(.quarto-title-block) {
+  padding: var(--slide-pad-y) var(--slide-pad-x);
+  box-sizing: border-box;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--slide-gap);
+  justify-content: flex-start;
+}
+
+.reveal .slides section:not(.quarto-title-block) > h2 {
+  margin: 0 0 1.2em 0;
+}
+
+.reveal .slides section:not(.quarto-title-block) > :not(h1):not(h2) {
+  min-height: 0;
+}
+
+.reveal .columns {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  align-items: center;
+  gap: var(--column-gap);
+}
+
+.reveal .slides section:not(.quarto-title-block) > .center:has(img),
+.reveal .slides section:not(.quarto-title-block) > .center:has(.r-stack) {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.reveal .column {
+  min-width: 0;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1vh;
+  flex: 1 1 0;
+}
+
+.reveal .column[style*="width"] {
+  flex: 0 1 auto;
+}
+
+.reveal img {
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.reveal .columns img {
+  max-height: 100%;
+}
+
+.reveal .center img {
+  max-height: 100%;
+}
+
+.reveal .r-stack > * {
+  margin: 0;
+}
+
+.reveal .r-stack p {
+  margin: 0;
+}
+
+.reveal .r-stack {
+  min-height: 0;
+  height: 100%;
+}
+
+.reveal .r-stack img {
+  max-height: 100%;
+}
+
+.reveal ul,
+.reveal ol {
+  margin-top: 0.15em;
+  margin-bottom: 0.15em;
+  padding-left: 1.1em;
+}
+
+.reveal li:has(> .fragment:not(.visible))::marker {
+  color: transparent;
+}
+
+.reveal li:has(> .fragment.visible)::marker {
+  color: currentColor;
+}
+
+.reveal ul + ul,
+.reveal ul + ol,
+.reveal ol + ul,
+.reveal ol + ol {
+  margin-top: 0;
+}
+
+.reveal p {
+  margin: 0.2em 0;
+}
+
+.reveal h2 {
+  margin: 0 0 0.3em 0;
+}
+
+.reveal li {
+  margin: 0.12em 0;
+}
+
+.reveal .slides section.center,
+.reveal .slides section .center {
+  text-align: center;
+}
+
+.full-screen-slide {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10em;
+}
+
+.full-screen-question {
+  font-size: 2.2em;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+
+.reveal .slides section.quarto-title-block {
+  text-align: center;
+  position: relative;
+  padding-bottom: 5rem;
+}
+
+.reveal .slides section.quarto-title-block h1.title {
+  font-size: 2.2em;
+  margin-bottom: 0.4em;
+}
+
+.reveal .slides section.quarto-title-block .quarto-title-authors {
+  font-size: 0.9em;
+  line-height: 1.35;
+  max-width: 900px;
+  margin: 0.2em auto 0;
+}
+
+.reveal .slides section.quarto-title-block .date {
+  margin-top: 0.4em;
+  color: #333;
+}
+
+.reveal .slides section.quarto-title-block::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 1rem;
+  transform: translateX(-50%);
+  width: 520px;
+  height: 90px;
+  background-image: url("/contents/slides/figures/scattering/dipc_logo.png"), url("/contents/slides/figures/scattering/tudelft_logo.png");
+  background-repeat: no-repeat;
+  background-position: left center, right center;
+  background-size: 200px auto, 200px auto;
+}
+
+.subtitle {
+  display: block;
+  font-size: 0.8em;
+  color: #555;
+  margin-top: -0.4em;
+  margin-bottom: 0.8em;
+}
+
+.mention-stack {
+  margin-top: 0.3rem;
+  text-align: right;
+}
+
+.mention {
+  font-size: 0.6em;
+  color: #666;
+}
+
+
+.end-qr {
+  margin-top: 0.6em;
+}
