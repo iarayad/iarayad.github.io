@@ -31,7 +31,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="../../../site_libs/revealjs/dist/theme/quarto-29a0d5968fa301dc7bc9138063dc504f.css">
+  <link rel="stylesheet" href="../../../site_libs/revealjs/dist/theme/quarto-71b0da359c03a236ae8050d6162207c9.css">
   <link href="../../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -161,21 +161,24 @@ Anton Akhmerov
 <p>Can we tell topology from quantum transport?</p>
 </div>
 </div>
+<p><br>
+</p>
 <p><img data-src="figures/transport_setup.png" style="width:40.0%"></p>
 <div class="caption">
 <p>Figure from Kwant</p>
-</div>
-<div class="reference-stack">
-<p><span class="reference">Waintal et al.&nbsp;2024</span></p>
 </div>
 </section>
 <section>
 <section id="transport-tells-how-samples-conduct" class="title-slide slide level1 center">
 <h1>Transport tells how samples conduct</h1>
+<p><br>
+</p>
+<p><br>
+</p>
 <div class="columns">
 <div class="column" style="width:50%;">
 <p><img data-src="figures/transport_wire.png" style="width:80.0%"></p>
-<p>Conductance in a metallic wire</p>
+<p>Conductance across a metallic wire</p>
 </div><div class="column" style="width:50%;">
 <p><img data-src="figures/transport_ring.png" style="width:80.0%"></p>
 <p>Aharonov-Bohm conductance oscillations</p>
@@ -184,8 +187,16 @@ Anton Akhmerov
 <p><span class="reference">Waintal et al., 2024</span></p>
 </div>
 </section>
-<section id="topological-edge-states-conduct" class="slide level2 center">
-<h2>Topological edge states conduct</h2>
+<section id="topological-edge-states-conduct" class="slide level2 center" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Topological edge states conduct</h2>
+<p><img data-src="figures/2dhalleffect.png" style="width:45.0%"></p>
+<div class="caption">
+<p>Quantum Hall sample</p>
+</div>
+</section>
+<section id="topological-edge-states-conduct-1" class="slide level2 center" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Topological edge states conduct</h2>
+<p>without backscattering</p>
 <p><img data-src="figures/edgetransport.png" style="width:35.0%"></p>
 <div class="caption">
 <p>Quantum Hall sample</p>
@@ -201,7 +212,6 @@ Anton Akhmerov
 <p><span class="reference">Waintal et al., 2024</span></p>
 </div>
 </section></section>
-<section>
 <section id="higher-order-topological-insulators" class="title-slide slide level1 center">
 <h1>Higher order topological insulators</h1>
 <p><img data-src="figures/pasted-2ce602cf.png" style="width:50.0%"></p>
@@ -209,16 +219,17 @@ Anton Akhmerov
 </p>
 <p><strong>Properties</strong>:</p>
 <ul>
-<li>Low dimensional surface modes</li>
 <li>Protected by spatial symmetries</li>
+<li>Low dimensional surface modes</li>
 <li>Unclear how robust to disorder they are</li>
 </ul>
 <div class="reference-stack">
 <p><span class="reference">Khalaf et al.&nbsp;(2018),</span> <span class="reference">Schindler et al.&nbsp;(2018)</span></p>
 </div>
 </section>
-<section class="slide level2 center">
 
+<section id="section" class="title-slide slide level1 center" data-auto-animate="true">
+<h1 data-id="quarto-animate-title"></h1>
 <div class="full-screen-slide">
 <div class="full-screen-question">
 <p>Can we tell topology from quantum transport if surface modes do not propagate?</p>
@@ -229,35 +240,66 @@ Anton Akhmerov
 <p>2nd order TI protected by <span class="math inline">\(C_2\)</span> and <span class="math inline">\(\mathcal{C}\)</span></p>
 </div>
 </section>
+
+<section>
+<section id="section-1" class="title-slide slide level1 center" data-auto-animate="true">
+<h1 data-id="quarto-animate-title"></h1>
+<div class="full-screen-slide">
+<div class="full-screen-question">
+<p>Can we tell topology from quantum transport if surface modes do not propagate?</p>
+</div>
+</div>
+<p>Useful for:</p>
+<ul>
+<li>Studying delocalization transitions</li>
+<li>Characterizing non-crystalline phases</li>
+<li>Computing topological invariants of large systems (e.g.&nbsp;a model material)</li>
+</ul>
+</section>
 <section id="disordered-axion-insulator" class="slide level2 center">
 <h2>Disordered Axion insulator</h2>
+<p><br>
+</p>
+<p>A 3D topological insulator that preserves inversion symmetry <strong>on average</strong></p>
 <p><img data-src="figures/pasted-182ff6bf.png" style="width:55.0%"></p>
-<p>Computing trivial and topological phases requires a convenient construction</p>
+<p>In practice computing trivial and topological phases requires a convenient construction</p>
 <div class="reference-stack">
-<p><span class="reference">Song et al.&nbsp;2021</span></p>
+<p><span class="reference">Song et al.&nbsp;(2021)</span></p>
 </div>
 </section>
-<section id="predictions-with-disorder-are-hard-to-test" class="slide level2 center">
-<h2>Predictions with disorder are hard to test</h2>
+<section id="intrinsic-disordered-axion-insulator" class="slide level2 center">
+<h2>Intrinsic disordered Axion insulator</h2>
+<p><br>
+</p>
+<p>A topological phase that does not exist in clean systems, but <strong>only in disordered ones!</strong></p>
 <div class="columns">
-<div class="column" style="width:50%;">
-<p><img data-src="figures/pasted-33cfb9a1.png" style="width:60.0%"></p>
-</div><div class="column" style="width:50%;">
-<p><img data-src="figures/pasted-882c947c.png" style="width:60.0%"></p>
+<div class="column" style="width:10%;">
+
+</div><div class="column" style="width:40%;">
+<p><img data-src="figures/pasted-882c947c.png" style="width:70.0%"></p>
+</div><div class="column" style="width:40%;">
+<p><img data-src="figures/pasted-33cfb9a1.png" style="width:70.0%"></p>
+</div><div class="column" style="width:10%;">
+
 </div></div>
-<p>There are topological phases that do not exist in clean systems, but <strong>only in disordered ones!</strong></p>
+<p><span class="math inline">\(W=0\)</span> gives trivial phase or a metal</p>
+<p><span class="math inline">\(W \neq 0\)</span> gives statistical topological phase</p>
+<p>Predictions with disorder are hard to test</p>
 <div class="reference-stack">
-<p><span class="reference">Chen et al.&nbsp;2025</span></p>
+<p><span class="reference">Chen et al.&nbsp;(2025)</span></p>
 </div>
 </section></section>
 <section>
 <section id="landauers-scattering-formalism" class="title-slide slide level1 center">
 <h1>Landauer’s scattering formalism</h1>
+<p><br>
+</p>
 <p>Scattering matrix and Hamiltonian are related by</p>
 <p><span class="math display">\[
 (H-E)(\Psi^{\textrm{in}} \alpha^{\textrm{in}} + \Psi^{\textrm{out}} S(E) \alpha^{\textrm{in}} + \Psi^{\textrm{localized}} \alpha^{\textrm{in}}) = 0
 \]</span></p>
-<p><img data-src="figures/d53b397f-image.png" style="width:50.0%"></p>
+<p><img data-src="figures/d53b397f-image.png" style="width:45.0%"></p>
+<div class="fragment current-visible" data-fragment-index="1" data-autoslide="1200">
 <p><span class="math display">\[
 S = \begin{pmatrix}
 r_{LL} &amp; t_{LR} \\
@@ -266,58 +308,105 @@ t_{RL} &amp; r_{RR}
 ; \;
 S S^\dagger = 1
 \]</span></p>
+</div>
+<div class="fragment fade-in" data-fragment-index="2" data-autoslide="1200">
+<p><span class="math display">\[
+S = \begin{pmatrix}
+r_{LL} &amp; 0 \\
+0 &amp; r_{RR}
+\end{pmatrix}
+; \;
+r r^\dagger = 1
+\]</span></p>
+<p><strong>gapped system</strong></p>
+</div>
 </section>
-<section id="scattering-theory-of-topological-phases" class="slide level2 center">
-<h2>Scattering theory of topological phases</h2>
+<section id="scattering-theory-of-topological-phases" class="slide level2 center" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Scattering theory of topological phases</h2>
 <p>Example: 1D topological superconductor</p>
 <p><img data-src="figures/39133d9f-image.png" style="width:40.0%"></p>
 <div class="columns">
 <div class="column" style="width:60%;">
 <p>Current conservation: <span class="math inline">\(rr^\dagger = 1 \implies \lvert \det r \rvert = 1\)</span></p>
+<div class="fragment" data-fragment-index="1">
 <p>Particle-hole symmetry: <span class="math inline">\(r \in \mathbb{R} \implies \textrm{Im} \det r = 0\)</span></p>
-<p>Both constraints together:</p>
+</div>
+<div class="fragment" data-fragment-index="2">
 <p><span class="math display">\[
-\mathcal{Q} = \det r = \pm 1 \in \mathbb{Z}_2
+\implies \mathcal{Q} = \det r = \pm 1 \in \mathbb{Z}_2
 \]</span></p>
+</div>
 </div><div class="column" style="width:40%;">
+<div class="fragment" data-fragment-index="2">
 <p><img data-src="figures/caed733f-image.png" style="width:80.0%"></p>
+</div>
 </div></div>
 <div class="reference-stack">
 <p><span class="reference">Fulga et al.&nbsp;(2011),</span> <span class="reference">Araya Day et al.&nbsp;(2025)</span></p>
 </div>
 </section>
-<section id="scattering-theory-of-topological-phases-1" class="slide level2 center">
-<h2>Scattering theory of topological phases</h2>
-<p><img data-src="figures/pasted-4db5d419.png" style="width:40.0%"></p>
-<p>1D reflection matrix from 2D gapped Hamiltonian</p>
-<p><strong>Recipe</strong>:</p>
-<ul>
-<li>Start from d-dimensional <span class="math inline">\(H_d(k_d)\)</span></li>
-<li>Attach <span class="math inline">\(d-1\)</span> leads</li>
-<li>Close 2 dimensions with twisted boundary conditions</li>
-<li>Calculate <span class="math inline">\(r(k_{d-1})\)</span> of a gapped bulk</li>
-<li>Find the invariant of <span class="math inline">\(r(k_{d-1})\)</span></li>
-</ul>
+<section id="scattering-theory-of-topological-phases-1" class="slide level2 center" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Scattering theory of topological phases</h2>
+<p>Example: 1D topological superconductor</p>
+<p><img data-src="figures/tgp-device.png" style="width:35.0%"></p>
+<p>Microsoft topological gap protocol</p>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p><span class="math display">\[
+\implies \mathcal{Q} = \det r = \pm 1 \in \mathbb{Z}_2
+\]</span></p>
+</div><div class="column" style="width:40%;">
+
+</div></div>
 <div class="reference-stack">
-<p><span class="reference">Fulga et al.&nbsp;(2011)</span></p>
+<p><span class="reference">Microsoft Quantum (2024)</span></p>
 </div>
 </section>
 <section id="scattering-theory-of-topological-phases-2" class="slide level2 center">
 <h2>Scattering theory of topological phases</h2>
+<p><img data-src="figures/pasted-4db5d419.png" style="width:40.0%"></p>
+<p>1D reflection matrix <span class="math inline">\(r(k_y)\)</span> from 2D gapped Hamiltonian <span class="math inline">\(H(k_x, k_y)\)</span></p>
+<p><br>
+</p>
+<div class="fragment">
+<p><strong>Recipe</strong>:</p>
+<ul>
+<li>Start from <span class="math inline">\(d\)</span>-dimensional <span class="math inline">\(H_d(k_d)\)</span></li>
+<li>Attach 2 leads</li>
+<li>Close <span class="math inline">\(d-1\)</span> dimensions with twisted boundary conditions</li>
+<li>Calculate <span class="math inline">\(r(k_{d-1})\)</span> of a gapped bulk</li>
+<li>Apply symmetry constraints</li>
+<li>Find the topological invariant of <span class="math inline">\(r(k_{d-1})\)</span></li>
+</ul>
+</div>
+<div class="reference-stack">
+<p><span class="reference">Fulga et al.&nbsp;(2011)</span></p>
+</div>
+</section>
+<section id="scattering-theory-of-topological-phases-3" class="slide level2 center">
+<h2>Scattering theory of topological phases</h2>
 <p>Example: 2D Chern insulator</p>
 <div class="columns">
-<div class="column" style="width:50%;">
-<p><img data-src="figures/e252dea3-image.png" style="width:55.0%"></p>
+<div class="column" style="width:10%;">
+
+</div><div class="column" style="width:40%;">
+<p><img data-src="figures/e252dea3-image.png" style="width:65.0%"></p>
 <p><span class="math display">\[
 C = \frac{1}{2\pi} \int_\textrm{BZ} d {k}^2 \textrm{tr} \nabla \times \mathcal{A}( k)
 \]</span></p>
-</div><div class="column" style="width:50%;">
-<p><img data-src="figures/e76fe021-image.png" style="width:45.0%"></p>
+</div><div class="column" style="width:40%;">
+<div class="fragment" data-fragment-index="1">
+<p><img data-src="figures/e76fe021-image.png" style="width:55.0%"></p>
 <p><span class="math display">\[
 C = \frac{1}{2\pi i} \int_0^{2\pi} d\Phi \frac{d}{d\Phi} \log \det r(\Phi)
 \]</span></p>
-</div></div>
+</div>
+<div class="column" style="width:10%;">
+
+</div></div></div>
+<div class="fragment" data-fragment-index="1">
 <p>Scattering geometry is that of Laughlin’s argument</p>
+</div>
 <div class="reference-stack">
 <p><span class="reference">Zijderveld et al.&nbsp;(2025)</span></p>
 </div>
@@ -372,6 +461,7 @@ r(\phi) = -V_{C_4} (\phi) r V_{C_4}^\dagger(\phi)
 <p><span class="math display">\[
 r(\phi) = r^\dagger(\phi)
 \]</span></p>
+<div class="fragment" data-fragment-index="1">
 <p><span class="math display">\[
 \implies
 r'(\phi) = \begin{pmatrix}
@@ -379,13 +469,16 @@ r'(\phi) = \begin{pmatrix}
 h^\dagger (\phi) &amp; 0
 \end{pmatrix}
 \]</span></p>
+</div>
 </div><div class="column" style="width:50%;">
-<p><img data-src="figures/pasted-5889921a.png" style="width:95.0%"></p>
+<p><img data-src="figures/example-hoti-si-2d.png" style="width:60.0%"></p>
 </div></div>
+<div class="fragment" data-fragment-index="2">
 <p>Scattering invariant:</p>
 <p><span class="math display">\[
 Q = \textrm{sign} ( \textrm{det}h(\phi) \textrm{exp} \left[\frac{1}{2} \int_{-\pi}^{\pi} d \textrm{log} \; \textrm{det}h(\phi) \right]) \in \mathbb{Z}_2
 \]</span></p>
+</div>
 <div class="reference-stack">
 <p><span class="reference">Zijderveld et al.&nbsp;(2025)</span></p>
 </div>
@@ -393,6 +486,8 @@ Q = \textrm{sign} ( \textrm{det}h(\phi) \textrm{exp} \left[\frac{1}{2} \int_{-\p
 <section id="example-3d-second-order-ti" class="slide level2 center">
 <h2>Example: 3D second-order TI</h2>
 <p><img data-src="figures/ad56e91f-image.png" style="width:55.0%"></p>
+<p><br>
+</p>
 <p>Protected by <span class="math inline">\(C_4 \mathcal{T}\)</span> and <span class="math inline">\(\mathcal{P}\)</span> such that <span class="math inline">\((C_4 \mathcal{T})^4 = -1\)</span></p>
 <p><span class="math display">\[
 \mathcal{Q} = \frac{\textrm{Pf}[H_{\textrm{eff}}(0, \pi)]}{\textrm{Pf}[H_{\textrm{eff}}(0, 0)]} \exp \left[ -\frac{1}{2}\int_0^\pi d\log \; \det H_{\textrm{eff}}(0, k_z)
@@ -402,8 +497,8 @@ Q = \textrm{sign} ( \textrm{det}h(\phi) \textrm{exp} \left[\frac{1}{2} \int_{-\p
 <p><span class="reference">Zijderveld et al.&nbsp;(2025)</span></p>
 </div>
 </section>
-<section id="hotis-response-to-flux" class="slide level2 center">
-<h2>HOTIs response to flux</h2>
+<section id="hotis-response-to-flux-insertion" class="slide level2 center">
+<h2>HOTIs response to flux insertion</h2>
 <p><img data-src="figures/pasted-bd3f09be.png" style="width:50.0%"></p>
 <p>Flux captures spectral flow of modes at the surface</p>
 <div class="reference-stack">
@@ -414,19 +509,80 @@ Q = \textrm{sign} ( \textrm{det}h(\phi) \textrm{exp} \left[\frac{1}{2} \int_{-\p
 
 <div class="full-screen-slide">
 <div class="full-screen-question">
-<p>How much charge does the HOTI pump per symmetry sector?</p>
+<p>What does the HOTI pump per symmetry sector?</p>
 </div>
+</div>
+<div class="fragment">
+<p><img data-src="figures/pasted-536ab8a6.png" style="width:20.0%"></p>
 </div>
 </section></section>
-<section id="summary-and-outlook" class="title-slide slide level1 center">
-<h1>Summary and outlook</h1>
+<section id="scattering-invariants-for-statistical-topological-phases" class="title-slide slide level1 center" data-auto-animate="true">
+<h1 data-id="quarto-animate-title">Scattering invariants for statistical topological phases</h1>
+<p><br>
+</p>
+<p><strong>Properties of statistical phases:</strong></p>
+<ul>
+<li>An ensemble where each sample has a symmetry image in the ensemble</li>
+<li>No single sample has the symmetry, but the ensemble does</li>
+</ul>
+<div class="reference-stack">
+<p><span class="reference">Zijderveld et al.&nbsp;(2026)</span></p>
+</div>
+</section>
+
+<section id="scattering-invariants-for-statistical-topological-phases-1" class="title-slide slide level1 center" data-auto-animate="true">
+<h1 data-id="quarto-animate-title">Scattering invariants for statistical topological phases</h1>
+<p>Example: intrinsic disordered <span class="math inline">\(C_2\)</span> symmetric HOTI</p>
+<p><img data-src="figures/symmetric-approximant.png" style="width:85.0%"></p>
+<p><strong>Properties of statistical phases:</strong></p>
+<ul>
+<li>An ensemble where each sample has a symmetry image in the ensemble</li>
+<li>No single sample has the symmetry, but the ensemble does</li>
+<li>Each sample has disorder <span class="math inline">\(\alpha\)</span></li>
+</ul>
+<div class="reference-stack">
+<p><span class="reference">Zijderveld et al.&nbsp;(2026)</span></p>
+</div>
+</section>
+
+<section id="summary" class="title-slide slide level1 center" data-auto-animate="true">
+<h1 data-id="quarto-animate-title">Summary</h1>
 <ol type="1">
 <li>Determined how to construct HOTI scattering invariants</li>
 <li>We can study phase transitions of HOTIs with disorder</li>
 <li>We can compute quasicrystalline bulk invariants</li>
 <li>We do not yet know how to write 3rd order HOTI invariants</li>
 </ol>
-<p><img data-src="figures/pasted-536ab8a6.png" style="width:30.0%"></p>
+<div class="footer">
+<p><a href="https://quarto.org/">These slides were made with Quarto</a></p>
+</div>
+</section>
+
+<section id="summary-1" class="title-slide slide level1 center" data-auto-animate="true">
+<h1 data-id="quarto-animate-title">Summary</h1>
+<div class="columns">
+<div class="column" style="width:20%;">
+
+</div><div class="column" style="width:30%;">
+<p><img data-src="figures/qrcode_with_arxiv.png" style="width:70.0%"></p>
+<p>Scattering theory of higher-order topological phases</p>
+</div><div class="column" style="width:30%;">
+<p><img data-src="figures/qrcode_with_arxiv2.png" style="width:70.0%"></p>
+<p>Symmetric approximant formalism for statistical topological matter</p>
+</div><div class="column" style="width:20%;">
+
+</div></div>
+<p><br>
+</p>
+<ol type="1">
+<li>Determined how to construct HOTI scattering invariants</li>
+<li>We can study phase transitions of HOTIs with disorder</li>
+<li>We can compute quasicrystalline bulk invariants</li>
+<li>We do not yet know how to write 3rd order HOTI invariants</li>
+</ol>
+<div class="footer">
+<p><a href="https://quarto.org/">These slides were made with Quarto</a></p>
+</div>
 
 
 </section>
@@ -618,7 +774,7 @@ Q = \textrm{sign} ( \textrm{det}h(\phi) \textrm{exp} \left[\frac{1}{2} \int_{-\p
         height: 720,
 
         // Factor of the display size that should remain empty around the content
-        margin: 0.15,
+        margin: 0.2,
 
         math: {
           mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
