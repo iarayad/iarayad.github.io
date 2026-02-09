@@ -151,8 +151,8 @@ Can we tell topology from quantum transport if surface modes do not propagate?
 
 Useful for:
 
-- Studying delocalization transitions of HOTIs
-- Characterizing non-crystalline topological phases
+- Studying delocalization transitions
+- Characterizing non-crystalline phases
 - Computing topological invariants of large systems (e.g. a model material)
 
 ## Disordered Axion insulator
@@ -173,20 +173,23 @@ In practice computing trivial and topological phases requires a convenient const
 
 
 
-## Predictions with disorder are hard to test
+## Intrinsic disordered Axion insulator
 
 \
+
+A topological phase that does not exist in clean systems, but **only in disordered ones!**
+
 
 ::: {.columns}
 ::: {.column width="10%"}
 :::
 
 ::: {.column width="40%"}
-![](figures/pasted-33cfb9a1.png){width=70%}
+![](figures/pasted-882c947c.png){width=70%}
 
 :::
 ::: {.column width="40%"}
-![](figures/pasted-882c947c.png){width=70%}
+![](figures/pasted-33cfb9a1.png){width=70%}
 
 :::
 
@@ -194,11 +197,16 @@ In practice computing trivial and topological phases requires a convenient const
 :::
 :::
 
-There are topological phases that do not exist in clean systems, but **only in disordered ones!**
+$W=0$ gives trivial phase or a metal
+
+$W \neq 0$ gives statistical topological phase
+
+Predictions with disorder are hard to test
+
 
 
 ::: {.reference-stack}
-[Chen et al. 2025]{.reference}
+[Chen et al. (2025)]{.reference}
 
 :::
 
@@ -504,7 +512,7 @@ $$
 :::
 
 
-## HOTIs response to flux
+## HOTIs response to flux insertion
 
 ![](figures/pasted-bd3f09be.png){width=50%}
 
@@ -527,19 +535,55 @@ What does the HOTI pump per symmetry sector?
 ![](figures/pasted-536ab8a6.png){width=20%}
 :::
 
-# ...
+# Scattering invariants for statistical topological phases  {data-auto-animate=true}
+
+
+\
+
+**Properties of statistical phases:**
+
+- An ensemble where each sample has a symmetry image in the ensemble
+- No single sample has the symmetry, but the ensemble does
+
+
+::: {.reference-stack}
+[Zijderveld et al. (2026)]{.reference}
+:::
+
+# Scattering invariants for statistical topological phases  {data-auto-animate=true}
+
+Example: intrinsic disordered $C_2$ symmetric HOTI
+
+
+![](figures/symmetric-approximant.png){width=85%}
+
+
+**Properties of statistical phases:**
+
+- An ensemble where each sample has a symmetry image in the ensemble
+- No single sample has the symmetry, but the ensemble does
+- Each sample has disorder $\alpha$
+
+::: {.reference-stack}
+[Zijderveld et al. (2026)]{.reference}
+:::
 
 
 
-
-
-# Summary
+# Summary {data-auto-animate=true}
 
 1. Determined how to construct HOTI scattering invariants
 2. We can study phase transitions of HOTIs with disorder
 3. We can compute quasicrystalline bulk invariants
 4. We do not yet know how to write 3rd order HOTI invariants
 
+
+:::{.footer}
+[These slides were made with Quarto](https://quarto.org/)
+:::
+
+
+# Summary {data-auto-animate=true}
 
 ::: {.columns}
 
@@ -558,6 +602,14 @@ Symmetric approximant formalism for statistical topological matter
 ::: {.column width="20%"}
 :::
 :::
+
+\
+
+1. Determined how to construct HOTI scattering invariants
+2. We can study phase transitions of HOTIs with disorder
+3. We can compute quasicrystalline bulk invariants
+4. We do not yet know how to write 3rd order HOTI invariants
+
 
 :::{.footer}
 [These slides were made with Quarto](https://quarto.org/)
