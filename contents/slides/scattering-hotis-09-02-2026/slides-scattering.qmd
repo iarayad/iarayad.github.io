@@ -301,6 +301,9 @@ Example: 1D topological superconductor
 
 Microsoft topological gap protocol
 
+$\mathcal{Q}$ helps identify regions with Majorana zero modes
+
+
 ::: {.columns}
 ::: {.column width="60%"}
 
@@ -308,6 +311,7 @@ Microsoft topological gap protocol
 $$
 \implies \mathcal{Q} = \det r = \pm 1 \in \mathbb{Z}_2
 $$
+
 :::
 
 ::: {.column width="40%"}
@@ -464,6 +468,34 @@ A generalization to spatial symmetries
 - Thread flux $\phi$
 - Attach spatially symmetric leads
 - Compute $r(k, ..., \phi)$
+:::
+:::
+
+
+::: {.reference-stack}
+[Zijderveld et al. (2025)]{.reference}
+
+:::
+
+# Scattering theory of higher order topological phases
+
+A generalization to spatial symmetries
+
+\
+
+::: {.columns}
+
+::: {.column width="60%"}
+![](figures/pasted-09312332wmodes.png){width=65%}
+:::
+::: {.column width="40%"}
+
+**Recipe**:
+
+- Construct symmetric sample
+- Thread flux $\phi$
+- Attach spatially symmetric leads
+- Compute $r(k, ..., \phi)$
 - Apply symmetry constraints
 - Compute invariant on $r(k, ..., \phi)$
 :::
@@ -474,7 +506,6 @@ A generalization to spatial symmetries
 [Zijderveld et al. (2025)]{.reference}
 
 :::
-
 
 
 ## Example: 2D second-order TI
@@ -548,9 +579,14 @@ $$
 
 ## HOTIs response to flux insertion
 
+Flux captures spectral flow of modes at the surface
+
+
 ![](figures/pasted-bd3f09be.png){width=50%}
 
-Flux captures spectral flow of modes at the surface
+:::{.caption}
+Spectrum of $H(\phi)$ of a 2D second-order TI with corner modes
+:::
 
 
 ::: {.reference-stack}
