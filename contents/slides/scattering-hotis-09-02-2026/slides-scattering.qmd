@@ -201,6 +201,8 @@ $W=0$ gives trivial phase or a metal
 
 $W \neq 0$ gives statistical topological phase
 
+\
+
 Predictions with disorder are hard to test
 
 
@@ -345,7 +347,39 @@ $$
 
 :::
 
-## Scattering theory of topological phases
+
+## Scattering theory of topological phases  {data-auto-animate=true}
+
+Example: 2D Chern insulator
+
+
+::: {.columns}
+
+::: {.column width="10%"}
+:::
+
+::: {.column width="40%"}
+
+![](figures/pasted-4db5d419.png){width=80%}
+
+$$
+C = \frac{1}{2\pi} \int_\textrm{BZ} d {k}^2 \textrm{tr} \nabla \times \mathcal{A}( k)
+$$
+:::
+::: {.column width="50%"}
+
+:::
+
+
+:::
+
+
+::: {.reference-stack}
+[Zijderveld et al. (2025)]{.reference}
+
+:::
+
+## Scattering theory of topological phases  {data-auto-animate=true}
 
 Example: 2D Chern insulator
 
@@ -419,16 +453,16 @@ A generalization to spatial symmetries
 
 ::: {.columns}
 
-::: {.column width="50%"}
+::: {.column width="60%"}
 ![](figures/pasted-09312332.png){width=65%}
 :::
-::: {.column width="50%"}
+::: {.column width="40%"}
 
 **Recipe**:
 
 - Construct symmetric sample
-- Thread a flux
-- Attach 2 symmetric leads
+- Thread flux $\phi$
+- Attach spatially symmetric leads
 - Compute $r(k, ..., \phi)$
 - Apply symmetry constraints
 - Compute invariant on $r(k, ..., \phi)$
@@ -569,21 +603,14 @@ Example: intrinsic disordered $C_2$ symmetric HOTI
 :::
 
 
+# Summary
 
-# Summary {data-auto-animate=true}
+\
 
-1. Determined how to construct HOTI scattering invariants
-2. We can study phase transitions of HOTIs with disorder
-3. We can compute quasicrystalline bulk invariants
-4. We do not yet know how to write 3rd order HOTI invariants
-
-
-:::{.footer}
-[These slides were made with Quarto](https://quarto.org/)
-:::
-
-
-# Summary {data-auto-animate=true}
+1. Theory for HOTI scattering invariants
+2. It allows studying HOTIs with disorder
+3. It allows computing quasicrystalline bulk invariants
+4. 3rd order HOTI invariants are still a mystery
 
 ::: {.columns}
 
@@ -602,14 +629,6 @@ Symmetric approximant formalism for statistical topological matter
 ::: {.column width="20%"}
 :::
 :::
-
-\
-
-1. Determined how to construct HOTI scattering invariants
-2. We can study phase transitions of HOTIs with disorder
-3. We can compute quasicrystalline bulk invariants
-4. We do not yet know how to write 3rd order HOTI invariants
-
 
 :::{.footer}
 [These slides were made with Quarto](https://quarto.org/)
