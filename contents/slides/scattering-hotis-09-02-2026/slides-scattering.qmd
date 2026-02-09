@@ -23,7 +23,7 @@ format:
     auto-stretch: false
     width: 1280
     height: 720
-    margin: 0.15
+    margin: 0.2
     center: true
     theme: [default, slides-scattering.scss]
 resources:
@@ -39,6 +39,8 @@ Can we tell topology from quantum transport?
 :::
 :::
 
+\
+
 ![](figures/transport_setup.png){width=40%}
 
 
@@ -48,22 +50,18 @@ Figure from Kwant
 
 :::
 
-::: {.reference-stack}
-
-[Waintal et al. 2024]{.reference}
-
-:::
-
-
 
 # Transport tells how samples conduct
 
+\
+
+\
 
 ::: {.columns}
 ::: {.column width="50%"}
 ![](figures/transport_wire.png){width=80%}
 
-Conductance in a metallic wire
+Conductance across a metallic wire
 :::
 ::: {.column width="50%"}
 ![](figures/transport_ring.png){width=80%}
@@ -76,8 +74,20 @@ Aharonov-Bohm conductance oscillations
 [Waintal et al., 2024]{.reference}
 :::
 
-## Topological edge states conduct
 
+## Topological edge states conduct {data-auto-animate=true}
+
+
+![](figures/2dhalleffect.png){width=45%}
+
+::: {.caption}
+
+Quantum Hall sample
+:::
+
+## Topological edge states conduct {data-auto-animate=true}
+
+without backscattering
 
 ![](figures/edgetransport.png){width=35%}
 
@@ -88,10 +98,12 @@ Quantum Hall sample
 
 \
 
+
 **Advantages**:
 
 - It does not require translational invariance
 - It is efficient to compute
+
 
 ::: {.reference-stack}
 [Waintal et al., 2024]{.reference}
@@ -105,8 +117,8 @@ Quantum Hall sample
 
 **Properties**:
 
-- Low dimensional surface modes
 - Protected by spatial symmetries
+- Low dimensional surface modes
 - Unclear how robust to disorder they are
 
 
@@ -115,7 +127,7 @@ Quantum Hall sample
 [Schindler et al. (2018)]{.reference}
 :::
 
----
+# {auto-animate=true}
 
 :::{.full-screen-slide}
 :::{.full-screen-question}
@@ -129,15 +141,33 @@ Can we tell topology from quantum transport if surface modes do not propagate?
 2nd order TI protected by $C_2$ and $\mathcal{C}$
 :::
 
+# {auto-animate=true}
+
+:::{.full-screen-slide}
+:::{.full-screen-question}
+Can we tell topology from quantum transport if surface modes do not propagate?
+:::
+:::
+
+Useful for:
+
+- Studying delocalization transitions of HOTIs
+- Characterizing non-crystalline topological phases
+- Computing topological invariants of large systems (e.g. a model material)
+
 ## Disordered Axion insulator
+
+\
+
+A 3D topological insulator that preserves inversion symmetry **on average**
 
 ![](figures/pasted-182ff6bf.png){width=55%}
 
 
-Computing trivial and topological phases requires a convenient construction
+In practice computing trivial and topological phases requires a convenient construction
 
 ::: {.reference-stack}
-[Song et al. 2021]{.reference}
+[Song et al. (2021)]{.reference}
 
 :::
 
@@ -145,15 +175,22 @@ Computing trivial and topological phases requires a convenient construction
 
 ## Predictions with disorder are hard to test
 
+\
 
 ::: {.columns}
-::: {.column width="50%"}
-![](figures/pasted-33cfb9a1.png){width=60%}
+::: {.column width="10%"}
+:::
+
+::: {.column width="40%"}
+![](figures/pasted-33cfb9a1.png){width=70%}
 
 :::
-::: {.column width="50%"}
-![](figures/pasted-882c947c.png){width=60%}
+::: {.column width="40%"}
+![](figures/pasted-882c947c.png){width=70%}
 
+:::
+
+::: {.column width="10%"}
 :::
 :::
 
@@ -168,14 +205,17 @@ There are topological phases that do not exist in clean systems, but **only in d
 
 # Landauer's scattering formalism
 
+\
+
 Scattering matrix and Hamiltonian are related by
 
 $$
 (H-E)(\Psi^{\textrm{in}} \alpha^{\textrm{in}} + \Psi^{\textrm{out}} S(E) \alpha^{\textrm{in}} + \Psi^{\textrm{localized}} \alpha^{\textrm{in}}) = 0
 $$
 
-![](figures/d53b397f-image.png){width=50%}
+![](figures/d53b397f-image.png){width=45%}
 
+::: {.fragment .current-visible data-fragment-index=1 data-autoslide=1200}
 
 $$
 S = \begin{pmatrix}
@@ -185,33 +225,52 @@ t_{RL} & r_{RR}
 ; \;
 S S^\dagger = 1
 $$
+:::
+
+::: {.fragment .fade-in data-fragment-index=2 data-autoslide=1200}
+
+$$
+S = \begin{pmatrix}
+r_{LL} & 0 \\
+0 & r_{RR}
+\end{pmatrix}
+; \;
+r r^\dagger = 1
+$$
+
+**gapped system**
+:::
 
 
+## Scattering theory of topological phases {data-auto-animate=true}
 
-## Scattering theory of topological phases
 
 Example: 1D topological superconductor
 
 ![](figures/39133d9f-image.png){width=40%}
+
 
 ::: {.columns}
 ::: {.column width="60%"}
 
 Current conservation: $rr^\dagger = 1 \implies \lvert \det r \rvert = 1$
 
+::: {.fragment data-fragment-index="1"}
 Particle-hole symmetry: $r \in \mathbb{R} \implies \textrm{Im} \det r = 0$
+:::
 
-
-Both constraints together:
-
+::: {.fragment data-fragment-index="2"}
 $$
-\mathcal{Q} = \det r = \pm 1 \in \mathbb{Z}_2
+\implies \mathcal{Q} = \det r = \pm 1 \in \mathbb{Z}_2
 $$
+:::
 :::
 
 ::: {.column width="40%"}
-![](figures/caed733f-image.png){width=80%}
 
+::: {.fragment data-fragment-index="2"}
+![](figures/caed733f-image.png){width=80%}
+:::
 
 :::
 
@@ -223,20 +282,55 @@ $$
 
 :::
 
+## Scattering theory of topological phases {data-auto-animate=true}
+
+
+Example: 1D topological superconductor
+
+![](figures/tgp-device.png){width=35%}
+
+Microsoft topological gap protocol
+
+::: {.columns}
+::: {.column width="60%"}
+
+
+$$
+\implies \mathcal{Q} = \det r = \pm 1 \in \mathbb{Z}_2
+$$
+:::
+
+::: {.column width="40%"}
+
+:::
+
+:::
+
+::: {.reference-stack}
+[Microsoft Quantum (2024)]{.reference}
+
+:::
+
+
 ## Scattering theory of topological phases
 
 
 ![](figures/pasted-4db5d419.png){width=40%}
 
-1D reflection matrix from 2D gapped Hamiltonian
+1D reflection matrix $r(k_y)$ from 2D gapped Hamiltonian $H(k_x, k_y)$
 
+\
+
+::: {.fragment}
 **Recipe**:
 
-- Start from d-dimensional $H_d(k_d)$
-- Attach $d-1$ leads
-- Close 2 dimensions with twisted boundary conditions
+- Start from $d$-dimensional $H_d(k_d)$
+- Attach 2 leads
+- Close $d-1$ dimensions with twisted boundary conditions
 - Calculate $r(k_{d-1})$ of a gapped bulk
-- Find the invariant of $r(k_{d-1})$
+- Apply symmetry constraints
+- Find the topological invariant of $r(k_{d-1})$
+:::
 
 ::: {.reference-stack}
 [Fulga et al. (2011)]{.reference}
@@ -250,17 +344,21 @@ Example: 2D Chern insulator
 
 ::: {.columns}
 
-::: {.column width="50%"}
+::: {.column width="10%"}
+:::
 
-![](figures/e252dea3-image.png){width=55%}
+::: {.column width="40%"}
+
+![](figures/e252dea3-image.png){width=65%}
 
 $$
 C = \frac{1}{2\pi} \int_\textrm{BZ} d {k}^2 \textrm{tr} \nabla \times \mathcal{A}( k)
 $$
 :::
-::: {.column width="50%"}
+::: {.column width="40%"}
 
-![](figures/e76fe021-image.png){width=45%}
+::: {.fragment data-fragment-index="1"}
+![](figures/e76fe021-image.png){width=55%}
 
 
 $$
@@ -268,8 +366,16 @@ C = \frac{1}{2\pi i} \int_0^{2\pi} d\Phi \frac{d}{d\Phi} \log \det r(\Phi)
 $$
 :::
 
+::: {.column width="10%"}
 :::
+
+:::
+
+:::
+
+::: {.fragment data-fragment-index="1"}
 Scattering geometry is that of Laughlin's argument
+:::
 
 ::: {.reference-stack}
 [Zijderveld et al. (2025)]{.reference}
@@ -344,6 +450,7 @@ $$
 r(\phi) = r^\dagger(\phi)
 $$
 
+::: {.fragment data-fragment-index="1"}
 $$
 \implies
 r'(\phi) = \begin{pmatrix}
@@ -351,19 +458,22 @@ r'(\phi) = \begin{pmatrix}
 h^\dagger (\phi) & 0
 \end{pmatrix}
 $$
+:::
 
 :::
 :::{.column width="50%"}
 
-![](figures/pasted-5889921a.png){width=95%}
+![](figures/example-hoti-si-2d.png){width=60%}
 :::
 :::
 
+::: {.fragment data-fragment-index="2"}
 Scattering invariant:
 
 $$
 Q = \textrm{sign} ( \textrm{det}h(\phi) \textrm{exp} \left[\frac{1}{2} \int_{-\pi}^{\pi} d \textrm{log} \; \textrm{det}h(\phi) \right]) \in \mathbb{Z}_2
 $$
+:::
 
 
 
@@ -377,6 +487,8 @@ $$
 ## Example: 3D second-order TI
 
 ![](figures/ad56e91f-image.png){width=55%}
+
+\
 
 Protected by $C_4 \mathcal{T}$ and $\mathcal{P}$ such that $(C_4 \mathcal{T})^4 = -1$
 
@@ -407,11 +519,21 @@ Flux captures spectral flow of modes at the surface
 
 ::: {.full-screen-slide}
 ::: {.full-screen-question}
-How much charge does the HOTI pump per symmetry sector?
+What does the HOTI pump per symmetry sector?
 :::
 :::
 
-# Summary and outlook
+::: {.fragment}
+![](figures/pasted-536ab8a6.png){width=20%}
+:::
+
+# ...
+
+
+
+
+
+# Summary
 
 1. Determined how to construct HOTI scattering invariants
 2. We can study phase transitions of HOTIs with disorder
@@ -419,4 +541,24 @@ How much charge does the HOTI pump per symmetry sector?
 4. We do not yet know how to write 3rd order HOTI invariants
 
 
-![](figures/pasted-536ab8a6.png){width=30%}
+::: {.columns}
+
+::: {.column width="20%"}
+:::
+::: {.column width="30%"}
+![](figures/qrcode_with_arxiv.png){width=70%}
+
+Scattering theory of higher-order topological phases
+:::
+::: {.column width="30%"}
+![](figures/qrcode_with_arxiv2.png){width=70%}
+
+Symmetric approximant formalism for statistical topological matter
+:::
+::: {.column width="20%"}
+:::
+:::
+
+:::{.footer}
+[These slides were made with Quarto](https://quarto.org/)
+:::
