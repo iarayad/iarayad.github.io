@@ -31,7 +31,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="../../../site_libs/revealjs/dist/theme/quarto-71b0da359c03a236ae8050d6162207c9.css">
+  <link rel="stylesheet" href="../../../site_libs/revealjs/dist/theme/quarto-67d79ee613f33cfcb6729683ff2779cf.css">
   <link href="../../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -284,6 +284,8 @@ Anton Akhmerov
 </div></div>
 <p><span class="math inline">\(W=0\)</span> gives trivial phase or a metal</p>
 <p><span class="math inline">\(W \neq 0\)</span> gives statistical topological phase</p>
+<p><br>
+</p>
 <p>Predictions with disorder are hard to test</p>
 <div class="reference-stack">
 <p><span class="reference">Chen et al.&nbsp;(2025)</span></p>
@@ -383,8 +385,26 @@ r r^\dagger = 1
 <p><span class="reference">Fulga et al.&nbsp;(2011)</span></p>
 </div>
 </section>
-<section id="scattering-theory-of-topological-phases-3" class="slide level2 center">
-<h2>Scattering theory of topological phases</h2>
+<section id="scattering-theory-of-topological-phases-3" class="slide level2 center" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Scattering theory of topological phases</h2>
+<p>Example: 2D Chern insulator</p>
+<div class="columns">
+<div class="column" style="width:10%;">
+
+</div><div class="column" style="width:40%;">
+<p><img data-src="figures/pasted-4db5d419.png" style="width:80.0%"></p>
+<p><span class="math display">\[
+C = \frac{1}{2\pi} \int_\textrm{BZ} d {k}^2 \textrm{tr} \nabla \times \mathcal{A}( k)
+\]</span></p>
+</div><div class="column" style="width:50%;">
+
+</div></div>
+<div class="reference-stack">
+<p><span class="reference">Zijderveld et al.&nbsp;(2025)</span></p>
+</div>
+</section>
+<section id="scattering-theory-of-topological-phases-4" class="slide level2 center" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Scattering theory of topological phases</h2>
 <p>Example: 2D Chern insulator</p>
 <div class="columns">
 <div class="column" style="width:10%;">
@@ -433,14 +453,14 @@ C = \frac{1}{2\pi i} \int_0^{2\pi} d\Phi \frac{d}{d\Phi} \log \det r(\Phi)
 <p><br>
 </p>
 <div class="columns">
-<div class="column" style="width:50%;">
+<div class="column" style="width:60%;">
 <p><img data-src="figures/pasted-09312332.png" style="width:65.0%"></p>
-</div><div class="column" style="width:50%;">
+</div><div class="column" style="width:40%;">
 <p><strong>Recipe</strong>:</p>
 <ul>
 <li>Construct symmetric sample</li>
-<li>Thread a flux</li>
-<li>Attach 2 symmetric leads</li>
+<li>Thread flux <span class="math inline">\(\phi\)</span></li>
+<li>Attach spatially symmetric leads</li>
 <li>Compute <span class="math inline">\(r(k, ..., \phi)\)</span></li>
 <li>Apply symmetry constraints</li>
 <li>Compute invariant on <span class="math inline">\(r(k, ..., \phi)\)</span></li>
@@ -545,21 +565,16 @@ Q = \textrm{sign} ( \textrm{det}h(\phi) \textrm{exp} \left[\frac{1}{2} \int_{-\p
 </div>
 </section>
 
-<section id="summary" class="title-slide slide level1 center" data-auto-animate="true">
-<h1 data-id="quarto-animate-title">Summary</h1>
+<section id="summary" class="title-slide slide level1 center">
+<h1>Summary</h1>
+<p><br>
+</p>
 <ol type="1">
-<li>Determined how to construct HOTI scattering invariants</li>
-<li>We can study phase transitions of HOTIs with disorder</li>
-<li>We can compute quasicrystalline bulk invariants</li>
-<li>We do not yet know how to write 3rd order HOTI invariants</li>
+<li>Theory for HOTI scattering invariants</li>
+<li>It allows studying HOTIs with disorder</li>
+<li>It allows computing quasicrystalline bulk invariants</li>
+<li>3rd order HOTI invariants are still a mystery</li>
 </ol>
-<div class="footer">
-<p><a href="https://quarto.org/">These slides were made with Quarto</a></p>
-</div>
-</section>
-
-<section id="summary-1" class="title-slide slide level1 center" data-auto-animate="true">
-<h1 data-id="quarto-animate-title">Summary</h1>
 <div class="columns">
 <div class="column" style="width:20%;">
 
@@ -572,14 +587,6 @@ Q = \textrm{sign} ( \textrm{det}h(\phi) \textrm{exp} \left[\frac{1}{2} \int_{-\p
 </div><div class="column" style="width:20%;">
 
 </div></div>
-<p><br>
-</p>
-<ol type="1">
-<li>Determined how to construct HOTI scattering invariants</li>
-<li>We can study phase transitions of HOTIs with disorder</li>
-<li>We can compute quasicrystalline bulk invariants</li>
-<li>We do not yet know how to write 3rd order HOTI invariants</li>
-</ol>
 <div class="footer">
 <p><a href="https://quarto.org/">These slides were made with Quarto</a></p>
 </div>
