@@ -211,20 +211,6 @@ $link-color: #2f5e5e;
   color: #333;
 }
 
-.reveal .slides section.quarto-title-block::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  bottom: -2rem;
-  transform: translateX(-50%);
-  width: 520px;
-  height: 90px;
-  background-image: url("/contents/slides/scattering-hotis-09-02-2026/figures/dipc_logo.png"), url("/contents/slides/scattering-hotis-09-02-2026/figures/tudelft_logo.png");
-  background-repeat: no-repeat;
-  background-position: left center, right center;
-  background-size: 200px auto, 200px auto;
-}
-
 .subtitle {
   display: block;
   font-size: 0.8em;

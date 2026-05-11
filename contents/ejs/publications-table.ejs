@@ -1,17 +1,26 @@
 <table class="table">
   <thead>
     <tr>
-      <th>arXiv ID</th>
+      <th>Year</th>
+      <th>Publication</th>
       <th>Title</th>
       <th>Authors</th>
     </tr>
   </thead>
   <tbody>
     <% for (const item of items) { %>
+    <%
+      const yearSource = item.published || item.on_arxiv || "";
+      const year = String(yearSource).slice(0, 4);
+      const hasJournal = item.journal_url && item.journal_ref;
+      const linkUrl = hasJournal ? item.journal_url : `https://arxiv.org/abs/${item.id}`;
+      const linkLabel = hasJournal ? String(item.journal_ref).replace(/\s*\(\d{4}\)\s*$/, "") : `arXiv:${item.id}`;
+    %>
     <tr>
+      <td><%= year %></td>
       <td>
-        <a href="https://arxiv.org/abs/<%= item.id %>" target="_blank" style="color: #0066cc; text-decoration: underline;">
-          <%= item.id %>
+        <a href="<%= linkUrl %>" target="_blank" style="color: #0066cc; text-decoration: underline;">
+          <%= linkLabel %>
         </a>
       </td>
       <td><%= item.title %></td>

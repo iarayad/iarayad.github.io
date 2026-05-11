@@ -23,6 +23,12 @@ jobs:
       - name: Sync pixi environment
         run: pixi install
 
+      - name: Update publication data
+        run: pixi run update-publications
+
+      - name: Build site data
+        run: pixi run build-site-data
+
       - name: Render with pixi
         run: pixi run quarto render
 
