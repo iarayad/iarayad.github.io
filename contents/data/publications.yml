@@ -1,10 +1,131 @@
+- abstract: Gyromorphs are a new class of disordered systems that combine an amorphous-like
+    absence of translational order with quasi-long-range rotational order. Gyromorphs
+    can outperform quasicrystals or hyperuniform arrangements in forming isotropic
+    band gaps, suggesting an avenue to realize robust disordered topological phases.
+    However, gyromorphs lack exact rotational symmetry, which is only realized on
+    average, posing an obstacle for existing real-space invariants to correctly diagnose
+    topological gyromorphs. In this work we show that gyromorphs can host higher-order
+    topological insulating (HOTI) phases protected by average rotational symmetry,
+    and we develop and systematically compare tools for diagnosing topological phases
+    protected by such symmetry. We introduce symmetry indicators of the effective
+    Hamiltonian based on average rotational symmetries which, when combined with the
+    spectral localizer and a scattering invariant, draw a consistent topological phase
+    diagram. Our work unlocks gyromorphs as a novel platform to study topological
+    phases beyond crystals, quasicrystals, and amorphous materials.
+  authors:
+  - Laura Gómez Paz
+  - Justin Schirmann
+  - Adam Yanis Chaou
+  - Isidora Araya Day
+  - Adolfo G. Grushin
+  id: '2603.02167'
+  on_arxiv: '2026-03-02'
+  title: Topological Gyromorphs
+- abstract: The standard approach to characterizing topological matter, computing
+    topological invariants, fails when the symmetry protecting the topological phase
+    is preserved only on average in a disordered system. Because topological invariants
+    rely on enforcing the symmetry exactly, they can overcount phases by incorrectly
+    identifying certain non-robust features as robust. Moreover, in intrinsic statistical
+    topological insulators, enforcing the symmetry exactly is guaranteed to destroy
+    the topological phase. We define a mapping that addresses both issues and provides
+    a unified framework for describing disordered topological matter.
+  authors:
+  - R. Johanna Zijderveld
+  - Adam Yanis Chaou
+  - Isidora Araya Day
+  - Anton R. Akhmerov
+  doi: 10.48550/arXiv.2601.00784
+  id: '2601.00784'
+  on_arxiv: '2026-01-02'
+  title: Symmetric approximant formalism for statistical topological matter
+- abstract: 'The easily accessible experimental signatures of Majorana modes are ambiguous
+    and only probe topology indirectly: for example, quasi-Majorana states mimic most
+    properties of Majoranas. Establishing a correspondence between an experiment and
+    a theoretical model known to be topological resolves this ambiguity. Here we demonstrate
+    that already theoretically determining whether a finite system is topological
+    is by itself ambiguous. In particular, we show that the scattering topological
+    invariant -- a probe of topology most closely related to transport signatures
+    of Majoranas -- has multiple biases in finite systems. For example, we identify
+    that quasi-Majorana states also mimic the scattering invariant of Majorana zero
+    modes in intermediate-sized systems. We expect that the bias due to finite size
+    effects is universal, and advocate that the analysis of topology in finite systems
+    should be accompanied by a comparison with the thermodynamic limit. Our results
+    are directly relevant to the applications of the topological gap protocol.'
+  authors:
+  - Isidora Araya Day
+  - Antonio L. R. Manesco
+  - Michael Wimmer
+  - Anton R. Akhmerov
+  doi: 10.21468/scipostphyscore.8.3.047
+  id: '2504.01069'
+  journal: SciPost Phys. Core
+  journal_ref: SciPost Phys. Core 8, 047 (2025)
+  journal_url: https://doi.org/10.21468/scipostphyscore.8.3.047
+  on_arxiv: '2025-04-01'
+  page: '047'
+  published: '2025-07-04'
+  title: Identifying biases of the Majorana scattering invariant
+  vol: '8'
+- abstract: We propose an architecture for bit-flip error correction of Andreev spins
+    that is protected by Kramers' degeneracy. Specifically, we show that a coupling
+    network of linear inductors and Andreev spin qubits results in a static Hamiltonian
+    composed of the stabilizers of a bit-flip code. The electrodynamics of the many-body
+    spin states also respect these stabilizers, and we show how reflectometry off
+    a single coupled resonator can thereby accomplish their projective measurement.
+    We further show how circuit-mediated spin couplings enable error correction operations
+    and a complete set of single- and two-module logical quantum gates. The concept,
+    which we dub the Ising molecule qubit (or Isene), is experimentally feasible and
+    provides a path for compact noise-biased qubits.
+  authors:
+  - Haoran Lu
+  - Isidora Araya Day
+  - Anton R. Akhmerov
+  - Bernard van Heck
+  - Valla Fatemi
+  doi: 10.1103/lqf3-6r5z
+  id: '2412.16116'
+  journal: Phys. Rev. Lett.
+  journal_ref: Phys. Rev. Lett. 135, 210602 (2025)
+  journal_url: https://doi.org/10.1103/lqf3-6r5z
+  on_arxiv: '2024-12-20'
+  page: '210602'
+  published: '2025-11-20'
+  title: Kramers-protected hardware-efficient error correction with Andreev spin qubits
+  vol: '135'
+- abstract: The surface states of intrinsic higher order topological phases are protected
+    by the spatial symmetries of a finite sample. This property makes the existing
+    scattering theory of topological invariants inapplicable because the scattering
+    geometry is either incompatible with the symmetry or does not probe the bulk topology.
+    We resolve this obstacle by using a symmetric scattering geometry that probes
+    transport from the inside to the outside of the sample. We demonstrate that the
+    intrinsic higher order topology is captured by the flux dependence of the reflection
+    matrix. Our finding follows from identifying the spectral flow of a flux line
+    as a signature of higher order topology. We show how this scattering approach
+    applies to several examples of higher order topological insulators and superconductors.
+    Our theory provides an alternative approach for proving bulk--edge correspondence
+    in intrinsic higher order topological phases, especially in presence of disorder.
+  authors:
+  - R. Johanna Zijderveld
+  - Isidora Araya Day
+  - Anton R. Akhmerov
+  doi: 10.21468/scipostphys.19.2.058
+  id: '2412.15333'
+  journal: SciPost Phys.
+  journal_ref: SciPost Phys. 19, 058 (2025)
+  journal_url: https://doi.org/10.21468/scipostphys.19.2.058
+  on_arxiv: '2024-12-19'
+  page: 058
+  published: '2025-08-27'
+  title: Scattering theory of higher order topological phases
+  vol: '19'
 - abstract: A common technique in the study of complex quantum-mechanical systems
     is to reduce the number of degrees of freedom in the Hamiltonian by using quasi-degenerate
     perturbation theory. While the Schrieffer--Wolff transformation achieves this
-    and constructs an effective Hamiltonian, its scaling is suboptimal, and implementing
-    it efficiently is both challenging and error-prone. We introduce an algorithm
-    for constructing an equivalent effective Hamiltonian as well as a Python package,
-    Pymablock, that implements it. Our algorithm combines an optimal asymptotic scaling
+    and constructs an effective Hamiltonian, its scaling is suboptimal, it is limited
+    to two subspaces, and implementing it efficiently is both challenging and error-prone.
+    We introduce an algorithm for constructing an equivalent effective Hamiltonian
+    as well as a Python package, Pymablock, that implements it. Our algorithm combines
+    an optimal asymptotic scaling and the ability to handle any number of subspaces
     with a range of other improvements. The package supports numerical and analytical
     calculations of any order and it is designed to be interoperable with any other
     packages for specifying the Hamiltonian. We demonstrate how the package handles
@@ -17,21 +138,29 @@
   - Hugo K. Kerstens
   - Daniel Varjas
   - Anton R. Akhmerov
+  data: https://zenodo.org/records/14188554
+  doi: 10.21468/scipostphyscodeb.50
   id: '2404.03728'
-  on_arxiv: 2024-04-04
+  journal: SciPost Phys. Codebases
+  journal_ref: SciPost Phys. Codebases 50 (2025)
+  journal_url: https://doi.org/10.21468/scipostphyscodeb.50
+  on_arxiv: '2024-04-04'
+  page: '50'
+  published: '2025-02-12'
   title: 'Pymablock: an algorithm and a package for quasi-degenerate perturbation
     theory'
-  data: 'https://zenodo.org/records/example1'
+  vol: '2025'
 - abstract: We demonstrate that Andreev modes that propagate along a transparent Josephson
     junction have a perfect transmission at the point where three junctions meet.
     The chirality and the number of quantized transmission channels is determined
     by the topology of the Fermi surface and the vorticity of the superconducting
     phase differences at the trijunction. We explain this chiral adiabatic transmission
     (CAT) as a consequence of the adiabatic evolution of the scattering modes both
-    in momentum and real space. We identify an effective energy barrier that guarantees
-    quantized transmission. We expect that CAT is observable in nonlocal conductance
-    and thermal transport measurements. Furthermore, because it does not rely on particle-hole
-    symmetry, CAT is also possible to observe directly in metamaterials.
+    in momentum and real space. The dispersion relation of the junction then separates
+    the scattering trajectories by introducing inaccessible regions of phase space.
+    We expect that CAT is observable in nonlocal conductance and thermal transport
+    measurements. Furthermore, because it does not rely on particle-hole symmetry,
+    CAT is also possible to observe directly in metamaterials.
   authors:
   - Isidora Araya Day
   - Kostas Vilkelis
@@ -39,9 +168,16 @@
   - A. Mert Bozkurt
   - Valla Fatemi
   - Anton R. Akhmerov
+  doi: 10.21468/scipostphys.18.3.098
   id: '2311.17160'
-  on_arxiv: 2023-11-28
+  journal: SciPost Phys.
+  journal_ref: SciPost Phys. 18, 098 (2025)
+  journal_url: https://doi.org/10.21468/scipostphys.18.3.098
+  on_arxiv: '2023-11-28'
+  page: 098
+  published: '2025-03-18'
   title: Chiral adiabatic transmission protected by Fermi surface topology
+  vol: '18'
 - abstract: We derive a $\mathbb{Z}_4$ topological invariant that extends beyond symmetry
     eigenvalues and Wilson loops and classifies two-dimensional insulators with a
     $C_4 \mathcal{T}$ symmetry. To formulate this invariant, we consider an irreducible
@@ -59,13 +195,14 @@
   - Anastasiia Varentcova
   - Daniel Varjas
   - Anton R. Akhmerov
-  doi: 10.21468/SciPostPhys.15.3.114
+  doi: 10.21468/scipostphys.15.3.114
   id: '2209.00029'
   journal: SciPost Phys.
-  journal_url: http://dx.doi.org/10.21468/scipostphys.15.3.114
-  on_arxiv: 2022-08-31
+  journal_ref: SciPost Phys. 15, 114 (2023)
+  journal_url: https://doi.org/10.21468/scipostphys.15.3.114
+  on_arxiv: '2022-08-31'
   page: '114'
-  published: 2023-09-25
+  published: '2023-09-25'
   title: Pfaffian invariant identifies magnetic obstructed atomic insulators
   vol: '15'
 - abstract: We show that topological defects in quadrupole insulators do not host
@@ -79,13 +216,14 @@
   - Isidora Araya Day
   - Anton R. Akhmerov
   - Daniel Varjas
-  doi: 10.21468/SciPostPhysCore.5.4.053
+  doi: 10.21468/scipostphyscore.5.4.053
   id: '2202.07675'
   journal: SciPost Phys. Core
-  journal_url: http://dx.doi.org/10.21468/scipostphyscore.5.4.053
-  on_arxiv: 2022-02-15
+  journal_ref: SciPost Phys. Core 5, 053 (2022)
+  journal_url: https://doi.org/10.21468/scipostphyscore.5.4.053
+  on_arxiv: '2022-02-15'
   page: '053'
-  published: 2022-12-15
+  published: '2022-12-15'
   title: Topological defects in a double-mirror quadrupole insulator displace diverging
     charge
   vol: '5'
@@ -108,48 +246,13 @@
   - Claudio Falcón
   - Punit Gandhi
   - Edgar Knobloch
-  doi: 10.1103/PhysRevFluids.2.064401
+  doi: 10.1103/physrevfluids.2.064401
   id: '1609.00703'
   journal: Phys. Rev. Fluids
-  journal_url: http://dx.doi.org/10.1103/physrevfluids.2.064401
-  on_arxiv: 2016-09-02
+  journal_ref: Phys. Rev. Fluids 2, 064401 (2017)
+  journal_url: https://doi.org/10.1103/physrevfluids.2.064401
+  on_arxiv: '2016-09-02'
   page: '064401'
-  published: 2017-06-21
+  published: '2017-06-21'
   title: Slanted snaking of localized Faraday waves
   vol: '2'
-- abstract: We propose an architecture for bit flip error correction of Andreev spins
-    that is protected by Kramers' degeneracy. Specifically, we show that a coupling
-    network of linear inductors results in a static Hamiltonian composed of the stabilizers
-    of a bit flip code. Thereby, without detuning from the Kramers' point, reflectometry
-    off a single coupled resonator accomplishes a projective measurement of multiple
-    stabilizers. We further show how circuit-mediated spin couplings enable error
-    correction operations and a complete set of logical quantum gates. The concept
-    is experimentally feasible.
-  authors:
-  - Haoran Lu
-  - Isidora Araya Day
-  - Anton R. Akhmerov
-  - Bernard van Heck
-  - Valla Fatemi
-  id: '2412.16116'
-  on_arxiv: 2024-12-20
-  title: Kramers-protected hardware-efficient error correction with Andreev spin qubits
-- abstract: The surface states of intrinsic higher order topological phases are protected
-    by the spatial symmetries of a finite sample. This property makes the existing
-    scattering theory of topological invariants inapplicable because the scattering
-    geometry is either incompatible with the symmetry or does not probe the bulk topology.
-    We resolve this obstacle by using a symmetric scattering geometry that probes
-    transport from the inside to the outside of the sample. We demonstrate that the
-    intrinsic higher order topology is captured by the flux dependence of the reflection
-    matrix. Our finding follows from identifying the spectral flow of a flux line
-    as a signature of higher order topology. We show how this scattering approach
-    applies to several examples of higher order topological insulators and superconductors.
-    Our theory provides an alternative approach for proving bulk--edge correspondence
-    in intrinsic higher order topological phases, especially in presence of disorder.
-  authors:
-  - R. Johanna Zijderveld
-  - Isidora Araya Day
-  - Anton R. Akhmerov
-  id: '2412.15333'
-  on_arxiv: 2024-12-19
-  title: Scattering theory of higher order topological phases
