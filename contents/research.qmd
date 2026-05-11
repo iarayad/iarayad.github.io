@@ -7,10 +7,17 @@ listing:
       - data/publications.yml
     fields:
       - id
+      - published
+      - on_arxiv
+      - journal
+      - journal_ref
+      - journal_url
       - title
       - authors
     field-display-names:
-      id: "arXiv ID"
+      id: "Publication"
+      published: "Year"
+      on_arxiv: "Year"
     template: ejs/publications-table.ejs
     type: table
   - id: talks-listings
