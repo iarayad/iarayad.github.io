@@ -380,3 +380,8 @@ a {
 .listing-toggle > :not(summary) {
   margin-top: 1rem;
 }
+
+#sample-listings tbody,
+#talks-listings tbody {
+  font-size: 0.92rem;
+}
