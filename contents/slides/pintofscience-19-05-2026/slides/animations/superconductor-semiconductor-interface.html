@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      :root {
+        --canvas: #300a24;
+        --bond-left: rgba(165, 214, 203, 0.32);
+        --bond-right: rgba(211, 182, 138, 0.3);
+        --bond-interface: rgba(247, 197, 108, 0.34);
+        --bond-glow: rgba(125, 240, 199, 0.16);
+        --atom-left-light: #dceee8;
+        --atom-left-mid: #8abfb0;
+        --atom-left-dark: #385952;
+        --atom-right-light: #f0d3a4;
+        --atom-right-mid: #c9974d;
+        --atom-right-dark: #7e5630;
+        --atom-interface-light: #f8efe0;
+        --atom-interface-mid: #b7c9c0;
+        --atom-interface-dark: #535a67;
+        --electron-core: #fffbe8;
+        --electron-mid: #f7c56c;
+        --electron-edge: #f26f4b;
+        --electron-halo: rgba(247, 197, 108, 0.16);
+        --pair-link: rgba(247, 197, 108, 0.64);
+        --pair-link-soft: rgba(125, 240, 199, 0.52);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+      }
+
+      body {
+        margin: 0;
+        overflow: hidden;
+        background: var(--canvas);
+      }
+
+      [data-composition-id="superconductor-semiconductor-interface"] {
+        width: 100vw;
+        height: 100vh;
+        background: var(--canvas);
+      }
+
+      svg {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+
+      .bond {
+        stroke-linecap: round;
+      }
+
+      .bond-glow {
+        stroke-width: 9;
+        stroke-linecap: round;
+        opacity: 0.26;
+      }
+
+      .bond-base {
+        stroke-width: 4.6;
+        stroke-linecap: round;
+        opacity: 0.46;
+      }
+
+      .bond-super {
+        stroke: var(--bond-left);
+      }
+
+      .bond-semi {
+        stroke: var(--bond-right);
+      }
+
+      .bond-interface {
+        stroke: var(--bond-interface);
+        stroke-width: 5.2;
+        opacity: 0.62;
+      }
+
+      .atom {
+        filter: drop-shadow(0 8px 10px rgba(0, 0, 0, 0.2));
+        animation: atomPulse 4.4s ease-in-out infinite;
+        transform-box: fill-box;
+        transform-origin: center;
+      }
+
+      .atom-super {
+        fill: url(#atomLeftGradient);
+      }
+
+      .atom-semi {
+        fill: url(#atomRightGradient);
+      }
+
+      .atom-interface {
+        fill: url(#atomInterfaceGradient);
+      }
+
+      .interface-band {
+        fill: url(#interfaceGradient);
+        opacity: 0.84;
+      }
+
+      .pair-link {
+        stroke: var(--pair-link);
+        stroke-width: 3;
+        stroke-linecap: round;
+        filter: drop-shadow(0 0 7px rgba(247, 197, 108, 0.5));
+      }
+
+      .pair-link.induced {
+        stroke: var(--pair-link);
+        filter: drop-shadow(0 0 7px rgba(247, 197, 108, 0.5));
+      }
+
+      .electron-halo {
+        fill: var(--electron-halo);
+        filter: blur(0.5px);
+      }
+
+      .electron-core {
+        fill: url(#electronGradient);
+        filter: drop-shadow(0 0 11px rgba(247, 197, 108, 0.98));
+      }
+
+      @keyframes atomPulse {
+        0%,
+        100% {
+          opacity: 0.94;
+        }
+        50% {
+          opacity: 1;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .atom {
+          animation-play-state: paused;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="superconductor-semiconductor-interface"
+      data-composition-id="superconductor-semiconductor-interface"
+      data-start="0"
+      data-duration="8"
+      data-width="1280"
+      data-height="410"
+    >
+      <svg viewBox="0 0 1000 410" role="img" aria-label="A superconductor stacked on a semiconductor, with paired electrons moving left to right in both materials">
+        <defs>
+          <linearGradient id="interfaceGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#7df0c7" stop-opacity="0" />
+            <stop offset="40%" stop-color="#7df0c7" stop-opacity="0.08" />
+            <stop offset="50%" stop-color="#f7c56c" stop-opacity="0.22" />
+            <stop offset="60%" stop-color="#f7c56c" stop-opacity="0.08" />
+            <stop offset="100%" stop-color="#f7c56c" stop-opacity="0" />
+          </linearGradient>
+          <radialGradient id="atomLeftGradient" cx="34%" cy="28%" r="72%">
+            <stop offset="0%" stop-color="var(--atom-left-light)" />
+            <stop offset="44%" stop-color="var(--atom-left-mid)" />
+            <stop offset="100%" stop-color="var(--atom-left-dark)" />
+          </radialGradient>
+          <radialGradient id="atomRightGradient" cx="34%" cy="28%" r="72%">
+            <stop offset="0%" stop-color="var(--atom-right-light)" />
+            <stop offset="44%" stop-color="var(--atom-right-mid)" />
+            <stop offset="100%" stop-color="var(--atom-right-dark)" />
+          </radialGradient>
+          <radialGradient id="atomInterfaceGradient" cx="34%" cy="28%" r="72%">
+            <stop offset="0%" stop-color="var(--atom-interface-light)" />
+            <stop offset="44%" stop-color="var(--atom-interface-mid)" />
+            <stop offset="100%" stop-color="var(--atom-interface-dark)" />
+          </radialGradient>
+          <radialGradient id="electronGradient" cx="35%" cy="30%" r="70%">
+            <stop offset="0%" stop-color="var(--electron-core)" />
+            <stop offset="38%" stop-color="#ffffff" />
+            <stop offset="66%" stop-color="var(--electron-mid)" />
+            <stop offset="100%" stop-color="var(--electron-edge)" />
+          </radialGradient>
+        </defs>
+
+        <rect class="interface-band" x="70" y="184" width="860" height="42" rx="20"></rect>
+
+        <g id="bonds-glow"></g>
+        <g id="bonds"></g>
+        <g id="atoms"></g>
+        <g id="pairs"></g>
+      </svg>
+    </div>
+
+    <script>
+      (() => {
+        const NS = "http://www.w3.org/2000/svg";
+        const bondsGlow = document.getElementById("bonds-glow");
+        const bonds = document.getElementById("bonds");
+        const atoms = document.getElementById("atoms");
+        const pairs = document.getElementById("pairs");
+
+        const cols = 11;
+        const spacingX = 78;
+        const startX = 110;
+        const yRows = [70, 124, 178, 232, 286, 340];
+        const rows = yRows.length;
+        const interfaceTop = 184;
+        const interfaceBottom = 226;
+
+        const points = [];
+        const pairDefs = [
+          { laneY: 98, x0: 120, span: 720, phase: 0.08, speed: 0.045, kind: "super" },
+          { laneY: 132, x0: 138, span: 682, phase: 0.23, speed: 0.043, kind: "super" },
+          { laneY: 166, x0: 112, span: 728, phase: 0.41, speed: 0.046, kind: "super" },
+          { laneY: 236, x0: 126, span: 706, phase: 0.68, speed: 0.044, kind: "semi-surface" },
+          { laneY: 251, x0: 110, span: 732, phase: 0.86, speed: 0.042, kind: "semi-surface" },
+          { laneY: 266, x0: 136, span: 690, phase: 0.17, speed: 0.041, kind: "semi-surface" },
+        ];
+
+        function make(tag, attrs = {}) {
+          const el = document.createElementNS(NS, tag);
+          for (const [key, value] of Object.entries(attrs)) {
+            el.setAttribute(key, value);
+          }
+          return el;
+        }
+
+        for (let r = 0; r < rows; r += 1) {
+          for (let c = 0; c < cols; c += 1) {
+            const x = startX + c * spacingX + (r % 2) * 10;
+            const y = yRows[r];
+            if (x < 60 || x > 940 || y < 50 || y > 360) continue;
+            points.push({ x, y, r, c });
+          }
+        }
+
+        const pointByKey = new Map(points.map((p) => [`${p.r},${p.c}`, p]));
+
+        for (const p of points) {
+          if (p.c < cols - 1) {
+            const right = pointByKey.get(`${p.r},${p.c + 1}`);
+            if (right) {
+              const midX = (p.x + right.x) / 2;
+              const className =
+                p.y < interfaceTop ? "bond-super" :
+                p.y > interfaceBottom ? "bond-semi" :
+                "bond-interface";
+              bondsGlow.appendChild(make("line", {
+                class: `bond bond-glow ${className}`,
+                x1: p.x.toFixed(1),
+                y1: p.y.toFixed(1),
+                x2: right.x.toFixed(1),
+                y2: right.y.toFixed(1),
+              }));
+              bonds.appendChild(make("line", {
+                class: `bond bond-base ${className}`,
+                x1: p.x.toFixed(1),
+                y1: p.y.toFixed(1),
+                x2: right.x.toFixed(1),
+                y2: right.y.toFixed(1),
+              }));
+            }
+          }
+          if (p.r < rows - 1) {
+            const down = pointByKey.get(`${p.r + 1},${p.c}`);
+            if (down) {
+              const midX = (p.x + down.x) / 2;
+              const className =
+                p.y < interfaceTop ? "bond-super" :
+                p.y > interfaceBottom ? "bond-semi" :
+                "bond-interface";
+              bondsGlow.appendChild(make("line", {
+                class: `bond bond-glow ${className}`,
+                x1: p.x.toFixed(1),
+                y1: p.y.toFixed(1),
+                x2: down.x.toFixed(1),
+                y2: down.y.toFixed(1),
+              }));
+              bonds.appendChild(make("line", {
+                class: `bond bond-base ${className}`,
+                x1: p.x.toFixed(1),
+                y1: p.y.toFixed(1),
+                x2: down.x.toFixed(1),
+                y2: down.y.toFixed(1),
+              }));
+            }
+          }
+        }
+
+        for (const p of points) {
+          const cls = p.y < interfaceTop ? "atom-super" : p.y > interfaceBottom ? "atom-semi" : "atom-interface";
+          atoms.appendChild(make("circle", {
+            class: `atom ${cls}`,
+            cx: p.x.toFixed(1),
+            cy: p.y.toFixed(1),
+            r: "23",
+          }));
+        }
+
+        pairDefs.forEach((def, i) => {
+          const pair = make("g", { transform: "translate(0 0)" });
+          const isInduced = def.kind === "semi-surface";
+          pair.appendChild(make("line", {
+            class: `pair-link${isInduced ? " induced" : ""}`,
+            x1: String(-12 - (isInduced ? 1 : 0)),
+            y1: String(-5 + (isInduced ? 0.8 : 0)),
+            x2: String(12 + (isInduced ? 1 : 0)),
+            y2: String(5 - (isInduced ? 0.8 : 0)),
+          }));
+
+          const first = make("g", { transform: "translate(-12 -5)" });
+          first.appendChild(make("circle", { class: "electron-halo", r: "15" }));
+          first.appendChild(make("circle", { class: "electron-core", r: "7.2" }));
+
+          const second = make("g", { transform: "translate(12 5)" });
+          second.appendChild(make("circle", { class: "electron-halo", r: "15" }));
+          second.appendChild(make("circle", { class: "electron-core", r: "7.2" }));
+
+          pair.appendChild(first);
+          pair.appendChild(second);
+          pair.dataset.lane = String(def.laneY);
+          pair.dataset.x0 = String(def.x0);
+          pair.dataset.span = String(def.span);
+          pair.dataset.phase = String(def.phase + i * 0.03);
+          pair.dataset.speed = String(def.speed);
+          pair.dataset.kind = def.kind;
+          pairs.appendChild(pair);
+        });
+
+        function render(now, scheduleNext = true) {
+          const t = now / 1000;
+
+          [...pairs.children].forEach((pair, i) => {
+            const laneY = Number(pair.dataset.lane);
+            const x0 = Number(pair.dataset.x0);
+            const span = Number(pair.dataset.span);
+            const phase = Number(pair.dataset.phase);
+            const speed = Number(pair.dataset.speed);
+            const kind = pair.dataset.kind;
+            const u = (phase + t * speed) % 1;
+            const x = x0 + u * span;
+            const wobble = Math.sin(t * 2.1 + i * 1.37) * (kind === "semi-surface" ? 0.8 : 1.2);
+            const y = laneY + wobble;
+            const separation = kind === "super" ? 18 : 19;
+            const opacity = 0.9;
+            const scale = 1;
+            const nudge = kind === "semi-surface" ? 0.65 : 0.25;
+
+            pair.setAttribute(
+              "transform",
+              `translate(${x.toFixed(1)} ${y.toFixed(1)}) scale(${scale.toFixed(3)})`
+            );
+            pair.style.opacity = opacity.toFixed(3);
+
+            const first = pair.children[1];
+            const second = pair.children[2];
+            pair.children[0].setAttribute("x1", String(-separation / 2 - nudge));
+            pair.children[0].setAttribute("y1", String(-4.8 + nudge * 0.5));
+            pair.children[0].setAttribute("x2", String(separation / 2 + nudge));
+            pair.children[0].setAttribute("y2", String(4.8 - nudge * 0.5));
+
+            first.setAttribute("transform", `translate(${-separation / 2} ${-4.8})`);
+            second.setAttribute("transform", `translate(${separation / 2} ${4.8})`);
+          });
+
+          if (scheduleNext) {
+            requestAnimationFrame((nextNow) => render(nextNow, true));
+          }
+        }
+
+        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+          render(0, false);
+        } else {
+          requestAnimationFrame((now) => render(now, true));
+        }
+      })();
+    </script>
+  </body>
+</html>

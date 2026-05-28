@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      :root {
+        --canvas: #f3f0e9;
+        --ink-soft: rgba(56, 48, 41, 0.2);
+        --shadow: rgba(55, 45, 35, 0.18);
+        --substrate-top-a: #d5a8c9;
+        --substrate-top-b: #ba80ad;
+        --substrate-side: #8b5d83;
+        --buffer-top-a: #d8ec9f;
+        --buffer-top-b: #98c85c;
+        --buffer-side: #6e9244;
+        --semiconductor-top-a: #b7edf3;
+        --semiconductor-top-b: #79c7d6;
+        --semiconductor-top-c: #4b9bb1;
+        --semiconductor-side: #286f86;
+        --channel-a: #caeef2;
+        --channel-b: #8ed7e2;
+        --al-a: #f7f9fa;
+        --al-b: #d8dde2;
+        --al-c: #8f9aa3;
+        --al-edge: #74828b;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+      }
+
+      body {
+        margin: 0;
+        overflow: hidden;
+        background: var(--canvas);
+      }
+
+      [data-composition-id="hybrid-device-build"] {
+        width: 100vw;
+        height: 100vh;
+        background:
+          linear-gradient(180deg, #fbfaf6 0%, #eee7dd 100%),
+          var(--canvas);
+      }
+
+      svg {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+
+      .stage-shadow {
+        fill: var(--shadow);
+        opacity: 0;
+        animation: shadowIn 10s ease-in-out infinite;
+      }
+
+      .layer,
+      .superconductor,
+      .junction-window,
+      .surface-detail {
+        transform-box: fill-box;
+        transform-origin: center;
+      }
+
+      .substrate {
+        animation: substrateIn 10s cubic-bezier(0.2, 0.84, 0.2, 1) infinite;
+      }
+
+      .buffer-layer {
+        animation: bufferIn 10s cubic-bezier(0.2, 0.84, 0.2, 1) infinite;
+      }
+
+      .semiconductor {
+        animation: semiconductorIn 10s cubic-bezier(0.2, 0.84, 0.2, 1) infinite;
+      }
+
+      .junction-window {
+        opacity: 0;
+        animation: channelIn 10s cubic-bezier(0.18, 0.84, 0.22, 1) infinite;
+      }
+
+      .superconductor {
+        opacity: 0;
+        animation: superconductorIn 10s cubic-bezier(0.16, 0.84, 0.18, 1) infinite;
+      }
+
+      .superconductor.right {
+        animation-delay: 0.18s;
+      }
+
+      .surface-detail {
+        opacity: 0;
+        animation: detailIn 10s ease-in-out infinite;
+      }
+
+      .substrate-top {
+        fill: url(#substrateTop);
+        stroke: rgba(115, 77, 108, 0.42);
+        stroke-width: 1.6;
+      }
+
+      .substrate-front {
+        fill: var(--substrate-side);
+      }
+
+      .buffer-top {
+        fill: url(#bufferTop);
+        stroke: rgba(93, 125, 55, 0.28);
+        stroke-width: 1.4;
+      }
+
+      .buffer-front {
+        fill: var(--buffer-side);
+      }
+
+      .wafer-top {
+        fill: url(#semiconductorTop);
+        stroke: rgba(38, 111, 134, 0.36);
+        stroke-width: 1.8;
+      }
+
+      .wafer-front {
+        fill: var(--semiconductor-side);
+      }
+
+      .mesa-line {
+        fill: none;
+        stroke: rgba(38, 111, 134, 0.32);
+        stroke-width: 1.3;
+      }
+
+      .channel {
+        fill: url(#channelGradient);
+        stroke: rgba(38, 111, 134, 0.58);
+        stroke-width: 1.6;
+      }
+
+      .aluminum-top {
+        fill: url(#aluminumTop);
+        stroke: rgba(95, 108, 118, 0.46);
+        stroke-width: 1.7;
+      }
+
+      .aluminum-front {
+        fill: url(#aluminumFront);
+        stroke: rgba(95, 108, 118, 0.32);
+        stroke-width: 1.4;
+      }
+
+      .aluminum-ridge {
+        fill: rgba(255, 255, 255, 0.34);
+      }
+
+      .film-edge {
+        fill: none;
+        stroke: var(--al-edge);
+        stroke-width: 1.25;
+        opacity: 0.42;
+      }
+
+      @keyframes shadowIn {
+        0%, 5% { opacity: 0; }
+        18%, 100% { opacity: 1; }
+      }
+
+      @keyframes substrateIn {
+        0%, 4% { opacity: 0; transform: translateY(18px); }
+        14%, 100% { opacity: 1; transform: translateY(0); }
+      }
+
+      @keyframes bufferIn {
+        0%, 12% { opacity: 0; transform: translateY(13px); }
+        24%, 100% { opacity: 1; transform: translateY(0); }
+      }
+
+      @keyframes semiconductorIn {
+        0%, 22% { opacity: 0; transform: translateY(12px); }
+        36%, 100% { opacity: 1; transform: translateY(0); }
+      }
+
+      @keyframes channelIn {
+        0%, 38% { opacity: 0; transform: scaleX(0.42); }
+        50%, 100% { opacity: 1; transform: scaleX(1); }
+      }
+
+      @keyframes superconductorIn {
+        0%, 48% { opacity: 0; transform: translateY(-52px); }
+        64%, 100% { opacity: 1; transform: translateY(0); }
+      }
+
+      @keyframes detailIn {
+        0%, 68% { opacity: 0; }
+        78%, 100% { opacity: 1; }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .stage-shadow,
+        .substrate,
+        .buffer-layer,
+        .semiconductor,
+        .junction-window,
+        .superconductor,
+        .surface-detail {
+          animation-play-state: paused;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="hybrid-device-build"
+      data-composition-id="hybrid-device-build"
+      data-start="0"
+      data-duration="10"
+      data-width="1280"
+      data-height="410"
+    >
+      <svg viewBox="0 0 1000 410" role="img" aria-label="Assembly of a planar superconducting semiconductor SNS junction">
+        <defs>
+          <linearGradient id="substrateTop" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="var(--substrate-top-a)" />
+            <stop offset="100%" stop-color="var(--substrate-top-b)" />
+          </linearGradient>
+          <linearGradient id="bufferTop" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="var(--buffer-top-a)" />
+            <stop offset="100%" stop-color="var(--buffer-top-b)" />
+          </linearGradient>
+          <linearGradient id="semiconductorTop" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="var(--semiconductor-top-a)" />
+            <stop offset="55%" stop-color="var(--semiconductor-top-b)" />
+            <stop offset="100%" stop-color="var(--semiconductor-top-c)" />
+          </linearGradient>
+          <linearGradient id="channelGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="var(--channel-a)" />
+            <stop offset="100%" stop-color="var(--channel-b)" />
+          </linearGradient>
+          <linearGradient id="aluminumTop" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="var(--al-a)" />
+            <stop offset="46%" stop-color="var(--al-b)" />
+            <stop offset="100%" stop-color="var(--al-c)" />
+          </linearGradient>
+          <linearGradient id="aluminumFront" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="var(--al-b)" />
+            <stop offset="100%" stop-color="var(--al-c)" />
+          </linearGradient>
+        </defs>
+
+        <ellipse class="stage-shadow" cx="500" cy="330" rx="350" ry="38"></ellipse>
+
+        <g class="layer substrate">
+          <polygon class="substrate-top" points="178,250 820,250 878,285 236,285"></polygon>
+          <polygon class="substrate-front" points="236,285 878,285 878,328 236,328"></polygon>
+        </g>
+
+        <g class="layer buffer-layer">
+          <polygon class="buffer-top" points="198,211 800,211 856,245 254,245"></polygon>
+          <polygon class="buffer-front" points="254,245 856,245 856,285 254,285"></polygon>
+        </g>
+
+        <g class="layer semiconductor">
+          <polygon class="wafer-top" points="220,150 780,150 834,183 274,183"></polygon>
+          <polygon class="wafer-front" points="274,183 834,183 834,245 274,245"></polygon>
+          <path class="mesa-line" d="M246 167 L806 167"></path>
+          <path class="mesa-line" d="M300 199 L812 199"></path>
+        </g>
+
+        <g class="junction-window">
+          <path class="channel" d="M452 127 L548 127 L604 161 L508 161 Z"></path>
+          <path class="mesa-line" d="M476 139 L570 139"></path>
+        </g>
+
+        <g class="superconductor left">
+          <path class="aluminum-top" d="M236 100 L452 100 L508 134 L292 134 Z"></path>
+          <path class="aluminum-front" d="M292 134 L508 134 L508 167 L292 167 Z"></path>
+          <path class="aluminum-ridge" d="M266 106 L430 106 L456 122 L292 122 Z"></path>
+          <path class="film-edge" d="M452 100 L508 134 L508 167"></path>
+        </g>
+
+        <g class="superconductor right">
+          <path class="aluminum-top" d="M548 100 L764 100 L820 134 L604 134 Z"></path>
+          <path class="aluminum-front" d="M604 134 L820 134 L820 167 L604 167 Z"></path>
+          <path class="aluminum-ridge" d="M578 106 L742 106 L768 122 L604 122 Z"></path>
+          <path class="film-edge" d="M548 100 L604 134 L604 167"></path>
+        </g>
+
+        <g class="surface-detail">
+          <path class="mesa-line" d="M292 168 L508 168"></path>
+          <path class="mesa-line" d="M604 168 L820 168"></path>
+          <path class="mesa-line" d="M508 168 L604 168"></path>
+        </g>
+      </svg>
+    </div>
+  </body>
+</html>
