@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      :root {
+        --canvas: #300a24;
+        --bond: rgba(197, 189, 208, 0.34);
+        --bond-glow: rgba(165, 214, 203, 0.14);
+        --atom-a-light: #f0f0ee;
+        --atom-a-mid: #c9c9c6;
+        --atom-a-dark: #777773;
+        --atom-b-light: #e5e5e2;
+        --atom-b-mid: #b8b8b4;
+        --atom-b-dark: #676762;
+        --electron-core: #ffffff;
+        --electron-mid: #f7b267;
+        --electron-edge: #f4845f;
+        --electron-halo: rgba(247, 178, 103, 0.18);
+        --ring: rgba(247, 178, 103, 0.28);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+      }
+
+      body {
+        margin: 0;
+        overflow: hidden;
+        background: var(--canvas);
+      }
+
+      [data-composition-id="solid-transport"] {
+        width: 100vw;
+        height: 100vh;
+        background: var(--canvas);
+      }
+
+      svg {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+
+      .bond {
+        stroke: var(--bond);
+        stroke-width: 4.5;
+        stroke-linecap: round;
+        opacity: 0.46;
+      }
+
+      .bond-glow {
+        stroke: var(--bond-glow);
+        stroke-width: 9;
+        stroke-linecap: round;
+        opacity: 0.34;
+      }
+
+      .atom {
+        filter: drop-shadow(0 8px 10px rgba(0, 0, 0, 0.2));
+      }
+
+      .atom {
+        fill: url(#atomGradient);
+        filter: drop-shadow(0 8px 10px rgba(0, 0, 0, 0.2));
+      }
+
+      .atom.pulse {
+        animation: atomPulse 4.4s ease-in-out infinite;
+        transform-box: fill-box;
+        transform-origin: center;
+      }
+
+      .trap-ring {
+        fill: none;
+        stroke: var(--ring);
+        stroke-width: 2.4;
+        stroke-dasharray: 5 7;
+        filter: drop-shadow(0 0 6px rgba(247, 178, 103, 0.24));
+      }
+
+      .electron {
+        animation: trapped 2.8s ease-in-out infinite;
+        transform-box: fill-box;
+        transform-origin: center;
+      }
+
+      .electron.e2 { animation-delay: -0.35s; }
+      .electron.e3 { animation-delay: -0.7s; }
+      .electron.e4 { animation-delay: -1.05s; }
+      .electron.e5 { animation-delay: -1.4s; }
+      .electron.e6 { animation-delay: -1.75s; }
+      .electron.e7 { animation-delay: -2.1s; }
+      .electron.e8 { animation-delay: -2.45s; }
+      .electron.e9 { animation-delay: -2.8s; }
+      .electron.e10 { animation-delay: -3.15s; }
+      .electron.e11 { animation-delay: -3.5s; }
+      .electron.e12 { animation-delay: -3.85s; }
+
+      .electron-halo {
+        fill: var(--electron-halo);
+        filter: blur(0.5px);
+      }
+
+      .electron-core {
+        fill: url(#electronGradient);
+        filter: drop-shadow(0 0 11px rgba(247, 178, 103, 0.98));
+      }
+
+      @keyframes trapped {
+        0% { transform: translate(-7px, -3px) scale(0.94); }
+        22% { transform: translate(10px, 5px) scale(1.04); }
+        54% { transform: translate(3px, -9px) scale(0.98); }
+        78% { transform: translate(-6px, 7px) scale(1.02); }
+        100% { transform: translate(-7px, -3px) scale(0.94); }
+      }
+
+      @keyframes atomPulse {
+        0%, 100% { opacity: 0.95; }
+        50% { opacity: 1; }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .electron,
+        .atom.pulse {
+          animation-play-state: paused;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="solid-transport"
+      data-composition-id="solid-transport"
+      data-start="0"
+      data-duration="8"
+      data-width="1280"
+      data-height="410"
+    >
+      <svg viewBox="0 0 1000 410" role="img" aria-label="Square insulator lattice with localized electrons">
+        <defs>
+          <radialGradient id="atomGradient" cx="34%" cy="28%" r="72%">
+            <stop offset="0%" stop-color="var(--atom-a-light)" />
+            <stop offset="44%" stop-color="var(--atom-a-mid)" />
+            <stop offset="100%" stop-color="var(--atom-a-dark)" />
+          </radialGradient>
+          <radialGradient id="electronGradient" cx="35%" cy="30%" r="70%">
+            <stop offset="0%" stop-color="var(--electron-core)" />
+            <stop offset="34%" stop-color="#ffffff" />
+            <stop offset="62%" stop-color="var(--electron-mid)" />
+            <stop offset="100%" stop-color="var(--electron-edge)" />
+          </radialGradient>
+        </defs>
+
+        <g id="bonds"></g>
+        <g id="rings"></g>
+        <g id="atoms"></g>
+        <g id="electrons"></g>
+      </svg>
+    </div>
+
+    <script>
+      (() => {
+        const NS = "http://www.w3.org/2000/svg";
+        const bonds = document.getElementById("bonds");
+        const rings = document.getElementById("rings");
+        const atoms = document.getElementById("atoms");
+        const electrons = document.getElementById("electrons");
+
+        const cols = 11;
+        const rows = 6;
+        const spacingX = 78;
+        const spacingY = 54;
+        const startX = 110;
+        const startY = 70;
+
+        const points = [];
+
+        function make(tag, attrs = {}) {
+          const el = document.createElementNS(NS, tag);
+          for (const [key, value] of Object.entries(attrs)) {
+            el.setAttribute(key, value);
+          }
+          return el;
+        }
+
+        for (let r = 0; r < rows; r += 1) {
+          for (let c = 0; c < cols; c += 1) {
+            const x = startX + c * spacingX + (r % 2) * 10;
+            const y = startY + r * spacingY;
+            if (x < 60 || x > 940 || y < 50 || y > 360) continue;
+            points.push({ x, y, r, c });
+          }
+        }
+
+        const pointByKey = new Map(points.map((p) => [`${p.r},${p.c}`, p]));
+
+        for (const p of points) {
+          if (p.c < cols - 1) {
+            const right = pointByKey.get(`${p.r},${p.c + 1}`);
+            if (right) {
+              bonds.appendChild(make("line", {
+                class: "bond-glow",
+                x1: p.x.toFixed(1),
+                y1: p.y.toFixed(1),
+                x2: right.x.toFixed(1),
+                y2: right.y.toFixed(1),
+              }));
+              bonds.appendChild(make("line", {
+                class: "bond",
+                x1: p.x.toFixed(1),
+                y1: p.y.toFixed(1),
+                x2: right.x.toFixed(1),
+                y2: right.y.toFixed(1),
+              }));
+            }
+          }
+          if (p.r < rows - 1) {
+            const down = pointByKey.get(`${p.r + 1},${p.c}`);
+            if (down) {
+              bonds.appendChild(make("line", {
+                class: "bond-glow",
+                x1: p.x.toFixed(1),
+                y1: p.y.toFixed(1),
+                x2: down.x.toFixed(1),
+                y2: down.y.toFixed(1),
+              }));
+              bonds.appendChild(make("line", {
+                class: "bond",
+                x1: p.x.toFixed(1),
+                y1: p.y.toFixed(1),
+                x2: down.x.toFixed(1),
+                y2: down.y.toFixed(1),
+              }));
+            }
+          }
+        }
+
+        for (const p of points) {
+          atoms.appendChild(make("circle", {
+            class: "atom pulse",
+            cx: p.x.toFixed(1),
+            cy: p.y.toFixed(1),
+            r: "23",
+          }));
+        }
+
+        const selected = [];
+        for (let r = 0; r < rows; r += 1) {
+          const rowPoints = points.filter((p) => p.r === r);
+          for (let k = 0; k < 3; k += 1) {
+            selected.push(rowPoints[(k * 3 + r) % rowPoints.length]);
+          }
+        }
+
+        selected.forEach((p, i) => {
+          rings.appendChild(make("circle", {
+            class: "trap-ring",
+            cx: p.x.toFixed(1),
+            cy: p.y.toFixed(1),
+            r: "31",
+          }));
+
+          const outer = make("g", { transform: `translate(${p.x.toFixed(1)} ${p.y.toFixed(1)})` });
+          const inner = make("g", { class: `electron e${i + 1}` });
+          inner.appendChild(make("circle", { class: "electron-halo", r: "17" }));
+          inner.appendChild(make("circle", { class: "electron-core", r: "7.5" }));
+          outer.appendChild(inner);
+          electrons.appendChild(outer);
+        });
+      })();
+    </script>
+  </body>
+</html>

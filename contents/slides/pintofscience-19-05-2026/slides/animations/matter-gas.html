@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      :root {
+        --canvas: #300a24;
+        --atom-light: #fff3dc;
+        --atom-mid: #f7b267;
+        --atom-dark: #c66d3d;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+      }
+
+      body {
+        margin: 0;
+        overflow: hidden;
+        background: var(--canvas);
+      }
+
+      [data-composition-id="matter-gas"] {
+        width: 100vw;
+        height: 100vh;
+        background: var(--canvas);
+      }
+
+      svg {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+
+      .atom {
+        fill: url(#atomGradient);
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="matter-gas"
+      data-composition-id="matter-gas"
+      data-start="0"
+      data-duration="8"
+      data-width="420"
+      data-height="260"
+    >
+      <svg viewBox="0 0 420 260" role="img" aria-label="Atoms in a gas moving freely and far apart">
+        <defs>
+          <radialGradient id="atomGradient" cx="34%" cy="28%" r="72%">
+            <stop offset="0%" stop-color="var(--atom-light)" />
+            <stop offset="44%" stop-color="var(--atom-mid)" />
+            <stop offset="100%" stop-color="var(--atom-dark)" />
+          </radialGradient>
+        </defs>
+
+        <g id="atoms"></g>
+      </svg>
+    </div>
+
+    <script>
+      (() => {
+        const NS = "http://www.w3.org/2000/svg";
+        const atoms = document.getElementById("atoms");
+        const particles = [
+          { x: 70, y: 62, vx: 36, vy: 20 },
+          { x: 210, y: 58, vx: -28, vy: 34 },
+          { x: 334, y: 84, vx: 24, vy: -30 },
+          { x: 110, y: 184, vx: 30, vy: -22 },
+          { x: 276, y: 190, vx: -34, vy: -18 },
+          { x: 350, y: 178, vx: -22, vy: 26 },
+        ];
+
+        function make(tag, attrs = {}) {
+          const el = document.createElementNS(NS, tag);
+          for (const [key, value] of Object.entries(attrs)) {
+            el.setAttribute(key, value);
+          }
+          return el;
+        }
+
+        particles.forEach((p) => {
+          const atom = make("circle", { class: "atom", r: "18" });
+          atom.dataset.x = String(p.x);
+          atom.dataset.y = String(p.y);
+          atom.dataset.vx = String(p.vx);
+          atom.dataset.vy = String(p.vy);
+          atoms.appendChild(atom);
+        });
+
+        let last = null;
+        function animate(now) {
+          if (last === null) last = now;
+          const dt = Math.min((now - last) / 1000, 0.04);
+          last = now;
+          [...atoms.children].forEach((atom) => {
+            let x = Number(atom.dataset.x);
+            let y = Number(atom.dataset.y);
+            let vx = Number(atom.dataset.vx);
+            let vy = Number(atom.dataset.vy);
+            x += vx * dt;
+            y += vy * dt;
+            if (x < 38 || x > 382) {
+              vx *= -1;
+              x = Math.max(38, Math.min(382, x));
+            }
+            if (y < 38 || y > 222) {
+              vy *= -1;
+              y = Math.max(38, Math.min(222, y));
+            }
+            atom.dataset.x = String(x);
+            atom.dataset.y = String(y);
+            atom.dataset.vx = String(vx);
+            atom.dataset.vy = String(vy);
+            atom.setAttribute("cx", x.toFixed(1));
+            atom.setAttribute("cy", y.toFixed(1));
+          });
+          requestAnimationFrame(animate);
+        }
+
+        requestAnimationFrame(animate);
+      })();
+    </script>
+  </body>
+</html>

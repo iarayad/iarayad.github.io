@@ -1,0 +1,649 @@
+.matter-photo-grid {
+  width: min(100%, 1120px);
+  margin: 0.8rem auto 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-rows: auto minmax(0, 1fr);
+  gap: 0.7rem 1rem;
+}
+
+.matter-photo-card {
+  min-width: 0;
+}
+
+.matter-photo-title {
+  color: #a5d6cb;
+  font-size: 0.9em;
+  font-weight: 700;
+  text-align: center;
+}
+
+.matter-photo-wide {
+  grid-column: 1 / -1;
+  width: 100%;
+  height: min(36vh, 310px);
+  object-fit: cover;
+  object-position: center;
+}
+
+.phase-transition-claim {
+  margin-top: 1.1rem;
+}
+
+.matter-phases {
+  width: min(100%, 1120px);
+  margin: 0.8rem auto 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.matter-phase {
+  min-width: 0;
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  gap: 0.28rem;
+}
+
+.matter-phase-title {
+  color: #a5d6cb;
+  font-size: 0.9em;
+  font-weight: 700;
+  text-align: center;
+}
+
+.matter-phase-example {
+  color: #c5bdd0;
+  font-size: 0.68em;
+  text-align: center;
+}
+
+.matter-phase iframe {
+  display: block;
+  width: 100%;
+  height: min(28vh, 250px);
+  border: 0;
+  background: #300a24;
+}
+
+.other-phases-gallery {
+  position: relative;
+  width: 100%;
+  height: min(36vh, 310px);
+}
+
+.other-phases-shot {
+  margin: 0;
+  position: absolute;
+  inset: 0;
+  transition: opacity 220ms ease;
+}
+
+.other-phases-replacement {
+  opacity: 0;
+}
+
+.other-phases-gallery:has(.other-phases-replacement.visible) .other-phases-shot:first-child {
+  opacity: 0;
+}
+
+.other-phases-gallery:has(.other-phases-replacement.visible) .other-phases-replacement {
+  opacity: 1;
+}
+
+.other-phases-shot img {
+  display: block;
+  width: 100%;
+  height: calc(100% - 2rem);
+  object-fit: contain;
+  object-position: center;
+  border: 0;
+}
+
+.other-phases-caption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  color: #c5bdd0;
+  font-size: 0.72em;
+  line-height: 1.1;
+  text-align: center;
+}
+
+.discovery-figure {
+  display: grid;
+  gap: 0.6rem;
+  justify-items: center;
+}
+
+.discovery-title {
+  color: #a5d6cb;
+  font-size: 0.9em;
+  font-weight: 700;
+  text-align: center;
+}
+
+.discovery-figure img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+.discovery-caption {
+  color: #c5bdd0;
+  font-size: 0.75em;
+  line-height: 1.1;
+  text-align: center;
+}
+
+.planar-junction-panels {
+  width: min(100%, 840px);
+  margin: 1rem auto 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.85rem;
+  align-items: start;
+  transition:
+    width 260ms ease,
+    gap 260ms ease,
+    grid-template-columns 260ms ease;
+}
+
+.planar-junction-panel {
+  min-width: 0;
+  position: relative;
+}
+
+.planar-junction-panel img {
+  display: block;
+  width: 92%;
+  height: auto;
+  margin: 0 auto;
+  transform-origin: center center;
+  transition: transform 260ms ease;
+}
+
+.planar-junction-panel.panel-c {
+  grid-column: 1 / -1;
+  justify-self: center;
+  width: min(58%, 500px);
+}
+
+.planar-junction-panels:has(.panel-b.visible) .panel-a img {
+  transform: scale(0.7);
+}
+
+.planar-junction-panels:has(.panel-b.visible) .panel-b img {
+  transform: scale(0.8);
+}
+
+.planar-junction-panels:has(.panel-c.visible) .panel-b img {
+  transform: scale(0.7);
+}
+
+.planar-junction-panels:has(.panel-b.visible) {
+  width: min(100%, 940px);
+  gap: 0.45rem;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1fr);
+}
+
+.planar-junction-panels:has(.panel-c.visible) {
+  width: min(100%, 980px);
+  gap: 0.45rem;
+  grid-template-columns: minmax(0, 0.75fr) minmax(0, 0.75fr);
+}
+
+.planar-junction-panels:has(.panel-c.visible) .panel-a {
+  justify-self: end;
+}
+
+.planar-junction-panels:has(.panel-c.visible) .panel-b {
+  justify-self: start;
+}
+
+.solids-theory {
+  --panel-border: rgba(165, 214, 203, 0.44);
+  --panel-muted: rgba(197, 189, 208, 0.26);
+  position: relative;
+  width: min(100%, 1120px);
+  height: min(48vh, 410px);
+  margin: 0.8rem auto 0;
+}
+
+.solids-theory .two-column-frame {
+  position: absolute;
+  inset: 0 0 4.2rem 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  transition: opacity 420ms ease;
+}
+
+.solids-theory .theory-column {
+  min-width: 0;
+  min-height: 0;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: 0.45rem;
+  padding: 0.6rem;
+  background: transparent;
+}
+
+.solids-theory .column-title {
+  color: #a5d6cb;
+  font-size: 0.9em;
+  font-weight: 700;
+  text-align: center;
+}
+
+.solids-theory .column-space {
+  background: transparent;
+}
+
+.solids-theory .theory-marker {
+  position: absolute;
+  inset: 0 auto auto 0;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.solids-theory .animation-card {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: calc(100% - 4.2rem);
+  padding: 0.32rem;
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) auto;
+  gap: 0.28rem;
+  background: #300a24;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 3;
+  transition:
+    top 1500ms cubic-bezier(0.18, 0.84, 0.22, 1),
+    left 1500ms cubic-bezier(0.18, 0.84, 0.22, 1),
+    width 1500ms cubic-bezier(0.18, 0.84, 0.22, 1),
+    height 1500ms cubic-bezier(0.18, 0.84, 0.22, 1),
+    opacity 320ms ease,
+    box-shadow 600ms ease;
+}
+
+.solids-theory .animation-card iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  background: #300a24;
+}
+
+.animation-example {
+  color: #d5cfe0;
+  font-size: 0.58em;
+  line-height: 1.1;
+  text-align: center;
+}
+
+.solids-theory:has(.stage-1.visible) .insulator-card {
+  opacity: 1;
+}
+
+.solids-theory:has(.stage-2.visible) .insulator-card {
+  opacity: 1;
+  top: 3rem;
+  left: 0.6rem;
+  width: calc((100% - 1rem) / 2 - 1.2rem);
+  height: calc(100% - 7.8rem);
+}
+
+.solids-theory:has(.stage-3.visible) .conductor-card {
+  opacity: 1;
+  z-index: 4;
+}
+
+.solids-theory:has(.stage-4.visible) .conductor-card {
+  opacity: 1;
+  top: 3rem;
+  left: calc((100% + 1rem) / 2 + 0.6rem);
+  width: calc((100% - 1rem) / 2 - 1.2rem);
+  height: calc(100% - 7.8rem);
+}
+
+.solids-theory:has(.stage-4.visible) .insulator-card {
+  z-index: 2;
+}
+
+.solids-theory .chip-transition {
+  position: absolute;
+  inset: 2.3rem 9% 2.6rem 9%;
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) auto;
+  gap: 0.45rem;
+  place-items: center;
+  opacity: 0;
+  transform: translateY(0.8rem) scale(0.98);
+  pointer-events: none;
+  z-index: 6;
+  transition: opacity 500ms ease, transform 700ms ease;
+}
+
+.solids-theory .chip-transition img {
+  display: block;
+  width: min(100%, 760px);
+  height: min(32vh, 260px);
+  object-fit: cover;
+  object-position: center;
+}
+
+.solids-theory .chip-caption {
+  color: #d5cfe0;
+  font-size: 0.68em;
+  line-height: 1.15;
+  text-align: center;
+}
+
+.solids-theory:has(.stage-5.visible) .two-column-frame,
+.solids-theory:has(.stage-5.visible) .animation-card {
+  opacity: 0;
+}
+
+.solids-theory:has(.stage-5.visible) .chip-transition {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .solids-theory .animation-card,
+  .solids-theory .two-column-frame,
+  .solids-theory .chip-transition {
+    transition-duration: 1ms;
+  }
+}
+
+.favorite-phases {
+  position: relative;
+  width: min(100%, 1120px);
+  height: min(48vh, 410px);
+  margin: 0.8rem auto 0;
+}
+
+.favorite-phases .two-column-frame {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.favorite-phases .phase-column {
+  min-width: 0;
+  min-height: 0;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: 0.45rem;
+  padding: 0.6rem;
+}
+
+.favorite-phases .column-title {
+  color: #a5d6cb;
+  font-size: 0.9em;
+  font-weight: 700;
+  text-align: center;
+}
+
+.favorite-phases .column-space {
+  background: transparent;
+}
+
+.favorite-phases .phase-marker {
+  position: absolute;
+  inset: 0 auto auto 0;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.favorite-phases .phase-card {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0.32rem;
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) auto;
+  gap: 0.28rem;
+  background: #300a24;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 3;
+  transition:
+    top 1500ms cubic-bezier(0.18, 0.84, 0.22, 1),
+    left 1500ms cubic-bezier(0.18, 0.84, 0.22, 1),
+    width 1500ms cubic-bezier(0.18, 0.84, 0.22, 1),
+    height 1500ms cubic-bezier(0.18, 0.84, 0.22, 1),
+    opacity 320ms ease;
+}
+
+.favorite-phases .phase-card iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  background: #300a24;
+}
+
+.favorite-phases:has(.phase-stage-1.visible) .superconductor-card {
+  opacity: 1;
+}
+
+.favorite-phases:has(.phase-stage-2.visible) .superconductor-card {
+  opacity: 1;
+  top: 3rem;
+  left: 0.6rem;
+  width: calc((100% - 1rem) / 2 - 1.2rem);
+  height: calc(100% - 3.6rem);
+}
+
+.favorite-phases:has(.phase-stage-3.visible) .topological-card {
+  opacity: 1;
+  z-index: 4;
+}
+
+.favorite-phases:has(.phase-stage-4.visible) .topological-card {
+  opacity: 1;
+  top: 3rem;
+  left: calc((100% + 1rem) / 2 + 0.6rem);
+  width: calc((100% - 1rem) / 2 - 1.2rem);
+  height: calc(100% - 3.6rem);
+}
+
+.favorite-phases:has(.phase-stage-4.visible) .superconductor-card {
+  z-index: 2;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .favorite-phases .phase-card {
+    transition-duration: 1ms;
+  }
+}
+
+.hybrid-device-animation {
+  width: min(100%, 1120px);
+  height: min(44vh, 410px);
+  margin: 0.8rem auto 0;
+}
+
+.hybrid-device-animation iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  background: #300a24;
+}
+
+.final-stack-scene {
+  --final-stack-width: min(70%, 560px);
+  width: min(100%, 1120px);
+  height: min(52vh, 390px);
+  margin: 1.2rem auto 0;
+  display: grid;
+  place-items: center;
+}
+
+.final-material-row {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.final-material-stack {
+  position: relative;
+  width: var(--final-stack-width);
+  height: 218px;
+  margin: 0 auto;
+}
+
+.final-material-card {
+  width: 300px;
+  height: 150px;
+}
+
+.final-stack-halo {
+  display: none;
+}
+
+.rectangle-1 {
+  background: #00c2a8;
+}
+
+.rectangle-2 {
+  background: #3b82f6;
+}
+
+.rectangle-3 {
+  background: #f2c94c;
+}
+
+.final-stack-built .final-material-card {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 86px;
+}
+
+.final-stack-built .final-stack-halo {
+  position: absolute;
+  left: 50%;
+  top: -28px;
+  display: block;
+  width: min(78%, 640px);
+  height: 314px;
+  transform: translateX(-50%);
+  background: radial-gradient(ellipse at center, rgba(255, 244, 179, 0.34) 0%, rgba(255, 122, 89, 0.18) 42%, transparent 72%);
+  filter: blur(18px);
+  z-index: 0;
+}
+
+.final-stack-built .rectangle-3 {
+  top: 0;
+  z-index: 3;
+}
+
+.final-stack-built .rectangle-2 {
+  top: 86px;
+  height: 46px;
+  z-index: 2;
+}
+
+.final-stack-built .rectangle-1 {
+  top: 132px;
+  z-index: 1;
+}
+
+.final-stack-columns {
+  width: min(100%, 1120px);
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1fr);
+  gap: 2rem;
+  justify-items: stretch;
+}
+
+.final-stack-columns .final-stack-difficulties {
+  align-self: center;
+  color: #eeeeec;
+  text-align: left;
+}
+
+.final-difficulty-title {
+  color: #a5d6cb;
+  font-size: 0.78em;
+  font-weight: 700;
+  margin-bottom: 0.7rem;
+}
+
+.final-stack-difficulties ul {
+  margin: 0;
+  padding-left: 1.1em;
+  color: #d5cfe0;
+  font-size: 0.86em;
+  line-height: 1.38;
+}
+
+.final-stack-columns .final-material-stack {
+  justify-self: center;
+  align-self: center;
+  width: min(88%, 500px);
+}
+
+.final-stack-columns .final-material-card {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 86px;
+}
+
+.final-stack-columns .final-stack-halo {
+  position: absolute;
+  left: 50%;
+  top: -28px;
+  display: block;
+  width: min(112%, 560px);
+  height: 314px;
+  transform: translateX(-50%);
+  background: radial-gradient(ellipse at center, rgba(255, 244, 179, 0.34) 0%, rgba(255, 122, 89, 0.18) 42%, transparent 72%);
+  filter: blur(18px);
+  z-index: 0;
+}
+
+.final-stack-columns .rectangle-3 {
+  top: 0;
+  z-index: 3;
+}
+
+.final-stack-columns .rectangle-2 {
+  top: 86px;
+  height: 46px;
+  z-index: 2;
+}
+
+.final-stack-columns .rectangle-1 {
+  top: 132px;
+  z-index: 1;
+}
+
+.final-thank-you {
+  grid-column: 1 / -1;
+  justify-self: center;
+  align-self: end;
+  color: #a5d6cb;
+  font-size: 1.25em;
+  font-weight: 700;
+  margin-top: 0.6rem;
+}

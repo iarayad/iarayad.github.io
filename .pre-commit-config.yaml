@@ -16,7 +16,9 @@ repos:
       - id: codespell
         additional_dependencies:
           - tomli
-        args: [--ignore-words-list=astroid, --ignore-regex=\bNWO\b]
+        args:
+          - --ignore-words-list=astroid
+          - --ignore-regex=\b(NWO|shadowIn|bufferIn|detailIn)\b
   - repo: https://github.com/astral-sh/ruff-pre-commit
     rev: v0.8.4
     hooks:

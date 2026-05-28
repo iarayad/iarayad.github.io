@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      :root {
+        --canvas: #300a24;
+        --atom-light: #f0f0ee;
+        --atom-mid: #c9c9c6;
+        --atom-dark: #777773;
+        --bond: rgba(197, 189, 208, 0.28);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+      }
+
+      body {
+        margin: 0;
+        overflow: hidden;
+        background: var(--canvas);
+      }
+
+      [data-composition-id="matter-solid"] {
+        width: 100vw;
+        height: 100vh;
+        background: var(--canvas);
+      }
+
+      svg {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+
+      .bond {
+        stroke: var(--bond);
+        stroke-width: 4;
+        stroke-linecap: round;
+      }
+
+      .atom {
+        fill: url(#atomGradient);
+        animation: vibrate 1.4s ease-in-out infinite;
+        transform-box: fill-box;
+        transform-origin: center;
+      }
+
+      .a2 { animation-delay: -0.2s; }
+      .a3 { animation-delay: -0.4s; }
+      .a4 { animation-delay: -0.6s; }
+      .a5 { animation-delay: -0.8s; }
+      .a6 { animation-delay: -1s; }
+      .a7 { animation-delay: -1.2s; }
+      .a8 { animation-delay: -1.4s; }
+      .a9 { animation-delay: -1.6s; }
+
+      @keyframes vibrate {
+        0%, 100% { transform: translate(-2px, 1px); }
+        50% { transform: translate(2px, -1px); }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .atom {
+          animation-play-state: paused;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="matter-solid"
+      data-composition-id="matter-solid"
+      data-start="0"
+      data-duration="8"
+      data-width="420"
+      data-height="260"
+    >
+      <svg viewBox="0 0 420 260" role="img" aria-label="Atoms in a solid vibrating in place">
+        <defs>
+          <radialGradient id="atomGradient" cx="34%" cy="28%" r="72%">
+            <stop offset="0%" stop-color="var(--atom-light)" />
+            <stop offset="44%" stop-color="var(--atom-mid)" />
+            <stop offset="100%" stop-color="var(--atom-dark)" />
+          </radialGradient>
+        </defs>
+
+        <g>
+          <line class="bond" x1="110" y1="62" x2="210" y2="62"></line>
+          <line class="bond" x1="210" y1="62" x2="310" y2="62"></line>
+          <line class="bond" x1="110" y1="130" x2="210" y2="130"></line>
+          <line class="bond" x1="210" y1="130" x2="310" y2="130"></line>
+          <line class="bond" x1="110" y1="198" x2="210" y2="198"></line>
+          <line class="bond" x1="210" y1="198" x2="310" y2="198"></line>
+          <line class="bond" x1="110" y1="62" x2="110" y2="198"></line>
+          <line class="bond" x1="210" y1="62" x2="210" y2="198"></line>
+          <line class="bond" x1="310" y1="62" x2="310" y2="198"></line>
+        </g>
+        <g>
+          <circle class="atom a1" cx="110" cy="62" r="22"></circle>
+          <circle class="atom a2" cx="210" cy="62" r="22"></circle>
+          <circle class="atom a3" cx="310" cy="62" r="22"></circle>
+          <circle class="atom a4" cx="110" cy="130" r="22"></circle>
+          <circle class="atom a5" cx="210" cy="130" r="22"></circle>
+          <circle class="atom a6" cx="310" cy="130" r="22"></circle>
+          <circle class="atom a7" cx="110" cy="198" r="22"></circle>
+          <circle class="atom a8" cx="210" cy="198" r="22"></circle>
+          <circle class="atom a9" cx="310" cy="198" r="22"></circle>
+        </g>
+      </svg>
+    </div>
+  </body>
+</html>
