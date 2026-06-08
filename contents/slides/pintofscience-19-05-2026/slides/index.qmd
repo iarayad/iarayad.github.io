@@ -5,10 +5,24 @@ author: "Isidora Araya Day"
 format:
   revealjs:
     embed-resources: true
+    theme: [default, theme.scss]
     css: theory-solids.css
-    slide-number: true
+    slide-number: c/t
     preview-links: auto
-    transition: slide
+    transition: fade
+    background-transition: fade
+    navigation-mode: linear
+    controls: true
+    controls-tutorial: false
+    progress: true
+    hash: true
+    center: true
+    width: 1280
+    height: 720
+    margin: 0.2
+    auto-stretch: false
+    preload-iframes: true
+    html-math-method: mathml
 editor: visual
 ---
 
