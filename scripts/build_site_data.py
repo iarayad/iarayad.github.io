@@ -4,27 +4,13 @@ import yaml
 
 
 ROOT = Path(__file__).resolve().parents[1]
-SOURCE = ROOT / "data"
 CONTENTS = ROOT / "contents"
-GENERATED = CONTENTS / "data"
+SOURCE = CONTENTS / "data"
 
 
 def load_yaml(path):
     with path.open() as f:
         return yaml.safe_load(f)
-
-
-def copy_yaml(source, destination):
-    load_yaml(source)
-    destination.write_text(source.read_text())
-
-
-def build_publications():
-    copy_yaml(SOURCE / "publications.yml", GENERATED / "publications.yml")
-
-
-def build_trajectory():
-    copy_yaml(SOURCE / "trajectory.yml", GENERATED / "trajectory.yml")
 
 
 def update_home():
@@ -43,9 +29,6 @@ def update_home():
 
 
 def main():
-    GENERATED.mkdir(parents=True, exist_ok=True)
-    build_publications()
-    build_trajectory()
     update_home()
 
 

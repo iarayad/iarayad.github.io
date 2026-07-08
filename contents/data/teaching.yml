@@ -1,0 +1,35 @@
+- description: Solid State Physics
+  type: bachelor
+  start: 2020-03-01
+  end: 2025-06-30
+  location: TU Delft
+  team:
+    - Anton Akhmerov
+    - Toeno van der Sar
+- description: Quantum Information
+  type: master
+  start: 2020-09-01
+  end: 2020-12-31
+  location: TU Delft
+  team:
+    - Leonardo Di Carlo
+- description: Classical Mechanics
+  type: bachelor
+  start: 2017-07-01
+  end: 2017-12-31
+  location: University of Chile
+- description: Introduction to Newtonian Physics
+  type: bachelor
+  start: 2017-03-01
+  end: 2017-06-30
+  location: University of Chile
+- description: Introduction to Programming
+  type: bachelor
+  start: 2016-07-01
+  end: 2016-12-30
+  location: University of Chile
+- description: Summer/winter school physics and mathematics
+  type: middle/high-school
+  start: 2015-04-15
+  end: 2019-01-30
+  location: University of Chile (EdV)

@@ -7,7 +7,7 @@ version = "0.1.0"
 
 [tasks]
 build-site-data = "python scripts/build_site_data.py"
-update-publications = "publist data/publications.yml --author_id arayaday_i_1 --update --silent --email iarayaday@gmail.com"
+update-publications = "publist contents/data/publications.yml --author_id arayaday_i_1 --update --silent --email iarayaday@gmail.com"
 
 [dependencies]
 numpy = ">=2.3.1,<3"
