@@ -1,5 +1,4 @@
 - description: Solid State Physics
-  category: Teaching assistant
   type: bachelor
   start: 2020-03-01
   end: 2025-06-30
@@ -8,13 +7,11 @@
     - Anton Akhmerov
     - Toeno van der Sar
 - description: Casimir Programming Course
-  category: Teaching assistant
   type: graduate
   start: 2022-01-10
   end: 2022-01-14
   location: TU Delft
 - description: Quantum Information
-  category: Teaching assistant
   type: master
   start: 2020-09-01
   end: 2020-12-31
@@ -22,38 +19,27 @@
   team:
     - Leonardo Di Carlo
 - description: Electromagnetism
-  category: Teaching assistant
   type: bachelor
   start: 2020-04-15
   end: 2020-06-30
   location: TU Delft
 - description: Classical Mechanics
-  category: Teaching assistant
   type: bachelor
   start: 2017-07-01
   end: 2017-12-31
   location: University of Chile
 - description: Introduction to Newtonian Physics
-  category: Teaching assistant
   type: bachelor
   start: 2017-03-01
   end: 2017-06-30
   location: University of Chile
 - description: Introduction to Programming
-  category: Teaching assistant
   type: bachelor
   start: 2016-07-01
   end: 2016-12-30
   location: University of Chile
 - description: Summer/winter school physics and mathematics
-  category: Teaching assistant
   type: middle/high-school
   start: 2015-04-15
   end: 2019-01-30
   location: University of Chile (EdV)
-- description: Introduction to computational quantum transport with Kwant
-  category: Workshops and trainings
-  type: instructor
-  start: 2020-12-17
-  end: 2020-12-17
-  location: Virtual Science Forum
