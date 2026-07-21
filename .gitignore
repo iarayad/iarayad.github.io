@@ -1,5 +1,6 @@
 # quarto
 /.quarto/
+/_freeze/
 /_site/
 
 # pixi environments
