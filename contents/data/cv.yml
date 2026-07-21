@@ -11,8 +11,6 @@
 # tagline: plain text
 # profile: plain text or folded YAML text
 # research_contributions: [plain-text contribution statements]
-# sections:
-#   not_applicable: [application-specific section titles]
 name: Isidora Araya Day
 publication_name_aliases:
   - Isidora Araya
@@ -30,10 +28,3 @@ profile: >-
 research_contributions:
   - Developed scattering-based invariants for higher-order topological phases.
   - Developed Pymablock, an open-source algorithm and software package for effective Hamiltonians.
-
-sections:
-  not_applicable:
-    - Organization of international conferences
-    - Research expeditions
-    - Patents
-    - Industrial innovation
