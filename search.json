@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "About me",
     "section": "",
-    "text": "Hi!👋 I am Isidora Araya Day, a theoretical condensed matter physicist working on mesoscopic superconductivity, topology, and quantum transport.\n📍 Currently I am a postdoc at DIPC in San Sebastián, Spain, working with Adolfo Grushin.\n💻 I completed my PhD in the Quantum Tinkerer group at TU Delft, The Netherlands, with Anton Akhmerov and Michael Wimmer, and defended in February 2026.\nI love working on problems that require combining analytics and numerics. One of my favorite projects so far was developing Pymablock, an open-source Python package to do quantum mechanical perturbation theory efficiently, numerically and symbolically.\n\n📖 Documentation 💻 GitHub Repository\n\nCheck out my research page to learn more!\n\nMy journey so far\n\n\n\n\n  \n    \n    \n      \n        2015\n        \n      \n      \n        2018\n        \n      \n      \n        2019\n        \n      \n      \n        2021\n        \n      \n      \n        2021\n        \n      \n      \n        2024\n        \n      \n    \n  \n  \n    \n      \n        2015 → 2019\n        BSc. Physics\n        University of Chile\n      \n      I completed my bachelor’s degree in physics at the University of Chile.\n      \n        Took computer science courses on algorithms, data structures, discrete\nmathematics, and software.\n        Worked as a teaching assistant in several physics courses for first-year\nundergraduates and high-school students.\n        Participated in the faculty's student council for a year.\n      \n    \n    \n      \n        2018\n        Experimental research internship\n        University of Waterloo\n      \n      I visited the Institute for Quantum Computing (IQC) of the University of Waterloo for three months.\n      \n        Participated at USEQIP, a quantum computing summer school.\n        Worked at an MBE lab using XPS and ARPES techniques to characterize 2D\nmaterials.\n      \n    \n    \n      \n        2019 → 2021\n        MSc. Applied Physics\n        TU Delft\n      \n      I received a QuTech Scholarship to pursue a master’s at TU Delft, where I followed the Quantum Computing track.\n      \n        Took courses on mesoscopic physics, quantum information, and quantum\nhardware.\n        Participated in the Northwestern European Regional Programming Contest\nas part of the TU Delft team.\n        Worked as a teaching assistant in solid state\nphysics and quantum\ninformation courses.\n        My master's thesis was on topological defects in crystalline topological\ninsulators.\n      \n    \n    \n      \n        2021\n        Theory research internship\n        Max Planck Institute PKS\n      \n      I spent a summer in Dresden working with the group of Ashley Cook on topological phases.\n    \n    \n      \n        2021 → 2026\n        PhD. Condensed matter physics\n        TU Delft\n      \n      I got a Casimir NanoFront grant to do my PhD in QuTech and defended cum laude on February 27, 2026. During this time I had the opportunity to improve my coding skills, work collaboratively, and learn about open science practices ✨.\n      \n        Worked on Andreev physics, topological invariants, and mesoscopic\nphysics (see Research ☝️).\n        Developed an open-source Python package,\nPymablock.\n        Worked as a teaching assistant of the solid state\nphysics course.\n      \n    \n    \n      \n        2024\n        Research visit at an experimental lab\n        Cornell University\n      \n      I visited and collaborated with Valla Fatemi’s group in Ithaca for a month.\n      \n        Worked on a read-out scheme for Andreev spin qubits using inductive\ndispersive sensing.\n        Optimized time-dependent pulses for qubit control using the Krotov\nPython\npackage.\n      \n    \n  \n\n\n\n\nI made this with Quarto and Github Copilot."
+    "text": "Hi!👋 I am Isidora Araya Day, a theoretical condensed matter physicist working on mesoscopic superconductivity, topology, and quantum transport.\n📍 Currently I am a postdoc at DIPC in San Sebastián, Spain, working with Adolfo Grushin.\n💻 I completed my PhD in the Quantum Tinkerer group at Delft University of Technology, The Netherlands, with Anton Akhmerov and Michael Wimmer, and defended in February 2026.\nI love working on problems that require combining analytics and numerics. One of my favorite projects so far was developing Pymablock, an open-source Python package to do quantum mechanical perturbation theory efficiently, numerically and symbolically.\n\n📖 Documentation 💻 GitHub Repository\n\nCheck out my research page to learn more!\n\nMy journey so far\n\n\n\n\n  \n    \n    \n      \n        2015\n        \n      \n      \n        2018\n        \n      \n      \n        2019\n        \n      \n      \n        2021\n        \n      \n      \n        2021\n        \n      \n      \n        2024\n        \n      \n    \n  \n  \n    \n      \n        2015 → 2019\n        BSc. Physics\n        University of Chile\n      \n      I completed my bachelor’s degree in physics at the University of Chile.\n      \n        Took computer science courses on algorithms, data structures, discrete\nmathematics, and software.\n        Worked as a teaching assistant in several physics courses for first-year\nundergraduates and high-school students.\n        Participated in the faculty's student council for a year.\n      \n    \n    \n      \n        2018\n        Experimental research internship\n        University of Waterloo\n      \n      I visited the Institute for Quantum Computing of the University of Waterloo for three months.\n      \n        Participated at USEQIP, a quantum computing summer school.\n        Worked at an MBE lab using XPS and ARPES techniques to characterize 2D\nmaterials.\n      \n    \n    \n      \n        2019 → 2021\n        MSc. Applied Physics\n        Delft University of Technology\n      \n      I received a QuTech Scholarship to pursue a master’s at Delft University of Technology, where I followed the Quantum Computing track.\n      \n        Took courses on mesoscopic physics, quantum information, and quantum\nhardware.\n        Participated in the Northwestern European Regional Programming Contest\nas part of the Delft University of Technology team.\n        Worked as a teaching assistant in solid state\nphysics and quantum\ninformation courses.\n        My master's thesis was on topological defects in crystalline topological\ninsulators.\n      \n    \n    \n      \n        2021\n        Theory research internship\n        Max Planck Institute for the Physics of Complex Systems\n      \n      I spent a summer in Dresden working with the group of Ashley Cook on topological phases.\n    \n    \n      \n        2021 → 2026\n        PhD. Condensed matter physics\n        Delft University of Technology\n      \n      I got a Casimir NanoFront grant to do my PhD in QuTech and defended cum laude on February 27, 2026. During this time I had the opportunity to improve my coding skills, work collaboratively, and learn about open science practices ✨.\n      \n        Worked on Andreev physics, topological invariants, and mesoscopic\nphysics (see Research ☝️).\n        Developed an open-source Python package,\nPymablock.\n        Worked as a teaching assistant of the solid state\nphysics course.\n      \n    \n    \n      \n        2024\n        Research visit at an experimental lab\n        Cornell University\n      \n      I visited and collaborated with Valla Fatemi’s group in Ithaca for a month.\n      \n        Worked on a read-out scheme for Andreev spin qubits using inductive\ndispersive sensing.\n        Optimized time-dependent pulses for qubit control using the Krotov\nPython\npackage.\n      \n    \n  \n\n\n\n\nI made this with Quarto and Github Copilot."
   },
   {
     "objectID": "contents/slides/pintofscience-19-05-2026/slides/index.html#phases-of-matter",
@@ -112,13 +112,6 @@
     "text": "Designing new phases\n\n  \n    But stacking materials is not magic\n    \n      Interfaces must be extremely clean\n      Each layer can disturb the others\n      The useful signal can be tiny\n      Geometry and disorder matter\n    \n  \n  \n    \n    \n    \n    \n  \n  Thank you!\n\n\nEmotion: Celebration\nWe started with the simple school picture: gases, liquids, and solids.\nBut inside solids, electrons can form many different phases.\nSuperconductors and topological materials show us unusual ways for current to move without ordinary resistance.\nTopological superconductors are exciting because they may host exotic boundary states.\nThey are difficult to realize in a single natural material.\nBut hybrid devices, proximity effects, and 2D platforms give us a way to design them.\nThe dream is to build quantum matter deliberately, using materials, interfaces, gates, and geometry.\nThank you.\nConnector: Questions."
   },
   {
-    "objectID": "contents/home.html",
-    "href": "contents/home.html",
-    "title": "About me",
-    "section": "",
-    "text": "Hi!👋 I am Isidora Araya Day, a theoretical condensed matter physicist working on mesoscopic superconductivity, topology, and quantum transport.\n📍 Currently I am a postdoc at DIPC in San Sebastián, Spain, working with Adolfo Grushin.\n💻 I completed my PhD in the Quantum Tinkerer group at TU Delft, The Netherlands, with Anton Akhmerov and Michael Wimmer, and defended in February 2026.\nI love working on problems that require combining analytics and numerics. One of my favorite projects so far was developing Pymablock, an open-source Python package to do quantum mechanical perturbation theory efficiently, numerically and symbolically.\n\n📖 Documentation 💻 GitHub Repository\n\nCheck out my research page to learn more!\n\nMy journey so far\n\n\n\n\n  \n    \n    \n      \n        2015\n        \n      \n      \n        2018\n        \n      \n      \n        2019\n        \n      \n      \n        2021\n        \n      \n      \n        2021\n        \n      \n      \n        2024\n        \n      \n    \n  \n  \n    \n      \n        2015 → 2019\n        BSc. Physics\n        University of Chile\n      \n      I completed my bachelor’s degree in physics at the University of Chile.\n      \n        Took computer science courses on algorithms, data structures, discrete\nmathematics, and software.\n        Worked as a teaching assistant in several physics courses for first-year\nundergraduates and high-school students.\n        Participated in the faculty's student council for a year.\n      \n    \n    \n      \n        2018\n        Experimental research internship\n        University of Waterloo\n      \n      I visited the Institute for Quantum Computing (IQC) of the University of Waterloo for three months.\n      \n        Participated at USEQIP, a quantum computing summer school.\n        Worked at an MBE lab using XPS and ARPES techniques to characterize 2D\nmaterials.\n      \n    \n    \n      \n        2019 → 2021\n        MSc. Applied Physics\n        TU Delft\n      \n      I received a QuTech Scholarship to pursue a master’s at TU Delft, where I followed the Quantum Computing track.\n      \n        Took courses on mesoscopic physics, quantum information, and quantum\nhardware.\n        Participated in the Northwestern European Regional Programming Contest\nas part of the TU Delft team.\n        Worked as a teaching assistant in solid state\nphysics and quantum\ninformation courses.\n        My master's thesis was on topological defects in crystalline topological\ninsulators.\n      \n    \n    \n      \n        2021\n        Theory research internship\n        Max Planck Institute PKS\n      \n      I spent a summer in Dresden working with the group of Ashley Cook on topological phases.\n    \n    \n      \n        2021 → 2026\n        PhD. Condensed matter physics\n        TU Delft\n      \n      I got a Casimir NanoFront grant to do my PhD in QuTech and defended cum laude on February 27, 2026. During this time I had the opportunity to improve my coding skills, work collaboratively, and learn about open science practices ✨.\n      \n        Worked on Andreev physics, topological invariants, and mesoscopic\nphysics (see Research ☝️).\n        Developed an open-source Python package,\nPymablock.\n        Worked as a teaching assistant of the solid state\nphysics course.\n      \n    \n    \n      \n        2024\n        Research visit at an experimental lab\n        Cornell University\n      \n      I visited and collaborated with Valla Fatemi’s group in Ithaca for a month.\n      \n        Worked on a read-out scheme for Andreev spin qubits using inductive\ndispersive sensing.\n        Optimized time-dependent pulses for qubit control using the Krotov\nPython\npackage.\n      \n    \n  \n\n\n\n\n\nI made this with Quarto and Github Copilot."
-  },
-  {
     "objectID": "contents/research.html",
     "href": "contents/research.html",
     "title": "Research",
@@ -131,6 +124,139 @@
     "title": "Research",
     "section": "",
     "text": "I enjoy thinking about problems that require combining analytical insight with equations only a computer can solve. Mesoscopic systems often benefit from this approach: they are small enough to behave quantum mechanically, and yet large enough to require several degrees of freedom to describe them.\n\n\n\n\n  \n  \n    \n      \n        \n          \n            \n               💻 Open-source software\n            \n            \n              🪢 Topological phases of matter \n            \n          \n          \n            \n              \n            \n            \n              \n              Two-dimensional devices offer the possibility of combining different\nmaterials such that different properties combine and give rise to\ntailored phenomena.\n              For example, placing a superconductor in close proximity to a\nsemiconductor turns the latter into a superconductor via the proximity\neffect, and allows to design Josephson junctions with highly tunable\nproperties.\n              My colleagues and I found that superconducting trijunctions can host\nchiral protected transport of Andreev bound states.\n              \n                📄 Paper\n                💻 GitHub Repository\n              \n            \n          \n        \n      \n    \n    \n      \n        \n          \n            \n               🔨 Mesoscopic superconductivity\n            \n            \n              💻 Open-source software \n            \n          \n          \n            \n              \n            \n            \n              \n              Protected transport also naturally arises in topological phases of\nmatter, where conduction channels are robust while the bulk remains\ninsulating and symmetry-protected. A Chern insulator, for example, hosts\ntwo counter-propagating edge states that may not disappear unless the\nbulk undergoes a delocalization transition. A powerful tool to\ncharacterize these phases are scattering invariants, which rely on a\ntransport setup to probe the topological properties of a system.\n              Johanna, Anton, and I recently generalized these invariants to phases\nprotected by spatial symmetries, which may or may not host conducting\nprotected modes.\n              \n                📄 Paper\n                💻 GitHub Repository\n              \n            \n          \n        \n      \n    \n    \n      \n        \n          \n            \n               🪢 Topological phases of matter\n            \n            \n              🔨 Mesoscopic superconductivity \n            \n          \n          \n            \n              \n            \n            \n              \n              Complex quantum mechanical systems with too many degrees of freedom\nare often impossible to solve analytically, and sometimes even\nnumerically. Constructing an effective model that captures the essential\nphysics of the system is then the key to making progress. A common\napproach is to use the Schrieffer–Wolff transformation to\nblock-diagonalize the Hamiltonian perturbatively, separating the\nlow-energy subspace from the rest. This is, however, standard and yet\ntedious. Even worse, Schrieffer–Wolff transformations scale poorly with\nthe perturbative order of the Hamiltonian, and they are limited to two\nsubspaces.\n              My colleagues and I developed an efficient algorithm and a Python\npackage 📦 that automates this process. Pymablock works with any number\nof subspaces, any number of perturbative orders, and it can handle both\nsymbolic and numerical inputs ✨.\n              \n                📖 Documentation\n                💻 GitHub Repository\n                📄 Paper"
+  },
+  {
+    "objectID": "contents/home.html",
+    "href": "contents/home.html",
+    "title": "About me",
+    "section": "",
+    "text": "Hi!👋 I am Isidora Araya Day, a theoretical condensed matter physicist working on mesoscopic superconductivity, topology, and quantum transport.\n📍 Currently I am a postdoc at DIPC in San Sebastián, Spain, working with Adolfo Grushin.\n💻 I completed my PhD in the Quantum Tinkerer group at Delft University of Technology, The Netherlands, with Anton Akhmerov and Michael Wimmer, and defended in February 2026.\nI love working on problems that require combining analytics and numerics. One of my favorite projects so far was developing Pymablock, an open-source Python package to do quantum mechanical perturbation theory efficiently, numerically and symbolically.\n\n📖 Documentation 💻 GitHub Repository\n\nCheck out my research page to learn more!\n\nMy journey so far\n\n\n\n\n  \n    \n    \n      \n        2015\n        \n      \n      \n        2018\n        \n      \n      \n        2019\n        \n      \n      \n        2021\n        \n      \n      \n        2021\n        \n      \n      \n        2024\n        \n      \n    \n  \n  \n    \n      \n        2015 → 2019\n        BSc. Physics\n        University of Chile\n      \n      I completed my bachelor’s degree in physics at the University of Chile.\n      \n        Took computer science courses on algorithms, data structures, discrete\nmathematics, and software.\n        Worked as a teaching assistant in several physics courses for first-year\nundergraduates and high-school students.\n        Participated in the faculty's student council for a year.\n      \n    \n    \n      \n        2018\n        Experimental research internship\n        University of Waterloo\n      \n      I visited the Institute for Quantum Computing of the University of Waterloo for three months.\n      \n        Participated at USEQIP, a quantum computing summer school.\n        Worked at an MBE lab using XPS and ARPES techniques to characterize 2D\nmaterials.\n      \n    \n    \n      \n        2019 → 2021\n        MSc. Applied Physics\n        Delft University of Technology\n      \n      I received a QuTech Scholarship to pursue a master’s at Delft University of Technology, where I followed the Quantum Computing track.\n      \n        Took courses on mesoscopic physics, quantum information, and quantum\nhardware.\n        Participated in the Northwestern European Regional Programming Contest\nas part of the Delft University of Technology team.\n        Worked as a teaching assistant in solid state\nphysics and quantum\ninformation courses.\n        My master's thesis was on topological defects in crystalline topological\ninsulators.\n      \n    \n    \n      \n        2021\n        Theory research internship\n        Max Planck Institute for the Physics of Complex Systems\n      \n      I spent a summer in Dresden working with the group of Ashley Cook on topological phases.\n    \n    \n      \n        2021 → 2026\n        PhD. Condensed matter physics\n        Delft University of Technology\n      \n      I got a Casimir NanoFront grant to do my PhD in QuTech and defended cum laude on February 27, 2026. During this time I had the opportunity to improve my coding skills, work collaboratively, and learn about open science practices ✨.\n      \n        Worked on Andreev physics, topological invariants, and mesoscopic\nphysics (see Research ☝️).\n        Developed an open-source Python package,\nPymablock.\n        Worked as a teaching assistant of the solid state\nphysics course.\n      \n    \n    \n      \n        2024\n        Research visit at an experimental lab\n        Cornell University\n      \n      I visited and collaborated with Valla Fatemi’s group in Ithaca for a month.\n      \n        Worked on a read-out scheme for Andreev spin qubits using inductive\ndispersive sensing.\n        Optimized time-dependent pulses for qubit control using the Krotov\nPython\npackage.\n      \n    \n  \n\n\n\n\n\nI made this with Quarto and Github Copilot."
+  },
+  {
+    "objectID": "contents/slides/asq_09-06-2026/index.html#kramers-protected-error-correction-with-andreev-spin-qubits",
+    "href": "contents/slides/asq_09-06-2026/index.html#kramers-protected-error-correction-with-andreev-spin-qubits",
+    "title": "About me",
+    "section": "Kramers-Protected Error Correction With Andreev Spin Qubits",
+    "text": "Kramers-Protected Error Correction With Andreev Spin Qubits\n\nKramers-protected error correction with Andreev spin qubits\nHaoran Lu, Isidora Araya Day, Anton R. Akhmerov, Bernard van Heck, Valla Fatemi\nJune 9th 2026"
+  },
+  {
+    "objectID": "contents/slides/asq_09-06-2026/index.html#spin",
+    "href": "contents/slides/asq_09-06-2026/index.html#spin",
+    "title": "About me",
+    "section": "Spin",
+    "text": "Spin"
+  },
+  {
+    "objectID": "contents/slides/asq_09-06-2026/index.html#spin-qubit",
+    "href": "contents/slides/asq_09-06-2026/index.html#spin-qubit",
+    "title": "About me",
+    "section": "Spin Qubit",
+    "text": "Spin Qubit"
+  },
+  {
+    "objectID": "contents/slides/asq_09-06-2026/index.html#andreev-bound-state",
+    "href": "contents/slides/asq_09-06-2026/index.html#andreev-bound-state",
+    "title": "About me",
+    "section": "Andreev Bound State",
+    "text": "Andreev Bound State\n\n\n\n\\[\nU_{\\sigma} = E_J \\cos(\\varphi)\n\\]\n\n\n\n\n\n\nSpin degenerate bound state!\n\n\nMax Hays PhD thesis, 2021"
+  },
+  {
+    "objectID": "contents/slides/asq_09-06-2026/index.html#andreev-bound-state-spin-orbit",
+    "href": "contents/slides/asq_09-06-2026/index.html#andreev-bound-state-spin-orbit",
+    "title": "About me",
+    "section": "Andreev Bound State + Spin Orbit",
+    "text": "Andreev Bound State + Spin Orbit\n\n\n\n\n\n\n\n\n\\[\nU_{\\sigma} =\nE_J \\cos(\\varphi)\n+ E_{\\sigma}(\\vec{\\epsilon}_{SO}\\cdot \\vec{\\sigma})\\sin(\\varphi)\n\\]\n\nSuperconducting Spin Qubits, C. Padurariu & Y. Nazarov, 2009"
+  },
+  {
+    "objectID": "contents/slides/asq_09-06-2026/index.html#andreev-spin-qubit",
+    "href": "contents/slides/asq_09-06-2026/index.html#andreev-spin-qubit",
+    "title": "About me",
+    "section": "Andreev Spin Qubit",
+    "text": "Andreev Spin Qubit\n\n\n\n\\[\n\\propto \\frac{dE(\\varphi)}{d\\varphi}\n\\]\n\nSpin degree of freedom couples to supercurrent!"
+  },
+  {
+    "objectID": "contents/slides/asq_09-06-2026/index.html#andreev-spin-qubit-readout",
+    "href": "contents/slides/asq_09-06-2026/index.html#andreev-spin-qubit-readout",
+    "title": "About me",
+    "section": "Andreev Spin Qubit Readout",
+    "text": "Andreev Spin Qubit Readout\n\n\n\n\n\n\\[\\lvert 0\\rangle\\]\n\\[\\lvert 1\\rangle\\]\n\n\n\nSpin degree of freedom couples to supercurrent!\nThus, if we can measure supercurrent, we can do readout.\n\n\nCoherent manipulation of an Andreev spin qubit, M. Hays et al. 2021"
+  },
+  {
+    "objectID": "contents/slides/asq_09-06-2026/index.html#inductance-couples-to-the-asq-ground-state",
+    "href": "contents/slides/asq_09-06-2026/index.html#inductance-couples-to-the-asq-ground-state",
+    "title": "About me",
+    "section": "Inductance Couples To The ASQ Ground State",
+    "text": "Inductance Couples To The ASQ Ground State\n\n\n\n\\[\nE_L \\propto \\frac{1}{L} \\propto \\frac{d^2E(\\varphi)}{d\\varphi^2}\n\\]\n\nWe can infer the ASQ state by measuring its inductance."
+  },
+  {
+    "objectID": "contents/slides/asq_09-06-2026/index.html#andreev-spin-qubit-coupled-to-a-transmon",
+    "href": "contents/slides/asq_09-06-2026/index.html#andreev-spin-qubit-coupled-to-a-transmon",
+    "title": "About me",
+    "section": "Andreev Spin Qubit Coupled To A Transmon",
+    "text": "Andreev Spin Qubit Coupled To A Transmon\n\n\n\n\n\n\n\nSuperconducting phase couples the 2 elements\nIt allows readout of ASQ via transmon\n\n\n\n\nDirect manipulation of a superconducting spin qubit strongly coupled to a transmon qubit, M. Pita-Vidal et al. 2022"
+  },
+  {
+    "objectID": "contents/slides/asq_09-06-2026/index.html#why-are-asq-challenging",
+    "href": "contents/slides/asq_09-06-2026/index.html#why-are-asq-challenging",
+    "title": "About me",
+    "section": "Why Are ASQ Challenging?",
+    "text": "Why Are ASQ Challenging?\n\nWhy are ASQ challenging?\n\n\nMaterial challenges:\n\nInAs nanowires usually have nuclear spins (phase decoherence)\nGraphene has no spin-orbit coupling\nOther materials are not reliable"
+  },
+  {
+    "objectID": "contents/slides/asq_09-06-2026/index.html#how-to-make-asq-more-robust",
+    "href": "contents/slides/asq_09-06-2026/index.html#how-to-make-asq-more-robust",
+    "title": "About me",
+    "section": "How To Make ASQ More Robust?",
+    "text": "How To Make ASQ More Robust?\n\nLooking ahead,\n\n\nHow to make ASQ more robust?\n\n\nCan we take advantage of the lack of magnetic field?"
+  },
+  {
+    "objectID": "contents/slides/asq_09-06-2026/index.html#kramers-theorem",
+    "href": "contents/slides/asq_09-06-2026/index.html#kramers-theorem",
+    "title": "About me",
+    "section": "Kramers’ Theorem",
+    "text": "Kramers’ Theorem\n\nEigenstates of a time-reversal symmetric system with half-integer spin come in degenerate pairs."
+  },
+  {
+    "objectID": "contents/slides/asq_09-06-2026/index.html#kramers-theorem-at-trs-flux",
+    "href": "contents/slides/asq_09-06-2026/index.html#kramers-theorem-at-trs-flux",
+    "title": "About me",
+    "section": "Kramers’ Theorem At TRS Flux",
+    "text": "Kramers’ Theorem At TRS Flux\n\nAt fluxes \\(\\varphi = 0,\\pi\\), the eigenstates of the Hamiltonian are degenerate.\n\n\n\n\n\nTherefore, we need a magnetic field or a drive to implement gates."
+  },
+  {
+    "objectID": "contents/slides/asq_09-06-2026/index.html#design-asq-in-a-network-of-inductors",
+    "href": "contents/slides/asq_09-06-2026/index.html#design-asq-in-a-network-of-inductors",
+    "title": "About me",
+    "section": "Design: ASQ In A Network Of Inductors",
+    "text": "Design: ASQ In A Network Of Inductors\n\n\n\n\n\n\n\\[\n\\lvert 1_L\\rangle,\\quad \\lvert 0_L\\rangle\n\\]\n\n\n\\[\nH_{\\sigma} =\nJ_{12}\\sigma_{1,z}\\sigma_{2,z}\n+ J_{23}\\sigma_{2,z}\\sigma_{3,z}\n+ J_{13}\\sigma_{1,z}\\sigma_{3,z}\n\\]\n\nKramers theorem forces a degenerate computational space at TRS flux."
+  },
+  {
+    "objectID": "contents/slides/asq_09-06-2026/index.html#dispersive-readout-via-network-inductance",
+    "href": "contents/slides/asq_09-06-2026/index.html#dispersive-readout-via-network-inductance",
+    "title": "About me",
+    "section": "Dispersive Readout Via Network Inductance",
+    "text": "Dispersive Readout Via Network Inductance\n\n\n\n\n\n\n\n\n\\[\nH_{\\sigma} =\nJ_{12}\\sigma_{1,z}\\sigma_{2,z}\n+ J_{23}\\sigma_{2,z}\\sigma_{3,z}\n+ J_{13}\\sigma_{1,z}\\sigma_{3,z}\n\\]\n\\[\nH_r =\n\\hbar\\omega_{r,0}a^\\dagger a\n+ \\sum_{i\\neq j}\\hbar\\chi_{ij}\\sigma_{i,z}\\sigma_{j,z}a^\\dagger a\n\\]\n\nA single readout resonator detects bit flips."
+  },
+  {
+    "objectID": "contents/slides/asq_09-06-2026/index.html#dispersive-readout-via-network-inductance-1",
+    "href": "contents/slides/asq_09-06-2026/index.html#dispersive-readout-via-network-inductance-1",
+    "title": "About me",
+    "section": "Dispersive Readout Via Network Inductance",
+    "text": "Dispersive Readout Via Network Inductance\n\n\n\n\\[\nH_{\\sigma} =\nJ_{12}\\sigma_{1,z}\\sigma_{2,z}\n+ J_{23}\\sigma_{2,z}\\sigma_{3,z}\n+ J_{13}\\sigma_{1,z}\\sigma_{3,z}\n\\]\n\\[\nH_r =\n\\hbar\\omega_{r,0}a^\\dagger a\n+ \\sum_{i\\neq j}\\hbar\\chi_{ij}\\sigma_{i,z}\\sigma_{j,z}a^\\dagger a\n\\]"
+  },
+  {
+    "objectID": "contents/slides/asq_09-06-2026/index.html#logical-gates",
+    "href": "contents/slides/asq_09-06-2026/index.html#logical-gates",
+    "title": "About me",
+    "section": "Logical Gates",
+    "text": "Logical Gates\n\n\nRx(θ) using EDSR to drive each spin\nRz(θ) using adiabatic flux detuning\n\n\n\n\\[\nU_{\\sigma} =\nE_J \\cos(\\phi)\n+ E_{\\sigma}\n\\left(\n[\\vec{\\epsilon}_{SO}\n+ \\delta\\vec{\\epsilon}_{SO}\\cos(\\omega t)]\n\\cdot\\vec{\\sigma}\n\\right)\\sin(\\phi)\n\\]\n\n\n\\[\n\\theta =\n\\hbar^{-1}\\int_0^T dt\n\\left(\nE_{\\lvert 0_L\\rangle}(\\Phi_t)\n- E_{\\lvert 1_L\\rangle}(\\Phi_t)\n\\right)\n\\]"
+  },
+  {
+    "objectID": "contents/slides/asq_09-06-2026/index.html#conclusions",
+    "href": "contents/slides/asq_09-06-2026/index.html#conclusions",
+    "title": "About me",
+    "section": "Conclusions",
+    "text": "Conclusions\n\n\n\n\n\nProof of principle of repetition error-correcting code with ASQ\nMaterials with which to make the junctions remain a challenge"
   },
   {
     "objectID": "contents/slides/scattering-hotis-09-02-2026/slides-scattering.html#topological-edge-states-conduct",

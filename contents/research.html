@@ -82,9 +82,9 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-id','listing-published','listing-on_arxiv','listing-journal','listing-journal_ref','listing-journal_url','listing-title','listing-authors',{ data: ['index'] },{ data: ['categories'] }],
+      valueNames: ['listing-id','listing-published','listing-on_arxiv','listing-journal','listing-vol','listing-page','listing-doi','listing-title','listing-authors',{ data: ['index'] },{ data: ['categories'] }],
       
-      searchColumns: ["listing-abstract","listing-authors","listing-id","listing-on_arxiv","listing-title","listing-doi","listing-journal","listing-journal_ref","listing-journal_url","listing-page","listing-published","listing-vol","listing-data"],
+      searchColumns: ["listing-abstract","listing-authors","listing-id","listing-on_arxiv","listing-title","listing-doi","listing-journal","listing-page","listing-published","listing-vol","listing-highlight","listing-category","listing-data"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -112,7 +112,7 @@ ul.task-list li input[type="checkbox"] {
     const options = {
       valueNames: ['listing-date','listing-event','listing-title','listing-location','listing-role',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] }],
       
-      searchColumns: ["listing-date","listing-event","listing-location","listing-role","listing-title","listing-slides"],
+      searchColumns: ["listing-date","listing-event","listing-city","listing-country","listing-format","listing-role","listing-status","listing-title","listing-venue","listing-slides","listing-online"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -521,7 +521,7 @@ Haoran Lu, <strong>Isidora Araya Day</strong>, Anton R. Akhmerov, Bernard van He
 2025
 </td>
 <td>
-<a href="https://doi.org/10.21468/scipostphys.19.2.058" target="_blank" style="color: #0066cc; text-decoration: underline;"> SciPost Phys. 19, 058 </a>
+<a href="https://doi.org/10.21468/scipostphys.19.2.058" target="_blank" style="color: #0066cc; text-decoration: underline;"> SciPost Phys. 19, 58 </a>
 </td>
 <td>
 Scattering theory of higher order topological phases
@@ -535,7 +535,7 @@ R. Johanna Zijderveld, <strong>Isidora Araya Day</strong>, Anton R. Akhmerov
 2025
 </td>
 <td>
-<a href="https://doi.org/10.21468/scipostphyscodeb.50" target="_blank" style="color: #0066cc; text-decoration: underline;"> SciPost Phys. Codebases 50 </a>
+<a href="https://doi.org/10.21468/scipostphyscodeb.50" target="_blank" style="color: #0066cc; text-decoration: underline;"> SciPost Phys. Codebases 2025, 50 </a>
 </td>
 <td>
 Pymablock: an algorithm and a package for quasi-degenerate perturbation theory
@@ -549,7 +549,7 @@ Pymablock: an algorithm and a package for quasi-degenerate perturbation theory
 2025
 </td>
 <td>
-<a href="https://doi.org/10.21468/scipostphys.18.3.098" target="_blank" style="color: #0066cc; text-decoration: underline;"> SciPost Phys. 18, 098 </a>
+<a href="https://doi.org/10.21468/scipostphys.18.3.098" target="_blank" style="color: #0066cc; text-decoration: underline;"> SciPost Phys. 18, 98 </a>
 </td>
 <td>
 Chiral adiabatic transmission protected by Fermi surface topology
@@ -650,6 +650,23 @@ Role
 2026
 </td>
 <td>
+Numerical methods for quantum matter: From nanographenes to moiré materials
+</td>
+<td>
+Pymablock software demo
+</td>
+<td>
+San Sebastián, Spain
+</td>
+<td>
+Forthcoming contributed talk
+</td>
+</tr>
+<tr>
+<td>
+2026
+</td>
+<td>
 Annual Meeting of the Austrian Physical Society
 </td>
 <td>
@@ -659,7 +676,7 @@ Topological Gyromorphs
 Graz, Austria
 </td>
 <td>
-Invited talk
+Forthcoming invited talk
 </td>
 </tr>
 <tr>
@@ -673,7 +690,7 @@ SUMMIT Quantum Limits
 Agentic LLMs in scientific research
 </td>
 <td>
-Dokkum, Netherlands
+Dokkum, The Netherlands
 </td>
 <td>
 Invited talk
@@ -690,7 +707,7 @@ Pint of Science 2026
 <p>Designing topological two-dimensional materials <a href="../contents/slides/pintofscience-19-05-2026/slides/index.html" aria-label="View slides" style="margin-left: 0.35rem; text-decoration: none;">👩‍🏫🔍</a></p>
 </td>
 <td>
-Mala Gissona, Donostia / San Sebastián, Spain
+Mala Gissona, San Sebastián, Spain
 </td>
 <td>
 Public talk
@@ -707,10 +724,10 @@ CNRS seminar
 <p>Scattering theory of higher-order topological insulators <a href="../contents/slides/scattering-hotis-09-02-2026/slides-scattering.html" aria-label="View slides" style="margin-left: 0.35rem; text-decoration: none;">👩‍🏫🔍</a></p>
 </td>
 <td>
-CNRS, Grenoble, France
+French National Centre for Scientific Research, Grenoble, France
 </td>
 <td>
-Department seminar
+Seminar speaker
 </td>
 </tr>
 <tr>
@@ -724,10 +741,10 @@ CNRS seminar
 Chiral adiabatic transmission protected by Fermi surface topology
 </td>
 <td>
-CNRS, Grenoble, France
+French National Centre for Scientific Research, Grenoble, France
 </td>
 <td>
-Department seminar
+Seminar speaker
 </td>
 </tr>
 <tr>
@@ -741,7 +758,7 @@ CCMR Symposium on Hybrid Superconductivity
 Chiral adiabatic transmission protected by Fermi surface topology
 </td>
 <td>
-Cornell University, Ithaca, USA
+Cornell University, Ithaca, United States of America
 </td>
 <td>
 Invited talk
@@ -758,10 +775,10 @@ Condensed Matter Seminar
 Chiral adiabatic transmission protected by Fermi surface topology
 </td>
 <td>
-MIT, Boston, USA
+Massachusetts Institute of Technology, Boston, United States of America
 </td>
 <td>
-Department seminar
+Seminar speaker
 </td>
 </tr>
 <tr>
@@ -778,7 +795,7 @@ Chiral adiabatic transmission protected by Fermi surface topology
 University of Zurich, Zurich, Switzerland
 </td>
 <td>
-Guest speaker
+Seminar speaker
 </td>
 </tr>
 <tr>
@@ -792,7 +809,7 @@ NWO Physics Conference
 Chiral adiabatic transmission protected by Fermi surface topology
 </td>
 <td>
-Veldhoven, Netherlands
+Veldhoven, The Netherlands
 </td>
 <td>
 Contributed talk
