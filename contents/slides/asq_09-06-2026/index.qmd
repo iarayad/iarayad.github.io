@@ -1,0 +1,334 @@
+---
+pagetitle: "Kramers-protected error correction with Andreev spin qubits"
+format:
+  revealjs:
+    width: 1280
+    height: 720
+    margin: 0
+    transition: slide
+    background-transition: slide
+    center: false
+    theme: simple
+    css: styles.css
+    slide-number: true
+    controls: true
+    controls-layout: bottom-right
+    progress: true
+    hash: true
+    html-math-method: mathjax
+---
+
+## Kramers-Protected Error Correction With Andreev Spin Qubits {background-color="rgba(255, 242, 204, 0.42)" .title-slide}
+
+::: {.title-wrap}
+### Kramers-protected error correction with Andreev spin qubits
+
+Haoran Lu, **Isidora Araya Day**, Anton R. Akhmerov, Bernard van Heck, Valla Fatemi
+
+June 9th 2026
+:::
+
+::: {.logo-row}
+![](https://s3.amazonaws.com/media-p.slid.es/uploads/2455817/images/12906179/image.png){.logo-wide}
+![](https://media.slid.es/uploads/2455817/images/12906174/image.png){.logo-small}
+:::
+
+## Spin {.section-title}
+
+::: {.center-stage}
+![](https://s3.amazonaws.com/media-p.slid.es/uploads/2455817/images/12905492/image.png){.crop-spin}
+:::
+
+## Spin Qubit {.section-title}
+
+:::: {.two-col .middle}
+::: {.col}
+![](https://s3.amazonaws.com/media-p.slid.es/uploads/2455817/images/12905492/image.png){.crop-spin}
+:::
+
+::: {.col}
+![](https://s3.amazonaws.com/media-p.slid.es/uploads/2455817/images/12906184/image.png){.spin-qubit-img}
+:::
+::::
+
+## Andreev Bound State {.section-title}
+
+:::: {.two-col .middle}
+::: {.col}
+![](https://s3.amazonaws.com/media-p.slid.es/uploads/2455817/images/12905492/image.png){.abs-diagram}
+
+$$
+U_{\sigma} = E_J \cos(\varphi)
+$$
+:::
+
+::: {.col}
+![](https://s3.amazonaws.com/media-p.slid.es/uploads/2455817/images/12906095/image.png){.plot-img}
+:::
+::::
+
+::: {.callout-text}
+Spin degenerate bound state!
+:::
+
+::: {.citation}
+Max Hays PhD thesis, 2021
+:::
+
+## Andreev Bound State + Spin Orbit {.section-title}
+
+:::: {.two-col .middle}
+::: {.col}
+![](https://s3.amazonaws.com/media-p.slid.es/uploads/2455817/images/12905492/image.png){.abs-diagram}
+:::
+
+::: {.col}
+![](https://s3.amazonaws.com/media-p.slid.es/uploads/2455817/images/12905492/image.png){.crop-spin-orbit}
+:::
+::::
+
+$$
+U_{\sigma} =
+E_J \cos(\varphi)
++ E_{\sigma}(\vec{\epsilon}_{SO}\cdot \vec{\sigma})\sin(\varphi)
+$$
+
+::: {.citation}
+Superconducting Spin Qubits, C. Padurariu & Y. Nazarov, 2009
+:::
+
+## Andreev Spin Qubit {.section-title}
+
+::: {.center-stage}
+![](https://s3.amazonaws.com/media-p.slid.es/uploads/2455817/images/12905484/image.png){.asq-device}
+:::
+
+$$
+\propto \frac{dE(\varphi)}{d\varphi}
+$$
+
+::: {.callout-text}
+Spin degree of freedom couples to supercurrent!
+:::
+
+## Andreev Spin Qubit Readout {.section-title}
+
+:::: {.two-col .middle}
+::: {.col}
+![](https://s3.amazonaws.com/media-p.slid.es/uploads/2455817/images/12905508/image.png){.readout-img}
+:::
+
+::: {.col .state-labels}
+$$\lvert 0\rangle$$
+
+$$\lvert 1\rangle$$
+:::
+::::
+
+::: {.callout-text}
+Spin degree of freedom couples to supercurrent!
+
+Thus, if we can measure supercurrent, we can do **readout**.
+:::
+
+::: {.citation}
+Coherent manipulation of an Andreev spin qubit, M. Hays et al. 2021
+:::
+
+## Inductance Couples To The ASQ Ground State {.section-title}
+
+::: {.center-stage .inductance-layout}
+![](https://s3.amazonaws.com/media-p.slid.es/uploads/2455817/images/12905492/image.png){.abs-diagram-rotated}
+:::
+
+$$
+E_L \propto \frac{1}{L} \propto \frac{d^2E(\varphi)}{d\varphi^2}
+$$
+
+::: {.callout-text}
+We can infer the ASQ state by measuring its inductance.
+:::
+
+## Andreev Spin Qubit Coupled To A Transmon {.section-title}
+
+:::: {.two-col .middle}
+::: {.col}
+![](https://s3.amazonaws.com/media-p.slid.es/uploads/2455817/images/12906078/image.png){.transmon-device}
+:::
+
+::: {.col}
+![](https://s3.amazonaws.com/media-p.slid.es/uploads/2455817/images/12906080/image.png){.coupling-strip}
+
+- Superconducting phase couples the 2 elements
+- It allows readout of ASQ via transmon
+:::
+::::
+
+::: {.citation}
+Direct manipulation of a superconducting spin qubit strongly coupled to a transmon qubit, M. Pita-Vidal et al. 2022
+:::
+
+## Why Are ASQ Challenging? {background-color="rgba(255, 242, 204, 0.53)" .question-slide}
+
+::: {.big-question}
+Why are ASQ challenging?
+:::
+
+::: {.challenge-list}
+Material challenges:
+
+- InAs nanowires usually have nuclear spins (phase decoherence)
+- Graphene has no spin-orbit coupling
+- Other materials are not reliable
+:::
+
+## How To Make ASQ More Robust? {background-color="rgba(230, 184, 175, 0.26)" .question-slide}
+
+::: {.small-lead}
+Looking ahead,
+:::
+
+::: {.big-question}
+How to make ASQ more robust?
+:::
+
+::: {.center-question}
+Can we take advantage of the **lack of magnetic field**?
+:::
+
+## Kramers' Theorem {background-color="rgb(217, 234, 211)" .section-title}
+
+::: {.theorem-text}
+Eigenstates of a **time-reversal symmetric** system with **half-integer spin** come in degenerate pairs.
+:::
+
+## Kramers' Theorem At TRS Flux {background-color="rgb(217, 234, 211)" .section-title}
+
+::: {.theorem-text}
+At fluxes $\varphi = 0,\pi$, the eigenstates of the Hamiltonian are degenerate.
+:::
+
+::: {.center-stage}
+![](https://s3.amazonaws.com/media-p.slid.es/uploads/2455817/images/12905484/image.png){.asq-half}
+:::
+
+::: {.callout-text}
+Therefore, we need a magnetic field or a drive to implement gates.
+:::
+
+## Design: ASQ In A Network Of Inductors {.section-title}
+
+:::: {.two-col .middle}
+::: {.col}
+![](https://s3.amazonaws.com/media-p.slid.es/uploads/2455817/images/12905539/image.png){.network-img}
+:::
+
+::: {.col}
+![](https://s3.amazonaws.com/media-p.slid.es/uploads/2455817/images/12905541/image.png){.network-img}
+
+$$
+\lvert 1_L\rangle,\quad \lvert 0_L\rangle
+$$
+:::
+::::
+
+$$
+H_{\sigma} =
+J_{12}\sigma_{1,z}\sigma_{2,z}
++ J_{23}\sigma_{2,z}\sigma_{3,z}
++ J_{13}\sigma_{1,z}\sigma_{3,z}
+$$
+
+::: {.callout-text}
+Kramers theorem forces a degenerate computational space at TRS flux.
+:::
+
+## Dispersive Readout Via Network Inductance {.section-title}
+
+:::: {.two-col .middle}
+::: {.col}
+![](https://s3.amazonaws.com/media-p.slid.es/uploads/2455817/images/12905539/image.png){.network-img}
+:::
+
+::: {.col}
+![](https://s3.amazonaws.com/media-p.slid.es/uploads/2455817/images/12905541/image.png){.network-img}
+:::
+::::
+
+$$
+H_{\sigma} =
+J_{12}\sigma_{1,z}\sigma_{2,z}
++ J_{23}\sigma_{2,z}\sigma_{3,z}
++ J_{13}\sigma_{1,z}\sigma_{3,z}
+$$
+
+$$
+H_r =
+\hbar\omega_{r,0}a^\dagger a
++ \sum_{i\neq j}\hbar\chi_{ij}\sigma_{i,z}\sigma_{j,z}a^\dagger a
+$$
+
+::: {.callout-text}
+A single readout resonator detects bit flips.
+:::
+
+## Dispersive Readout Via Network Inductance {.section-title}
+
+::: {.center-stage}
+![](https://s3.amazonaws.com/media-p.slid.es/uploads/2455817/images/12906560/image.png){.readout-spectrum}
+:::
+
+$$
+H_{\sigma} =
+J_{12}\sigma_{1,z}\sigma_{2,z}
++ J_{23}\sigma_{2,z}\sigma_{3,z}
++ J_{13}\sigma_{1,z}\sigma_{3,z}
+$$
+
+$$
+H_r =
+\hbar\omega_{r,0}a^\dagger a
++ \sum_{i\neq j}\hbar\chi_{ij}\sigma_{i,z}\sigma_{j,z}a^\dagger a
+$$
+
+## Logical Gates {.section-title}
+
+::: {.gate-list}
+- <span class="gate-label">R<sub>x</sub>(&theta;)</span> using EDSR to drive each spin
+- <span class="gate-label">R<sub>z</sub>(&theta;)</span> using adiabatic flux detuning
+:::
+
+::: {.drive-equation}
+$$
+U_{\sigma} =
+E_J \cos(\phi)
++ E_{\sigma}
+\left(
+[\vec{\epsilon}_{SO}
++ \delta\vec{\epsilon}_{SO}\cos(\omega t)]
+\cdot\vec{\sigma}
+\right)\sin(\phi)
+$$
+:::
+
+::: {.phase-equation}
+$$
+\theta =
+\hbar^{-1}\int_0^T dt
+\left(
+E_{\lvert 0_L\rangle}(\Phi_t)
+- E_{\lvert 1_L\rangle}(\Phi_t)
+\right)
+$$
+:::
+
+## Conclusions {.section-title}
+
+::: {.center-stage}
+![](https://s3.amazonaws.com/media-p.slid.es/uploads/2455817/images/12905539/image.png){.network-conclusion}
+:::
+
+::: {.conclusions}
+- Proof of principle of repetition error-correcting code with ASQ
+- Materials with which to make the junctions remain a challenge
+:::
