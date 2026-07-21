@@ -12,7 +12,7 @@
 #   category: software (optional; omit for ordinary articles and preprints)
 #   data: full data or archive URL (optional)
 #   highlight: true | false (optional; defaults to false)
-#   cv_significance: short qualitative CV statement (optional)
+#   cv_significance: short qualitative CV statement grounded in the publication (required)
 # Published records must provide doi, journal, vol, page, and published together.
 - abstract: Gyromorphs are a new class of disordered systems that combine an amorphous-like
     absence of translational order with quasi-long-range rotational order. Gyromorphs
@@ -35,6 +35,9 @@
   - Isidora Araya Day
   - Adolfo G. Grushin
   id: '2603.02167'
+  cv_significance: >-
+    Introduces topological gyromorphs and a consistent toolkit for diagnosing
+    higher-order topology protected by average rotational symmetry.
   on_arxiv: 2026-03-02
   title: Topological Gyromorphs
 - abstract: The standard approach to characterizing topological matter, computing
@@ -52,6 +55,9 @@
   - Anton R. Akhmerov
   doi: 10.48550/arXiv.2601.00784
   id: '2601.00784'
+  cv_significance: >-
+    Provides a unified mapping for topological phases protected only by average
+    symmetry, avoiding the overcounting of non-robust phases.
   on_arxiv: 2026-01-02
   title: Symmetric approximant formalism for statistical topological matter
 - abstract: 'The easily accessible experimental signatures of Majorana modes are ambiguous
@@ -74,6 +80,9 @@
   - Anton R. Akhmerov
   doi: 10.21468/scipostphyscore.8.3.047
   id: '2504.01069'
+  cv_significance: >-
+    Shows how finite-size and quasi-Majorana effects bias scattering-based
+    topology diagnostics, motivating thermodynamic-limit checks.
   journal: SciPost Phys. Core
   on_arxiv: 2025-04-01
   page: '047'
@@ -98,6 +107,9 @@
   - Valla Fatemi
   doi: 10.1103/lqf3-6r5z
   id: '2412.16116'
+  cv_significance: >-
+    Proposes a compact, Kramers-protected architecture for hardware-efficient
+    error correction and logical gates with Andreev spin qubits.
   journal: Phys. Rev. Lett.
   on_arxiv: 2024-12-20
   page: '210602'
@@ -123,6 +135,9 @@
   doi: 10.21468/scipostphys.19.2.058
   highlight: true
   id: '2412.15333'
+  cv_significance: >-
+    Extends scattering invariants to intrinsic higher-order topological phases
+    and establishes a disorder-compatible bulk-edge correspondence.
   journal: SciPost Phys.
   on_arxiv: 2024-12-19
   page: '058'
@@ -154,6 +169,9 @@
   doi: 10.21468/scipostphyscodeb.50
   highlight: true
   id: '2404.03728'
+  cv_significance: >-
+    Introduces Pymablock, an open-source Python package with optimal-scaling
+    algorithms for high-order quasi-degenerate perturbation theory.
   journal: SciPost Phys. Codebases
   on_arxiv: 2024-04-04
   page: '50'
@@ -182,6 +200,9 @@
   doi: 10.21468/scipostphys.18.3.098
   highlight: true
   id: '2311.17160'
+  cv_significance: >-
+    Identifies a topologically protected mechanism for quantized chiral
+    transmission in Josephson trijunctions, with direct transport signatures.
   journal: SciPost Phys.
   on_arxiv: 2023-11-28
   page: '098'
@@ -207,6 +228,9 @@
   - Anton R. Akhmerov
   doi: 10.21468/scipostphys.15.3.114
   id: '2209.00029'
+  cv_significance: >-
+    Derives a Z4 Pfaffian invariant that distinguishes four C4T-protected
+    obstructed atomic limits beyond symmetry indicators.
   journal: SciPost Phys.
   on_arxiv: 2022-08-31
   page: '114'
@@ -226,6 +250,10 @@
   - Daniel Varjas
   doi: 10.21468/scipostphyscore.5.4.053
   id: '2202.07675'
+  cv_significance: >-
+    Revises the interpretation of defect charge in quadrupole insulators by
+    identifying sublattice symmetry, rather than higher-order topology, as the
+    source of quantization.
   journal: SciPost Phys. Core
   on_arxiv: 2022-02-15
   page: '053'
@@ -254,6 +282,9 @@
   - Edgar Knobloch
   doi: 10.1103/physrevfluids.2.064401
   id: '1609.00703'
+  cv_significance: >-
+    Combines experiment, theory, and numerics to explain localized Faraday-wave
+    snaking through coupling to a conserved quantity.
   journal: Phys. Rev. Fluids
   on_arxiv: 2016-09-02
   page: '064401'
@@ -279,6 +310,9 @@
   - Anton R. Akhmerov
   - Antonio R. L. Manesco
   id: '2607.08845'
+  cv_significance: >-
+    Establishes phase-controlled quasiparticle steering as a momentum-space
+    probe of condensate momentum transfer in planar Josephson junctions.
   on_arxiv: 2026-07-09
   title: Probing Cooper pair momentum by quasiparticle steering with planar Josephson
     junctions
