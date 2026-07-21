@@ -10,6 +10,20 @@
   </thead>
   <tbody>
     <% for (const item of items) { %>
+    <%
+      const baseRoleLabel = item.format === 'public'
+        ? 'Public talk'
+        : item.format === 'seminar'
+          ? 'Seminar speaker'
+          : item.role === 'invited'
+            ? 'Invited talk'
+            : item.role === 'contributed'
+              ? 'Contributed talk'
+              : item.role;
+      const roleLabel = item.status === 'forthcoming'
+        ? `Forthcoming ${baseRoleLabel.charAt(0).toLowerCase()}${baseRoleLabel.slice(1)}`
+        : baseRoleLabel;
+    %>
     <tr>
       <td><%= new Date(item.date).getFullYear() %></td>
       <td><%= item.event %></td>
@@ -18,8 +32,8 @@
           <a href="<%= item.slides %>" aria-label="View slides" style="margin-left: 0.35rem; text-decoration: none;">👩‍🏫🔍</a>
         <% } %>
       </td>
-      <td><%= item.location %></td>
-      <td><%= item.role %></td>
+      <td><%= item.online ? 'Online' : [item.venue, item.city, item.country].filter(Boolean).join(', ') %></td>
+      <td><%= roleLabel %></td>
     </tr>
     <% } %>
   </tbody>

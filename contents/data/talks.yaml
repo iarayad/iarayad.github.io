@@ -1,77 +1,135 @@
+# Entry schema (list; fields marked optional may be omitted):
+# - date: YYYY-MM-DD
+#   title: full talk title
+#   event: full event name
+#   format: conference | seminar | public | online_series
+#   role: invited | contributed | speaker
+#   status: forthcoming (optional)
+#   venue: full venue or institution name (optional)
+#   city: full city name (required unless online: true)
+#   country: full country name (required unless online: true)
+#   online: true (optional; omit for in-person talks)
+#   slides: repository-relative slide path (optional)
+# Allowed format/role pairs: conference/invited, conference/contributed,
+# online_series/contributed, public/speaker, and seminar/speaker.
+- date: 2026-10-15
+  event: "Numerical methods for quantum matter: From nanographenes to moiré materials"
+  city: San Sebastián
+  country: Spain
+  format: conference
+  role: contributed
+  status: forthcoming
+  title: "Pymablock software demo"
 - date: 2026-09-21
   event: "Annual Meeting of the Austrian Physical Society"
-  location: "Graz, Austria"
-  role: "Invited talk"
+  city: Graz
+  country: Austria
+  format: conference
+  role: invited
+  status: forthcoming
   title: "Topological Gyromorphs"
 - date: 2026-09-08
   event: "SUMMIT Quantum Limits"
-  location: "Dokkum, Netherlands"
-  role: "Invited talk"
+  city: Dokkum
+  country: The Netherlands
+  format: conference
+  role: invited
   title: "Agentic LLMs in scientific research"
 - date: 2026-05-19
   event: "Pint of Science 2026"
-  location: "Mala Gissona, Donostia / San Sebastián, Spain"
-  role: "Public talk"
+  venue: Mala Gissona
+  city: San Sebastián
+  country: Spain
+  format: public
+  role: speaker
   title: "Designing topological two-dimensional materials"
   slides: "slides/pintofscience-19-05-2026/slides/index.qmd"
 - date: 2026-02-09
   event: "CNRS seminar"
-  location: "CNRS, Grenoble, France"
-  role: "Department seminar"
+  venue: French National Centre for Scientific Research
+  city: Grenoble
+  country: France
+  format: seminar
+  role: speaker
   title: "Scattering theory of higher-order topological insulators"
   slides: "slides/scattering-hotis-09-02-2026/slides-scattering.qmd"
 - date: 2025-02-21
   event: "CNRS seminar"
-  location: "CNRS, Grenoble, France"
-  role: "Department seminar"
+  venue: French National Centre for Scientific Research
+  city: Grenoble
+  country: France
+  format: seminar
+  role: speaker
   title: "Chiral adiabatic transmission protected by Fermi surface topology"
 - date: 2024-08-16
   event: "CCMR Symposium on Hybrid Superconductivity"
-  location: "Cornell University, Ithaca, USA"
-  role: "Invited talk"
+  venue: Cornell University
+  city: Ithaca
+  country: United States of America
+  format: conference
+  role: invited
   title: "Chiral adiabatic transmission protected by Fermi surface topology"
 - date: 2024-07-31
   event: "Condensed Matter Seminar"
-  location: "MIT, Boston, USA"
-  role: "Department seminar"
+  venue: Massachusetts Institute of Technology
+  city: Boston
+  country: United States of America
+  format: seminar
+  role: speaker
   title: "Chiral adiabatic transmission protected by Fermi surface topology"
 - date: 2024-05-30
   event: "Condensed Matter Journal Club"
-  location: "University of Zurich, Zurich, Switzerland"
-  role: "Guest speaker"
+  venue: University of Zurich
+  city: Zurich
+  country: Switzerland
+  format: seminar
+  role: speaker
   title: "Chiral adiabatic transmission protected by Fermi surface topology"
 - date: 2024-01-24
   event: "NWO Physics Conference"
-  location: "Veldhoven, Netherlands"
-  role: "Contributed talk"
+  city: Veldhoven
+  country: The Netherlands
+  format: conference
+  role: contributed
   title: "Chiral adiabatic transmission protected by Fermi surface topology"
 - date: 2023-11-15
   event: "Speakers' Corner, Virtual Science Forum"
-  location: "Online"
-  role: "Contributed talk"
+  online: true
+  format: online_series
+  role: contributed
   title: "Pymablock: a software package for constructing effective models"
 - date: 2023-08-01
   event: "Grete Hermann Network Workshop"
-  location: "Würzburg, Germany"
-  role: "Contributed talk"
+  city: Würzburg
+  country: Germany
+  format: conference
+  role: contributed
   title: "Pfaffian invariant identifies magnetic obstructed atomic insulators"
 - date: 2023-07-23
   event: "Condensed Matter Seminar"
-  location: "University of Manchester, Manchester, United Kingdom"
-  role: "Seminar speaker"
+  venue: University of Manchester
+  city: Manchester
+  country: United Kingdom
+  format: seminar
+  role: speaker
   title: "Pfaffian invariant identifies magnetic obstructed atomic insulators"
 - date: 2022-10-17
   event: "Condensed Matter Seminar"
-  location: "Max Planck Institute for the Physics of Complex Systems, Dresden, Germany"
-  role: "Seminar speaker"
+  venue: Max Planck Institute for the Physics of Complex Systems
+  city: Dresden
+  country: Germany
+  format: seminar
+  role: speaker
   title: "Pfaffian invariant identifies magnetic obstructed atomic insulators"
 - date: 2022-10-07
   event: "Speakers' Corner, Virtual Science Forum"
-  location: "Online"
-  role: "Contributed talk"
+  online: true
+  format: online_series
+  role: contributed
   title: "Pfaffian invariant identifies magnetic obstructed atomic insulators"
 - date: 2022-03-09
   event: "Speakers' Corner, Virtual Science Forum"
-  location: "Online"
-  role: "Contributed talk"
+  online: true
+  format: online_series
+  role: contributed
   title: "Topological defects in a double-mirror quadrupole insulator displace diverging charge"

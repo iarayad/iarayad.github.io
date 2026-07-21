@@ -1,13 +1,36 @@
-- description: Research assistant at IQC, Waterloo, Canada.
+# Entry schema (list; end may be omitted for a current position):
+# - role: job title
+#   institution: full institution name
+#   city: full city name
+#   country: full country name
+#   start: YYYY-MM-DD
+#   end: YYYY-MM-DD (optional)
+- role: Research assistant
+  institution: Institute for Quantum Computing
+  city: Waterloo
+  country: Canada
   start: 2018-05-21
   end: 2018-08-30
-- description: Research intern at Max Planck Institute, Dresden, Germany.
+- role: Research intern
+  institution: Max Planck Institute for the Physics of Complex Systems
+  city: Dresden
+  country: Germany
   start: 2021-06-10
   end: 2021-08-28
-- description: PhD student at QuTech, TU Delft, Netherlands.
+- role: PhD student
+  institution: QuTech, Delft University of Technology
+  city: Delft
+  country: The Netherlands
   start: 2021-09-01
   end: 2025-08-31
-- description: Visiting PhD student at Cornell University, United States.
-  details: Experimental collaboration on Andreev spin qubits
+- role: Visiting PhD student
+  institution: Cornell University
+  city: Ithaca
+  country: United States of America
   start: 2024-07-22
   end: 2024-08-17
+- role: Postdoctoral researcher
+  institution: Donostia International Physics Center
+  city: San Sebastián
+  country: Spain
+  start: 2025-10-01

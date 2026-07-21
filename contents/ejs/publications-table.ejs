@@ -12,9 +12,9 @@
     <%
       const yearSource = item.published || item.on_arxiv || "";
       const year = String(yearSource).slice(0, 4);
-      const hasJournal = item.journal_url && item.journal_ref;
-      const linkUrl = hasJournal ? item.journal_url : `https://arxiv.org/abs/${item.id}`;
-      const linkLabel = hasJournal ? String(item.journal_ref).replace(/\s*\(\d{4}\)\s*$/, "") : `arXiv:${item.id}`;
+      const hasJournal = item.journal && item.vol && item.page && item.doi;
+      const linkUrl = hasJournal ? `https://doi.org/${item.doi}` : `https://arxiv.org/abs/${item.id}`;
+      const linkLabel = hasJournal ? `${item.journal} ${item.vol}, ${item.page}` : `arXiv:${item.id}`;
     %>
     <tr>
       <td><%= year %></td>

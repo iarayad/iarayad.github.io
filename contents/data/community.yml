@@ -1,8 +1,13 @@
+# Entry schema (list):
+# - title: string
+#   date: YYYY-MM-DD
+#   organization: full organization name
+#   role: lowercase snake_case value, for example organizer
+#   city: full city name
+#   country: full country name
 - title: Workshop for physics students and alumni
   date: 2025-12-19
   organization: University of Chile
-  role: Organizer
-- title: Introduction to computational quantum transport with Kwant
-  date: 2020-12-17
-  organization: Virtual Science Forum
-  role: Instructor
+  role: organizer
+  city: Santiago
+  country: Chile

@@ -1,45 +1,80 @@
-- description: Solid State Physics
-  type: bachelor
+# Entry schema (list; fields marked optional may be omitted):
+# - title: course or workshop title
+#   category: course | workshop
+#   role: teaching_assistant (course) | instructor (workshop)
+#   institution: full host institution name
+#   start: YYYY-MM-DD
+#   end: YYYY-MM-DD
+#   level: bachelor | master | graduate | middle_high_school (course only)
+#   program: programme name, for example EdV (optional)
+#   details: concise description of additional duties (optional)
+#   team: [full collaborator names] (optional)
+- title: Introduction to computational quantum transport with Kwant
+  category: workshop
+  role: instructor
+  start: 2020-12-17
+  end: 2020-12-17
+  institution: Virtual Science Forum
+- title: Solid State Physics
+  category: course
+  role: teaching_assistant
+  level: bachelor
   start: 2020-03-01
   end: 2025-06-30
-  location: TU Delft
+  institution: Delft University of Technology
+  details: Answered Q&A, graded and designed exams, coordinated TA team and taught 4 full lectures
   team:
     - Anton Akhmerov
     - Toeno van der Sar
-- description: Casimir Programming Course
-  type: graduate
+- title: Casimir Programming Course
+  category: course
+  role: teaching_assistant
+  level: graduate
   start: 2022-01-10
   end: 2022-01-14
-  location: TU Delft
-- description: Quantum Information
-  type: master
+  institution: Delft University of Technology
+- title: Quantum Information
+  category: course
+  role: teaching_assistant
+  level: master
   start: 2020-09-01
   end: 2020-12-31
-  location: TU Delft
+  institution: Delft University of Technology
   team:
     - Leonardo Di Carlo
-- description: Electromagnetism
-  type: bachelor
+- title: Electromagnetism
+  category: course
+  role: teaching_assistant
+  level: bachelor
   start: 2020-04-15
   end: 2020-06-30
-  location: TU Delft
-- description: Classical Mechanics
-  type: bachelor
+  institution: Delft University of Technology
+- title: Classical Mechanics
+  category: course
+  role: teaching_assistant
+  level: bachelor
   start: 2017-07-01
   end: 2017-12-31
-  location: University of Chile
-- description: Introduction to Newtonian Physics
-  type: bachelor
+  institution: University of Chile
+- title: Introduction to Newtonian Physics
+  category: course
+  role: teaching_assistant
+  level: bachelor
   start: 2017-03-01
   end: 2017-06-30
-  location: University of Chile
-- description: Introduction to Programming
-  type: bachelor
+  institution: University of Chile
+- title: Introduction to Programming
+  category: course
+  role: teaching_assistant
+  level: bachelor
   start: 2016-07-01
   end: 2016-12-30
-  location: University of Chile
-- description: Summer/winter school physics and mathematics
-  type: middle/high-school
+  institution: University of Chile
+- title: Summer/winter school physics and mathematics
+  category: course
+  role: teaching_assistant
+  level: middle_high_school
   start: 2015-04-15
   end: 2019-01-30
-  location: University of Chile (EdV)
+  institution: University of Chile
+  program: EdV

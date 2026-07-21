@@ -1,15 +1,25 @@
+# Entry schema (list):
+# - name: full student name
+#   program: project or degree type, for example master's thesis
+#   type: lowercase snake_case value, for example co_supervision
+#   institution: full institution name
+#   start: YYYY-MM-DD
+#   end: YYYY-MM-DD
 - name: Trey B. Cole
-  program: master thesis
-  type: co-supervision
+  program: master's thesis
+  type: co_supervision
+  institution: Delft University of Technology
   start: 2023-04-01
   end: 2023-06-15
 - name: Yitao Sun
-  program: master thesis
-  type: co-supervision
+  program: master's thesis
+  type: co_supervision
+  institution: Delft University of Technology
   start: 2023-10-01
   end: 2024-05-30
 - name: Hugo K. Kerstens
-  program: master thesis
-  type: co-supervision
+  program: master's thesis
+  type: co_supervision
+  institution: Delft University of Technology
   start: 2023-11-01
   end: 2024-10-20

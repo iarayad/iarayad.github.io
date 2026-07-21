@@ -1,3 +1,19 @@
+# Entry schema (list; all dates are unquoted ISO dates):
+# - title: full publication title
+#   authors: [full author names in publication order]
+#   abstract: plain or folded text
+#   id: quoted arXiv identifier
+#   on_arxiv: YYYY-MM-DD
+#   doi: DOI without URL prefix (optional for preprints; required when published)
+#   journal: abbreviated journal name (published records only)
+#   vol: quoted volume string (published records only)
+#   page: quoted page or article-number string (published records only)
+#   published: YYYY-MM-DD (published records only)
+#   category: software (optional; omit for ordinary articles and preprints)
+#   data: full data or archive URL (optional)
+#   highlight: true | false (optional; defaults to false)
+#   cv_significance: short qualitative CV statement (optional)
+# Published records must provide doi, journal, vol, page, and published together.
 - abstract: Gyromorphs are a new class of disordered systems that combine an amorphous-like
     absence of translational order with quasi-long-range rotational order. Gyromorphs
     can outperform quasicrystals or hyperuniform arrangements in forming isotropic
@@ -19,7 +35,7 @@
   - Isidora Araya Day
   - Adolfo G. Grushin
   id: '2603.02167'
-  on_arxiv: '2026-03-02'
+  on_arxiv: 2026-03-02
   title: Topological Gyromorphs
 - abstract: The standard approach to characterizing topological matter, computing
     topological invariants, fails when the symmetry protecting the topological phase
@@ -36,7 +52,7 @@
   - Anton R. Akhmerov
   doi: 10.48550/arXiv.2601.00784
   id: '2601.00784'
-  on_arxiv: '2026-01-02'
+  on_arxiv: 2026-01-02
   title: Symmetric approximant formalism for statistical topological matter
 - abstract: 'The easily accessible experimental signatures of Majorana modes are ambiguous
     and only probe topology indirectly: for example, quasi-Majorana states mimic most
@@ -59,11 +75,9 @@
   doi: 10.21468/scipostphyscore.8.3.047
   id: '2504.01069'
   journal: SciPost Phys. Core
-  journal_ref: SciPost Phys. Core 8, 047 (2025)
-  journal_url: https://doi.org/10.21468/scipostphyscore.8.3.047
-  on_arxiv: '2025-04-01'
+  on_arxiv: 2025-04-01
   page: '047'
-  published: '2025-07-04'
+  published: 2025-07-04
   title: Identifying biases of the Majorana scattering invariant
   vol: '8'
 - abstract: We propose an architecture for bit-flip error correction of Andreev spins
@@ -85,11 +99,9 @@
   doi: 10.1103/lqf3-6r5z
   id: '2412.16116'
   journal: Phys. Rev. Lett.
-  journal_ref: Phys. Rev. Lett. 135, 210602 (2025)
-  journal_url: https://doi.org/10.1103/lqf3-6r5z
-  on_arxiv: '2024-12-20'
+  on_arxiv: 2024-12-20
   page: '210602'
-  published: '2025-11-20'
+  published: 2025-11-20
   title: Kramers-protected hardware-efficient error correction with Andreev spin qubits
   vol: '135'
 - abstract: The surface states of intrinsic higher order topological phases are protected
@@ -109,13 +121,12 @@
   - Isidora Araya Day
   - Anton R. Akhmerov
   doi: 10.21468/scipostphys.19.2.058
+  highlight: true
   id: '2412.15333'
   journal: SciPost Phys.
-  journal_ref: SciPost Phys. 19, 058 (2025)
-  journal_url: https://doi.org/10.21468/scipostphys.19.2.058
-  on_arxiv: '2024-12-19'
+  on_arxiv: 2024-12-19
   page: '058'
-  published: '2025-08-27'
+  published: 2025-08-27
   title: Scattering theory of higher order topological phases
   vol: '19'
 - abstract: A common technique in the study of complex quantum-mechanical systems
@@ -138,15 +149,15 @@
   - Hugo K. Kerstens
   - Daniel Varjas
   - Anton R. Akhmerov
+  category: software
   data: https://zenodo.org/records/14188554
   doi: 10.21468/scipostphyscodeb.50
+  highlight: true
   id: '2404.03728'
   journal: SciPost Phys. Codebases
-  journal_ref: SciPost Phys. Codebases 50 (2025)
-  journal_url: https://doi.org/10.21468/scipostphyscodeb.50
-  on_arxiv: '2024-04-04'
+  on_arxiv: 2024-04-04
   page: '50'
-  published: '2025-02-12'
+  published: 2025-02-12
   title: 'Pymablock: an algorithm and a package for quasi-degenerate perturbation
     theory'
   vol: '2025'
@@ -169,13 +180,12 @@
   - Valla Fatemi
   - Anton R. Akhmerov
   doi: 10.21468/scipostphys.18.3.098
+  highlight: true
   id: '2311.17160'
   journal: SciPost Phys.
-  journal_ref: SciPost Phys. 18, 098 (2025)
-  journal_url: https://doi.org/10.21468/scipostphys.18.3.098
-  on_arxiv: '2023-11-28'
+  on_arxiv: 2023-11-28
   page: '098'
-  published: '2025-03-18'
+  published: 2025-03-18
   title: Chiral adiabatic transmission protected by Fermi surface topology
   vol: '18'
 - abstract: We derive a $\mathbb{Z}_4$ topological invariant that extends beyond symmetry
@@ -198,11 +208,9 @@
   doi: 10.21468/scipostphys.15.3.114
   id: '2209.00029'
   journal: SciPost Phys.
-  journal_ref: SciPost Phys. 15, 114 (2023)
-  journal_url: https://doi.org/10.21468/scipostphys.15.3.114
-  on_arxiv: '2022-08-31'
+  on_arxiv: 2022-08-31
   page: '114'
-  published: '2023-09-25'
+  published: 2023-09-25
   title: Pfaffian invariant identifies magnetic obstructed atomic insulators
   vol: '15'
 - abstract: We show that topological defects in quadrupole insulators do not host
@@ -219,11 +227,9 @@
   doi: 10.21468/scipostphyscore.5.4.053
   id: '2202.07675'
   journal: SciPost Phys. Core
-  journal_ref: SciPost Phys. Core 5, 053 (2022)
-  journal_url: https://doi.org/10.21468/scipostphyscore.5.4.053
-  on_arxiv: '2022-02-15'
+  on_arxiv: 2022-02-15
   page: '053'
-  published: '2022-12-15'
+  published: 2022-12-15
   title: Topological defects in a double-mirror quadrupole insulator displace diverging
     charge
   vol: '5'
@@ -249,10 +255,30 @@
   doi: 10.1103/physrevfluids.2.064401
   id: '1609.00703'
   journal: Phys. Rev. Fluids
-  journal_ref: Phys. Rev. Fluids 2, 064401 (2017)
-  journal_url: https://doi.org/10.1103/physrevfluids.2.064401
-  on_arxiv: '2016-09-02'
+  on_arxiv: 2016-09-02
   page: '064401'
-  published: '2017-06-21'
+  published: 2017-06-21
   title: Slanted snaking of localized Faraday waves
   vol: '2'
+- abstract: 'The Cooper pair momentum in a superconductor is associated with a phase
+    gradient of the superconducting order parameter. In general, this momentum is
+    small compared to the Fermi momentum, which makes it challenging to measure. Josephson
+    junctions, however, enable the creation of large phase gradients and transfer
+    of the Cooper pair momentum to quasiparticles via Andreev reflection. In this
+    work we demonstrate that Andreev bound states propagating along ballistic planar
+    Josephson junctions eject into an adjacent normal region at a phase-controlled
+    angle that scales as $\Theta \sim \sqrt{\Delta/ \mu}$, where $\Delta$ is the superconducting
+    gap and $\mu$ is the chemical potential. This angle parametrically exceeds the
+    conventional Cooper pair momentum scale $\Delta/ \mu$, and thus this phenomenon
+    is sizeable even within the Andreev approximation regime $\Delta / \mu \ll 1$.
+    Our results establish phase-controlled quasiparticle ejection as a kinematic probe
+    of condensate momentum transfer: unlike existing probes that detect the Doppler
+    energy shift, the signal appears as a momentum-space deflection of emitted quasiparticles.'
+  authors:
+  - Isidora Araya Day
+  - Anton R. Akhmerov
+  - Antonio R. L. Manesco
+  id: '2607.08845'
+  on_arxiv: 2026-07-09
+  title: Probing Cooper pair momentum by quasiparticle steering with planar Josephson
+    junctions

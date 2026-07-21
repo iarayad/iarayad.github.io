@@ -1,3 +1,12 @@
+# Document schema (single mapping containing ordered trajectory entries):
+# trajectory:
+#   - id: unique lowercase identifier
+#     order: positive integer
+#     label: concise display title
+#     place: full institution or location name
+#     period: human-readable display period
+#     summary: Markdown-enabled plain or folded text
+#     bullets: [Markdown-enabled strings] (optional; omit when empty)
 trajectory:
   - id: bachelors
     order: 1
@@ -16,35 +25,33 @@ trajectory:
     place: "University of Waterloo"
     period: "2018"
     summary: >-
-      I visited the **Institute for Quantum Computing (IQC)** of the University of Waterloo for three months.
+      I visited the **Institute for Quantum Computing** of the University of Waterloo for three months.
     bullets:
       - Participated at USEQIP, a quantum computing summer school.
       - Worked at an MBE lab using XPS and ARPES techniques to characterize 2D materials.
   - id: masters
     order: 3
     label: "MSc. Applied Physics"
-    place: "TU Delft"
+    place: "Delft University of Technology"
     period: "2019 → 2021"
     summary: >-
-      I received a QuTech Scholarship to pursue a master's at TU Delft, where I followed the Quantum Computing track.
+      I received a QuTech Scholarship to pursue a master's at Delft University of Technology, where I followed the Quantum Computing track.
     bullets:
       - Took courses on mesoscopic physics, quantum information, and quantum hardware.
-      - Participated in the Northwestern European Regional Programming Contest as part of the TU Delft team.
+      - Participated in the Northwestern European Regional Programming Contest as part of the Delft University of Technology team.
       - Worked as a teaching assistant in [solid state physics](https://solidstate.quantumtinkerer.tudelft.nl/) and quantum information courses.
       - My master's thesis was on topological defects in crystalline topological insulators.
   - id: internship2
     order: 4
     label: "Theory research internship"
-    place: "Max Planck Institute PKS"
+    place: "Max Planck Institute for the Physics of Complex Systems"
     period: "2021"
     summary: >-
       I spent a summer in Dresden working with the group of Ashley Cook on topological phases.
-    bullets:
-      - null
   - id: phd
     order: 5
     label: "PhD. Condensed matter physics"
-    place: "TU Delft"
+    place: "Delft University of Technology"
     period: "2021 → 2026"
     summary: >-
       I got a Casimir NanoFront grant to do my PhD in [QuTech](https://qutech.nl/) and defended cum laude on February 27, 2026.

@@ -1,10 +1,51 @@
-- title: USEQIP Research Award, IQC, Canada.
+# Entry schema (list; fields marked optional may be omitted):
+# - title: string
+#   institution: full institution name (optional)
+#   country: full country name
+#   date: YYYY-MM-DD
+#   category: award | funding
+#   amount:                         # required only for category: funding
+#     value: positive integer
+#     currency: three-letter uppercase currency code, for example EUR | USD
+#     approximate: true | false
+- title: Gold medal in the Chilean Physics National Olympiad
+  country: Chile
+  date: 2014-12-15
+  category: award
+- title: USEQIP Research Award
+  institution: Institute for Quantum Computing
+  country: Canada
   date: 2018-05-01
-- title: QuTech Masters Scholarship, QuTech, Netherlands.
+  category: award
+- title: QuTech Masters Scholarship
+  institution: QuTech
+  country: The Netherlands
   date: 2019-08-13
-- title: Hendrik Casimir Prize, Casimir School, Netherlands.
+  category: funding
+  amount:
+    value: 60000
+    currency: EUR
+    approximate: true
+- title: Hendrik Casimir Prize
+  institution: Casimir School
+  country: The Netherlands
   date: 2021-09-01
-- title: Nanofront PhD Grant, Casimir School, Netherlands.
+  category: award
+- title: Nanofront PhD Grant
+  institution: Casimir School
+  country: The Netherlands
   date: 2021-09-01
-- title: Research Exchange Grant, Global Quantum Leap, United States.
+  category: funding
+  amount:
+    value: 220000
+    currency: EUR
+    approximate: true
+- title: Research Exchange Grant
+  institution: Global Quantum Leap
+  country: United States of America
   date: 2024-07-15
+  category: funding
+  amount:
+    value: 8000
+    currency: USD
+    approximate: false

@@ -1,3 +1,14 @@
+# Document schema (single mapping containing a list of topic cards):
+# topics:
+#   - title: display title; emoji and Markdown are allowed
+#     indicator_label: short plain-text navigation label
+#     figure: repository-relative image path
+#     figure_alt: accessible image description
+#     body: [Markdown-enabled paragraphs]
+#     buttons:                         # optional
+#       - label: button text
+#         href: full URL or repository-relative link
+#         classes: CSS class string (optional)
 topics:
   - title: "🔨 Mesoscopic superconductivity"
     indicator_label: "Mesoscopic superconductivity"

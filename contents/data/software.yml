@@ -1,5 +1,12 @@
+# Entry schema (list; end may be omitted for an active project):
+# - title: project name
+#   description: concise plain-text description without a trailing period
+#   url: full project URL
+#   start: YYYY-MM-DD
+#   end: YYYY-MM-DD (optional)
+#   role: lowercase snake_case value, for example main_developer
 - title: Pymablock
-  description: construction of perturbative effective models
+  description: Python package for the construction of perturbative effective models
   url: https://pymablock.readthedocs.io/
   start: 2022-10-01
-  role: main developer
+  role: main_developer

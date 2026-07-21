@@ -10,8 +10,9 @@ listing:
       - published
       - on_arxiv
       - journal
-      - journal_ref
-      - journal_url
+      - vol
+      - page
+      - doi
       - title
       - authors
     field-display-names:

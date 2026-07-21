@@ -1,9 +1,37 @@
-# - degree: High-school diploma, Liceo Carmela Carvajal de Prat, Santiago, Chile.
-#   start: 2011-03-01
-#   end: 2014-12-31
-- degree: B.Sc. cum laude in Physics, University of Chile, Santiago Chile.
+# Entry schema (list; fields marked optional may be omitted):
+# - degree: complete degree title
+#   institution: full institution name
+#   city: full city name
+#   country: full country name
+#   start: YYYY-MM-DD
+#   end: YYYY-MM-DD
+#   track: programme or track title (optional)
+#   advisor: full advisor name (optional; requires advisor_url)
+#   advisor_url: full URL (optional; requires advisor)
+#   thesis_title: full thesis title (optional; requires thesis_url)
+#   thesis_url: full URL (optional; requires thesis_title)
+- degree: B. Sc. cum laude in Physics
+  institution: University of Chile
+  city: Santiago
+  country: Chile
   start: 2015-03-10
   end: 2019-03-01
-- degree: M.Sc. cum laude in Applied Physics, Honours track, TU Delft, Delft, The Netherlands.
+- degree: M. Sc. cum laude in Applied Physics, Honours
+  track: Physics for Quantum Devices and Quantum Computing
+  institution: Delft University of Technology
+  city: Delft
+  country: The Netherlands
+  advisor: Anton R. Akhmerov
+  advisor_url: https://antonakhmerov.org/
   start: 2019-09-01
   end: 2021-09-01
+- degree: Ph. D. cum laude in Condensed Matter Physics
+  institution: Delft University of Technology
+  city: Delft
+  country: The Netherlands
+  thesis_title: "Revealing topology with flux: manifestations of broken reciprocity"
+  thesis_url: https://pure.tudelft.nl/ws/portalfiles/portal/266801886/fullthesis.pdf
+  advisor: Anton R. Akhmerov
+  advisor_url: https://antonakhmerov.org/
+  start: 2021-09-01
+  end: 2026-02-27
