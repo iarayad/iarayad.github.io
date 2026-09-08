@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 170">
+<title>A person exchanges messages with a chatbot</title>
+<g fill="none" stroke="#2f5e5e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+<circle cx="90" cy="60" r="19"/><path d="M53 125v-13a37 37 0 0 1 74 0v13"/>
+<path d="M170 57h114m-10-8 10 8-10 8M284 108H170m10-8-10 8 10 8"/>
+<path fill="#f3f7f7" d="M345 39h89a15 15 0 0 1 15 15v48a15 15 0 0 1-15 15h-56l-27 20 5-20h-11a15 15 0 0 1-15-15V54a15 15 0 0 1 15-15Z"/>
+</g><g fill="#2f5e5e"><circle cx="366" cy="78" r="4"/><circle cx="389" cy="78" r="4"/><circle cx="412" cy="78" r="4"/></g></svg>

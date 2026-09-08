@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 230">
+<title>A prompt guides the LLM, which works with a harness that manages context, memory, skills, tools and the reason, act, observe, record loop.</title>
+<defs><marker id="arrow" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="12" viewBox="0 0 12 12" refX="10" refY="6" orient="auto-start-reverse"><path d="M2 2 10 6 2 10" fill="none" stroke="#2f5e5e" stroke-width="1.5"/></marker></defs>
+<g fill="none" stroke="#2f5e5e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+<path d="M80 46V72" marker-end="url(#arrow)"/>
+<circle cx="80" cy="125" r="44" fill="#f3f7f7"/>
+<path d="M140 125H215" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+<path stroke="#aabdbd" d="M240 50V38H1060V50"/>
+<path stroke="#aabdbd" d="M425 87H450V163H425M425 125H460"/>
+<path d="M460 125H487" marker-end="url(#arrow)"/>
+<path d="M573 125H642" marker-end="url(#arrow)"/>
+<path d="M728 125H797" marker-end="url(#arrow)"/>
+<path d="M883 125H952" marker-end="url(#arrow)"/>
+<path d="M995 169V208H530V169" marker-end="url(#arrow)"/>
+<circle cx="530" cy="125" r="35" fill="#f3f7f7"/><circle cx="685" cy="125" r="35" fill="#f3f7f7"/><circle cx="840" cy="125" r="35" fill="#f3f7f7"/><circle cx="995" cy="125" r="35" fill="#f3f7f7"/>
+<circle cx="525" cy="120" r="11"/><path d="m533 128 12 12M674 113l13 12-13 12m18 0h10M826 125l10 10 19-22M982 109h24v32h-24zM989 118h10m-10 8h10m-10 8h6"/>
+</g>
+<g fill="#2b2b2b" font-family="sans-serif" font-size="21">
+<text x="80" y="30" text-anchor="middle" font-size="23">Prompt</text>
+<text x="80" y="132" text-anchor="middle" font-size="25" font-weight="600">LLM</text>
+<text x="650" y="25" text-anchor="middle" font-size="24" font-weight="600">Harness</text>
+<g text-anchor="end"><text x="413" y="93">Context + memory</text><text x="413" y="131">Skills</text><text x="413" y="169">Tools</text></g>
+<g text-anchor="middle"><text x="530" y="77">Reason</text><text x="685" y="77">Act</text><text x="840" y="77">Observe</text><text x="995" y="77">Record</text></g>
+</g></svg>
