@@ -1,0 +1,357 @@
+/*-- scss:defaults --*/
+$presentation-font-size-root: 26px;
+$presentation-h1-font-size: 1.6em;
+$presentation-h2-font-size: 1.4em;
+$presentation-h3-font-size: 0.9em;
+$presentation-h4-font-size: 0.8em;
+$presentation-line-height: 1.35;
+
+$presentation-heading-color: #2b2b2b;
+$body-color: #2b2b2b;
+$body-bg: #ffffff;
+$link-color: #2f5e5e;
+
+/*-- scss:rules --*/
+.reveal {
+  letter-spacing: 0.01em;
+}
+
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4 {
+  letter-spacing: 0.01em;
+  text-transform: none;
+}
+
+.reveal p,
+.reveal li {
+  font-size: 0.95em;
+}
+
+.reveal .subtitle {
+  font-size: 0.7em;
+}
+
+.reveal .caption {
+  font-size: 0.8em;
+  color: #666;
+}
+
+.reference-stack {
+  margin-top: 0.3rem;
+  text-align: right;
+}
+
+.reference {
+  font-size: 0.6em;
+  color: #666;
+}
+
+.reveal {
+  line-height: 1.2;
+}
+
+.reveal .slides section {
+  text-align: left;
+}
+
+.reveal .slides section:not(.quarto-title-block) {
+  padding: var(--slide-pad-y) var(--slide-pad-x);
+  box-sizing: border-box;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--slide-gap);
+  justify-content: flex-start;
+}
+
+.reveal .slides section:not(.quarto-title-block) > h2 {
+  margin: 0 0 1.2em 0;
+}
+
+.reveal .slides section:not(.quarto-title-block) > :not(h1):not(h2) {
+  min-height: 0;
+}
+
+.reveal .columns {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  align-items: center;
+  gap: var(--column-gap);
+}
+
+.reveal .slides section:not(.quarto-title-block) > .center:has(img),
+.reveal .slides section:not(.quarto-title-block) > .center:has(.r-stack) {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.reveal .column {
+  min-width: 0;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1vh;
+  flex: 1 1 0;
+}
+
+.reveal .column[style*="width"] {
+  flex: 0 1 auto;
+}
+.reveal .docs-preview-stack,
+.reveal .docs-preview-stack > div { width: 100%; }
+.reveal .docs-preview-stack > div { min-width: 0; text-align: center; }
+.reveal .docs-preview-stack > div > a { display: block; font-size: .8em; }
+.reveal .docs-preview-frame {
+  width: 100%; height: 460px; overflow: hidden;
+  margin-bottom: .5em;
+}
+.reveal .docs-preview-frame img {
+  width: 100%; height: 460px; margin: 0;
+  object-fit: contain;
+}
+.reveal #how-i-structure-my-work .columns,
+.reveal .repo-detail .columns {
+  align-items: flex-start;
+}
+
+.reveal img {
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.reveal .columns img {
+  max-height: 100%;
+}
+
+.reveal .center img {
+  max-height: 100%;
+}
+
+.reveal .r-stack > * {
+  margin: 0;
+}
+
+.reveal .r-stack p {
+  margin: 0;
+}
+
+.reveal .r-stack {
+  min-height: 0;
+  height: 100%;
+}
+
+.reveal .r-stack img {
+  max-height: 100%;
+}
+
+.reveal ul,
+.reveal ol {
+  margin-top: 0.15em;
+  margin-bottom: 0.15em;
+  padding-left: 1.1em;
+}
+
+.reveal li:has(> .fragment:not(.visible))::marker {
+  color: transparent;
+}
+
+.reveal li:has(> .fragment.visible)::marker {
+  color: currentColor;
+}
+
+.reveal ul + ul,
+.reveal ul + ol,
+.reveal ol + ul,
+.reveal ol + ol {
+  margin-top: 0;
+}
+
+.reveal p {
+  margin: 0.2em 0;
+}
+
+.reveal h2 {
+  margin: 0 0 0.3em 0;
+}
+
+.reveal li {
+  margin: 0.12em 0;
+}
+
+.reveal .slides section.center,
+.reveal .slides section .center {
+  text-align: center;
+}
+
+.full-screen-slide {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10em;
+}
+
+.full-screen-question {
+  font-size: 2.2em;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+
+.reveal .slides section.quarto-title-block {
+  text-align: center;
+  position: relative;
+  padding-bottom: 5rem;
+}
+
+.reveal .slides section.quarto-title-block h1.title {
+  font-size: 2.2em;
+  margin-bottom: 0.4em;
+}
+
+.reveal .slides section.quarto-title-block .quarto-title-authors {
+  font-size: 0.9em;
+  line-height: 1.35;
+  max-width: 900px;
+  margin: 0.2em auto 0;
+}
+
+.reveal .slides section.quarto-title-block .date {
+  margin-top: 0.4em;
+  color: #333;
+}
+
+.subtitle {
+  display: block;
+  font-size: 0.8em;
+  color: #555;
+  margin-top: -0.4em;
+  margin-bottom: 0.8em;
+}
+
+.mention-stack {
+  margin-top: 0.3rem;
+  text-align: right;
+}
+
+.mention {
+  font-size: 0.6em;
+  color: #666;
+}
+
+
+.end-qr {
+  margin-top: 0.6em;
+}
+
+/* Layout adaptations for the agent-workflow deck. */
+:root {
+  --slide-pad-x: 0px;
+  --slide-pad-y: 0px;
+  --slide-gap: 0.6em;
+  --column-gap: 2em;
+}
+/* Reveal owns the positioning of vertical-stack containers. */
+.reveal .slides section.stack {
+  padding: 0; gap: 0; display: block;
+}
+.reveal .slides section > h1,
+.reveal .slides section > h2 {
+  width: 100%; max-width: none; box-sizing: border-box;
+}
+.reveal .slides section:not(.quarto-title-block) > h1 {
+  margin: 0 0 1.2em;
+}
+.reveal div.sourceCode {
+  background: transparent; border: 0; box-shadow: none;
+  padding: 0; margin: .3em 0; max-width: 100%;
+}
+.reveal pre {
+  width: 100%; font-size: .8em; margin: .3em 0;
+  background: #20262e; color: #eceff4;
+  border: 1px solid #414b59; border-radius: 8px;
+  box-shadow: none; padding: 16px 20px;
+  box-sizing: border-box; max-width: 100%; text-align: left;
+}
+.reveal div.sourceCode > pre { margin: 0; }
+.reveal pre code {
+  color: #eceff4; background: transparent; border: 0;
+  padding: 0; box-shadow: none; white-space: pre-wrap;
+  overflow-wrap: anywhere; line-height: 1.35; max-height: none;
+}
+.reveal pre code, .reveal pre code span { color: #eceff4 !important; }
+.reveal .example-inverted,
+.reveal .example-inverted h1 { color: #ffffff; }
+.reveal .example-inverted a { color: #b8dcdc; }
+.reveal .example-inverted pre {
+  background: #ffffff;
+  color: #20262e;
+  border-color: #ffffff;
+}
+.reveal .example-inverted pre code,
+.reveal .example-inverted pre code span { color: #20262e !important; }
+.reveal :not(pre) > code { color: #2b2b2b; background: transparent; }
+.reveal .slide-number { background: transparent; color: #666; }
+.reveal .columns img.comparison-figure {
+  width: 100%;
+  height: 170px;
+  margin: 0;
+  object-fit: contain;
+}
+.reveal .column > p:has(.comparison-figure) { margin: 0; }
+.reveal .slides section.figure-slide > h1,
+.reveal .slides section.figure-slide > h2 {
+  display: none;
+}
+.reveal .slides section.figure-slide img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+.reveal .slides section.figure-slide.has-source img {
+  height: calc(100% - 42px);
+}
+.reveal .figure-source {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  font-size: .6em;
+}
+.reveal .figure-source p { margin: 0; }
+.reveal .slides section.figure-slide.benchmark-figure img {
+  height: calc(100% - 135px);
+}
+.reveal .benchmark-figure .figure-source {
+  font-size: .75em;
+  line-height: 1.35;
+}
+.reveal .benchmark-figure .figure-source p + p {
+  margin-top: .5em;
+  font-size: .8em;
+}
+.reveal .slides section.main-question:not(.quarto-title-block) {
+  justify-content: center;
+  text-align: center;
+}
+.reveal .slides section.main-question:not(.quarto-title-block) > h1 {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  font-size: 2em;
+}
+@media (prefers-reduced-motion: reduce) {
+  .reveal .slides section, .reveal .fragment { transition: none !important; }
+}

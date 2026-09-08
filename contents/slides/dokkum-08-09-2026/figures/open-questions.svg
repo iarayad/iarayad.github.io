@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 190">
+<title>Open questions about privacy, remote computing, documenting AI use, cost, and keeping up to date.</title>
+<g fill="none" stroke="#2f5e5e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+<g transform="translate(100 75)"><circle r="52" fill="#f3f7f7" stroke="none"/><rect x="-22" y="-4" width="44" height="34" rx="5"/><path d="M-14-4v-13a14 14 0 0 1 28 0v13"/><circle cy="11" r="3"/><path d="M0 14v6"/></g>
+<g transform="translate(325 75)"><circle r="52" fill="#f3f7f7" stroke="none"/><rect x="-29" y="-28" width="58" height="24" rx="4"/><rect x="-29" y="4" width="58" height="24" rx="4"/><path d="M-16-16h1m10 0h20M-16 16h1m10 0h20M0 30v13m-15 0h30"/></g>
+<g transform="translate(550 75)"><circle r="52" fill="#f3f7f7" stroke="none"/><path d="M-24-32H8l16 16v48h-48ZM8-32v16h16M-13-4h26M-13 7h26M-13 18h17"/></g>
+<g transform="translate(775 75)"><circle r="52" fill="#f3f7f7" stroke="none"/><ellipse cx="-8" cy="-17" rx="24" ry="9"/><path d="M-32-17v16c0 12 48 12 48 0v-16M-32-1v16c0 7 16 10 28 9"/><circle cx="16" cy="17" r="20"/><path d="M22 6c-15-8-19 8-6 11s9 18-6 10m6-26v31"/></g>
+<g transform="translate(1000 75)"><circle r="52" fill="#f3f7f7" stroke="none"/><path d="M-28-8a29 29 0 0 1 52-10m-1-13 1 13-13-1M28 8a29 29 0 0 1-52 10m1 13-1-13 13 1"/><path d="M0-15v16l12 7"/></g>
+</g>
+<g font-family="sans-serif" font-size="23" fill="#2b2b2b" text-anchor="middle"><text x="100" y="160">Privacy</text><text x="325" y="160">Remote access</text><text x="550" y="160">AI disclosure</text><text x="775" y="160">Costs</text><text x="1000" y="160">Keeping up</text></g>
+</svg>

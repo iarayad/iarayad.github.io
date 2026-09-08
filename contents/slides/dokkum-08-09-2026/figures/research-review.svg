@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 170">
+<title>Review outputs, seek independent checks, and use scientific judgment to decide whether to revise or share with stated limits.</title>
+<defs><marker id="arrow" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="12" viewBox="0 0 12 12" refX="10" refY="6" orient="auto"><path d="M2 2 10 6 2 10" fill="none" stroke="#2f5e5e" stroke-width="1.6"/></marker></defs>
+<g fill="none" stroke="#2f5e5e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+<path d="M176 65H284" marker-end="url(#arrow)"/><path d="M476 65H584" marker-end="url(#arrow)"/><path d="M776 65H884" marker-end="url(#arrow)"/>
+<path d="M680 102V143H380V102" marker-end="url(#arrow)"/>
+<path d="M66 78V42m0 36h44m-35-10 10-12 10 6 13-18"/>
+<circle cx="380" cy="65" r="28" fill="#f3f7f7"/><path d="m365 65 10 10 20-22"/>
+<path d="m680 31 36 34-36 34-36-34Z" fill="#f3f7f7"/>
+<path d="M667 57c0-13 26-13 26 0 0 9-13 8-13 17m0 9v1"/>
+<path d="M960 38h31l12 12v42h-43Zm31 0v12h12m-33 12h23m-23 10h23m-23 10h16"/>
+</g>
+<g fill="#2b2b2b" font-family="sans-serif" font-size="21" text-anchor="middle">
+<text x="90" y="22">Outputs</text><text x="380" y="22">Independent checks</text><text x="680" y="22">Scientific judgment</text><text x="980" y="22">Share + state limits</text>
+<text x="530" y="131" font-size="19">Unresolved? Revise and recheck</text>
+</g></svg>

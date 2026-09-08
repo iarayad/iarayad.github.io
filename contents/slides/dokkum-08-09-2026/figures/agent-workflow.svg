@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 170">
+<title>An agent connected to files, code execution, and result checks</title>
+<g fill="none" stroke="#2f5e5e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+<path stroke="#aabdbd" d="M208 75 120 49M292 75l88-26M250 105v27"/>
+<rect x="208" y="44" width="84" height="62" rx="13" fill="#f3f7f7"/>
+<path d="M250 44V30m-42 35h-9v23h9m84-23h9v23h-9M240 88h20"/><circle cx="250" cy="24" r="6"/><circle cx="232" cy="69" r="5"/><circle cx="268" cy="69" r="5"/>
+<path d="M77 23h29l14 14v40H77Zm29 0v14h14M86 48h25M86 59h20"/>
+<rect x="380" y="25" width="53" height="48" rx="5"/><path d="m391 39 9 9-9 9m16 0h14"/>
+<circle cx="250" cy="145" r="17" fill="white"/><path d="m242 145 6 6 11-12"/>
+<path d="M180 55a78 78 0 0 1 132-19m-1-10 1 10-11-1" stroke="#aabdbd"/>
+</g></svg>
