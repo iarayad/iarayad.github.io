@@ -3,8 +3,11 @@ repos:
     rev: v5.0.0
     hooks:
       - id: trailing-whitespace
+        exclude: '^contents/slides/gyromorphs-21-09-2026/slides\.html$'
       - id: end-of-file-fixer
+        exclude: '^contents/slides/gyromorphs-21-09-2026/slides\.html$'
       - id: check-added-large-files
+        exclude: '^contents/slides/gyromorphs-21-09-2026/slides\.html$'
         args: [--maxkb=2000]
       - id: check-merge-conflict
       - id: check-symlinks
@@ -14,6 +17,7 @@ repos:
     rev: v2.4.1
     hooks:
       - id: codespell
+        exclude: '^contents/slides/gyromorphs-21-09-2026/slides\.html$'
         additional_dependencies:
           - tomli
         args:

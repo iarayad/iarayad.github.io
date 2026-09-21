@@ -26,8 +26,8 @@
   country: Austria
   format: conference
   role: invited
-  status: forthcoming
   title: "Topological Gyromorphs"
+  slides: "slides/gyromorphs-21-09-2026/slides.html"
 - date: 2026-09-08
   event: "SUMMIT Quantum Limits"
   city: Dokkum
