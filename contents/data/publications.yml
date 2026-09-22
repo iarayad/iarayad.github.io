@@ -12,8 +12,33 @@
 #   category: software (optional; omit for ordinary articles and preprints)
 #   data: full data or archive URL (optional)
 #   highlight: true | false (optional; defaults to false)
+#   note: editorial distinction shown in the CV, e.g. Editors' Suggestion (optional)
 #   cv_significance: short qualitative CV statement grounded in the publication (required)
 # Published records must provide doi, journal, vol, page, and published together.
+- abstract: 'The Cooper pair momentum in a superconductor is associated with a phase
+    gradient of the superconducting order parameter. In general, this momentum is
+    small compared to the Fermi momentum, which makes it challenging to measure. Josephson
+    junctions, however, enable the creation of large phase gradients and transfer
+    of the Cooper pair momentum to quasiparticles via Andreev reflection. In this
+    work we demonstrate that Andreev bound states propagating along ballistic planar
+    Josephson junctions eject into an adjacent normal region at a phase-controlled
+    angle that scales as $\Theta \sim \sqrt{\Delta/ \mu}$, where $\Delta$ is the superconducting
+    gap and $\mu$ is the chemical potential. This angle parametrically exceeds the
+    conventional Cooper pair momentum scale $\Delta/ \mu$, and thus this phenomenon
+    is sizeable even within the Andreev approximation regime $\Delta / \mu \ll 1$.
+    Our results establish phase-controlled quasiparticle ejection as a kinematic probe
+    of condensate momentum transfer: unlike existing probes that detect the Doppler
+    energy shift, the signal appears as a momentum-space deflection of emitted quasiparticles.'
+  authors:
+  - Isidora Araya Day
+  - Anton R. Akhmerov
+  - Antonio R. L. Manesco
+  cv_significance: Establishes phase-controlled quasiparticle steering as a momentum-space
+    probe of condensate momentum transfer in planar Josephson junctions.
+  id: '2607.08845'
+  on_arxiv: 2026-07-09
+  title: Probing Cooper pair momentum by quasiparticle steering with planar Josephson
+    junctions
 - abstract: Gyromorphs are a new class of disordered systems that combine an amorphous-like
     absence of translational order with quasi-long-range rotational order. Gyromorphs
     can outperform quasicrystals or hyperuniform arrangements in forming isotropic
@@ -34,12 +59,17 @@
   - Adam Yanis Chaou
   - Isidora Araya Day
   - Adolfo G. Grushin
+  cv_significance: Introduces topological gyromorphs and a consistent toolkit for
+    diagnosing higher-order topology protected by average rotational symmetry.
+  doi: 10.1103/g7mg-h6gb
   id: '2603.02167'
-  cv_significance: >-
-    Introduces topological gyromorphs and a consistent toolkit for diagnosing
-    higher-order topology protected by average rotational symmetry.
+  journal: Phys. Rev. B
+  note: Editors' Suggestion
   on_arxiv: 2026-03-02
+  page: L080201
+  published: 2026-08-31
   title: Topological Gyromorphs
+  vol: '114'
 - abstract: The standard approach to characterizing topological matter, computing
     topological invariants, fails when the symmetry protecting the topological phase
     is preserved only on average in a disordered system. Because topological invariants
@@ -53,11 +83,10 @@
   - Adam Yanis Chaou
   - Isidora Araya Day
   - Anton R. Akhmerov
+  cv_significance: Provides a unified mapping for topological phases protected only
+    by average symmetry, avoiding the overcounting of non-robust phases.
   doi: 10.48550/arXiv.2601.00784
   id: '2601.00784'
-  cv_significance: >-
-    Provides a unified mapping for topological phases protected only by average
-    symmetry, avoiding the overcounting of non-robust phases.
   on_arxiv: 2026-01-02
   title: Symmetric approximant formalism for statistical topological matter
 - abstract: 'The easily accessible experimental signatures of Majorana modes are ambiguous
@@ -78,11 +107,10 @@
   - Antonio L. R. Manesco
   - Michael Wimmer
   - Anton R. Akhmerov
+  cv_significance: Shows how finite-size and quasi-Majorana effects bias scattering-based
+    topology diagnostics, motivating thermodynamic-limit checks.
   doi: 10.21468/scipostphyscore.8.3.047
   id: '2504.01069'
-  cv_significance: >-
-    Shows how finite-size and quasi-Majorana effects bias scattering-based
-    topology diagnostics, motivating thermodynamic-limit checks.
   journal: SciPost Phys. Core
   on_arxiv: 2025-04-01
   page: '047'
@@ -105,11 +133,10 @@
   - Anton R. Akhmerov
   - Bernard van Heck
   - Valla Fatemi
+  cv_significance: Proposes a compact, Kramers-protected architecture for hardware-efficient
+    error correction and logical gates with Andreev spin qubits.
   doi: 10.1103/lqf3-6r5z
   id: '2412.16116'
-  cv_significance: >-
-    Proposes a compact, Kramers-protected architecture for hardware-efficient
-    error correction and logical gates with Andreev spin qubits.
   journal: Phys. Rev. Lett.
   on_arxiv: 2024-12-20
   page: '210602'
@@ -132,12 +159,11 @@
   - R. Johanna Zijderveld
   - Isidora Araya Day
   - Anton R. Akhmerov
+  cv_significance: Extends scattering invariants to intrinsic higher-order topological
+    phases and establishes a disorder-compatible bulk-edge correspondence.
   doi: 10.21468/scipostphys.19.2.058
   highlight: true
   id: '2412.15333'
-  cv_significance: >-
-    Extends scattering invariants to intrinsic higher-order topological phases
-    and establishes a disorder-compatible bulk-edge correspondence.
   journal: SciPost Phys.
   on_arxiv: 2024-12-19
   page: '058'
@@ -165,13 +191,12 @@
   - Daniel Varjas
   - Anton R. Akhmerov
   category: software
+  cv_significance: Introduces Pymablock, an open-source Python package with optimal-scaling
+    algorithms for high-order quasi-degenerate perturbation theory.
   data: https://zenodo.org/records/14188554
   doi: 10.21468/scipostphyscodeb.50
   highlight: true
   id: '2404.03728'
-  cv_significance: >-
-    Introduces Pymablock, an open-source Python package with optimal-scaling
-    algorithms for high-order quasi-degenerate perturbation theory.
   journal: SciPost Phys. Codebases
   on_arxiv: 2024-04-04
   page: '50'
@@ -197,12 +222,11 @@
   - A. Mert Bozkurt
   - Valla Fatemi
   - Anton R. Akhmerov
+  cv_significance: Identifies a topologically protected mechanism for quantized chiral
+    transmission in Josephson trijunctions, with direct transport signatures.
   doi: 10.21468/scipostphys.18.3.098
   highlight: true
   id: '2311.17160'
-  cv_significance: >-
-    Identifies a topologically protected mechanism for quantized chiral
-    transmission in Josephson trijunctions, with direct transport signatures.
   journal: SciPost Phys.
   on_arxiv: 2023-11-28
   page: '098'
@@ -226,11 +250,10 @@
   - Anastasiia Varentcova
   - Daniel Varjas
   - Anton R. Akhmerov
+  cv_significance: Derives a Z4 Pfaffian invariant that distinguishes four C4T-protected
+    obstructed atomic limits beyond symmetry indicators.
   doi: 10.21468/scipostphys.15.3.114
   id: '2209.00029'
-  cv_significance: >-
-    Derives a Z4 Pfaffian invariant that distinguishes four C4T-protected
-    obstructed atomic limits beyond symmetry indicators.
   journal: SciPost Phys.
   on_arxiv: 2022-08-31
   page: '114'
@@ -248,12 +271,11 @@
   - Isidora Araya Day
   - Anton R. Akhmerov
   - Daniel Varjas
+  cv_significance: Revises the interpretation of defect charge in quadrupole insulators
+    by identifying sublattice symmetry, rather than higher-order topology, as the
+    source of quantization.
   doi: 10.21468/scipostphyscore.5.4.053
   id: '2202.07675'
-  cv_significance: >-
-    Revises the interpretation of defect charge in quadrupole insulators by
-    identifying sublattice symmetry, rather than higher-order topology, as the
-    source of quantization.
   journal: SciPost Phys. Core
   on_arxiv: 2022-02-15
   page: '053'
@@ -280,39 +302,13 @@
   - Claudio Falcón
   - Punit Gandhi
   - Edgar Knobloch
+  cv_significance: Combines experiment, theory, and numerics to explain localized
+    Faraday-wave snaking through coupling to a conserved quantity.
   doi: 10.1103/physrevfluids.2.064401
   id: '1609.00703'
-  cv_significance: >-
-    Combines experiment, theory, and numerics to explain localized Faraday-wave
-    snaking through coupling to a conserved quantity.
   journal: Phys. Rev. Fluids
   on_arxiv: 2016-09-02
   page: '064401'
   published: 2017-06-21
   title: Slanted snaking of localized Faraday waves
   vol: '2'
-- abstract: 'The Cooper pair momentum in a superconductor is associated with a phase
-    gradient of the superconducting order parameter. In general, this momentum is
-    small compared to the Fermi momentum, which makes it challenging to measure. Josephson
-    junctions, however, enable the creation of large phase gradients and transfer
-    of the Cooper pair momentum to quasiparticles via Andreev reflection. In this
-    work we demonstrate that Andreev bound states propagating along ballistic planar
-    Josephson junctions eject into an adjacent normal region at a phase-controlled
-    angle that scales as $\Theta \sim \sqrt{\Delta/ \mu}$, where $\Delta$ is the superconducting
-    gap and $\mu$ is the chemical potential. This angle parametrically exceeds the
-    conventional Cooper pair momentum scale $\Delta/ \mu$, and thus this phenomenon
-    is sizeable even within the Andreev approximation regime $\Delta / \mu \ll 1$.
-    Our results establish phase-controlled quasiparticle ejection as a kinematic probe
-    of condensate momentum transfer: unlike existing probes that detect the Doppler
-    energy shift, the signal appears as a momentum-space deflection of emitted quasiparticles.'
-  authors:
-  - Isidora Araya Day
-  - Anton R. Akhmerov
-  - Antonio R. L. Manesco
-  id: '2607.08845'
-  cv_significance: >-
-    Establishes phase-controlled quasiparticle steering as a momentum-space
-    probe of condensate momentum transfer in planar Josephson junctions.
-  on_arxiv: 2026-07-09
-  title: Probing Cooper pair momentum by quasiparticle steering with planar Josephson
-    junctions

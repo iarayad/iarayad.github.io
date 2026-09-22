@@ -30,6 +30,10 @@ abbreviations, but they must derive those choices from the same records here.
   Boolean `approximate` flag.
 - Publication `vol`, `page`, and arXiv `id` values are strings; dates are ISO
   dates. `highlight` remains optional CV-selection metadata.
+- Publication `note` holds an editorial distinction awarded by the journal,
+  such as `Editors' Suggestion`. It is a fact about the record, not a
+  presentation choice, and the data-driven CV templates in
+  `application_material` render it after the citation.
 
 Validate the database and rebuild both CV variants from
 `application_material` with:
