@@ -10,3 +10,18 @@
   url: https://pymablock.readthedocs.io/
   start: 2022-10-01
   role: main_developer
+- title: Qsymm
+  description: Python library for symmetry analysis and generation of symmetric Hamiltonians
+  url: https://qsymm.readthedocs.io/latest/
+  start: 2022-06-15
+  role: contributor
+- title: MeanFi
+  description: Python package for self-consistent Hartree-Fock calculations
+  url: https://meanfi.readthedocs.io/
+  start: 2025-11-03
+  role: contributor
+- title: ScatterWorks
+  description: Python package for building and solving scattering-network models
+  url: https://gitlab.kwant-project.org/qt/scatterworks/-/tree/main/docs/source
+  start: 2022-08-06
+  role: contributor

@@ -5,6 +5,9 @@
 #   country: full country name
 #   start: YYYY-MM-DD
 #   end: YYYY-MM-DD (optional)
+#   description: brief description of the work (optional)
+#   advisor: advisor name (optional; requires advisor_url)
+#   advisor_url: advisor website (optional; requires advisor)
 - role: Research assistant
   institution: Institute for Quantum Computing
   city: Waterloo
@@ -18,18 +21,25 @@
   start: 2021-06-10
   end: 2021-08-28
 - role: PhD student
+  description: Quantum transport of hybrid superconducting-semiconducting topological systems and higher-order topological phases.
   institution: QuTech, Delft University of Technology
   city: Delft
   country: The Netherlands
   start: 2021-09-01
   end: 2025-08-31
 - role: Visiting PhD student
+  description: Classical and quantum circuit electrodynamics for error-corrected Andreev spin qubits.
+  advisor: Valla Fatemi
+  advisor_url: https://www.duffield.cornell.edu/people/valla-fatemi/
   institution: Cornell University
   city: Ithaca
   country: United States of America
   start: 2024-07-22
   end: 2024-08-17
 - role: Postdoctoral researcher
+  description: DMRG and tensor networks applied to topological disordered systems.
+  advisor: Adolfo Grushin
+  advisor_url: https://grushingroup.cnrs.fr/
   institution: Donostia International Physics Center
   city: San Sebastián
   country: Spain

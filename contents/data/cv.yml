@@ -9,7 +9,9 @@
 # github: full profile URL
 # orcid: full ORCID URL
 # tagline: plain text
+# short_profile: concise profile of at most three sentences
 # profile: plain text or folded YAML text
+# languages: [{name: language, level: self-assessed proficiency}]
 # research_contributions: [plain-text contribution statements]
 name: Isidora Araya Day
 publication_name_aliases:
@@ -22,9 +24,22 @@ website: isidora.araya.day
 github: https://github.com/iarayad
 orcid: https://orcid.org/0000-0002-2948-4198
 
-tagline: Topological phases of matter · superconductivity · quantum transport · open-source software
+tagline: Topological phases of matter · superconductivity · quantum transport · tensor networks · open-source software
+short_profile: >-
+  I am a theoretical condensed matter physicist studying how topology and
+  superconductivity can be used to design robust quantum devices. I combine
+  analytical theory, numerical methods, and open-source software to investigate
+  protected quantum transport.
 profile: >-
   I am a theoretical condensed matter physicist interested in the design of quantum systems with protected transport phenomena, and understanding the mechanisms that give rise to them. My research combines analytical and numerical methods, and I am particularly interested in exploring the potential of agentic models in scientific research. Above all, I enjoy collaborating with others, and look for an environment where people are encouraged to think together.
 research_contributions:
   - Developed scattering-based invariants for higher-order topological phases.
   - Developed Pymablock, an open-source algorithm and software package for effective Hamiltonians.
+
+languages:
+  - name: Spanish
+    level: Native
+  - name: English
+    level: Advanced
+  - name: French
+    level: Basic

@@ -3,6 +3,7 @@
 import argparse
 from datetime import date
 from pathlib import Path
+import re
 
 import yaml
 
@@ -10,6 +11,18 @@ import yaml
 PUBLICATIONS = (
     Path(__file__).resolve().parents[1] / "contents" / "data" / "publications.yml"
 )
+
+
+class PublicationDumper(yaml.SafeDumper):
+    """Preserve strings that another YAML parser could read as numbers."""
+
+
+def represent_string(dumper: PublicationDumper, value: str) -> yaml.ScalarNode:
+    style = "'" if re.fullmatch(r"0\d+", value) else None
+    return dumper.represent_scalar("tag:yaml.org,2002:str", value, style=style)
+
+
+PublicationDumper.add_representer(str, represent_string)
 
 
 def guidance_header(path: Path) -> str:
@@ -36,8 +49,11 @@ def normalize(path: Path = PUBLICATIONS, header: str | None = None) -> None:
             if isinstance(publication.get(field), str):
                 publication[field] = date.fromisoformat(publication[field])
 
-    body = yaml.safe_dump(
+    publications.sort(key=lambda item: item["on_arxiv"], reverse=True)
+
+    body = yaml.dump(
         publications,
+        Dumper=PublicationDumper,
         allow_unicode=True,
         default_flow_style=False,
         sort_keys=False,
