@@ -8,6 +8,7 @@
 #   track: programme or track title (optional)
 #   advisor: full advisor name (optional; requires advisor_url)
 #   advisor_url: full URL (optional; requires advisor)
+#   institution_contact: institutional contact email (optional)
 #   thesis_title: full thesis title (optional; requires thesis_url)
 #   thesis_url: full URL (optional; requires thesis_title)
 - degree: B. Sc. cum laude in Physics
@@ -29,6 +30,8 @@
   institution: Delft University of Technology
   city: Delft
   country: The Netherlands
+  # Contact source: https://tunews.weblog.tudelft.nl/2014/07/04/verhuizing-bureau-pedel-office-of-the-beadle-moving-to-graduate-school/
+  institution_contact: graduateschool@tudelft.nl
   thesis_title: "Revealing topology with flux: manifestations of broken reciprocity"
   thesis_url: https://pure.tudelft.nl/ws/portalfiles/portal/266801886/fullthesis.pdf
   advisor: Anton R. Akhmerov
