@@ -1,5 +1,7 @@
 ---
 title: "About me"
+metadata-files:
+  - contents/data/home.yml
 image: contents/images/profile.png
 about:
   template: solana
@@ -18,4 +20,4 @@ about:
       href: mailto:isidora@araya.day
 ---
 
-{{< include contents/home.qmd >}}
+{{< include contents/_home.qmd >}}

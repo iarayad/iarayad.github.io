@@ -46,44 +46,34 @@ local function sanitize_text(value)
   return nil
 end
 
-local function meta_to_list(value)
-  local items = {}
-  if value == nil then
-    return items
-  end
-  if type(value) == "table" then
-    for _, entry in ipairs(value) do
-      local text = stringify(entry)
-      if type(text) ~= "string" then
-        text = tostring(text or "")
-      end
-      if text:match('%S') then
-        table.insert(items, text)
-      end
-    end
-    return items
-  end
-  local text = stringify(value)
-  if type(text) ~= "string" then
-    text = tostring(text or "")
-  end
-  if text:match('%S') then
-    table.insert(items, text)
-  end
-  return items
-end
-
-local function markdown_to_html(text)
-  if not text or text == '' then
+local function to_html(value)
+  local vtype = pandoc.utils.type(value)
+  local blocks
+  if vtype == "Inlines" then
+    blocks = { pandoc.Para(value) }
+  elseif vtype == "Blocks" then
+    blocks = value
+  else
     return ''
   end
-  local ok, doc = pcall(pandoc.read, text, 'markdown')
-  if not ok then
-    log_warning('unable to parse markdown snippet: ' .. text)
-    return '<p>' .. escape_html(text) .. '</p>'
+  local html = pandoc.write(pandoc.Pandoc(blocks), 'html')
+  return (html:gsub('%s+$', ''))
+end
+
+-- Convert Markdown metadata to HTML without stringifying it first, so links and spans survive.
+local function meta_to_html_paragraphs(value)
+  local paragraphs = {}
+  if value == nil then
+    return paragraphs
   end
-  local html = pandoc.write(doc, 'html')
-  return html:gsub('%s+$', '')
+  local entries = pandoc.utils.type(value) == "List" and value or { value }
+  for _, entry in ipairs(entries) do
+    local html = to_html(entry)
+    if html:match('%S') then
+      table.insert(paragraphs, html)
+    end
+  end
+  return paragraphs
 end
 
 local function read_topics(path)
@@ -111,13 +101,7 @@ local function read_topics(path)
     topic.highlight = sanitize_text(entry.highlight)
     topic.figure = sanitize_text(entry.figure)
     topic.figure_alt = sanitize_text(entry.figure_alt) or topic.title
-    topic.body = {}
-    for _, paragraph in ipairs(meta_to_list(entry.body)) do
-      local html = markdown_to_html(paragraph)
-      if html ~= '' then
-        table.insert(topic.body, html)
-      end
-    end
+    topic.body = meta_to_html_paragraphs(entry.body)
     topic.buttons = {}
     if type(entry.buttons) == "table" then
       for _, btn in ipairs(entry.buttons) do

@@ -24,7 +24,7 @@ topics:
     buttons:
       - label: "📄 Paper"
         href: "https://scipost.org/10.21468/SciPostPhys.18.3.098"
-      - label: "💻 GitHub Repository"
+      - label: "🗄️ Code & data (Zenodo)"
         href: "https://zenodo.org/records/15048045"
   - title: "🪢 Topological phases of matter"
     indicator_label: "Topological phases"
@@ -40,7 +40,7 @@ topics:
     buttons:
       - label: "📄 Paper"
         href: "https://scipost.org/10.21468/SciPostPhys.19.2.058"
-      - label: "💻 GitHub Repository"
+      - label: "🗄️ Code & data (Zenodo)"
         href: "https://zenodo.org/records/15553181"
   - title: "💻 Open-source software"
     indicator_label: "Open-source software"

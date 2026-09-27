@@ -1,7 +1,6 @@
 project:
   type: website
   output-dir: _site
-  pre-render: python scripts/build_site_data.py
   render:
     - "*.qmd"
     - "contents/**/*.qmd"
@@ -14,7 +13,8 @@ project:
 
 website:
   title: "About me"
-  site-url: "https://iarayad.github.io/"
+  site-url: "https://isidora.araya.day/"
+  favicon: favicon.svg
   navbar:
     left:
       - contents/research.qmd
@@ -27,6 +27,7 @@ website:
       - text: "📧 isidora (at) araya.day"
       - text: "Get my GPG key"
         href: publickey.asc
+    right: "Made with [Quarto](https://quarto.org) and [GitHub Copilot](https://github.com/features/copilot)"
 
 format:
   html:

@@ -148,8 +148,8 @@ local function render(entries)
   local html = {}
   local purple_ids = { bachelors = true, masters = true, phd = true }
   table.insert(html, '<div class="trajectory-stepper" data-stepper>')
-  table.insert(html, '  <div class="stepper-track" aria-hidden="true">')
-  table.insert(html, '    <div class="stepper-track-fill"></div>')
+  table.insert(html, '  <div class="stepper-track">')
+  table.insert(html, '    <div class="stepper-track-fill" aria-hidden="true"></div>')
   table.insert(html, '    <div class="stepper-nodes" role="tablist" aria-label="Academic and professional journey timeline">')
   for idx, entry in ipairs(entries) do
     local year = entry.start_year ~= '' and entry.start_year or '&nbsp;'

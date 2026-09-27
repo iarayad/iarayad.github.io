@@ -10,7 +10,7 @@ This folder contains all the content files for the Quarto website:
 
 ```text
 contents/
-├── home.qmd           # Main homepage content
+├── _home.qmd          # Homepage content, included by index.qmd
 ├── research.qmd       # Research page
 ├── images/            # Image assets
 │   ├── logo.svg
