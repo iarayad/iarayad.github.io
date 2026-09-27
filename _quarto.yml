@@ -40,7 +40,7 @@ format:
     css: styles.css
     scroll-reveal: true
     # toc: true
-    backgroundcolor: "#f8f9fa"
+    backgroundcolor: "#fcfcfd"
 
 execute:
   freeze: auto
