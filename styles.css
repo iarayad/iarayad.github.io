@@ -101,7 +101,6 @@ a {
   align-items: center;
   gap: 0.1rem;
   min-width: 0;
-  font-size: 0.68rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: #3a4b51;
@@ -232,6 +231,16 @@ a {
 }
 
 @media (max-width: 600px) {
+  .stepper-nodes {
+    padding: 0;
+  }
+
+  .stepper-node {
+    padding: 0.35rem 0;
+    font-size: 0.8rem;
+    letter-spacing: 0;
+  }
+
   .stepper-panels {
     padding: 0.9rem;
     font-size: 0.88rem;
