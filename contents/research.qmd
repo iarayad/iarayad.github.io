@@ -6,6 +6,9 @@ open-graph:
 twitter-card:
   description: *description
 draft: false
+# Publication abstracts are raw HTML from the listing template, so Quarto does not add MathJax itself.
+include-in-header:
+  text: <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"></script>
 listing:
   - id: sample-listings
     contents:

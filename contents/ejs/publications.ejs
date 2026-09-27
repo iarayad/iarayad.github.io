@@ -1,5 +1,7 @@
 <%
   const self = new Set(['Isidora Araya Day', 'Isidora Araya']);
+  // Abstracts use $...$ for math; MathJax on the page reads \(...\) by default.
+  const abstractHtml = (text) => _.escape(String(text)).replace(/\$([^$]+)\$/g, '\\($1\\)');
   let previousYear = null;
 %>
 ```{=html}
@@ -23,6 +25,7 @@
         <%= authors %>,
         <% if (isPublished) { %><a href="<%- titleUrl %>"><em><%- item.journal %></em> <%- item.vol %>, <%- item.page %></a><% } else { %><a href="<%- titleUrl %>">arXiv:<%- item.id %></a><% } %>
         <% if (item.note) { %>·&nbsp;<span class="entry-badge"><%- item.note %></span><% } %>
+        <% if (item.abstract) { %><details class="entry-abstract"><summary aria-label="Show abstract"><i class="bi bi-chevron-down" aria-hidden="true"></i></summary><p><%= abstractHtml(item.abstract) %></p></details><% } %>
       </div>
     </div>
   </li>
