@@ -23,56 +23,33 @@ local function open_with_fallbacks(path)
   return nil
 end
 
-local function escape_html(text)
-  local map = { ['&'] = '&amp;', ['<'] = '&lt;', ['>'] = '&gt;', ['"'] = '&quot;', ["'"] = '&#39;' }
-  local str = tostring(text or "")
-  str = str:gsub('[&<>"\']', map)
-  str = str:gsub("'", map["'"])
-  return str
-end
-
-local function sanitize_text(value)
+local function meta_to_text(value)
   if value == nil then
     return nil
   end
   local text = stringify(value)
-  if type(text) ~= "string" then
-    text = tostring(text or "")
-  end
   if text:match('%S') then
-    return escape_html(text)
+    return text
   end
   return nil
 end
 
-local function to_html(value)
-  local vtype = pandoc.utils.type(value)
-  local blocks
-  if vtype == "Inlines" then
-    blocks = { pandoc.Para(value) }
-  elseif vtype == "Blocks" then
-    blocks = value
-  else
-    return ''
-  end
-  local html = pandoc.write(pandoc.Pandoc(blocks), 'html')
-  return (html:gsub('%s+$', ''))
-end
-
--- Convert Markdown metadata to HTML without stringifying it first, so links and spans survive.
-local function meta_to_html_paragraphs(value)
-  local paragraphs = {}
+-- Body entries are Markdown metadata; keep them as Pandoc blocks so links and spans survive.
+local function meta_to_blocks(value)
+  local blocks = pandoc.Blocks({})
   if value == nil then
-    return paragraphs
+    return blocks
   end
   local entries = pandoc.utils.type(value) == "List" and value or { value }
   for _, entry in ipairs(entries) do
-    local html = to_html(entry)
-    if html:match('%S') then
-      table.insert(paragraphs, html)
+    local vtype = pandoc.utils.type(entry)
+    if vtype == "Inlines" then
+      blocks:insert(pandoc.Para(entry))
+    elseif vtype == "Blocks" then
+      blocks:extend(entry)
     end
   end
-  return paragraphs
+  return blocks
 end
 
 local function read_topics(path)
@@ -94,94 +71,75 @@ local function read_topics(path)
   end
   local topics = {}
   for idx, entry in ipairs(meta) do
-    local topic = {}
-    topic.title = sanitize_text(entry.title) or string.format("Topic %02d", idx)
-    topic.highlight = sanitize_text(entry.highlight)
-    topic.figure = sanitize_text(entry.figure)
-    topic.figure_alt = sanitize_text(entry.figure_alt) or topic.title
-    topic.body = meta_to_html_paragraphs(entry.body)
-    topics[#topics + 1] = topic
+    local title = meta_to_text(entry.title) or string.format("Topic %02d", idx)
+    topics[#topics + 1] = {
+      title = title,
+      figure = meta_to_text(entry.figure),
+      figure_alt = meta_to_text(entry.figure_alt) or title,
+      body = meta_to_blocks(entry.body),
+    }
   end
   return topics
 end
 
+-- One tab per topic, built as Quarto's own Tabset node; the figure floats inside the first paragraph.
 local function render(topics)
-  local html = {}
-  table.insert(html, '<div class="research-topics">')
+  local tabs = pandoc.List({})
   for _, topic in ipairs(topics) do
-    table.insert(html, '  <section class="research-topic">')
-    table.insert(html, string.format('    <h3>%s</h3>', topic.title))
-    table.insert(html, '    <div class="research-topic-copy">')
+    local body = topic.body
     if topic.figure then
-      table.insert(html, string.format('      <img class="research-topic-figure" src="%s" alt="%s" loading="lazy" decoding="async" />', topic.figure, topic.figure_alt))
+      local image = pandoc.Image(topic.figure_alt, topic.figure, "", pandoc.Attr("", { "research-topic-figure" }))
+      if body[1] and body[1].t == "Para" then
+        body[1].content:insert(1, image)
+      else
+        body:insert(1, pandoc.Plain({ image }))
+      end
     end
-    for _, paragraph in ipairs(topic.body) do
-      table.insert(html, '      ' .. paragraph)
-    end
-    if topic.highlight then
-      table.insert(html, string.format('      <p class="research-topic-highlight">%s</p>', topic.highlight))
-    end
-    table.insert(html, '    </div>')
-    table.insert(html, '  </section>')
+    tabs:insert(quarto.Tab({ title = topic.title, content = body }))
   end
-  table.insert(html, '</div>')
-  return table.concat(html, '\n')
+  return (quarto.Tabset({
+    level = 3,
+    tabs = tabs,
+    attr = pandoc.Attr("", { "panel-tabset", "research-topics" }),
+  }))
 end
 
 local styles_injected = false
 
 local topic_styles = [[
 <style>
-/* Topics side by side; a subgrid puts all headings in one row so the text below starts level. */
-.research-topics {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 2.5rem;
-  margin-top: 1.5rem;
+.research-topics .tab-content {
+  padding-top: 1.25rem;
 }
 
-.research-topic {
-  display: grid;
-  grid-row: span 2;
-  grid-template-rows: subgrid;
-  row-gap: 0.75rem;
-}
-
-.research-topic h3 {
-  margin: 0;
-  font-size: 1.2rem;
-}
-
-.research-topic-copy {
-  display: flow-root;
-}
-
-.research-topic-copy p {
-  font-size: 0.95rem;
-  margin-bottom: 0.6rem;
+.research-topics .tab-pane p {
   text-align: justify;
   -webkit-hyphens: auto;
   hyphens: auto;
 }
 
-/* Small figure wrapped by the text under each heading. */
 .research-topic-figure {
   float: right;
-  width: 110px;
+  width: 170px;
   height: auto;
-  margin: 0.3rem 0 0.4rem 0.9rem;
-  border-radius: 0.5rem;
+  margin: 0.25rem 0 0.75rem 1.5rem;
 }
 
-.research-topic-highlight {
-  color: #6c757d;
-  font-size: 0.9rem;
+.research-topics .tab-pane::after {
+  content: "";
+  display: block;
+  clear: both;
 }
 
-/* Stack columns below Bootstrap's lg breakpoint rather than leaving an orphan column. */
-@media (max-width: 991.98px) {
-  .research-topics {
-    grid-template-columns: minmax(0, 1fr);
+/* Lines beside the figure are too short to justify on phones. */
+@media (max-width: 575.98px) {
+  .research-topics .tab-pane p {
+    text-align: left;
+  }
+
+  .research-topic-figure {
+    width: 110px;
+    margin-left: 1rem;
   }
 }
 </style>
@@ -190,7 +148,7 @@ local topic_styles = [[
 return {
   ["research-cards"] = function(args, kwargs)
     local raw_path = stringify(kwargs["path"] or "")
-    local path = (type(raw_path) == "string" and raw_path ~= "") and raw_path or "data/research.yml"
+    local path = raw_path ~= "" and raw_path or "data/research.yml"
     local topics = read_topics(path)
     if #topics == 0 then
       return pandoc.Null()
@@ -200,7 +158,7 @@ return {
       table.insert(blocks, pandoc.RawBlock('html', topic_styles))
       styles_injected = true
     end
-    table.insert(blocks, pandoc.RawBlock('html', render(topics)))
+    table.insert(blocks, render(topics))
     return blocks
   end
 }
