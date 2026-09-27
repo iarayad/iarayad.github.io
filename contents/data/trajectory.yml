@@ -4,7 +4,6 @@
 #     order: positive integer
 #     label: concise display title
 #     place: full institution or location name
-#     city: city where it took place
 #     period: human-readable display period
 #     summary: Markdown-enabled plain or folded text
 #     bullets: [Markdown-enabled strings] (optional; omit when empty)
@@ -13,7 +12,6 @@ trajectory:
     order: 1
     label: "BSc. Physics"
     place: "University of Chile"
-    city: "Santiago"
     period: "2015 → 2019"
     summary: >-
       I completed my bachelor's degree in physics at the University of Chile.
@@ -25,7 +23,6 @@ trajectory:
     order: 2
     label: "Experimental research internship"
     place: "University of Waterloo"
-    city: "Waterloo"
     period: "2018"
     summary: >-
       I visited the **Institute for Quantum Computing** of the University of Waterloo for three months.
@@ -36,7 +33,6 @@ trajectory:
     order: 3
     label: "MSc. Applied Physics"
     place: "Delft University of Technology"
-    city: "Delft"
     period: "2019 → 2021"
     summary: >-
       I received a QuTech Scholarship to pursue a master's at Delft University of Technology, where I followed the Quantum Computing track.
@@ -49,7 +45,6 @@ trajectory:
     order: 4
     label: "Theory research internship"
     place: "Max Planck Institute for the Physics of Complex Systems"
-    city: "Dresden"
     period: "2021"
     summary: >-
       I spent a summer in Dresden working with the group of Ashley Cook on topological phases.
@@ -57,7 +52,6 @@ trajectory:
     order: 5
     label: "PhD. Condensed matter physics"
     place: "Delft University of Technology"
-    city: "Delft"
     period: "2021 → 2026"
     summary: >-
       I got a Casimir NanoFront grant to do my PhD in [QuTech](https://qutech.nl/) and defended cum laude on February 27, 2026.
@@ -70,7 +64,6 @@ trajectory:
     order: 6
     label: "Research visit at an experimental lab"
     place: "Cornell University"
-    city: "Ithaca"
     period: "2024"
     summary: >-
       I visited and collaborated with [Valla Fatemi's group](https://fatemilab.aep.cornell.edu/) in Ithaca for a month.
@@ -81,7 +74,6 @@ trajectory:
     order: 7
     label: "Postdoctoral researcher"
     place: "Donostia International Physics Center"
-    city: "San Sebastián"
     period: "2025 → present"
     summary: >-
       I joined [Adolfo Grushin's group](https://grushingroup.cnrs.fr/) in San Sebastián to work on DMRG and tensor networks applied to topological disordered systems.

@@ -71,7 +71,6 @@ local function read_entries(path)
       order = tonumber(stringify(entry.order or idx)) or idx,
       label = escape_html(stringify(entry.label or "")),
       place = escape_html(stringify(entry.place or "")),
-      city = escape_html(stringify(entry.city or "")),
       period = escape_html(period),
       year = period:match('(%d%d%d%d)') or "",
       summary = to_inline_html(entry.summary),
@@ -86,7 +85,7 @@ local function read_entries(path)
   return entries
 end
 
--- A row of year/city nodes controlling one visible panel at a time.
+-- A row of year nodes controlling one visible panel at a time.
 local function render(entries)
   local html = { '<div class="trajectory-stepper" data-stepper>' }
   table.insert(html, '  <div class="stepper-track">')
@@ -99,7 +98,6 @@ local function render(entries)
       entry.id, is_active and ' is-active' or '', entry.id, is_active and 'true' or 'false', is_active and '' or ' tabindex="-1"'))
     table.insert(html, string.format('        <span class="stepper-node-year">%s</span>', entry.year))
     table.insert(html, '        <span class="stepper-node-dot" aria-hidden="true"></span>')
-    table.insert(html, string.format('        <span class="stepper-node-city">%s</span>', entry.city))
     table.insert(html, '      </button>')
   end
   table.insert(html, '    </div>')

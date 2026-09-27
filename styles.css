@@ -22,7 +22,7 @@ body {
   font-size: 1.05rem;
 }
 
-/* Background stepper: year/city nodes on a line, one panel visible at a time. */
+/* Background stepper: year nodes on a line, one panel visible at a time. */
 .trajectory-section {
   margin-top: 1rem;
   text-align: left;
@@ -36,7 +36,7 @@ body {
 
 .stepper-track {
   position: relative;
-  height: 4.6rem;
+  height: 3.5rem;
 }
 
 .stepper-track::before,
@@ -95,15 +95,10 @@ body {
 .stepper-node-dot {
   width: 0.8rem;
   height: 0.8rem;
-  margin: 0.4rem 0 0.3rem;
+  margin-top: 0.4rem;
   border-radius: 50%;
   border: 2px solid #338c73;
   background: #fcfcfd;
-}
-
-.stepper-node-city {
-  font-size: 0.8rem;
-  white-space: nowrap;
 }
 
 .stepper-node.is-complete .stepper-node-dot {
@@ -146,16 +141,7 @@ body {
   color: #4a5a61;
 }
 
-/* Seven city names do not fit on a phone; keep the years only. */
 @media (max-width: 575.98px) {
-  .stepper-track {
-    height: 3.5rem;
-  }
-
-  .stepper-node-city {
-    display: none;
-  }
-
   .stepper-node {
     padding: 0.35rem 0;
     font-size: 0.8rem;
