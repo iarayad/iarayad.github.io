@@ -38,6 +38,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
 <link href="./favicon.svg" rel="icon" type="image/svg+xml">
+<script src="site_libs/quarto-listing/list.min.js"></script>
+<script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -74,7 +76,65 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script>
 
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-news .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-abstract','listing-authors','listing-cv_significance','listing-id','listing-on_arxiv','listing-title','listing-doi','listing-journal','listing-note','listing-page','listing-published','listing-vol','listing-highlight','listing-category','listing-data',{ data: ['index'] },{ data: ['categories'] }],
+      
+      searchColumns: ["listing-abstract","listing-authors","listing-cv_significance","listing-id","listing-on_arxiv","listing-title","listing-doi","listing-journal","listing-note","listing-page","listing-published","listing-vol","listing-highlight","listing-category","listing-data"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-news'] = new List('listing-news', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="styles.css">
 <meta property="og:title" content="Isidora Araya Day">
@@ -123,6 +183,11 @@ ul.task-list li input[type="checkbox"] {
 <!-- margin-sidebar -->
     
 <!-- main -->
+<main class="content page-columns page-full column-page" id="quarto-document-content">
+
+
+
+
 <div class="quarto-about-solana column-page">
   <div class="about-entity">
     <div class="entity-contents">
@@ -150,16 +215,22 @@ ul.task-list li input[type="checkbox"] {
      <span class="about-link-text">Email</span>
   </a>
 </div>
-      <div class="about-contents"><main class="content column-page" id="quarto-document-content">
-<div class="hero-section">
+      <div class="about-contents"><div id="intro">
 <p>Hi!👋 I am a theoretical condensed matter physicist working on <strong>mesoscopic superconductivity, topology, and quantum transport</strong>.</p>
 <p>📍 Currently I am a postdoc at DIPC in San Sebastián, Spain, working with <a href="https://grushingroup.cnrs.fr/">Adolfo Grushin</a>.</p>
 <p>💻 I completed my PhD in the <a href="http://quantumtinkerer.group/">Quantum Tinkerer group</a> at Delft University of Technology, The Netherlands, with <a href="https://antonakhmerov.org/">Anton Akhmerov</a> and <a href="https://michaelwimmer.org/">Michael Wimmer</a>, and defended in February 2026.</p>
 <p>I particularly enjoy working on problems that require combining analytics and numerics. One of my favorite projects so far was developing <a href="https://pymablock.readthedocs.io/"><strong>Pymablock</strong></a>, an open-source Python package to do quantum mechanical perturbation theory efficiently, numerically and symbolically.</p>
-<section id="background" class="level3">
-<h3 data-anchor-id="background">Background</h3>
-</section>
+</div></div>
+    </div>
+    <img src="contents/images/profile.jpg" class="about-image
+  rounded " style="width: 15em;">
+  </div>
 </div>
+
+<!-- Background on the left; news in a narrow column under the photo, the same width as the image. -->
+<div class="home-columns">
+<section id="background" class="level3 home-main">
+<h3 data-anchor-id="background">Background</h3>
 <div class="trajectory-section" data-scroll-reveal="true">
 <div class="trajectory-stepper" data-stepper="">
   <div class="stepper-track">
@@ -277,12 +348,14 @@ const initTrajectoryStepper = () => {
     const trackFill = stepper.querySelector('.stepper-track-fill');
     const nodes = stepper.querySelectorAll('.stepper-node');
     if (!nodes.length) return;
+
     const setActive = (index) => {
       panels.forEach((panel, idx) => {
         const isActive = idx === index;
         panel.classList.toggle('is-active', isActive);
         panel.setAttribute('aria-hidden', String(!isActive));
       });
+
       nodes.forEach((node, idx) => {
         const isActive = idx === index;
         node.classList.toggle('is-active', isActive);
@@ -290,11 +363,13 @@ const initTrajectoryStepper = () => {
         node.setAttribute('aria-selected', String(isActive));
         node.setAttribute('tabindex', isActive ? '0' : '-1');
       });
+
       if (trackFill) {
         const progress = nodes.length > 1 ? (index / (nodes.length - 1)) * 100 : 100;
         trackFill.style.setProperty('--step-progress', `${progress}%`);
       }
     };
+
     nodes.forEach((node, index) => {
       node.addEventListener('click', () => setActive(index));
       node.addEventListener('keydown', (event) => {
@@ -306,36 +381,64 @@ const initTrajectoryStepper = () => {
         if (event.key === 'ArrowRight') nextIndex = Math.min(lastIndex, index + 1);
         if (event.key === 'Home') nextIndex = 0;
         if (event.key === 'End') nextIndex = lastIndex;
+
         if (['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) {
           event.preventDefault();
           nodes[nextIndex].focus();
           setActive(nextIndex);
         }
+
         if (event.key === 'Enter' || event.key === ' ') {
           event.preventDefault();
           setActive(index);
         }
       });
     });
+
     setActive(0);
   });
 };
+
 if (document.readyState !== 'loading') {
   initTrajectoryStepper();
 } else {
   document.addEventListener('DOMContentLoaded', initTrajectoryStepper);
 }
 </script>
+
+</div>
+</section>
+<section id="news" class="level3 home-news">
+<h3 data-anchor-id="news">News</h3>
+<div id="listing-news" class="quarto-listing quarto-listing-container-custom">
+<ul class="news-list">
+  
+  <li class="news-item">
+    <span class="news-date">Aug 2026 · Published in Phys. Rev. B</span>
+    <a class="news-text" href="https://doi.org/10.1103/g7mg-h6gb"><em>Topological Gyromorphs</em></a>
+  </li>
+  
+  <li class="news-item">
+    <span class="news-date">Jul 2026 · New preprint</span>
+    <a class="news-text" href="https://arxiv.org/abs/2607.08845"><em>Probing Cooper pair momentum by quasiparticle steering with planar Josephson junctions</em></a>
+  </li>
+  
+  <li class="news-item">
+    <span class="news-date">Jan 2026 · New preprint</span>
+    <a class="news-text" href="https://arxiv.org/abs/2601.00784"><em>Symmetric approximant formalism for statistical topological matter</em></a>
+  </li>
+  
+</ul>
+<div class="listing-no-matching d-none">No matching items</div>
+</div>
+</section>
 </div>
 
 
-</main></div>
-    </div>
-    <img src="contents/images/profile.jpg" class="about-image
-  rounded " style="width: 15em;">
-  </div>
-</div>
- <!-- /main -->
+
+
+
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const isCodeAnnotation = (el) => {

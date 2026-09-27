@@ -325,3 +325,63 @@ a.entry-title:hover {
     border-radius: 4px;
   }
 }
+
+/* Homepage: background beside a news column (latest papers) that lines up under the 15em photo. */
+/* The About block now sits inside the page body, so drop the template's extra top and bottom padding. */
+div.quarto-about-solana {
+  padding-top: 1.2em !important;
+  padding-bottom: 0;
+}
+
+.home-columns {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 15em;
+  gap: 0 1.5em;
+}
+
+.news-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.news-item {
+  padding: 0.5rem 0;
+  border-top: 1px solid #e3e6e8;
+  font-size: 0.88rem;
+  line-height: 1.35;
+}
+
+.news-item:first-child {
+  border-top: none;
+  padding-top: 0.1rem;
+}
+
+.news-date {
+  display: block;
+  font-size: 0.78rem;
+  color: #6c757d;
+}
+
+a.news-text {
+  color: inherit;
+  text-decoration: none;
+}
+
+a.news-text:hover {
+  color: #338c73;
+  text-decoration: underline;
+}
+
+/* One column below lg, news first so it sits right after the introduction. */
+@media (max-width: 991.98px) {
+  .home-columns {
+    grid-template-columns: minmax(0, 1fr);
+    text-align: left;
+  }
+
+  .home-news {
+    order: -1;
+    margin-bottom: 0.5rem;
+  }
+}
