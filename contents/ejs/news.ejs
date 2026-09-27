@@ -1,22 +1,7 @@
 <%
-  // Merge papers and talks into dated news items, newest first.
+  // The two most recent papers, dated by publication or, for preprints, by arXiv submission.
   const month = (d) => d.toLocaleDateString('en-US', { month: 'short', year: 'numeric', timeZone: 'UTC' });
-  const talkKind = (t) => t.format === 'public' ? 'Public talk'
-    : t.format === 'seminar' ? 'Seminar'
-    : t.role === 'invited' ? 'Invited talk' : 'Talk';
-  const today = new Date();
   const news = items.map((item) => {
-    if (item.event) {
-      const date = new Date(item.date);
-      const upcoming = date > today;
-      const place = item.online ? 'online' : item.city;
-      return {
-        date,
-        label: upcoming ? `Upcoming ${talkKind(item).toLowerCase()}` : talkKind(item),
-        text: `<em>${_.escape(item.title)}</em> at ${_.escape(item.event)}, ${_.escape(place)}`,
-        href: item.slides ? `contents/${item.slides}` : null,
-      };
-    }
     const published = item.journal && item.vol && item.page && item.doi;
     return {
       date: new Date(published ? item.published : item.on_arxiv),
@@ -24,14 +9,14 @@
       text: `<em>${_.escape(item.title)}</em>`,
       href: published ? `https://doi.org/${item.doi}` : `https://arxiv.org/abs/${item.id}`,
     };
-  }).sort((a, b) => b.date - a.date).slice(0, 5);
+  }).sort((a, b) => b.date - a.date).slice(0, 2);
 %>
 ```{=html}
 <ul class="news-list">
   <% for (const n of news) { %>
   <li class="news-item">
     <span class="news-date"><%- month(n.date) %> · <%- n.label %></span>
-    <% if (n.href) { %><a class="news-text" href="<%- n.href %>"><%= n.text %></a><% } else { %><span class="news-text"><%= n.text %></span><% } %>
+    <a class="news-text" href="<%- n.href %>"><%= n.text %></a>
   </li>
   <% } %>
 </ul>

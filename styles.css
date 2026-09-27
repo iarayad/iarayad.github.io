@@ -326,7 +326,7 @@ a.entry-title:hover {
   }
 }
 
-/* Homepage: background beside a news column that lines up under the 15em photo. */
+/* Homepage: background beside a news column (latest papers) that lines up under the 15em photo. */
 /* The About block now sits inside the page body, so drop the template's extra top and bottom padding. */
 div.quarto-about-solana {
   padding-top: 1.2em !important;

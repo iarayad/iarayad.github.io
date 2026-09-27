@@ -29,7 +29,6 @@ listing:
   - id: news
     contents:
       - contents/data/publications.yml
-      - contents/data/talks.yaml
     template: contents/ejs/news.ejs
     sort: false
 ---
