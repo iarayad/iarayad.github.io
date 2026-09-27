@@ -1,0 +1,90 @@
+<!-- Page-flow gesture tests. Render the site, copy this file into _site/, serve _site, and open
+     /flow-test.html, or run: google-chrome --headless=new --virtual-time-budget=120000 --dump-dom URL
+     It replays simulated wheel, touch, and pinch gestures against the built pages and reports
+     whether each one navigated as expected. -->
+<!doctype html><html><body>
+<iframe id="f" style="width:1366px;height:800px;border:0"></iframe>
+<pre id="out"></pre>
+<script>
+const f = document.getElementById("f");
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+const load = (url) => new Promise((r) => { f.onload = () => r(); f.src = url; });
+const win = () => f.contentWindow;
+const bottom = () => win().document.documentElement.scrollHeight - win().innerHeight;
+const wheel = (dy, opts = {}) => {
+  win().dispatchEvent(new WheelEvent("wheel", { deltaY: dy, bubbles: true, ...opts }));
+  if (!opts.ctrlKey) win().scrollBy(0, dy);  // real browsers scroll after the wheel event
+};
+const touch = (type, y) => { const e = new Event(type); e.touches = [{ clientY: y }]; win().dispatchEvent(e); };
+const seq = async (deltas, gap, opts) => { for (const d of deltas) { wheel(d, opts); await sleep(gap); } };
+
+const scenarios = [
+  ["momentum arriving at bottom (1.5 s of decaying flick)", "index.html", false, async () => {
+    win().scrollTo(0, bottom() - 400);
+    await sleep(400);
+    const deltas = Array.from({ length: 90 }, (_, i) => Math.max(1, Math.round(60 * Math.exp(-i / 30))));
+    await seq(deltas, 16);
+  }],
+  ["trackpad swipe 250 ms after reaching bottom", "index.html", true, async () => {
+    win().scrollTo(0, bottom()); await sleep(250);
+    await seq(Array(25).fill(20), 16);
+  }],
+  ["mouse: 3 quick wheel clicks at bottom", "index.html", true, async () => {
+    win().scrollTo(0, bottom()); await sleep(300);
+    await seq([100, 100, 100], 60);
+  }],
+  ["mouse: 4 slow wheel clicks, 350 ms apart", "index.html", true, async () => {
+    win().scrollTo(0, bottom()); await sleep(300);
+    await seq([100, 100, 100, 100], 350);
+  }],
+  ["mouse: a single wheel click at bottom", "index.html", false, async () => {
+    win().scrollTo(0, bottom()); await sleep(300);
+    await seq([100], 60);
+  }],
+  ["Firefox-style line deltas (3 lines per click)", "index.html", true, async () => {
+    win().scrollTo(0, bottom()); await sleep(300);
+    await seq([3, 3, 3, 3, 3, 3], 60, { deltaMode: 1 });
+  }],
+  ["pinch-zoom at bottom (ctrl + wheel)", "index.html", false, async () => {
+    win().scrollTo(0, bottom()); await sleep(300);
+    await seq(Array(30).fill(20), 16, { ctrlKey: true });
+  }],
+  ["touch swipe that starts above the bottom", "index.html", false, async () => {
+    win().scrollTo(0, bottom() - 150); await sleep(300);
+    touch("touchstart", 700);
+    for (let y = 700; y > 300; y -= 20) { touch("touchmove", y); win().scrollBy(0, 20); await sleep(16); }
+    touch("touchend", 300);
+  }],
+  ["touch swipe that starts at the bottom", "index.html", true, async () => {
+    win().scrollTo(0, bottom()); await sleep(300);
+    touch("touchstart", 600);
+    for (let y = 600; y > 460; y -= 10) { touch("touchmove", y); await sleep(16); }
+    touch("touchend", 460);
+  }],
+  ["Research: wheel up at the top goes back", "contents/research.html", true, async () => {
+    win().scrollTo(0, 0); await sleep(300);
+    await seq([-100, -100, -100], 60);
+  }],
+  ["Research: scrolling up to the top with momentum", "contents/research.html", false, async () => {
+    win().scrollTo(0, 300); await sleep(300);
+    const deltas = Array.from({ length: 90 }, (_, i) => -Math.max(1, Math.round(50 * Math.exp(-i / 30))));
+    await seq(deltas, 16);
+  }],
+];
+
+(async () => {
+  const out = [];
+  for (const [name, url, expected, run] of scenarios) {
+    sessionStorage.clear();
+    await load(url);
+    await sleep(300);
+    let navigated = false;
+    const done = new Promise((r) => { f.onload = () => { navigated = true; r(); }; });
+    await Promise.race([run().then(() => sleep(800)), done]);
+    const ok = navigated === expected;
+    out.push(`${ok ? "PASS" : "FAIL"}  ${name}: ${navigated ? "navigated" : "stayed"} (expected ${expected ? "navigate" : "stay"})`);
+  }
+  document.getElementById("out").textContent = out.join("\n");
+  document.title = "done";
+})();
+</script></body></html>
