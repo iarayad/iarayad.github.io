@@ -5,29 +5,32 @@
 #     figure_alt: accessible image description
 #     body: [Markdown-enabled paragraphs]
 topics:
-  - title: "🔨 Mesoscopic superconductivity"
+  - title: "Superconductivity"
     figure: "images/research-mesoscopic.png"
     figure_alt: "Three superconductors with phases φL, φR, and φT meeting at a trijunction, with arrows showing Andreev modes routed between the normal channels"
     body:
       - >-
         Usually, protecting transport in a quantum system requires either topological band structures or adiabaticity in real space.
+      - >-
         My colleagues and I found a mechanism that works under neither of these conditions, relying instead on phase-space adiabaticity.
         We considered three superconductors with different phases that meet at a trijunction, and we unexpectedly found that the Andreev modes between them propagate in a clockwise fashion and without any reflection---two hallmarks of protected chiral quantized transport.
-  - title: "🪢 Topological phases of matter"
+        Check out our [paper](https://scipost.org/10.21468/SciPostPhys.18.3.098) for more details!
+  - title: "Topology"
     figure: "images/research-topological.png"
     figure_alt: "Hexagonal sample with six leads and a flux φ through its central hole, illustrating a sixfold rotation symmetry C6(φ) and the reflection matrix r(φ)"
     body:
       - >-
        How to characterize and study topological phases of matter in the presence of disorder?
        Disorder may kill a topological phase, but it may also induce one, and it inherently breaks the translational symmetry of a crystal.
+      - >-
        My colleagues and I generalized the theory of [scattering invariants to topological phases protected by spatial symmetries](https://scipost.org/10.21468/SciPostPhys.19.2.058), and used it to build a [formalism that applies to disordered systems](https://arxiv.org/pdf/2601.00784).
-  - title: "💻 Open-source software"
+  - title: "Open-source software"
     figure: "images/research-software.svg"
     figure_alt: "Pymablock logo: three block matrices in shades of purple"
     body:
       - >-
-        Complex quantum mechanical systems with too many degrees of freedom are often impossible to solve analytically, and sometimes even numerically; in many cases only an effective low-energy model can be solved.
-        A common approach is to use the Schrieffer–Wolff transformation to block-diagonalize the Hamiltonian perturbatively, separating the low-energy subspace from the rest---a tedious and slow approach.
+        Complex quantum mechanical systems with many degrees of freedom are often impossible to solve analytically, or even numerically; in many cases only an effective low-energy model can help.
+        A common approach is to use the Schrieffer–Wolff transformation to block-diagonalize the Hamiltonian perturbatively, separating the low-energy subspace from the rest.
       - >-
-        My colleagues and I developed an [efficient algorithm](https://scipost.org/10.21468/SciPostPhysCodeb.50) and a [Python package](https://pymablock.readthedocs.io/) 📦 that automates this process.
-        [Pymablock]{.pymablock} works with any number of subspaces, any number of perturbative orders, and it can handle both symbolic and numerical inputs ✨.
+        My colleagues and I developed an [efficient and general algorithm](https://scipost.org/10.21468/SciPostPhysCodeb.50) and a [Python package](https://pymablock.readthedocs.io/) 📦 that automates this process.
+        Check [Pymablock]{.pymablock} out! ✨.
