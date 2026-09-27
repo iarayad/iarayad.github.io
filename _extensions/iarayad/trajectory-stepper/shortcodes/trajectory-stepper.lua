@@ -1,11 +1,11 @@
 local stringify = pandoc.utils.stringify
 
-local function is_absolute(path)
-  return path:match('^%/') or path:match('^%a:[/\\]')
-end
-
 local function log_warning(msg)
   io.stderr:write("[trajectory-stepper] " .. msg .. "\n")
+end
+
+local function is_absolute(path)
+  return path:match('^%/') or path:match('^%a:[/\\]')
 end
 
 local function open_with_fallbacks(path)
@@ -25,97 +25,25 @@ end
 
 local function escape_html(text)
   local map = { ['&'] = '&amp;', ['<'] = '&lt;', ['>'] = '&gt;', ['"'] = '&quot;', ["'"] = '&#39;' }
-  local str = tostring(text or "")
-  str = str:gsub('[&<>"]', map)
-  str = str:gsub("'", map["'"])
-  return str
+  return (tostring(text or ""):gsub('[&<>"\']', map))
 end
 
-local function slugify(text, fallback)
-  local slug = text:lower():gsub('[^%w]+', '-'):gsub('^-+', ''):gsub('-+$', '')
-  if slug == '' then
-    slug = fallback
-  end
-  return slug
-end
-
-local function extract_markdown_text(value)
+-- Render Markdown metadata as inline HTML without stringifying it first, so links and emphasis survive.
+local function to_inline_html(value)
   if value == nil then
-    return nil
+    return ''
   end
   local vtype = pandoc.utils.type(value)
+  local blocks
   if vtype == "Inlines" then
-    local doc = pandoc.Pandoc({ pandoc.Plain(value) })
-    local markdown = pandoc.write(doc, "markdown")
-    return markdown and markdown:gsub('^%s+', ''):gsub('%s+$', '') or nil
+    blocks = { pandoc.Plain(value) }
   elseif vtype == "Blocks" then
-    local doc = pandoc.Pandoc(value)
-    local markdown = pandoc.write(doc, "markdown")
-    return markdown and markdown:gsub('^%s+', ''):gsub('%s+$', '') or nil
+    blocks = value
+  else
+    return escape_html(stringify(value))
   end
-  local text = stringify(value)
-  if type(text) ~= "string" then
-    text = tostring(text or "")
-  end
-  return text
-end
-
-local function sanitize_text(value)
-  local text = extract_markdown_text(value)
-  if text and text:match('%S') then
-    return escape_html(text)
-  end
-  return nil
-end
-
-local function convert_markdown_links(text)
-  if not text or text == '' then
-    return text
-  end
-  local function build_link(label, url)
-    local link_label = label ~= '' and label or url
-    return string.format('<a href="%s" class="trajectory-inline-link no-external" target="_blank" rel="noopener">%s</a>', url, link_label)
-  end
-  local converted = text:gsub('%[(.-)%]%((https?://[^%s)]+)%)', function(label, url)
-    return build_link(label, url)
-  end)
-  return converted
-end
-
-local function meta_to_strings(value)
-  local items = {}
-  if type(value) == "table" then
-    for _, entry in ipairs(value) do
-      local cleaned = sanitize_text(entry)
-      if cleaned then
-        table.insert(items, cleaned)
-      end
-    end
-  end
-  return items
-end
-
-local function extract_start_year(text)
-  local raw = tostring(text or "")
-  local year = raw:match('(%d%d%d%d)')
-  return year or ""
-end
-
-local function to_entry(entry, index)
-  local raw_id = escape_html(stringify(entry.id or ""))
-  local clean_id = slugify(raw_id ~= '' and raw_id or ('step-' .. index), 'step-' .. index)
-  local period_text = stringify(entry.period or "")
-  return {
-    id = clean_id,
-    order = tonumber(stringify(entry.order or index)) or index,
-    label = escape_html(stringify(entry.label or "")),
-    place = escape_html(stringify(entry.place or "")),
-    period = escape_html(period_text),
-    start_year = extract_start_year(period_text),
-    heading = escape_html(stringify(entry.heading or "")),
-    summary = escape_html(stringify(entry.summary or "")),
-    bullets = meta_to_strings(entry.bullets)
-  }
+  local html = pandoc.write(pandoc.Pandoc(blocks), 'html')
+  return (html:gsub('^%s+', ''):gsub('%s+$', ''))
 end
 
 local function read_entries(path)
@@ -127,157 +55,70 @@ local function read_entries(path)
   file:close()
   local doc = pandoc.read("---\n" .. content .. "\n---", "markdown")
   local meta = doc.meta.trajectory or doc.meta
-  local entries = {}
   if type(meta) ~= "table" then
     log_warning("no entries found in " .. (resolved_path or path))
-    return entries
+    return {}
   end
+  local entries = {}
   for idx, entry in ipairs(meta) do
-    entries[#entries + 1] = to_entry(entry, idx)
-  end
-  table.sort(entries, function(a, b)
-    if a.order == b.order then
-      return a.label < b.label
+    local period = stringify(entry.period or "")
+    local bullets = {}
+    for _, bullet in ipairs(entry.bullets or {}) do
+      table.insert(bullets, to_inline_html(bullet))
     end
-    return a.order < b.order
-  end)
+    entries[#entries + 1] = {
+      order = tonumber(stringify(entry.order or idx)) or idx,
+      label = escape_html(stringify(entry.label or "")),
+      place = escape_html(stringify(entry.place or "")),
+      period = escape_html(period),
+      year = period:match('(%d%d%d%d)') or "",
+      summary = to_inline_html(entry.summary),
+      bullets = bullets,
+    }
+  end
+  -- Newest first, like the publication and talk lists.
+  table.sort(entries, function(a, b) return a.order > b.order end)
   return entries
 end
 
 local function render(entries)
-  local html = {}
-  local purple_ids = { bachelors = true, masters = true, phd = true }
-  table.insert(html, '<div class="trajectory-stepper" data-stepper>')
-  table.insert(html, '  <div class="stepper-track">')
-  table.insert(html, '    <div class="stepper-track-fill" aria-hidden="true"></div>')
-  table.insert(html, '    <div class="stepper-nodes" role="tablist" aria-label="Academic and professional journey timeline">')
-  for idx, entry in ipairs(entries) do
-    local year = entry.start_year ~= '' and entry.start_year or '&nbsp;'
-    local panel_id = 'trajectory-' .. entry.id
-    local node_id = 'trajectory-node-' .. entry.id
-    local is_active = idx == 1
-    local is_purple = purple_ids[entry.id] or false
-    local node_classes = 'stepper-node' .. (is_active and ' is-active' or '') .. (is_purple and ' is-purple' or '')
-    local aria_selected = is_active and 'true' or 'false'
-    local tabindex = is_active and '' or ' tabindex="-1"'
-    table.insert(html, string.format('      <button id="%s" class="%s" type="button" role="tab" data-step-index="%d" data-target="%s" aria-controls="%s" aria-selected="%s"%s>', node_id, node_classes, idx - 1, panel_id, panel_id, aria_selected, tabindex))
-    table.insert(html, string.format('        <span class="stepper-node-year">%s</span>', year))
-    table.insert(html, '        <span class="stepper-node-dot" aria-hidden="true"></span>')
-    table.insert(html, '      </button>')
-  end
-  table.insert(html, '    </div>')
-  table.insert(html, '  </div>')
-  table.insert(html, '  <div class="stepper-panels">')
-  for idx, entry in ipairs(entries) do
-    local panel_id = 'trajectory-' .. entry.id
-    local node_id = 'trajectory-node-' .. entry.id
-    local is_active = idx == 1
-    local panel_classes = 'stepper-panel' .. (is_active and ' is-active' or '')
-    local aria_hidden = is_active and 'false' or 'true'
-    table.insert(html, string.format('    <section id="%s" class="%s" role="tabpanel" aria-labelledby="%s" aria-hidden="%s">', panel_id, panel_classes, node_id, aria_hidden))
-    if entry.period ~= '' or entry.label ~= '' or entry.place ~= '' then
-      table.insert(html, '      <div class="stepper-panel-heading">')
-      if entry.period ~= '' then
-        table.insert(html, string.format('        <p class="stepper-panel-period">%s</p>', entry.period))
+  local html = { '<ol class="entry-list">' }
+  local previous_year = nil
+  for _, entry in ipairs(entries) do
+    local new_year = entry.year ~= previous_year
+    previous_year = entry.year
+    table.insert(html, string.format('  <li class="entry%s">', new_year and ' entry-new-year' or ''))
+    table.insert(html, string.format('    <span class="entry-year">%s</span>', new_year and entry.year or ''))
+    table.insert(html, '    <div class="entry-body">')
+    local where = { entry.place, entry.period }
+    local suffix = {}
+    for _, part in ipairs(where) do
+      if part ~= '' then
+        table.insert(suffix, part)
       end
-      if entry.label ~= '' then
-        table.insert(html, string.format('        <h3 class="stepper-panel-title">%s</h3>', entry.label))
-      end
-      if entry.place ~= '' then
-        table.insert(html, string.format('        <p class="stepper-panel-subtitle">%s</p>', entry.place))
-      end
-      table.insert(html, '      </div>')
     end
+    table.insert(html, string.format('      <span class="entry-title">%s</span><span class="entry-role">, %s</span>',
+      entry.label, table.concat(suffix, ' · ')))
     if entry.summary ~= '' then
-      table.insert(html, string.format('      <p>%s</p>', convert_markdown_links(entry.summary)))
+      table.insert(html, string.format('      <div class="entry-description">%s</div>', entry.summary))
     end
     if #entry.bullets > 0 then
-      table.insert(html, '      <ul class="stepper-panel-list">')
+      table.insert(html, '      <ul class="entry-details">')
       for _, bullet in ipairs(entry.bullets) do
-        table.insert(html, string.format('        <li>%s</li>', convert_markdown_links(bullet)))
+        table.insert(html, string.format('        <li>%s</li>', bullet))
       end
       table.insert(html, '      </ul>')
     end
-    table.insert(html, '    </section>')
+    table.insert(html, '    </div>')
+    table.insert(html, '  </li>')
   end
-  table.insert(html, '  </div>')
-  table.insert(html, '</div>')
+  table.insert(html, '</ol>')
   return table.concat(html, '\n')
 end
 
-local stepper_script = [[
-<script type="module">
-const initTrajectoryStepper = () => {
-  const steppers = document.querySelectorAll('[data-stepper]');
-  steppers.forEach((stepper) => {
-    const panels = stepper.querySelectorAll('.stepper-panel');
-    const trackFill = stepper.querySelector('.stepper-track-fill');
-    const nodes = stepper.querySelectorAll('.stepper-node');
-    if (!nodes.length) return;
-
-    const setActive = (index) => {
-      panels.forEach((panel, idx) => {
-        const isActive = idx === index;
-        panel.classList.toggle('is-active', isActive);
-        panel.setAttribute('aria-hidden', String(!isActive));
-      });
-
-      nodes.forEach((node, idx) => {
-        const isActive = idx === index;
-        node.classList.toggle('is-active', isActive);
-        node.classList.toggle('is-complete', idx <= index);
-        node.setAttribute('aria-selected', String(isActive));
-        node.setAttribute('tabindex', isActive ? '0' : '-1');
-      });
-
-      if (trackFill) {
-        const progress = nodes.length > 1 ? (index / (nodes.length - 1)) * 100 : 100;
-        trackFill.style.setProperty('--step-progress', `${progress}%`);
-      }
-    };
-
-    nodes.forEach((node, index) => {
-      node.addEventListener('click', () => setActive(index));
-      node.addEventListener('keydown', (event) => {
-        const interactiveKeys = ['ArrowLeft', 'ArrowRight', 'Home', 'End', 'Enter', ' '];
-        if (!interactiveKeys.includes(event.key)) return;
-        const lastIndex = nodes.length - 1;
-        let nextIndex = index;
-        if (event.key === 'ArrowLeft') nextIndex = Math.max(0, index - 1);
-        if (event.key === 'ArrowRight') nextIndex = Math.min(lastIndex, index + 1);
-        if (event.key === 'Home') nextIndex = 0;
-        if (event.key === 'End') nextIndex = lastIndex;
-
-        if (['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) {
-          event.preventDefault();
-          nodes[nextIndex].focus();
-          setActive(nextIndex);
-        }
-
-        if (event.key === 'Enter' || event.key === ' ') {
-          event.preventDefault();
-          setActive(index);
-        }
-      });
-    });
-
-    setActive(0);
-  });
-};
-
-if (document.readyState !== 'loading') {
-  initTrajectoryStepper();
-} else {
-  document.addEventListener('DOMContentLoaded', initTrajectoryStepper);
-}
-</script>
-]]
-
-local script_injected = false
-
 return {
   ["trajectory-stepper"] = function(args, kwargs)
-    local path = stringify(kwargs["path"]) or ""
+    local path = stringify(kwargs["path"] or "")
     if path == "" then
       path = "data/trajectory.yml"
     end
@@ -285,11 +126,6 @@ return {
     if #entries == 0 then
       return pandoc.Null()
     end
-    local blocks = { pandoc.RawBlock('html', render(entries)) }
-    if not script_injected then
-      table.insert(blocks, pandoc.RawBlock('html', stepper_script))
-      script_injected = true
-    end
-    return blocks
+    return pandoc.RawBlock('html', render(entries))
   end
 }

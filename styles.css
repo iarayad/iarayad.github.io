@@ -2,7 +2,6 @@
 
 /* Style for Pymablock mentions */
 .pymablock {
-  color: #8b4aa0ff;
   font-weight: bold;
 }
 
@@ -23,225 +22,27 @@ body {
   font-size: 1.05rem;
 }
 
-/* Darker link highlighting */
-a {
-  color: rgb(51, 140, 115);
-}
-
+/* Background timeline: reuses the entry list layout; description and highlights sit under each entry. */
 .trajectory-section {
-  margin-top: 1rem;
+  margin-top: 0.5rem;
+  text-align: left;
 }
 
-.trajectory-stepper .trajectory-inline-link {
-  color: inherit;
-  text-decoration: none;
-  font-weight: inherit;
+.entry-description {
+  margin: 0.15rem 0 0;
+  font-size: 0.92rem;
+  color: #4a5a61;
 }
 
-.trajectory-stepper .trajectory-inline-link:hover,
-.trajectory-stepper .trajectory-inline-link:focus {
-  text-decoration: underline;
-  color: inherit;
-}
-
-.trajectory-section h2 {
-  text-align: center;
-  margin-bottom: 2rem;
-  font-size: 1.4rem;
-}
-
-.trajectory-stepper {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  gap: 1.1rem;
-}
-
-.stepper-track {
-  position: relative;
-  height: 3.5rem;
-  margin-bottom: 0.35rem;
-}
-
-.stepper-track::before {
-  content: "";
-  position: absolute;
-  top: 2.6rem;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: rgba(51, 140, 115, 0.2);
-  border-radius: 999px;
-}
-
-.stepper-track-fill {
-  position: absolute;
-  top: 2.6rem;
-  left: 0;
-  height: 4px;
-  width: var(--step-progress, 0%);
-  background: linear-gradient(90deg, rgb(51, 140, 115), rgb(28, 99, 87));
-  border-radius: 999px;
-  transition: width 320ms ease;
-  transform: translateY(-50%);
-}
-
-.stepper-nodes {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  padding: 0 0.3rem;
-}
-
-.stepper-node {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.1rem;
-  min-width: 0;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: #3a4b51;
-  pointer-events: auto;
-  background: none;
-  border: none;
-  padding: 0.35rem 0.25rem;
-  cursor: pointer;
-  font: inherit;
-}
-
-.stepper-node:focus-visible {
-  outline: 3px solid rgba(51, 140, 115, 0.45);
-  outline-offset: 4px;
-  border-radius: 0.5rem;
-}
-
-.stepper-node-year {
-  font-weight: 600;
-  margin-bottom: -0.2rem;
-}
-
-.stepper-node-dot {
-  width: 0.85rem;
-  height: 0.85rem;
-  border-radius: 50%;
-  border: 3px solid #1c6357;
-  background: #fff;
-  box-shadow: 0 0 0 6px rgba(51, 140, 115, 0.08);
-  margin-top: 0.4rem;
-}
-
-.stepper-node.is-complete .stepper-node-dot {
-  background: #1c6357;
-  border-color: #1c6357;
-  box-shadow: 0 0 0 6px rgba(28, 99, 87, 0.15);
-}
-
-.stepper-node.is-active .stepper-node-year {
-  color: #1c6357;
-}
-
-.stepper-node.is-purple .stepper-node-dot {
-  border-color: #984eca;
-  box-shadow: 0 0 0 6px rgba(123, 77, 194, 0.15);
-}
-
-.stepper-node.is-purple.is-complete .stepper-node-dot {
-  background: #984eca;
-  border-color: #984eca;
-  box-shadow: 0 0 0 6px rgba(123, 77, 194, 0.25);
-}
-
-.stepper-node.is-purple.is-active .stepper-node-year {
-  color: #984eca;
-}
-
-.stepper-panels {
-  padding: 0.25rem 0 0;
-}
-
-.stepper-panel {
-  display: none;
-  animation: fadeSlideIn 260ms ease;
-  font-size: 0.9rem;
-  line-height: 1.35;
-}
-
-.stepper-panel.is-active {
-  display: block;
-}
-
-.stepper-panel-heading {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 0.6rem;
-  margin-bottom: 0.75rem;
-}
-
-.stepper-panel-title {
+.entry-description p {
   margin: 0;
-  font-size: 1rem;
-  font-weight: 700;
-  color: #1f2f35;
 }
 
-.stepper-panel-subtitle {
-  margin: 0;
+.entry-details {
+  margin: 0.2rem 0 0;
+  padding-left: 1.1rem;
   font-size: 0.9rem;
-  color: #5f6c74;
-}
-
-.stepper-panel-period {
-  font-size: 0.8rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: rgb(51, 140, 115);
-  margin-bottom: 0;
-}
-
-.stepper-panel-list {
-  margin-top: 1rem;
-  padding-left: 1rem;
-  display: grid;
-  gap: 0.25rem;
-  font-size: 0.9rem;
-}
-
-@keyframes fadeSlideIn {
-  from {
-    opacity: 0;
-    transform: translateY(8px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@media (max-width: 900px) {
-  .trajectory-section {
-    padding: 1.35rem 1rem;
-  }
-}
-
-@media (max-width: 600px) {
-  .stepper-nodes {
-    padding: 0;
-  }
-
-  .stepper-node {
-    padding: 0.35rem 0;
-    font-size: 0.8rem;
-    letter-spacing: 0;
-  }
-
-  .stepper-panels {
-    font-size: 0.88rem;
-    text-align: left;
-  }
+  color: #4a5a61;
 }
 
 .listing-toggle {

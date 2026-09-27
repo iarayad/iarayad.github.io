@@ -36,11 +36,11 @@ format:
   html:
     theme:
       - minty
+      - theme.scss
     page-layout: full
     css: styles.css
     scroll-reveal: true
     # toc: true
-    backgroundcolor: "#fcfcfd"
 
 execute:
   freeze: auto

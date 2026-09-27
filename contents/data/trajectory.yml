@@ -70,3 +70,10 @@ trajectory:
     bullets:
       - Worked on a read-out scheme for Andreev spin qubits using inductive dispersive sensing.
       - Optimized time-dependent pulses for qubit control using the [Krotov Python package](https://qucontrol.github.io/krotov/v1.0.0/01_overview.html).
+  - id: postdoc
+    order: 7
+    label: "Postdoctoral researcher"
+    place: "Donostia International Physics Center"
+    period: "2025 → present"
+    summary: >-
+      I joined [Adolfo Grushin's group](https://grushingroup.cnrs.fr/) in San Sebastián to work on DMRG and tensor networks applied to topological disordered systems.

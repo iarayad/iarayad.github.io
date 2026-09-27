@@ -1,0 +1,22 @@
+/*-- scss:defaults --*/
+// One accent colour on a near-white page; the navbar and footer match the page.
+$primary: #338c73;
+$link-color: $primary;
+$body-bg: #fcfcfd;
+$body-color: #333;
+$headings-color: #222;
+$text-muted: #6c757d;
+$navbar-bg: $body-bg;
+$navbar-fg: #333;
+$navbar-hl: $primary;
+$footer-bg: $body-bg;
+$footer-fg: $text-muted;
+
+/*-- scss:rules --*/
+.navbar {
+  border-bottom: 1px solid #e3e6e8;
+}
+
+.nav-footer {
+  border-top: 1px solid #e3e6e8;
+}
