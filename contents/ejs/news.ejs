@@ -1,5 +1,5 @@
 <%
-  // The two most recent papers, dated by publication or, for preprints, by arXiv submission.
+  // The three most recent papers, dated by publication or, for preprints, by arXiv submission.
   const month = (d) => d.toLocaleDateString('en-US', { month: 'short', year: 'numeric', timeZone: 'UTC' });
   const news = items.map((item) => {
     const published = item.journal && item.vol && item.page && item.doi;
@@ -9,7 +9,7 @@
       text: `<em>${_.escape(item.title)}</em>`,
       href: published ? `https://doi.org/${item.doi}` : `https://arxiv.org/abs/${item.id}`,
     };
-  }).sort((a, b) => b.date - a.date).slice(0, 2);
+  }).sort((a, b) => b.date - a.date).slice(0, 3);
 %>
 ```{=html}
 <ul class="news-list">
