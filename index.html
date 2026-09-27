@@ -36,6 +36,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<link href="./favicon.svg" rel="icon" type="image/svg+xml">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -156,8 +157,8 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <div class="trajectory-section" data-scroll-reveal="true">
 <div class="trajectory-stepper" data-stepper="">
-  <div class="stepper-track" aria-hidden="true">
-    <div class="stepper-track-fill"></div>
+  <div class="stepper-track">
+    <div class="stepper-track-fill" aria-hidden="true"></div>
     <div class="stepper-nodes" role="tablist" aria-label="Academic and professional journey timeline">
       <button id="trajectory-node-bachelors" class="stepper-node is-active is-purple" type="button" role="tab" data-step-index="0" data-target="trajectory-bachelors" aria-controls="trajectory-bachelors" aria-selected="true">
         <span class="stepper-node-year">2015</span>
@@ -332,9 +333,6 @@ if (document.readyState !== 'loading') {
 }
 </script>
 </div>
-<div class="quarto-footer">
-<p>I made this with <a href="https://quarto.org">Quarto</a> and <a href="https://github.com/features/copilot">Github Copilot</a>.</p>
-</div>
 
 
 </main></div>
@@ -410,7 +408,7 @@ if (document.readyState !== 'loading') {
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/iarayad\.github\.io\/");
+        var filterRegex = new RegExp("https:\/\/isidora\.araya\.day\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
@@ -756,8 +754,8 @@ if (document.readyState !== 'loading') {
 </ul>
     </div>
     <div class="nav-footer-right">
-      &nbsp;
-    </div>
+<p>Made with <a href="https://quarto.org">Quarto</a> and <a href="https://github.com/features/copilot">GitHub Copilot</a></p>
+</div>
   </div>
 </footer>
 
