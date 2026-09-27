@@ -2,7 +2,6 @@
 
 /* Style for Pymablock mentions */
 .pymablock {
-  color: #8b4aa0ff;
   font-weight: bold;
 }
 
@@ -23,35 +22,13 @@ body {
   font-size: 1.05rem;
 }
 
-/* Darker link highlighting */
-a {
-  color: rgb(51, 140, 115);
-}
-
+/* Background stepper: year nodes on a line, one panel visible at a time. */
 .trajectory-section {
   margin-top: 1rem;
-}
-
-.trajectory-stepper .trajectory-inline-link {
-  color: inherit;
-  text-decoration: none;
-  font-weight: inherit;
-}
-
-.trajectory-stepper .trajectory-inline-link:hover,
-.trajectory-stepper .trajectory-inline-link:focus {
-  text-decoration: underline;
-  color: inherit;
-}
-
-.trajectory-section h2 {
-  text-align: center;
-  margin-bottom: 2rem;
-  font-size: 1.4rem;
+  text-align: left;
 }
 
 .trajectory-stepper {
-  position: relative;
   display: flex;
   flex-direction: column;
   gap: 1.1rem;
@@ -60,30 +37,27 @@ a {
 .stepper-track {
   position: relative;
   height: 3.5rem;
-  margin-bottom: 0.35rem;
 }
 
-.stepper-track::before {
+.stepper-track::before,
+.stepper-track-fill {
   content: "";
   position: absolute;
   top: 2.6rem;
   left: 0;
+  height: 2px;
+  transform: translateY(-50%);
+}
+
+.stepper-track::before {
   right: 0;
-  height: 4px;
-  background: rgba(51, 140, 115, 0.2);
-  border-radius: 999px;
+  background: #d6e4df;
 }
 
 .stepper-track-fill {
-  position: absolute;
-  top: 2.6rem;
-  left: 0;
-  height: 4px;
   width: var(--step-progress, 0%);
-  background: linear-gradient(90deg, rgb(51, 140, 115), rgb(28, 99, 87));
-  border-radius: 999px;
-  transition: width 320ms ease;
-  transform: translateY(-50%);
+  background: #338c73;
+  transition: width 300ms ease;
 }
 
 .stepper-nodes {
@@ -92,30 +66,25 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  padding: 0 0.3rem;
 }
 
 .stepper-node {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.1rem;
   min-width: 0;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: #3a4b51;
-  pointer-events: auto;
-  background: none;
-  border: none;
   padding: 0.35rem 0.25rem;
-  cursor: pointer;
+  border: none;
+  background: none;
   font: inherit;
+  color: #6c757d;
+  cursor: pointer;
 }
 
 .stepper-node:focus-visible {
-  outline: 3px solid rgba(51, 140, 115, 0.45);
-  outline-offset: 4px;
-  border-radius: 0.5rem;
+  outline: 2px solid rgba(51, 140, 115, 0.5);
+  outline-offset: 2px;
+  border-radius: 4px;
 }
 
 .stepper-node-year {
@@ -124,52 +93,25 @@ a {
 }
 
 .stepper-node-dot {
-  width: 0.85rem;
-  height: 0.85rem;
-  border-radius: 50%;
-  border: 3px solid #1c6357;
-  background: #fff;
-  box-shadow: 0 0 0 6px rgba(51, 140, 115, 0.08);
+  width: 0.8rem;
+  height: 0.8rem;
   margin-top: 0.4rem;
+  border-radius: 50%;
+  border: 2px solid #338c73;
+  background: #fcfcfd;
 }
 
 .stepper-node.is-complete .stepper-node-dot {
-  background: #1c6357;
-  border-color: #1c6357;
-  box-shadow: 0 0 0 6px rgba(28, 99, 87, 0.15);
+  background: #338c73;
 }
 
-.stepper-node.is-active .stepper-node-year {
+.stepper-node.is-active {
   color: #1c6357;
-}
-
-.stepper-node.is-purple .stepper-node-dot {
-  border-color: #984eca;
-  box-shadow: 0 0 0 6px rgba(123, 77, 194, 0.15);
-}
-
-.stepper-node.is-purple.is-complete .stepper-node-dot {
-  background: #984eca;
-  border-color: #984eca;
-  box-shadow: 0 0 0 6px rgba(123, 77, 194, 0.25);
-}
-
-.stepper-node.is-purple.is-active .stepper-node-year {
-  color: #984eca;
-}
-
-.stepper-panels {
-  border-radius: 1rem;
-  background: #f7fbfa;
-  padding: 1.05rem;
-  box-shadow: inset 0 0 0 1px rgba(51, 140, 115, 0.08);
 }
 
 .stepper-panel {
   display: none;
-  animation: fadeSlideIn 260ms ease;
-  font-size: 0.9rem;
-  line-height: 1.35;
+  font-size: 0.95rem;
 }
 
 .stepper-panel.is-active {
@@ -177,73 +119,37 @@ a {
 }
 
 .stepper-panel-heading {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 0.6rem;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.5rem;
 }
 
 .stepper-panel-title {
-  margin: 0;
-  font-size: 1rem;
-  font-weight: 700;
-  color: #1f2f35;
+  font-weight: 600;
 }
 
-.stepper-panel-subtitle {
-  margin: 0;
-  font-size: 0.9rem;
-  color: #5f6c74;
+.stepper-panel-where {
+  color: #6c757d;
 }
 
-.stepper-panel-period {
-  font-size: 0.8rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: rgb(51, 140, 115);
-  margin-bottom: 0;
+.stepper-panel p {
+  margin-bottom: 0.5rem;
 }
 
 .stepper-panel-list {
-  margin-top: 1rem;
-  padding-left: 1rem;
-  display: grid;
-  gap: 0.25rem;
-  font-size: 0.9rem;
+  padding-left: 1.1rem;
+  margin: 0;
+  font-size: 0.92rem;
+  color: #4a5a61;
 }
 
-@keyframes fadeSlideIn {
-  from {
-    opacity: 0;
-    transform: translateY(8px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@media (max-width: 900px) {
-  .trajectory-section {
-    padding: 1.35rem 1rem;
-  }
-}
-
-@media (max-width: 600px) {
-  .stepper-nodes {
-    padding: 0;
-  }
-
+@media (max-width: 575.98px) {
   .stepper-node {
     padding: 0.35rem 0;
     font-size: 0.8rem;
-    letter-spacing: 0;
   }
 
-  .stepper-panels {
-    padding: 0.9rem;
-    font-size: 0.88rem;
+  .stepper-track::before,
+  .stepper-track-fill {
+    top: 2.35rem;
   }
 }
 
