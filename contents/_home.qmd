@@ -1,13 +1,13 @@
 
 ::: {.hero-section}
 
-Hi!👋 I am **Isidora Araya Day**, a theoretical condensed matter physicist working on **mesoscopic superconductivity, topology, and quantum transport**.
+Hi!👋 I am a theoretical condensed matter physicist working on **mesoscopic superconductivity, topology, and quantum transport**.
 
 📍 Currently I am a postdoc at DIPC in San Sebastián, Spain, working with [Adolfo Grushin](https://grushingroup.cnrs.fr/).
 
 💻 {{< meta phd_line >}}
 
-I love working on problems that require combining analytics and numerics.
+I particularly enjoy working on problems that require combining analytics and numerics.
 One of my favorite projects so far was developing [**Pymablock**](https://pymablock.readthedocs.io/), an open-source Python package to do quantum mechanical perturbation theory efficiently, numerically and symbolically.
 
 ### My journey so far
