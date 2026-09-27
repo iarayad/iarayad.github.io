@@ -1,5 +1,10 @@
 ---
-title: "About me"
+title: "Isidora Araya Day"
+description-meta: &description "Theoretical condensed matter physicist working on mesoscopic superconductivity, topology, and quantum transport."
+open-graph:
+  description: *description
+twitter-card:
+  description: *description
 metadata-files:
   - contents/data/home.yml
 image: contents/images/profile.png

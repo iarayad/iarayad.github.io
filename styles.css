@@ -358,3 +358,19 @@ a.entry-title:hover {
     display: none;
   }
 }
+
+/* Keep the homepage profile links as a compact row on small screens instead of full-width stacked buttons. */
+@media (max-width: 991.98px) {
+  div.quarto-about-solana .about-entity .about-links {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  div.quarto-about-solana .about-entity .about-link {
+    font-size: 0.9em;
+    padding: 0.25em 0.6em;
+    border-radius: 4px;
+  }
+}

@@ -12,8 +12,11 @@ project:
     - contents/slides/pintofscience-19-05-2026/slides/figures/
 
 website:
-  title: "About me"
+  title: "Isidora Araya Day"
   site-url: "https://isidora.araya.day/"
+  image: contents/images/profile.png
+  open-graph: true
+  twitter-card: true
   favicon: favicon.svg
   navbar:
     left:

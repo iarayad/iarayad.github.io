@@ -1,5 +1,10 @@
 ---
 title: "Research"
+description-meta: &description "Research, publications, and talks of Isidora Araya Day on superconductivity, topology, and open-source physics software."
+open-graph:
+  description: *description
+twitter-card:
+  description: *description
 draft: false
 listing:
   - id: sample-listings
@@ -40,8 +45,6 @@ listing:
 
 
 ::: {.research-section}
-## My interests
-
 I enjoy thinking about problems that require combining analytical insight with equations only a computer can solve.
 Mesoscopic systems often benefit from this approach: they are small enough to behave quantum mechanically, and yet large enough to require several degrees of freedom to describe them.
 
