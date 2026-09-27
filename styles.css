@@ -289,7 +289,72 @@ a {
   margin-top: 1rem;
 }
 
-#sample-listings tbody,
-#talks-listings tbody {
-  font-size: 0.92rem;
+/* Publication and talk lists: year in a narrow gutter, shown once per year. */
+.entry-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.entry {
+  display: grid;
+  grid-template-columns: 4rem minmax(0, 1fr);
+  gap: 0 1rem;
+  padding: 0.35rem 0;
+}
+
+.entry-new-year {
+  border-top: 1px solid #e3e6e8;
+  margin-top: 0.35rem;
+  padding-top: 0.75rem;
+}
+
+.entry-new-year:first-child {
+  border-top: none;
+  margin-top: 0;
+  padding-top: 0.25rem;
+}
+
+.entry-year {
+  color: #6c757d;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.entry-title {
+  font-weight: 600;
+  color: #1f2f35;
+}
+
+a.entry-title {
+  text-decoration: none;
+}
+
+a.entry-title:hover {
+  text-decoration: underline;
+}
+
+.entry-role {
+  color: #6c757d;
+}
+
+.entry-people {
+  color: #4a5a61;
+}
+
+.entry-badge {
+  color: rgb(51, 140, 115);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+@media (max-width: 575.98px) {
+  .entry {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .entry-year:empty {
+    display: none;
+  }
 }

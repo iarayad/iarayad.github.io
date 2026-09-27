@@ -229,398 +229,212 @@ window.Quarto = {
 <p>I enjoy thinking about problems that require combining analytical insight with equations only a computer can solve. Mesoscopic systems often benefit from this approach: they are small enough to behave quantum mechanically, and yet large enough to require several degrees of freedom to describe them.</p>
 <div class="research-grid">
 <style>
-.research-carousel-shell {
-  position: relative;
-  width: 100%;
-  padding: 0;
-  margin: 0;
+.research-topics .tab-content {
+  padding-top: 1.25rem;
 }
 
-.research-carousel-shell .carousel,
-.research-carousel-shell .carousel-inner,
-.research-carousel-shell .carousel-item,
-.research-card.card {
-  width: 100%;
+.research-topics .tab-pane p {
+  text-align: justify;
+  -webkit-hyphens: auto;
+  hyphens: auto;
 }
 
-.research-card.card {
-  border-radius: 1.25rem;
-}
-
-.card-nav-control {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.45rem;
-  font-size: 0.92rem;
-  letter-spacing: 0.02em;
-  border: none;
-  background: transparent;
-  color: #5e6a76;
-  padding: 0.2rem 0.55rem;
-  cursor: pointer;
-  font-weight: 600;
-  transition: color 180ms ease, transform 180ms ease;
-}
-
-.card-nav-control:hover {
-  color: #338c73;
-  transform: translateY(-1px);
-}
-
-.card-nav-control:focus-visible {
-  outline: 2px solid rgba(51, 140, 115, 0.45);
-  outline-offset: 3px;
-}
-
-.card-nav-control .bi {
-  font-size: 1.35rem;
-  line-height: 1;
-}
-
-.research-card .card-nav-hints {
-  font-size: 0.92rem;
-  letter-spacing: 0.01em;
-  margin-bottom: 1.15rem;
-}
-
-.research-card-payload {
-  display: flex;
-  gap: 1.75rem;
-  align-items: center;
-  flex-wrap: nowrap;
-}
-
-.research-card-figure {
-  flex: 0 0 240px;
-  max-width: 320px;
-}
-
-.research-card-figure img {
-  width: 100%;
+.research-topic-figure {
+  float: right;
+  width: 170px;
   height: auto;
-  border-radius: 1rem;
+  margin: 0.25rem 0 0.75rem 1.5rem;
 }
 
-.research-card-copy {
-  flex: 1 1 320px;
+.research-topics .tab-pane::after {
+  content: "";
+  display: block;
+  clear: both;
 }
 
-@media (max-width: 768px) {
-  .card-nav-hints {
-    flex-direction: column;
-    gap: 0.4rem;
+/* Lines beside the figure are too short to justify on phones. */
+@media (max-width: 575.98px) {
+  .research-topics .tab-pane p {
+    text-align: left;
   }
-  .research-card-payload {
-    flex-direction: column;
-    align-items: stretch;
-  }
-  .research-card-figure {
-    flex: 0 0 auto;
-    width: 100%;
-    max-width: none;
+
+  .research-topic-figure {
+    width: 110px;
+    margin-left: 1rem;
   }
 }
 </style>
 
-<div class="research-carousel-shell">
-  <div id="research-carousel-1" class="carousel carousel-dark slide" data-bs-interval="false" data-bs-touch="true" aria-label="Research focus carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <div class="research-card card shadow-sm border-0">
-        <div class="card-body">
-          <div class="card-nav-hints d-flex justify-content-between align-items-center mb-3">
-            <button class="card-nav-control card-nav-prev" type="button" data-bs-target="#research-carousel-1" data-bs-slide="prev" aria-label="Previous research topic">
-              <i class="bi bi-arrow-left-short"></i> 💻 Open-source software
-            </button>
-            <button class="card-nav-control card-nav-next" type="button" data-bs-target="#research-carousel-1" data-bs-slide="next" aria-label="Next research topic">
-              🪢 Topological phases of matter <i class="bi bi-arrow-right-short"></i>
-            </button>
-          </div>
-          <div class="research-card-payload">
-            <div class="research-card-figure">
-              <img src="images/research-mesoscopic.png" alt="Stylized mesoscopic superconducting device diagram" loading="lazy" decoding="async">
-            </div>
-            <div class="research-card-copy">
-              <h3 class="h4 anchored">🔨 Mesoscopic superconductivity</h3>
-              <p>Two-dimensional devices offer the possibility of combining different
-materials such that different properties combine and give rise to
-tailored phenomena.</p>
-              <p>For example, placing a superconductor in close proximity to a
-semiconductor turns the latter into a superconductor via the proximity
-effect, and allows to design Josephson junctions with highly tunable
-properties.</p>
-              <p>My colleagues and I found that superconducting trijunctions can host
-<a href="https://scipost.org/10.21468/SciPostPhys.18.3.098">chiral
-protected transport of Andreev bound states</a>.</p>
-              <div class="d-flex flex-wrap gap-2 mt-4">
-                <a class="btn btn-outline-primary" href="https://scipost.org/10.21468/SciPostPhys.18.3.098">📄 Paper</a>
-                <a class="btn btn-outline-primary" href="https://zenodo.org/records/15048045">🗄️ Code &amp; data (Zenodo)</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="carousel-item">
-      <div class="research-card card shadow-sm border-0">
-        <div class="card-body">
-          <div class="card-nav-hints d-flex justify-content-between align-items-center mb-3">
-            <button class="card-nav-control card-nav-prev" type="button" data-bs-target="#research-carousel-1" data-bs-slide="prev" aria-label="Previous research topic">
-              <i class="bi bi-arrow-left-short"></i> 🔨 Mesoscopic superconductivity
-            </button>
-            <button class="card-nav-control card-nav-next" type="button" data-bs-target="#research-carousel-1" data-bs-slide="next" aria-label="Next research topic">
-              💻 Open-source software <i class="bi bi-arrow-right-short"></i>
-            </button>
-          </div>
-          <div class="research-card-payload">
-            <div class="research-card-figure">
-              <img src="images/research-topological.png" alt="Concentric topological interference rings" loading="lazy" decoding="async">
-            </div>
-            <div class="research-card-copy">
-              <h3 class="h4 anchored">🪢 Topological phases of matter</h3>
-              <p>Protected transport also naturally arises in topological phases of
-matter, where conduction channels are robust while the bulk remains
-insulating and symmetry-protected. A Chern insulator, for example, hosts
-two counter-propagating edge states that may not disappear unless the
-bulk undergoes a delocalization transition. A powerful tool to
-characterize these phases are scattering invariants, which rely on a
-transport setup to probe the topological properties of a system.</p>
-              <p>Johanna, Anton, and I recently generalized these invariants to phases
-protected by spatial symmetries, which may or may not host conducting
-protected modes.</p>
-              <div class="d-flex flex-wrap gap-2 mt-4">
-                <a class="btn btn-outline-primary" href="https://scipost.org/10.21468/SciPostPhys.19.2.058">📄 Paper</a>
-                <a class="btn btn-outline-primary" href="https://zenodo.org/records/15553181">🗄️ Code &amp; data (Zenodo)</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="carousel-item">
-      <div class="research-card card shadow-sm border-0">
-        <div class="card-body">
-          <div class="card-nav-hints d-flex justify-content-between align-items-center mb-3">
-            <button class="card-nav-control card-nav-prev" type="button" data-bs-target="#research-carousel-1" data-bs-slide="prev" aria-label="Previous research topic">
-              <i class="bi bi-arrow-left-short"></i> 🪢 Topological phases of matter
-            </button>
-            <button class="card-nav-control card-nav-next" type="button" data-bs-target="#research-carousel-1" data-bs-slide="next" aria-label="Next research topic">
-              🔨 Mesoscopic superconductivity <i class="bi bi-arrow-right-short"></i>
-            </button>
-          </div>
-          <div class="research-card-payload">
-            <div class="research-card-figure">
-              <img src="images/research-software.svg" alt="Terminal window running pymablock iterations" loading="lazy" decoding="async">
-            </div>
-            <div class="research-card-copy">
-              <h3 class="h4 anchored">💻 Open-source software</h3>
-              <p>Complex quantum mechanical systems with too many degrees of freedom
-are often impossible to solve analytically, and sometimes even
-numerically. Constructing an effective model that captures the essential
-physics of the system is then the key to making progress. A common
-approach is to use the Schrieffer–Wolff transformation to
-block-diagonalize the Hamiltonian perturbatively, separating the
-low-energy subspace from the rest. This is, however, standard and yet
-tedious. Even worse, Schrieffer–Wolff transformations scale poorly with
-the perturbative order of the Hamiltonian, and they are limited to two
-subspaces.</p>
-              <p>My colleagues and I developed an efficient algorithm and a Python
-package 📦 that automates this process. <span class="pymablock">Pymablock</span> works with any number of subspaces,
-any number of perturbative orders, and it can handle both symbolic and
-numerical inputs ✨.</p>
-              <div class="d-flex flex-wrap gap-2 mt-4">
-                <a class="btn btn-primary" href="https://pymablock.readthedocs.io/">📖 Documentation</a>
-                <a class="btn btn-outline-primary" href="https://github.com/quantum-tinkerer/pymablock">💻 GitHub Repository</a>
-                <a class="btn btn-outline-primary" href="https://scipost.org/10.21468/SciPostPhysCodeb.50">📄 Paper</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+<div class="tabset-margin-container"></div><div class="panel-tabset research-topics">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">Superconductivity</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">Topology</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false" href="">Open-source software</a></li></ul>
+<div class="tab-content research-topics">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<p><img src="images/research-mesoscopic.png" class="research-topic-figure img-fluid" alt="Three superconductors with phases φL, φR, and φT meeting at a trijunction, with arrows showing Andreev modes routed between the normal channels">Usually, protecting transport in a quantum system requires either topological band structures or adiabaticity in real space.</p>
+<p>My colleagues and I found a mechanism that works under neither of these conditions, relying instead on phase-space adiabaticity. We considered three superconductors with different phases that meet at a trijunction, and we unexpectedly found that the Andreev modes between them propagate in a clockwise fashion and without any reflection—two hallmarks of protected chiral quantized transport. Check out our <a href="https://scipost.org/10.21468/SciPostPhys.18.3.098">paper</a> for more details!</p>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<p><img src="images/research-topological.png" class="research-topic-figure img-fluid" alt="Hexagonal sample with six leads and a flux φ through its central hole, illustrating a sixfold rotation symmetry C6(φ) and the reflection matrix r(φ)">How to characterize and study topological phases of matter in the presence of disorder? Disorder may kill a topological phase, but it may also induce one, and it inherently breaks the translational symmetry of a crystal.</p>
+<p>My colleagues and I generalized the theory of <a href="https://scipost.org/10.21468/SciPostPhys.19.2.058">scattering invariants to topological phases protected by spatial symmetries</a>, and used it to build a <a href="https://arxiv.org/pdf/2601.00784">formalism that applies to disordered systems</a>.</p>
+</div>
+<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
+<p><img src="images/research-software.svg" class="research-topic-figure img-fluid" alt="Pymablock logo: three block matrices in shades of purple">Complex quantum mechanical systems with many degrees of freedom are often impossible to solve analytically, or even numerically; in many cases only an effective low-energy model can help. A common approach is to use the Schrieffer–Wolff transformation to block-diagonalize the Hamiltonian perturbatively, separating the low-energy subspace from the rest.</p>
+<p>My colleagues and I developed an <a href="https://scipost.org/10.21468/SciPostPhysCodeb.50">efficient and general algorithm</a> and a <a href="https://pymablock.readthedocs.io/">Python package</a> 📦 that automates this process. Check <span class="pymablock">Pymablock</span> out! ✨.</p>
 </div>
 </div>
-</div></section>
+</div>
+</div>
+</section>
 <details class="listing-toggle">
 <summary>
 Publications
 </summary>
 <div id="listing-sample-listings" class="quarto-listing quarto-listing-container-custom">
-<table class="table">
-<thead>
-<tr>
-<th>
-Year
-</th>
-<th>
-Publication
-</th>
-<th>
-Title
-</th>
-<th>
-Authors
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-2026
-</td>
-<td>
-<a href="https://arxiv.org/abs/2607.08845" target="_blank" style="color: #0066cc; text-decoration: underline;"> arXiv:2607.08845 </a>
-</td>
-<td>
-Probing Cooper pair momentum by quasiparticle steering with planar Josephson junctions
-</td>
-<td>
-<strong>Isidora Araya Day</strong>, Anton R. Akhmerov, Antonio R. L. Manesco
-</td>
-</tr>
-<tr>
-<td>
-2026
-</td>
-<td>
-<a href="https://doi.org/10.1103/g7mg-h6gb" target="_blank" style="color: #0066cc; text-decoration: underline;"> Phys. Rev.&nbsp;B 114, L080201 </a>
-</td>
-<td>
-Topological Gyromorphs
-</td>
-<td>
-Laura Gómez Paz, Justin Schirmann, Adam Yanis Chaou, <strong>Isidora Araya Day</strong>, Adolfo G. Grushin
-</td>
-</tr>
-<tr>
-<td>
-2026
-</td>
-<td>
-<a href="https://arxiv.org/abs/2601.00784" target="_blank" style="color: #0066cc; text-decoration: underline;"> arXiv:2601.00784 </a>
-</td>
-<td>
-Symmetric approximant formalism for statistical topological matter
-</td>
-<td>
-R. Johanna Zijderveld, Adam Yanis Chaou, <strong>Isidora Araya Day</strong>, Anton R. Akhmerov
-</td>
-</tr>
-<tr>
-<td>
-2025
-</td>
-<td>
-<a href="https://doi.org/10.21468/scipostphyscore.8.3.047" target="_blank" style="color: #0066cc; text-decoration: underline;"> SciPost Phys. Core 8, 047 </a>
-</td>
-<td>
-Identifying biases of the Majorana scattering invariant
-</td>
-<td>
-<strong>Isidora Araya Day</strong>, Antonio L. R. Manesco, Michael Wimmer, Anton R. Akhmerov
-</td>
-</tr>
-<tr>
-<td>
-2025
-</td>
-<td>
-<a href="https://doi.org/10.1103/lqf3-6r5z" target="_blank" style="color: #0066cc; text-decoration: underline;"> Phys. Rev.&nbsp;Lett. 135, 210602 </a>
-</td>
-<td>
-Kramers-protected hardware-efficient error correction with Andreev spin qubits
-</td>
-<td>
-Haoran Lu, <strong>Isidora Araya Day</strong>, Anton R. Akhmerov, Bernard van Heck, Valla Fatemi
-</td>
-</tr>
-<tr>
-<td>
-2025
-</td>
-<td>
-<a href="https://doi.org/10.21468/scipostphys.19.2.058" target="_blank" style="color: #0066cc; text-decoration: underline;"> SciPost Phys. 19, 058 </a>
-</td>
-<td>
-Scattering theory of higher order topological phases
-</td>
-<td>
-R. Johanna Zijderveld, <strong>Isidora Araya Day</strong>, Anton R. Akhmerov
-</td>
-</tr>
-<tr>
-<td>
-2025
-</td>
-<td>
-<a href="https://doi.org/10.21468/scipostphyscodeb.50" target="_blank" style="color: #0066cc; text-decoration: underline;"> SciPost Phys. Codebases 2025, 50 </a>
-</td>
-<td>
-Pymablock: an algorithm and a package for quasi-degenerate perturbation theory
-</td>
-<td>
-<strong>Isidora Araya Day</strong>, Sebastian Miles, Hugo K. Kerstens, Daniel Varjas, Anton R. Akhmerov
-</td>
-</tr>
-<tr>
-<td>
-2025
-</td>
-<td>
-<a href="https://doi.org/10.21468/scipostphys.18.3.098" target="_blank" style="color: #0066cc; text-decoration: underline;"> SciPost Phys. 18, 098 </a>
-</td>
-<td>
-Chiral adiabatic transmission protected by Fermi surface topology
-</td>
-<td>
-<strong>Isidora Araya Day</strong>, Kostas Vilkelis, Antonio L. R. Manesco, A. Mert Bozkurt, Valla Fatemi, Anton R. Akhmerov
-</td>
-</tr>
-<tr>
-<td>
-2023
-</td>
-<td>
-<a href="https://doi.org/10.21468/scipostphys.15.3.114" target="_blank" style="color: #0066cc; text-decoration: underline;"> SciPost Phys. 15, 114 </a>
-</td>
-<td>
-Pfaffian invariant identifies magnetic obstructed atomic insulators
-</td>
-<td>
-<strong>Isidora Araya Day</strong>, Anastasiia Varentcova, Daniel Varjas, Anton R. Akhmerov
-</td>
-</tr>
-<tr>
-<td>
-2022
-</td>
-<td>
-<a href="https://doi.org/10.21468/scipostphyscore.5.4.053" target="_blank" style="color: #0066cc; text-decoration: underline;"> SciPost Phys. Core 5, 053 </a>
-</td>
-<td>
-Topological defects in a double-mirror quadrupole insulator displace diverging charge
-</td>
-<td>
-<strong>Isidora Araya Day</strong>, Anton R. Akhmerov, Daniel Varjas
-</td>
-</tr>
-<tr>
-<td>
-2017
-</td>
-<td>
-<a href="https://doi.org/10.1103/physrevfluids.2.064401" target="_blank" style="color: #0066cc; text-decoration: underline;"> Phys. Rev.&nbsp;Fluids 2, 064401 </a>
-</td>
-<td>
-Slanted snaking of localized Faraday waves
-</td>
-<td>
-Bastián Pradenas, <strong>Isidora Araya</strong>, Marcel G. Clerc, Claudio Falcón, Punit Gandhi, Edgar Knobloch
-</td>
-</tr>
-</tbody>
-</table>
+<ol class="entry-list">
+  
+  
+  <li class="entry entry-new-year">
+    <span class="entry-year">2026</span>
+    <div class="entry-body">
+      <a class="entry-title" href="https://arxiv.org/abs/2607.08845">Probing Cooper pair momentum by quasiparticle steering with planar Josephson junctions</a>
+      <div class="entry-people">
+        <strong>Isidora Araya Day</strong>, Anton R. Akhmerov, Antonio R. L. Manesco,
+        <a href="https://arxiv.org/abs/2607.08845">arXiv:2607.08845</a>
+        
+      </div>
+    </div>
+  </li>
+  
+  
+  <li class="entry">
+    <span class="entry-year"></span>
+    <div class="entry-body">
+      <a class="entry-title" href="https://doi.org/10.1103/g7mg-h6gb">Topological Gyromorphs</a>
+      <div class="entry-people">
+        Laura Gómez Paz, Justin Schirmann, Adam Yanis Chaou, <strong>Isidora Araya Day</strong>, Adolfo G. Grushin,
+        <a href="https://doi.org/10.1103/g7mg-h6gb"><em>Phys. Rev. B</em> 114, L080201</a>
+        ·&nbsp;<span class="entry-badge">Editors' Suggestion</span>
+      </div>
+    </div>
+  </li>
+  
+  
+  <li class="entry">
+    <span class="entry-year"></span>
+    <div class="entry-body">
+      <a class="entry-title" href="https://arxiv.org/abs/2601.00784">Symmetric approximant formalism for statistical topological matter</a>
+      <div class="entry-people">
+        R. Johanna Zijderveld, Adam Yanis Chaou, <strong>Isidora Araya Day</strong>, Anton R. Akhmerov,
+        <a href="https://arxiv.org/abs/2601.00784">arXiv:2601.00784</a>
+        
+      </div>
+    </div>
+  </li>
+  
+  
+  <li class="entry entry-new-year">
+    <span class="entry-year">2025</span>
+    <div class="entry-body">
+      <a class="entry-title" href="https://doi.org/10.21468/scipostphyscore.8.3.047">Identifying biases of the Majorana scattering invariant</a>
+      <div class="entry-people">
+        <strong>Isidora Araya Day</strong>, Antonio L. R. Manesco, Michael Wimmer, Anton R. Akhmerov,
+        <a href="https://doi.org/10.21468/scipostphyscore.8.3.047"><em>SciPost Phys. Core</em> 8, 047</a>
+        
+      </div>
+    </div>
+  </li>
+  
+  
+  <li class="entry">
+    <span class="entry-year"></span>
+    <div class="entry-body">
+      <a class="entry-title" href="https://doi.org/10.1103/lqf3-6r5z">Kramers-protected hardware-efficient error correction with Andreev spin qubits</a>
+      <div class="entry-people">
+        Haoran Lu, <strong>Isidora Araya Day</strong>, Anton R. Akhmerov, Bernard van Heck, Valla Fatemi,
+        <a href="https://doi.org/10.1103/lqf3-6r5z"><em>Phys. Rev. Lett.</em> 135, 210602</a>
+        
+      </div>
+    </div>
+  </li>
+  
+  
+  <li class="entry">
+    <span class="entry-year"></span>
+    <div class="entry-body">
+      <a class="entry-title" href="https://doi.org/10.21468/scipostphys.19.2.058">Scattering theory of higher order topological phases</a>
+      <div class="entry-people">
+        R. Johanna Zijderveld, <strong>Isidora Araya Day</strong>, Anton R. Akhmerov,
+        <a href="https://doi.org/10.21468/scipostphys.19.2.058"><em>SciPost Phys.</em> 19, 058</a>
+        
+      </div>
+    </div>
+  </li>
+  
+  
+  <li class="entry">
+    <span class="entry-year"></span>
+    <div class="entry-body">
+      <a class="entry-title" href="https://doi.org/10.21468/scipostphyscodeb.50">Pymablock: an algorithm and a package for quasi-degenerate perturbation theory</a>
+      <div class="entry-people">
+        <strong>Isidora Araya Day</strong>, Sebastian Miles, Hugo K. Kerstens, Daniel Varjas, Anton R. Akhmerov,
+        <a href="https://doi.org/10.21468/scipostphyscodeb.50"><em>SciPost Phys. Codebases</em> 2025, 50</a>
+        
+      </div>
+    </div>
+  </li>
+  
+  
+  <li class="entry">
+    <span class="entry-year"></span>
+    <div class="entry-body">
+      <a class="entry-title" href="https://doi.org/10.21468/scipostphys.18.3.098">Chiral adiabatic transmission protected by Fermi surface topology</a>
+      <div class="entry-people">
+        <strong>Isidora Araya Day</strong>, Kostas Vilkelis, Antonio L. R. Manesco, A. Mert Bozkurt, Valla Fatemi, Anton R. Akhmerov,
+        <a href="https://doi.org/10.21468/scipostphys.18.3.098"><em>SciPost Phys.</em> 18, 098</a>
+        
+      </div>
+    </div>
+  </li>
+  
+  
+  <li class="entry entry-new-year">
+    <span class="entry-year">2023</span>
+    <div class="entry-body">
+      <a class="entry-title" href="https://doi.org/10.21468/scipostphys.15.3.114">Pfaffian invariant identifies magnetic obstructed atomic insulators</a>
+      <div class="entry-people">
+        <strong>Isidora Araya Day</strong>, Anastasiia Varentcova, Daniel Varjas, Anton R. Akhmerov,
+        <a href="https://doi.org/10.21468/scipostphys.15.3.114"><em>SciPost Phys.</em> 15, 114</a>
+        
+      </div>
+    </div>
+  </li>
+  
+  
+  <li class="entry entry-new-year">
+    <span class="entry-year">2022</span>
+    <div class="entry-body">
+      <a class="entry-title" href="https://doi.org/10.21468/scipostphyscore.5.4.053">Topological defects in a double-mirror quadrupole insulator displace diverging charge</a>
+      <div class="entry-people">
+        <strong>Isidora Araya Day</strong>, Anton R. Akhmerov, Daniel Varjas,
+        <a href="https://doi.org/10.21468/scipostphyscore.5.4.053"><em>SciPost Phys. Core</em> 5, 053</a>
+        
+      </div>
+    </div>
+  </li>
+  
+  
+  <li class="entry entry-new-year">
+    <span class="entry-year">2017</span>
+    <div class="entry-body">
+      <a class="entry-title" href="https://doi.org/10.1103/physrevfluids.2.064401">Slanted snaking of localized Faraday waves</a>
+      <div class="entry-people">
+        Bastián Pradenas, <strong>Isidora Araya</strong>, Marcel G. Clerc, Claudio Falcón, Punit Gandhi, Edgar Knobloch,
+        <a href="https://doi.org/10.1103/physrevfluids.2.064401"><em>Phys. Rev. Fluids</em> 2, 064401</a>
+        
+      </div>
+    </div>
+  </li>
+  
+</ol>
 <div class="listing-no-matching d-none">No matching items</div>
 </div>
 </details>
@@ -629,301 +443,169 @@ Bastián Pradenas, <strong>Isidora Araya</strong>, Marcel G. Clerc, Claudio Falc
 Talks
 </summary>
 <div id="listing-talks-listings" class="quarto-listing quarto-listing-container-custom">
-<table class="table talks-table">
-<thead>
-<tr>
-<th>
-Year
-</th>
-<th>
-Event
-</th>
-<th>
-Talk
-</th>
-<th>
-Location
-</th>
-<th>
-Role
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-2026
-</td>
-<td>
-Numerical methods for quantum matter: From nanographenes to moiré materials
-</td>
-<td>
-Pymablock software demo
-</td>
-<td>
-San Sebastián, Spain
-</td>
-<td>
-Forthcoming contributed talk
-</td>
-</tr>
-<tr>
-<td>
-2026
-</td>
-<td>
-Annual Meeting of the Austrian Physical Society
-</td>
-<td>
-<p>Topological Gyromorphs <a href="slides/gyromorphs-21-09-2026/slides.html" aria-label="View slides" style="margin-left: 0.35rem; text-decoration: none;">👩‍🏫🔍</a></p>
-</td>
-<td>
-Graz, Austria
-</td>
-<td>
-Invited talk
-</td>
-</tr>
-<tr>
-<td>
-2026
-</td>
-<td>
-SUMMIT Quantum Limits
-</td>
-<td>
-<p>Agentic LLMs in scientific research <a href="../contents/slides/dokkum-08-09-2026/slides.html" aria-label="View slides" style="margin-left: 0.35rem; text-decoration: none;">👩‍🏫🔍</a></p>
-</td>
-<td>
-Dokkum, The Netherlands
-</td>
-<td>
-Invited talk
-</td>
-</tr>
-<tr>
-<td>
-2026
-</td>
-<td>
-Pint of Science 2026
-</td>
-<td>
-<p>Designing topological two-dimensional materials <a href="../contents/slides/pintofscience-19-05-2026/slides/index.html" aria-label="View slides" style="margin-left: 0.35rem; text-decoration: none;">👩‍🏫🔍</a></p>
-</td>
-<td>
-Mala Gissona, San Sebastián, Spain
-</td>
-<td>
-Public talk
-</td>
-</tr>
-<tr>
-<td>
-2026
-</td>
-<td>
-CNRS seminar
-</td>
-<td>
-<p>Scattering theory of higher-order topological insulators <a href="../contents/slides/scattering-hotis-09-02-2026/slides-scattering.html" aria-label="View slides" style="margin-left: 0.35rem; text-decoration: none;">👩‍🏫🔍</a></p>
-</td>
-<td>
-French National Centre for Scientific Research, Grenoble, France
-</td>
-<td>
-Seminar speaker
-</td>
-</tr>
-<tr>
-<td>
-2025
-</td>
-<td>
-CNRS seminar
-</td>
-<td>
-Chiral adiabatic transmission protected by Fermi surface topology
-</td>
-<td>
-French National Centre for Scientific Research, Grenoble, France
-</td>
-<td>
-Seminar speaker
-</td>
-</tr>
-<tr>
-<td>
-2024
-</td>
-<td>
-CCMR Symposium on Hybrid Superconductivity
-</td>
-<td>
-Chiral adiabatic transmission protected by Fermi surface topology
-</td>
-<td>
-Cornell University, Ithaca, United States of America
-</td>
-<td>
-Invited talk
-</td>
-</tr>
-<tr>
-<td>
-2024
-</td>
-<td>
-Condensed Matter Seminar
-</td>
-<td>
-Chiral adiabatic transmission protected by Fermi surface topology
-</td>
-<td>
-Massachusetts Institute of Technology, Boston, United States of America
-</td>
-<td>
-Seminar speaker
-</td>
-</tr>
-<tr>
-<td>
-2024
-</td>
-<td>
-Condensed Matter Journal Club
-</td>
-<td>
-Chiral adiabatic transmission protected by Fermi surface topology
-</td>
-<td>
-University of Zurich, Zurich, Switzerland
-</td>
-<td>
-Seminar speaker
-</td>
-</tr>
-<tr>
-<td>
-2024
-</td>
-<td>
-NWO Physics Conference
-</td>
-<td>
-Chiral adiabatic transmission protected by Fermi surface topology
-</td>
-<td>
-Veldhoven, The Netherlands
-</td>
-<td>
-Contributed talk
-</td>
-</tr>
-<tr>
-<td>
-2023
-</td>
-<td>
-Speakers’ Corner, Virtual Science Forum
-</td>
-<td>
-Pymablock: a software package for constructing effective models
-</td>
-<td>
-Online
-</td>
-<td>
-Contributed talk
-</td>
-</tr>
-<tr>
-<td>
-2023
-</td>
-<td>
-Grete Hermann Network Workshop
-</td>
-<td>
-Pfaffian invariant identifies magnetic obstructed atomic insulators
-</td>
-<td>
-Würzburg, Germany
-</td>
-<td>
-Contributed talk
-</td>
-</tr>
-<tr>
-<td>
-2023
-</td>
-<td>
-Condensed Matter Seminar
-</td>
-<td>
-Pfaffian invariant identifies magnetic obstructed atomic insulators
-</td>
-<td>
-University of Manchester, Manchester, United Kingdom
-</td>
-<td>
-Seminar speaker
-</td>
-</tr>
-<tr>
-<td>
-2022
-</td>
-<td>
-Condensed Matter Seminar
-</td>
-<td>
-Pfaffian invariant identifies magnetic obstructed atomic insulators
-</td>
-<td>
-Max Planck Institute for the Physics of Complex Systems, Dresden, Germany
-</td>
-<td>
-Seminar speaker
-</td>
-</tr>
-<tr>
-<td>
-2022
-</td>
-<td>
-Speakers’ Corner, Virtual Science Forum
-</td>
-<td>
-Pfaffian invariant identifies magnetic obstructed atomic insulators
-</td>
-<td>
-Online
-</td>
-<td>
-Contributed talk
-</td>
-</tr>
-<tr>
-<td>
-2022
-</td>
-<td>
-Speakers’ Corner, Virtual Science Forum
-</td>
-<td>
-Topological defects in a double-mirror quadrupole insulator displace diverging charge
-</td>
-<td>
-Online
-</td>
-<td>
-Contributed talk
-</td>
-</tr>
-</tbody>
-</table>
+<ol class="entry-list">
+  
+  
+  <li class="entry entry-new-year">
+    <span class="entry-year">2026</span>
+    <div class="entry-body">
+      <span class="entry-title">Pymablock software demo</span><span class="entry-role">, upcoming contributed talk</span>
+      
+      <div class="entry-people">Numerical methods for quantum matter: From nanographenes to moiré materials at San Sebastián, Spain</div>
+    </div>
+  </li>
+  
+  
+  <li class="entry">
+    <span class="entry-year"></span>
+    <div class="entry-body">
+      <span class="entry-title">Topological Gyromorphs</span><span class="entry-role">, invited talk</span>
+       ·&nbsp;<a href="slides/gyromorphs-21-09-2026/slides.html">slides</a>
+      <div class="entry-people">Annual Meeting of the Austrian Physical Society at Graz, Austria</div>
+    </div>
+  </li>
+  
+  
+  <li class="entry">
+    <span class="entry-year"></span>
+    <div class="entry-body">
+      <span class="entry-title">Agentic LLMs in scientific research</span><span class="entry-role">, invited talk</span>
+       ·&nbsp;<a href="../contents/slides/dokkum-08-09-2026/slides.html">slides</a>
+      <div class="entry-people">SUMMIT Quantum Limits at Dokkum, The Netherlands</div>
+    </div>
+  </li>
+  
+  
+  <li class="entry">
+    <span class="entry-year"></span>
+    <div class="entry-body">
+      <span class="entry-title">Designing topological two-dimensional materials</span><span class="entry-role">, public talk</span>
+       ·&nbsp;<a href="../contents/slides/pintofscience-19-05-2026/slides/index.html">slides</a>
+      <div class="entry-people">Pint of Science 2026 at Mala Gissona, San Sebastián, Spain</div>
+    </div>
+  </li>
+  
+  
+  <li class="entry">
+    <span class="entry-year"></span>
+    <div class="entry-body">
+      <span class="entry-title">Scattering theory of higher-order topological insulators</span><span class="entry-role">, seminar</span>
+       ·&nbsp;<a href="../contents/slides/scattering-hotis-09-02-2026/slides-scattering.html">slides</a>
+      <div class="entry-people">CNRS seminar at French National Centre for Scientific Research, Grenoble, France</div>
+    </div>
+  </li>
+  
+  
+  <li class="entry entry-new-year">
+    <span class="entry-year">2025</span>
+    <div class="entry-body">
+      <span class="entry-title">Chiral adiabatic transmission protected by Fermi surface topology</span><span class="entry-role">, seminar</span>
+      
+      <div class="entry-people">CNRS seminar at French National Centre for Scientific Research, Grenoble, France</div>
+    </div>
+  </li>
+  
+  
+  <li class="entry entry-new-year">
+    <span class="entry-year">2024</span>
+    <div class="entry-body">
+      <span class="entry-title">Chiral adiabatic transmission protected by Fermi surface topology</span><span class="entry-role">, invited talk</span>
+      
+      <div class="entry-people">CCMR Symposium on Hybrid Superconductivity at Cornell University, Ithaca, United States of America</div>
+    </div>
+  </li>
+  
+  
+  <li class="entry">
+    <span class="entry-year"></span>
+    <div class="entry-body">
+      <span class="entry-title">Chiral adiabatic transmission protected by Fermi surface topology</span><span class="entry-role">, seminar</span>
+      
+      <div class="entry-people">Condensed Matter Seminar at Massachusetts Institute of Technology, Boston, United States of America</div>
+    </div>
+  </li>
+  
+  
+  <li class="entry">
+    <span class="entry-year"></span>
+    <div class="entry-body">
+      <span class="entry-title">Chiral adiabatic transmission protected by Fermi surface topology</span><span class="entry-role">, seminar</span>
+      
+      <div class="entry-people">Condensed Matter Journal Club at University of Zurich, Zurich, Switzerland</div>
+    </div>
+  </li>
+  
+  
+  <li class="entry">
+    <span class="entry-year"></span>
+    <div class="entry-body">
+      <span class="entry-title">Chiral adiabatic transmission protected by Fermi surface topology</span><span class="entry-role">, contributed talk</span>
+      
+      <div class="entry-people">NWO Physics Conference at Veldhoven, The Netherlands</div>
+    </div>
+  </li>
+  
+  
+  <li class="entry entry-new-year">
+    <span class="entry-year">2023</span>
+    <div class="entry-body">
+      <span class="entry-title">Pymablock: a software package for constructing effective models</span><span class="entry-role">, contributed talk</span>
+      
+      <div class="entry-people">Speakers' Corner, Virtual Science Forum (online)</div>
+    </div>
+  </li>
+  
+  
+  <li class="entry">
+    <span class="entry-year"></span>
+    <div class="entry-body">
+      <span class="entry-title">Pfaffian invariant identifies magnetic obstructed atomic insulators</span><span class="entry-role">, contributed talk</span>
+      
+      <div class="entry-people">Grete Hermann Network Workshop at Würzburg, Germany</div>
+    </div>
+  </li>
+  
+  
+  <li class="entry">
+    <span class="entry-year"></span>
+    <div class="entry-body">
+      <span class="entry-title">Pfaffian invariant identifies magnetic obstructed atomic insulators</span><span class="entry-role">, seminar</span>
+      
+      <div class="entry-people">Condensed Matter Seminar at University of Manchester, Manchester, United Kingdom</div>
+    </div>
+  </li>
+  
+  
+  <li class="entry entry-new-year">
+    <span class="entry-year">2022</span>
+    <div class="entry-body">
+      <span class="entry-title">Pfaffian invariant identifies magnetic obstructed atomic insulators</span><span class="entry-role">, seminar</span>
+      
+      <div class="entry-people">Condensed Matter Seminar at Max Planck Institute for the Physics of Complex Systems, Dresden, Germany</div>
+    </div>
+  </li>
+  
+  
+  <li class="entry">
+    <span class="entry-year"></span>
+    <div class="entry-body">
+      <span class="entry-title">Pfaffian invariant identifies magnetic obstructed atomic insulators</span><span class="entry-role">, contributed talk</span>
+      
+      <div class="entry-people">Speakers' Corner, Virtual Science Forum (online)</div>
+    </div>
+  </li>
+  
+  
+  <li class="entry">
+    <span class="entry-year"></span>
+    <div class="entry-body">
+      <span class="entry-title">Topological defects in a double-mirror quadrupole insulator displace diverging charge</span><span class="entry-role">, contributed talk</span>
+      
+      <div class="entry-people">Speakers' Corner, Virtual Science Forum (online)</div>
+    </div>
+  </li>
+  
+</ol>
 <div class="listing-no-matching d-none">No matching items</div>
 </div>
 </details>
