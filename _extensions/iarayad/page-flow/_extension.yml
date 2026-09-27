@@ -1,0 +1,6 @@
+title: Page flow
+author: Isidora Araya Day
+version: 1.0.0
+contributes:
+  filters:
+    - page-flow.lua

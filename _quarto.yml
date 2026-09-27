@@ -41,7 +41,19 @@ format:
     page-layout: full
     css: styles.css
     include-in-header: contents/_view-transition.html
+    include-after-body: contents/_page-flow.html
     # toc: true
+
+filters:
+  - page-flow
+
+# Pages connected in order: scrolling past a page's bottom continues to the next one,
+# pulling up past its top returns to the previous one (see _extensions/iarayad/page-flow).
+site-flow:
+  - href: index.qmd
+    text: Home
+  - href: contents/research.qmd
+    text: Research
 
 execute:
   freeze: auto

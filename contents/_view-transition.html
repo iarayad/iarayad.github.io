@@ -1,9 +1,13 @@
 <script>
-  // Cross-document view transitions: a page that navigates "forward" (scrolling past the
-  // homepage into Research) leaves a note, and the arriving page tags the transition with it.
+  // Cross-document view transitions: the page-flow script leaves a note ("forward" or
+  // "backward") before navigating, and the arriving page tags the transition with it.
+  // Arriving backward lands at the bottom, where the previous scroll left off.
   window.addEventListener("pagereveal", (event) => {
     const type = sessionStorage.getItem("view-transition-type");
     sessionStorage.removeItem("view-transition-type");
+    if (type === "backward") {
+      window.scrollTo(0, document.documentElement.scrollHeight);
+    }
     if (event.viewTransition && type) {
       event.viewTransition.types.add(type);
     }
