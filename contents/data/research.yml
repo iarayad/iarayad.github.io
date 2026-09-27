@@ -7,15 +7,15 @@
 topics:
   - title: "🔨 Mesoscopic superconductivity"
     figure: "images/research-mesoscopic.png"
-    figure_alt: "Stylized mesoscopic superconducting device diagram"
+    figure_alt: "Three superconductors with phases φL, φR, and φT meeting at a trijunction, with arrows showing Andreev modes routed between the normal channels"
     body:
       - >-
         Usually, protecting transport in a quantum system requires either topological band structures or adiabaticity in real space.
-        In a [recent work](https://scipost.org/10.21468/SciPostPhys.18.3.098), my colleagues and I found a mechanism that works under neither of these conditions, relying instead on phase-space adiabaticity.
-        We considered three superconductors with different phases that meet at a trijunction, such that the metallic regions connecting them behave as one-dimensional channels with Andreev modes, and we unexpectedly found that the Andreev modes propagate in a clockwise fashion and without any reflection---two hallmarks of protected chiral quantized transport.
+        My colleagues and I found a mechanism that works under neither of these conditions, relying instead on phase-space adiabaticity.
+        We considered three superconductors with different phases that meet at a trijunction, and we unexpectedly found that the Andreev modes between them propagate in a clockwise fashion and without any reflection---two hallmarks of protected chiral quantized transport.
   - title: "🪢 Topological phases of matter"
     figure: "images/research-topological.png"
-    figure_alt: "Concentric topological interference rings"
+    figure_alt: "Hexagonal sample with six leads and a flux φ through its central hole, illustrating a sixfold rotation symmetry C6(φ) and the reflection matrix r(φ)"
     body:
       - >-
        How to characterize and study topological phases of matter in the presence of disorder?
@@ -23,7 +23,7 @@ topics:
        My colleagues and I generalized the theory of [scattering invariants to topological phases protected by spatial symmetries](https://scipost.org/10.21468/SciPostPhys.19.2.058), and used it to build a [formalism that applies to disordered systems](https://arxiv.org/pdf/2601.00784).
   - title: "💻 Open-source software"
     figure: "images/research-software.svg"
-    figure_alt: "Terminal window running pymablock iterations"
+    figure_alt: "Pymablock logo: three block matrices in shades of purple"
     body:
       - >-
         Complex quantum mechanical systems with too many degrees of freedom are often impossible to solve analytically, and sometimes even numerically; in many cases only an effective low-energy model can be solved.
