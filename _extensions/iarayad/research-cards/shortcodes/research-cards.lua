@@ -159,6 +159,9 @@ local topic_styles = [[
 .research-topic-copy p {
   font-size: 0.95rem;
   margin-bottom: 0.6rem;
+  text-align: justify;
+  -webkit-hyphens: auto;
+  hyphens: auto;
 }
 
 /* Small figure wrapped by the text under each heading. */
