@@ -1,0 +1,31 @@
+<%
+  const self = new Set(['Isidora Araya Day', 'Isidora Araya']);
+  let previousYear = null;
+%>
+```{=html}
+<ol class="entry-list">
+  <% for (const item of items) { %>
+  <%
+    const year = String(item.published || item.on_arxiv || '').slice(0, 4);
+    const isPublished = item.journal && item.vol && item.page && item.doi;
+    const titleUrl = isPublished ? `https://doi.org/${item.doi}` : `https://arxiv.org/abs/${item.id}`;
+    const authors = (Array.isArray(item.authors) ? item.authors : [item.authors])
+      .map((name) => self.has(name) ? `<strong>${_.escape(name)}</strong>` : _.escape(name))
+      .join(', ');
+    const showYear = year !== previousYear;
+    previousYear = year;
+  %>
+  <li class="entry<%- showYear ? ' entry-new-year' : '' %>">
+    <span class="entry-year"><%- showYear ? year : '' %></span>
+    <div class="entry-body">
+      <a class="entry-title" href="<%- titleUrl %>"><%- item.title %></a>
+      <div class="entry-people">
+        <%= authors %>,
+        <% if (isPublished) { %><a href="<%- titleUrl %>"><em><%- item.journal %></em> <%- item.vol %>, <%- item.page %></a><% } else { %><a href="<%- titleUrl %>">arXiv:<%- item.id %></a><% } %>
+        <% if (item.note) { %>·&nbsp;<span class="entry-badge"><%- item.note %></span><% } %>
+      </div>
+    </div>
+  </li>
+  <% } %>
+</ol>
+```

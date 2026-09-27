@@ -19,8 +19,7 @@ listing:
       id: "Publication"
       published: "Year"
       on_arxiv: "Year"
-    template: ejs/publications-table.ejs
-    type: table
+    template: ejs/publications.ejs
   - id: talks-listings
     contents:
       - data/talks.yaml
@@ -36,8 +35,7 @@ listing:
       title: "Talk"
       location: "Location"
       role: "Role"
-    template: ejs/talks-table.ejs
-    type: table
+    template: ejs/talks.ejs
 ---
 
 

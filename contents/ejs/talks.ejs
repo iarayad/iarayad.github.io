@@ -1,0 +1,31 @@
+<%
+  const roleLabel = (item) => {
+    if (item.format === 'public') return 'public talk';
+    if (item.format === 'seminar') return 'seminar';
+    if (item.role === 'invited') return 'invited talk';
+    if (item.role === 'contributed') return 'contributed talk';
+    return item.role;
+  };
+  let previousYear = null;
+%>
+```{=html}
+<ol class="entry-list">
+  <% for (const item of items) { %>
+  <%
+    const year = String(new Date(item.date).getFullYear());
+    const place = [item.venue, item.city, item.country].filter(Boolean).join(', ');
+    const where = item.online ? `${item.event} (online)` : `${item.event} at ${place}`;
+    const showYear = year !== previousYear;
+    previousYear = year;
+  %>
+  <li class="entry<%- showYear ? ' entry-new-year' : '' %>">
+    <span class="entry-year"><%- showYear ? year : '' %></span>
+    <div class="entry-body">
+      <span class="entry-title"><%- item.title %></span><span class="entry-role">, <%- item.status === 'forthcoming' ? 'upcoming ' : '' %><%- roleLabel(item) %></span>
+      <% if (item.slides) { %> ·&nbsp;<a href="<%- item.slides %>">slides</a><% } %>
+      <div class="entry-people"><%- where %></div>
+    </div>
+  </li>
+  <% } %>
+</ol>
+```
