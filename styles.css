@@ -158,7 +158,7 @@ body {
   padding: 0.4rem 0;
 }
 
-.listing-toggle summary {
+.listing-toggle > summary {
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -170,11 +170,11 @@ body {
   position: relative;
 }
 
-.listing-toggle summary::-webkit-details-marker {
+.listing-toggle > summary::-webkit-details-marker {
   display: none;
 }
 
-.listing-toggle summary::after {
+.listing-toggle > summary::after {
   content: "▸";
   font-size: 1rem;
   margin-left: auto;
@@ -182,7 +182,7 @@ body {
   transition: transform 180ms ease;
 }
 
-.listing-toggle[open] summary::after {
+.listing-toggle[open] > summary::after {
   transform: rotate(90deg);
 }
 
@@ -255,7 +255,52 @@ a.entry-title:hover {
   white-space: nowrap;
 }
 
+/* Abstract toggle: a small chevron at the end of the reference line; the abstract opens below. */
+.entry-abstract {
+  display: inline;
+}
+
+.entry-abstract summary {
+  display: inline-block;
+  list-style: none;
+  padding: 0 0.3rem;
+  color: #6c757d;
+  cursor: pointer;
+}
+
+.entry-abstract summary::-webkit-details-marker {
+  display: none;
+}
+
+.entry-abstract summary:hover,
+.entry-abstract summary:focus-visible {
+  color: #338c73;
+}
+
+.entry-abstract summary .bi {
+  display: inline-block;
+  font-size: 0.8rem;
+  transition: transform 150ms ease;
+}
+
+.entry-abstract[open] summary .bi {
+  transform: rotate(180deg);
+}
+
+.entry-abstract p {
+  margin: 0.35rem 0 0.6rem;
+  font-size: 0.9rem;
+  color: #4a5a61;
+  text-align: justify;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+
 @media (max-width: 575.98px) {
+  .entry-abstract p {
+    text-align: left;
+  }
+
   .entry {
     grid-template-columns: minmax(0, 1fr);
   }
