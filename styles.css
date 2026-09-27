@@ -22,52 +22,148 @@ body {
   font-size: 1.05rem;
 }
 
-/* Background: one row per place, city and years in a narrow column, the summary beside it. */
+/* Background stepper: year/city nodes on a line, one panel visible at a time. */
 .trajectory-section {
-  margin-top: 0.5rem;
+  margin-top: 1rem;
   text-align: left;
 }
 
-.stops {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+.trajectory-stepper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
 }
 
-.stop {
-  display: grid;
-  grid-template-columns: 9.5rem minmax(0, 1fr);
-  gap: 0 1rem;
-  padding: 0.45rem 0;
+.stepper-track {
+  position: relative;
+  height: 4.6rem;
 }
 
-.stop-city {
-  display: block;
-  font-weight: 600;
+.stepper-track::before,
+.stepper-track-fill {
+  content: "";
+  position: absolute;
+  top: 2.6rem;
+  left: 0;
+  height: 2px;
+  transform: translateY(-50%);
 }
 
-.stop-years {
-  display: block;
-  font-size: 0.85rem;
+.stepper-track::before {
+  right: 0;
+  background: #d6e4df;
+}
+
+.stepper-track-fill {
+  width: var(--step-progress, 0%);
+  background: #338c73;
+  transition: width 300ms ease;
+}
+
+.stepper-nodes {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.stepper-node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 0;
+  padding: 0.35rem 0.25rem;
+  border: none;
+  background: none;
+  font: inherit;
   color: #6c757d;
+  cursor: pointer;
 }
 
-.stop-text {
+.stepper-node:focus-visible {
+  outline: 2px solid rgba(51, 140, 115, 0.5);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.stepper-node-year {
+  font-weight: 600;
+  margin-bottom: -0.2rem;
+}
+
+.stepper-node-dot {
+  width: 0.8rem;
+  height: 0.8rem;
+  margin: 0.4rem 0 0.3rem;
+  border-radius: 50%;
+  border: 2px solid #338c73;
+  background: #fcfcfd;
+}
+
+.stepper-node-city {
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+
+.stepper-node.is-complete .stepper-node-dot {
+  background: #338c73;
+}
+
+.stepper-node.is-active {
+  color: #1c6357;
+}
+
+.stepper-panel {
+  display: none;
   font-size: 0.95rem;
 }
 
+.stepper-panel.is-active {
+  display: block;
+}
+
+.stepper-panel-heading {
+  margin-bottom: 0.5rem;
+}
+
+.stepper-panel-title {
+  font-weight: 600;
+}
+
+.stepper-panel-where {
+  color: #6c757d;
+}
+
+.stepper-panel p {
+  margin-bottom: 0.5rem;
+}
+
+.stepper-panel-list {
+  padding-left: 1.1rem;
+  margin: 0;
+  font-size: 0.92rem;
+  color: #4a5a61;
+}
+
+/* Seven city names do not fit on a phone; keep the years only. */
 @media (max-width: 575.98px) {
-  .stop {
-    grid-template-columns: minmax(0, 1fr);
+  .stepper-track {
+    height: 3.5rem;
   }
 
-  .stop-city,
-  .stop-years {
-    display: inline;
+  .stepper-node-city {
+    display: none;
   }
 
-  .stop-years::before {
-    content: "· ";
+  .stepper-node {
+    padding: 0.35rem 0;
+    font-size: 0.8rem;
+  }
+
+  .stepper-track::before,
+  .stepper-track-fill {
+    top: 2.35rem;
   }
 }
 
