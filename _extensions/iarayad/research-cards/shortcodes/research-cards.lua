@@ -132,7 +132,7 @@ local styles_injected = false
 
 local topic_styles = [[
 <style>
-/* Topics side by side. */
+/* Topics side by side; a subgrid puts all headings in one row so the text below starts level. */
 .research-topics {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -140,9 +140,15 @@ local topic_styles = [[
   margin-top: 1.5rem;
 }
 
+.research-topic {
+  display: grid;
+  grid-row: span 2;
+  grid-template-rows: subgrid;
+  row-gap: 0.75rem;
+}
+
 .research-topic h3 {
-  margin-top: 0;
-  margin-bottom: 0.75rem;
+  margin: 0;
   font-size: 1.2rem;
 }
 
@@ -160,7 +166,7 @@ local topic_styles = [[
   float: right;
   width: 110px;
   height: auto;
-  margin: 0.2rem 0 0.5rem 0.9rem;
+  margin: 0.3rem 0 0.4rem 0.9rem;
   border-radius: 0.5rem;
 }
 
