@@ -100,21 +100,6 @@ local function read_topics(path)
     topic.figure = sanitize_text(entry.figure)
     topic.figure_alt = sanitize_text(entry.figure_alt) or topic.title
     topic.body = meta_to_html_paragraphs(entry.body)
-    topic.buttons = {}
-    if type(entry.buttons) == "table" then
-      for _, btn in ipairs(entry.buttons) do
-        local label = sanitize_text(btn.label)
-        local href = sanitize_text(btn.href)
-        local classes = sanitize_text(btn.classes)
-        if label and href then
-          table.insert(topic.buttons, {
-            label = label,
-            href = href,
-            classes = classes or "btn btn-outline-primary"
-          })
-        end
-      end
-    end
     topics[#topics + 1] = topic
   end
   return topics
@@ -137,13 +122,6 @@ local function render(topics)
       table.insert(html, string.format('      <p class="research-topic-highlight">%s</p>', topic.highlight))
     end
     table.insert(html, '    </div>')
-    if #topic.buttons > 0 then
-      table.insert(html, '    <div class="research-topic-links">')
-      for _, button in ipairs(topic.buttons) do
-        table.insert(html, string.format('      <a class="%s" href="%s">%s</a>', button.classes, button.href, button.label))
-      end
-      table.insert(html, '    </div>')
-    end
     table.insert(html, '  </section>')
   end
   table.insert(html, '</div>')
@@ -154,17 +132,12 @@ local styles_injected = false
 
 local topic_styles = [[
 <style>
-/* Topics side by side; links aligned at the bottom of each column. */
+/* Topics side by side. */
 .research-topics {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 2.5rem;
   margin-top: 1.5rem;
-}
-
-.research-topic {
-  display: flex;
-  flex-direction: column;
 }
 
 .research-topic h3 {
@@ -194,19 +167,6 @@ local topic_styles = [[
 .research-topic-highlight {
   color: #6c757d;
   font-size: 0.9rem;
-}
-
-.research-topic-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-top: auto;
-  padding-top: 0.6rem;
-}
-
-.research-topic-links .btn {
-  padding: 0.15rem 0.6rem;
-  font-size: 0.85rem;
 }
 
 /* Stack columns below Bootstrap's lg breakpoint rather than leaving an orphan column. */
