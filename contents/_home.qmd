@@ -31,3 +31,12 @@ One of my favorite projects so far was developing [**Pymablock**](https://pymabl
 :::
 
 :::
+
+<!-- Continue cue: scrolling past it (see _scroll-next.html) or clicking it opens Research. -->
+```{=html}
+<a class="next-page" href="contents/research.qmd" data-next-page>
+  <span class="next-page-label">Research</span>
+  <span class="next-page-hint">keep scrolling</span>
+  <i class="bi bi-chevron-down" aria-hidden="true"></i>
+</a>
+```

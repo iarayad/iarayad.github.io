@@ -385,3 +385,84 @@ a.news-text:hover {
     margin-bottom: 0.5rem;
   }
 }
+
+/* Page transitions: navigations animate between pages (cross-document view transitions).
+   Scrolling past the homepage into Research is tagged "forward": the old page slides up and
+   away while Research slides up into place; the navbar stays put. Other navigation crossfades. */
+@view-transition {
+  navigation: auto;
+}
+
+#quarto-header {
+  view-transition-name: site-header;
+}
+
+@keyframes page-leave-up {
+  to {
+    opacity: 0;
+    transform: translateY(-30vh);
+  }
+}
+
+@keyframes page-enter-up {
+  from {
+    opacity: 0;
+    transform: translateY(45vh);
+  }
+}
+
+html:active-view-transition-type(forward)::view-transition-old(root) {
+  animation: page-leave-up 600ms cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+html:active-view-transition-type(forward)::view-transition-new(root) {
+  animation: page-enter-up 600ms cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  @view-transition {
+    navigation: none;
+  }
+}
+
+/* Continue cue at the bottom of the homepage; the chevron follows the pull (--pull, 0 to 1). */
+.next-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: max-content;
+  margin: 4rem auto 1rem;
+  color: #6c757d;
+  text-decoration: none;
+}
+
+.next-page:hover {
+  color: #338c73;
+}
+
+.next-page-label {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #1c6357;
+}
+
+.next-page-hint {
+  font-size: 0.8rem;
+}
+
+.next-page .bi {
+  font-size: 1.4rem;
+  translate: 0 calc(var(--pull, 0) * 1.2rem);
+  animation: next-page-nudge 1.8s ease-in-out infinite;
+}
+
+@keyframes next-page-nudge {
+  0%, 100% { transform: none; }
+  50% { transform: translateY(0.3rem); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .next-page .bi {
+    animation: none;
+  }
+}

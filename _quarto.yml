@@ -40,7 +40,7 @@ format:
       - theme.scss
     page-layout: full
     css: styles.css
-    scroll-reveal: true
+    include-in-header: contents/_view-transition.html
     # toc: true
 
 execute:

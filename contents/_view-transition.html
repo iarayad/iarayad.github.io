@@ -1,0 +1,11 @@
+<script>
+  // Cross-document view transitions: a page that navigates "forward" (scrolling past the
+  // homepage into Research) leaves a note, and the arriving page tags the transition with it.
+  window.addEventListener("pagereveal", (event) => {
+    const type = sessionStorage.getItem("view-transition-type");
+    sessionStorage.removeItem("view-transition-type");
+    if (event.viewTransition && type) {
+      event.viewTransition.types.add(type);
+    }
+  });
+</script>

@@ -31,6 +31,7 @@ listing:
       - contents/data/publications.yml
     template: contents/ejs/news.ejs
     sort: false
+include-after-body: contents/_scroll-next.html
 ---
 
 {{< include contents/_home.qmd >}}
