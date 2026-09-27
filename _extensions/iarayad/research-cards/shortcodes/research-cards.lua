@@ -1,5 +1,4 @@
 local stringify = pandoc.utils.stringify
-local carousel_counter = 0
 
 local function log_warning(msg)
   io.stderr:write("[research-cards] " .. msg .. "\n")
@@ -97,7 +96,6 @@ local function read_topics(path)
   for idx, entry in ipairs(meta) do
     local topic = {}
     topic.title = sanitize_text(entry.title) or string.format("Topic %02d", idx)
-    topic.indicator_label = sanitize_text(entry.indicator_label) or topic.title
     topic.highlight = sanitize_text(entry.highlight)
     topic.figure = sanitize_text(entry.figure)
     topic.figure_alt = sanitize_text(entry.figure_alt) or topic.title
@@ -122,154 +120,99 @@ local function read_topics(path)
   return topics
 end
 
-local function render(topics, carousel_id)
+local function render(topics)
   local html = {}
-  table.insert(html, '<div class="research-carousel-shell">')
-  table.insert(html, string.format('  <div id="%s" class="carousel carousel-dark slide" data-bs-interval="false" data-bs-touch="true" aria-label="Research focus carousel">', carousel_id))
-  table.insert(html, '  <div class="carousel-inner">')
-  local total = #topics
-  for idx, topic in ipairs(topics) do
-    local item_class = idx == 1 and 'carousel-item active' or 'carousel-item'
-    local prev_idx = idx == 1 and total or idx - 1
-    local next_idx = idx == total and 1 or idx + 1
-    local prev_title = topics[prev_idx].title
-    local next_title = topics[next_idx].title
-    table.insert(html, string.format('    <div class="%s">', item_class))
-    table.insert(html, '      <div class="research-card card shadow-sm border-0">')
-    table.insert(html, '        <div class="card-body">')
-    table.insert(html, '          <div class="card-nav-hints d-flex justify-content-between align-items-center mb-3">')
-    table.insert(html, string.format('            <button class="card-nav-control card-nav-prev" type="button" data-bs-target="#%s" data-bs-slide="prev" aria-label="Previous research topic">', carousel_id))
-    table.insert(html, string.format('              <i class="bi bi-arrow-left-short"></i> %s', prev_title))
-    table.insert(html, '            </button>')
-    table.insert(html, string.format('            <button class="card-nav-control card-nav-next" type="button" data-bs-target="#%s" data-bs-slide="next" aria-label="Next research topic">', carousel_id))
-    table.insert(html, string.format('              %s <i class="bi bi-arrow-right-short"></i>', next_title))
-    table.insert(html, '            </button>')
-    table.insert(html, '          </div>')
-    table.insert(html, '          <div class="research-card-payload">')
+  table.insert(html, '<div class="research-topics">')
+  for _, topic in ipairs(topics) do
+    table.insert(html, '  <section class="research-topic">')
+    table.insert(html, string.format('    <h3>%s</h3>', topic.title))
+    table.insert(html, '    <div class="research-topic-copy">')
     if topic.figure then
-      table.insert(html, '            <div class="research-card-figure">')
-      table.insert(html, string.format('              <img src="%s" alt="%s" loading="lazy" decoding="async" />', topic.figure, topic.figure_alt))
-      table.insert(html, '            </div>')
+      table.insert(html, string.format('      <img class="research-topic-figure" src="%s" alt="%s" loading="lazy" decoding="async" />', topic.figure, topic.figure_alt))
     end
-    table.insert(html, '            <div class="research-card-copy">')
-    table.insert(html, string.format('              <h3 class="h4">%s</h3>', topic.title))
     for _, paragraph in ipairs(topic.body) do
-      table.insert(html, '              ' .. paragraph)
+      table.insert(html, '      ' .. paragraph)
     end
     if topic.highlight then
-      table.insert(html, string.format('              <div class="border-top pt-3 mt-4 small text-muted">%s</div>', topic.highlight))
+      table.insert(html, string.format('      <p class="research-topic-highlight">%s</p>', topic.highlight))
     end
-    if #topic.buttons > 0 then
-      table.insert(html, '              <div class="d-flex flex-wrap gap-2 mt-4">')
-      for _, button in ipairs(topic.buttons) do
-        table.insert(html, string.format('                <a class="%s" href="%s">%s</a>', button.classes, button.href, button.label))
-      end
-      table.insert(html, '              </div>')
-    end
-    table.insert(html, '            </div>')
-    table.insert(html, '          </div>')
-    table.insert(html, '        </div>')
-    table.insert(html, '      </div>')
     table.insert(html, '    </div>')
+    if #topic.buttons > 0 then
+      table.insert(html, '    <div class="research-topic-links">')
+      for _, button in ipairs(topic.buttons) do
+        table.insert(html, string.format('      <a class="%s" href="%s">%s</a>', button.classes, button.href, button.label))
+      end
+      table.insert(html, '    </div>')
+    end
+    table.insert(html, '  </section>')
   end
-  table.insert(html, '  </div>')
   table.insert(html, '</div>')
   return table.concat(html, '\n')
 end
 
 local styles_injected = false
 
-local carousel_styles = [[
+local topic_styles = [[
 <style>
-.research-carousel-shell {
-  position: relative;
-  width: 100%;
-  padding: 0;
-  margin: 0;
+/* Topics side by side; links aligned at the bottom of each column. */
+.research-topics {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2.5rem;
+  margin-top: 1.5rem;
 }
 
-.research-carousel-shell .carousel,
-.research-carousel-shell .carousel-inner,
-.research-carousel-shell .carousel-item,
-.research-card.card {
-  width: 100%;
-}
-
-.research-card.card {
-  border-radius: 1.25rem;
-}
-
-.card-nav-control {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.45rem;
-  font-size: 0.92rem;
-  letter-spacing: 0.02em;
-  border: none;
-  background: transparent;
-  color: #5e6a76;
-  padding: 0.2rem 0.55rem;
-  cursor: pointer;
-  font-weight: 600;
-  transition: color 180ms ease, transform 180ms ease;
-}
-
-.card-nav-control:hover {
-  color: #338c73;
-  transform: translateY(-1px);
-}
-
-.card-nav-control:focus-visible {
-  outline: 2px solid rgba(51, 140, 115, 0.45);
-  outline-offset: 3px;
-}
-
-.card-nav-control .bi {
-  font-size: 1.35rem;
-  line-height: 1;
-}
-
-.research-card .card-nav-hints {
-  font-size: 0.92rem;
-  letter-spacing: 0.01em;
-  margin-bottom: 1.15rem;
-}
-
-.research-card-payload {
+.research-topic {
   display: flex;
-  gap: 1.75rem;
-  align-items: center;
-  flex-wrap: nowrap;
+  flex-direction: column;
 }
 
-.research-card-figure {
-  flex: 0 0 240px;
-  max-width: 320px;
+.research-topic h3 {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  font-size: 1.2rem;
 }
 
-.research-card-figure img {
-  width: 100%;
+.research-topic-copy {
+  display: flow-root;
+}
+
+.research-topic-copy p {
+  font-size: 0.95rem;
+  margin-bottom: 0.6rem;
+}
+
+/* Small figure wrapped by the text under each heading. */
+.research-topic-figure {
+  float: right;
+  width: 110px;
   height: auto;
-  border-radius: 1rem;
+  margin: 0.2rem 0 0.5rem 0.9rem;
+  border-radius: 0.5rem;
 }
 
-.research-card-copy {
-  flex: 1 1 320px;
+.research-topic-highlight {
+  color: #6c757d;
+  font-size: 0.9rem;
 }
 
-@media (max-width: 768px) {
-  .card-nav-hints {
-    flex-direction: column;
-    gap: 0.4rem;
-  }
-  .research-card-payload {
-    flex-direction: column;
-    align-items: stretch;
-  }
-  .research-card-figure {
-    flex: 0 0 auto;
-    width: 100%;
-    max-width: none;
+.research-topic-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: auto;
+  padding-top: 0.6rem;
+}
+
+.research-topic-links .btn {
+  padding: 0.15rem 0.6rem;
+  font-size: 0.85rem;
+}
+
+/* Stack columns below Bootstrap's lg breakpoint rather than leaving an orphan column. */
+@media (max-width: 991.98px) {
+  .research-topics {
+    grid-template-columns: minmax(0, 1fr);
   }
 }
 </style>
@@ -283,14 +226,12 @@ return {
     if #topics == 0 then
       return pandoc.Null()
     end
-    carousel_counter = carousel_counter + 1
-    local carousel_id = string.format("research-carousel-%d", carousel_counter)
     local blocks = {}
     if not styles_injected then
-      table.insert(blocks, pandoc.RawBlock('html', carousel_styles))
+      table.insert(blocks, pandoc.RawBlock('html', topic_styles))
       styles_injected = true
     end
-    table.insert(blocks, pandoc.RawBlock('html', render(topics, carousel_id)))
+    table.insert(blocks, pandoc.RawBlock('html', render(topics)))
     return blocks
   end
 }

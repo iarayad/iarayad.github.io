@@ -1,7 +1,6 @@
 # Document schema (single mapping containing a list of topic cards):
 # topics:
 #   - title: display title; emoji and Markdown are allowed
-#     indicator_label: short plain-text navigation label
 #     figure: repository-relative image path
 #     figure_alt: accessible image description
 #     body: [Markdown-enabled paragraphs]
@@ -11,7 +10,6 @@
 #         classes: CSS class string (optional)
 topics:
   - title: "🔨 Mesoscopic superconductivity"
-    indicator_label: "Mesoscopic superconductivity"
     figure: "images/research-mesoscopic.png"
     figure_alt: "Stylized mesoscopic superconducting device diagram"
     body:
@@ -27,7 +25,6 @@ topics:
       - label: "🗄️ Code & data (Zenodo)"
         href: "https://zenodo.org/records/15048045"
   - title: "🪢 Topological phases of matter"
-    indicator_label: "Topological phases"
     figure: "images/research-topological.png"
     figure_alt: "Concentric topological interference rings"
     body:
@@ -43,7 +40,6 @@ topics:
       - label: "🗄️ Code & data (Zenodo)"
         href: "https://zenodo.org/records/15553181"
   - title: "💻 Open-source software"
-    indicator_label: "Open-source software"
     figure: "images/research-software.svg"
     figure_alt: "Terminal window running pymablock iterations"
     body:
