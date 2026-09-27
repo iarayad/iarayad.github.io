@@ -10,6 +10,8 @@ metadata-files:
 image: contents/images/profile.jpg
 about:
   template: solana
+  id: intro
+  image-width: 15em
   links:
     - icon: github
       text: GitHub
@@ -23,6 +25,13 @@ about:
     - icon: envelope
       text: Email
       href: mailto:isidora@araya.day
+listing:
+  - id: news
+    contents:
+      - contents/data/publications.yml
+      - contents/data/talks.yaml
+    template: contents/ejs/news.ejs
+    sort: false
 ---
 
 {{< include contents/_home.qmd >}}

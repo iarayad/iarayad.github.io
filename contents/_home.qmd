@@ -1,5 +1,4 @@
-
-::: {.hero-section}
+::: {#intro}
 
 Hi!👋 I am a theoretical condensed matter physicist working on **mesoscopic superconductivity, topology, and quantum transport**.
 
@@ -10,12 +9,25 @@ Hi!👋 I am a theoretical condensed matter physicist working on **mesoscopic su
 I particularly enjoy working on problems that require combining analytics and numerics.
 One of my favorite projects so far was developing [**Pymablock**](https://pymablock.readthedocs.io/), an open-source Python package to do quantum mechanical perturbation theory efficiently, numerically and symbolically.
 
-### Background
-
-
 :::
+
+<!-- Background on the left; news in a narrow column under the photo, the same width as the image. -->
+::: {.home-columns}
+
+::: {.home-main}
+### Background
 
 ::: {.trajectory-section data-scroll-reveal="true"}
 
 {{< trajectory-stepper >}}
+:::
+:::
+
+::: {.home-news}
+### News
+
+::: {#news}
+:::
+:::
+
 :::
