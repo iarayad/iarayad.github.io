@@ -168,6 +168,12 @@ ul.task-list li input[type="checkbox"] {
 <script>
   // Page flow: on pages in `site-flow`, scrolling past the bottom continues to the next page and
   // pulling up past the top returns to the previous one, each with a view transition.
+  //
+  // Only a gesture that *starts* at an edge counts. The scroll that brought the page to the edge,
+  // including trackpad momentum, never triggers a navigation however long it lasts; the next
+  // deliberate gesture counts from its first delta. Wheel gestures are separated by a pause or a
+  // change of direction, touch gestures by lifting the finger. Progress decays instead of
+  // resetting, so a few slow wheel clicks still add up.
   (() => {
     const cues = {
       next: document.querySelector('[data-flow="next"]'),
@@ -175,21 +181,32 @@ ul.task-list li input[type="checkbox"] {
     };
     if (!cues.next && !cues.prev) return;
 
-    const threshold = 300;  // px of deliberate extra scrolling once at an edge
-    const settle = 500;     // ms at the edge before counting, so a flick's momentum does not trigger it
+    const threshold = 250;   // px of scrolling, within gestures that start at the edge
+    const gesturePause = 200; // ms without wheel events that ends a wheel gesture
+    const decayTime = 1500;   // ms for accumulated progress to fall to about a third
+    const touchGain = 2.5;    // finger travel counts more than wheel pixels
     const root = document.documentElement;
-    const atEdge = {
-      next: () => window.innerHeight + window.scrollY >= root.scrollHeight - 2,
-      prev: () => window.scrollY <= 0,
-    };
-    const pull = { next: 0, prev: 0 };
-    const since = { next: null, prev: null };
-    let leaving = false;
-    let resetTimer = null;
 
-    const setPull = (dir, value) => {
-      pull[dir] = Math.max(0, Math.min(threshold, value));
-      cues[dir]?.style.setProperty("--pull", pull[dir] / threshold);
+    const atEdge = {
+      next: () => Math.ceil(window.innerHeight + window.scrollY) >= root.scrollHeight - 4,
+      prev: () => window.scrollY <= 4,
+    };
+    const progress = { next: 0, prev: 0 };
+    let lastTime = performance.now();
+    let leaving = false;
+    let relaxTimer = null;
+
+    const show = () => {
+      for (const dir of ["next", "prev"]) {
+        cues[dir]?.style.setProperty("--pull", progress[dir] / threshold);
+      }
+    };
+    const decay = () => {
+      const now = performance.now();
+      const factor = Math.exp(-(now - lastTime) / decayTime);
+      lastTime = now;
+      progress.next *= factor;
+      progress.prev *= factor;
     };
     const go = (dir) => {
       if (leaving) return;
@@ -197,45 +214,65 @@ ul.task-list li input[type="checkbox"] {
       sessionStorage.setItem("view-transition-type", dir === "next" ? "forward" : "backward");
       window.location.href = cues[dir].href;
     };
-    const track = () => {
-      for (const dir of ["next", "prev"]) {
-        if (!cues[dir]) continue;
-        if (atEdge[dir]()) {
-          since[dir] ??= performance.now();
-        } else {
-          since[dir] = null;
-          setPull(dir, 0);
-        }
-      }
+    // Add `amount` px towards `dir` and navigate once the threshold is reached.
+    const add = (dir, amount) => {
+      if (leaving || !cues[dir]) return;
+      decay();
+      progress[dir === "next" ? "prev" : "next"] = 0;
+      progress[dir] += amount;
+      show();
+      clearTimeout(relaxTimer);
+      relaxTimer = setTimeout(() => { progress.next = progress.prev = 0; show(); }, decayTime * 1.5);
+      if (progress[dir] >= threshold) go(dir);
     };
-    const push = (dy) => {
-      if (leaving || dy === 0) return;
+
+    // Wheel: a gesture counts only if the page was already at that edge when it started.
+    // Page load opens a gesture that does not count, so momentum carried over from the
+    // previous page cannot skip straight past a short page.
+    let wheelLast = performance.now();
+    let wheelDir = "any";
+    let wheelCounts = false;
+    window.addEventListener("wheel", (event) => {
+      if (event.ctrlKey || Math.abs(event.deltaX) > Math.abs(event.deltaY)) return;  // pinch-zoom, sideways
+      const unit = event.deltaMode === 1 ? 16 : event.deltaMode === 2 ? window.innerHeight : 1;
+      const dy = event.deltaY * unit;
+      if (dy === 0) return;
       const dir = dy > 0 ? "next" : "prev";
-      setPull(dir === "next" ? "prev" : "next", 0);
-      if (!cues[dir] || since[dir] === null || performance.now() - since[dir] < settle) return;
-      setPull(dir, pull[dir] + Math.abs(dy));
-      clearTimeout(resetTimer);
-      resetTimer = setTimeout(() => { setPull("next", 0); setPull("prev", 0); }, 700);
-      if (pull[dir] >= threshold) go(dir);
-    };
+      const now = performance.now();
+      if (now - wheelLast > gesturePause || (wheelDir !== "any" && dir !== wheelDir)) {
+        wheelCounts = atEdge[dir]();
+      }
+      wheelDir = dir;
+      wheelLast = now;
+      if (wheelCounts) add(dir, Math.abs(dy));
+    }, { passive: true });
 
-    window.addEventListener("scroll", track, { passive: true });
-    window.addEventListener("wheel", (event) => push(event.deltaY), { passive: true });
-
+    // Touch: a swipe counts only if the page was already at that edge when the finger went down.
     let touchY = null;
-    window.addEventListener("touchstart", (event) => { touchY = event.touches[0].clientY; }, { passive: true });
+    let touchAtEdge = { next: false, prev: false };
+    window.addEventListener("touchstart", (event) => {
+      touchY = event.touches[0].clientY;
+      touchAtEdge = { next: atEdge.next(), prev: atEdge.prev() };
+    }, { passive: true });
     window.addEventListener("touchmove", (event) => {
       if (touchY === null) return;
       const y = event.touches[0].clientY;
-      push((touchY - y) * 1.5);
+      const dy = touchY - y;
       touchY = y;
+      const dir = dy > 0 ? "next" : "prev";
+      if (dy !== 0 && touchAtEdge[dir]) add(dir, Math.abs(dy) * touchGain);
     }, { passive: true });
+    window.addEventListener("touchend", () => { touchY = null; }, { passive: true });
 
+    // Keyboard: each press at an edge counts half the threshold.
     window.addEventListener("keydown", (event) => {
-      if (event.target.closest("input, textarea, [contenteditable]")) return;
-      if (["ArrowDown", "PageDown"].includes(event.key) || (event.key === " " && !event.shiftKey)) push(threshold / 2);
-      if (["ArrowUp", "PageUp"].includes(event.key) || (event.key === " " && event.shiftKey)) push(-threshold / 2);
+      if (event.target.closest("input, textarea, select, [contenteditable]")) return;
+      const down = ["ArrowDown", "PageDown"].includes(event.key) || (event.key === " " && !event.shiftKey);
+      const up = ["ArrowUp", "PageUp"].includes(event.key) || (event.key === " " && event.shiftKey);
+      if (down && atEdge.next()) add("next", threshold / 2);
+      if (up && atEdge.prev()) add("prev", threshold / 2);
     });
+
     for (const dir of ["next", "prev"]) {
       cues[dir]?.addEventListener("click", () => {
         sessionStorage.setItem("view-transition-type", dir === "next" ? "forward" : "backward");
@@ -243,7 +280,6 @@ ul.task-list li input[type="checkbox"] {
     }
     // The browser's own pull-to-refresh would compete with pulling back to the previous page.
     if (cues.prev) root.style.overscrollBehaviorY = "contain";
-    track();
   })();
 </script>
 <script id="quarto-html-after-body" type="application/javascript">
