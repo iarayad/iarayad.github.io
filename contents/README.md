@@ -14,6 +14,6 @@ contents/
 ├── research.qmd       # Research page
 ├── images/            # Image assets
 │   ├── logo.svg
-│   └── profile.png
+│   └── profile.jpg
 └── data/              # Canonical data files
 ```

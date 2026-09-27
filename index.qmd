@@ -7,7 +7,7 @@ twitter-card:
   description: *description
 metadata-files:
   - contents/data/home.yml
-image: contents/images/profile.png
+image: contents/images/profile.jpg
 about:
   template: solana
   links:

@@ -57,7 +57,7 @@ trajectory:
       I got a Casimir NanoFront grant to do my PhD in [QuTech](https://qutech.nl/) and defended cum laude on February 27, 2026.
       During this time I had the opportunity to improve my coding skills, work collaboratively, and learn about open science practices ✨.
     bullets:
-      - Worked on Andreev physics, topological invariants, and mesoscopic physics (see Research ☝️).
+      - Worked on Andreev physics, topological invariants, and mesoscopic physics (see [Research](contents/research.html)).
       - Developed an open-source Python package, [Pymablock](https://pymablock.readthedocs.io/).
       - Worked as a teaching assistant of the [solid state physics](https://solidstate.quantumtinkerer.tudelft.nl/) course.
   - id: internship3

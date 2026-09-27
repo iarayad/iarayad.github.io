@@ -14,7 +14,7 @@ project:
 website:
   title: "Isidora Araya Day"
   site-url: "https://isidora.araya.day/"
-  image: contents/images/profile.png
+  image: contents/images/profile.jpg
   open-graph: true
   twitter-card: true
   favicon: favicon.svg
@@ -27,7 +27,8 @@ website:
   page-navigation: true
   page-footer:
     center:
-      - text: "📧 isidora (at) araya.day"
+      - text: "📧 isidora@araya.day"
+        href: mailto:isidora@araya.day
       - text: "Get my GPG key"
         href: publickey.asc
     right: "Made with [Quarto](https://quarto.org) and [GitHub Copilot](https://github.com/features/copilot)"
