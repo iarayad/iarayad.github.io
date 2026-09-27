@@ -61,55 +61,26 @@ local function read_entries(path)
   end
   local entries = {}
   for idx, entry in ipairs(meta) do
-    local period = stringify(entry.period or "")
-    local bullets = {}
-    for _, bullet in ipairs(entry.bullets or {}) do
-      table.insert(bullets, to_inline_html(bullet))
-    end
     entries[#entries + 1] = {
       order = tonumber(stringify(entry.order or idx)) or idx,
-      label = escape_html(stringify(entry.label or "")),
-      place = escape_html(stringify(entry.place or "")),
-      period = escape_html(period),
-      year = period:match('(%d%d%d%d)') or "",
+      city = escape_html(stringify(entry.city or entry.place or "")),
+      period = escape_html(stringify(entry.period or "")),
       summary = to_inline_html(entry.summary),
-      bullets = bullets,
     }
   end
-  -- Newest first, like the publication and talk lists.
-  table.sort(entries, function(a, b) return a.order > b.order end)
+  -- Oldest first: the list reads as a route through the places.
+  table.sort(entries, function(a, b) return a.order < b.order end)
   return entries
 end
 
+-- One row per stop: city and years on the left, the one-sentence summary on the right.
 local function render(entries)
-  local html = { '<ol class="entry-list">' }
-  local previous_year = nil
+  local html = { '<ol class="stops">' }
   for _, entry in ipairs(entries) do
-    local new_year = entry.year ~= previous_year
-    previous_year = entry.year
-    table.insert(html, string.format('  <li class="entry%s">', new_year and ' entry-new-year' or ''))
-    table.insert(html, string.format('    <span class="entry-year">%s</span>', new_year and entry.year or ''))
-    table.insert(html, '    <div class="entry-body">')
-    local where = { entry.place, entry.period }
-    local suffix = {}
-    for _, part in ipairs(where) do
-      if part ~= '' then
-        table.insert(suffix, part)
-      end
-    end
-    table.insert(html, string.format('      <span class="entry-title">%s</span><span class="entry-role">, %s</span>',
-      entry.label, table.concat(suffix, ' · ')))
-    if entry.summary ~= '' then
-      table.insert(html, string.format('      <div class="entry-description">%s</div>', entry.summary))
-    end
-    if #entry.bullets > 0 then
-      table.insert(html, '      <ul class="entry-details">')
-      for _, bullet in ipairs(entry.bullets) do
-        table.insert(html, string.format('        <li>%s</li>', bullet))
-      end
-      table.insert(html, '      </ul>')
-    end
-    table.insert(html, '    </div>')
+    table.insert(html, '  <li class="stop">')
+    table.insert(html, string.format('    <div class="stop-where"><span class="stop-city">%s</span> <span class="stop-years">%s</span></div>',
+      entry.city, entry.period))
+    table.insert(html, string.format('    <div class="stop-text">%s</div>', entry.summary))
     table.insert(html, '  </li>')
   end
   table.insert(html, '</ol>')

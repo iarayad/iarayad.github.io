@@ -22,27 +22,53 @@ body {
   font-size: 1.05rem;
 }
 
-/* Background timeline: reuses the entry list layout; description and highlights sit under each entry. */
+/* Background: one row per place, city and years in a narrow column, the summary beside it. */
 .trajectory-section {
   margin-top: 0.5rem;
   text-align: left;
 }
 
-.entry-description {
-  margin: 0.15rem 0 0;
-  font-size: 0.92rem;
-  color: #4a5a61;
-}
-
-.entry-description p {
+.stops {
+  list-style: none;
+  padding: 0;
   margin: 0;
 }
 
-.entry-details {
-  margin: 0.2rem 0 0;
-  padding-left: 1.1rem;
-  font-size: 0.9rem;
-  color: #4a5a61;
+.stop {
+  display: grid;
+  grid-template-columns: 9.5rem minmax(0, 1fr);
+  gap: 0 1rem;
+  padding: 0.45rem 0;
+}
+
+.stop-city {
+  display: block;
+  font-weight: 600;
+}
+
+.stop-years {
+  display: block;
+  font-size: 0.85rem;
+  color: #6c757d;
+}
+
+.stop-text {
+  font-size: 0.95rem;
+}
+
+@media (max-width: 575.98px) {
+  .stop {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .stop-city,
+  .stop-years {
+    display: inline;
+  }
+
+  .stop-years::before {
+    content: "· ";
+  }
 }
 
 .listing-toggle {
