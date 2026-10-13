@@ -36,6 +36,14 @@
   role: invited
   title: "Agentic LLMs in scientific research"
   slides: "slides/dokkum-08-09-2026/slides.qmd"
+- date: 2026-06-09
+  event: "Alice & Bob seminar"
+  city: Paris
+  country: France
+  format: seminar
+  role: speaker
+  title: "Kramers-protected error correction with Andreev spin qubits"
+  slides: "slides/alice-bob-09-06-2026/slides.html"
 - date: 2026-05-19
   event: "Pint of Science 2026"
   venue: Mala Gissona

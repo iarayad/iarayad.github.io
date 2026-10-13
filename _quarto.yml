@@ -5,6 +5,7 @@ project:
     - "*.qmd"
     - "contents/**/*.qmd"
   resources:
+    - contents/slides/alice-bob-09-06-2026/slides.html
     - contents/slides/gyromorphs-21-09-2026/slides.html
     - google71bbe46973ffb153.html
     - publickey.asc
