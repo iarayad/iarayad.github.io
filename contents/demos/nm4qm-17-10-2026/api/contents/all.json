@@ -1,0 +1,29 @@
+{
+  "content": [
+    {
+      "content": null,
+      "created": "2026-10-15T23:44:36.381734Z",
+      "format": null,
+      "hash": null,
+      "hash_algorithm": null,
+      "last_modified": "2026-10-15T23:44:08.542271Z",
+      "mimetype": null,
+      "name": "graphene_multilayers.ipynb",
+      "path": "graphene_multilayers.ipynb",
+      "size": 451081,
+      "type": "notebook",
+      "writable": true
+    }
+  ],
+  "created": "2026-10-15T23:44:36.381734Z",
+  "format": "json",
+  "hash": null,
+  "hash_algorithm": null,
+  "last_modified": "2026-10-15T23:44:36.381734Z",
+  "mimetype": null,
+  "name": "",
+  "path": "",
+  "size": null,
+  "type": "directory",
+  "writable": true
+}
