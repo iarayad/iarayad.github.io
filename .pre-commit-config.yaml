@@ -17,7 +17,7 @@ repos:
     rev: v2.4.1
     hooks:
       - id: codespell
-        exclude: '^contents/slides/(gyromorphs-21-09-2026|alice-bob-09-06-2026)/slides\.html$'
+        exclude: '^contents/slides/(gyromorphs-21-09-2026|alice-bob-09-06-2026)/slides\.html$|^contents/demos/.*\.ipynb$'
         additional_dependencies:
           - tomli
         args:
@@ -26,6 +26,9 @@ repos:
   - repo: https://github.com/astral-sh/ruff-pre-commit
     rev: v0.8.4
     hooks:
+      # Demo notebooks are generated from the tutorial sources, which are linted there.
       - id: ruff
         args: [--fix]
+        exclude: '^contents/demos/'
       - id: ruff-format
+        exclude: '^contents/demos/'
