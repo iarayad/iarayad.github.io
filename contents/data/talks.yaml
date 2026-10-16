@@ -10,7 +10,9 @@
 #   country: full country name (required unless online: true)
 #   online: true (optional; omit for in-person talks)
 #   slides: repository-relative slide path (optional)
-#   notebook: repository-relative link to an interactive notebook (optional)
+#   notebooks: interactive notebooks (optional), each with
+#     label: short link text
+#     path: repository-relative link
 # Allowed format/role pairs: conference/invited, conference/contributed,
 # online_series/contributed, public/speaker, and seminar/speaker.
 - date: 2026-10-17
@@ -21,7 +23,12 @@
   role: contributed
   status: forthcoming
   title: "Pymablock software demo"
-  notebook: "demos/nm4qm-17-10-2026/notebooks/index.html?path=graphene_multilayers.ipynb"
+  slides: "slides/nm4qm-17-10-2026/slides.html"
+  notebooks:
+    - label: graphene multilayers
+      path: "demos/nm4qm-17-10-2026/notebooks/index.html?path=graphene_multilayers.ipynb"
+    - label: quantum dot
+      path: "demos/nm4qm-17-10-2026/notebooks/index.html?path=bilayer_dot.ipynb"
 - date: 2026-09-21
   event: "Annual Meeting of the Austrian Physical Society"
   city: Graz

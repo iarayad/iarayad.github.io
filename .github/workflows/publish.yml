@@ -30,12 +30,7 @@ jobs:
       - name: Build JupyterLite demos
         run: |
           pip install jupyterlite-core==0.8.6 jupyterlite-pyodide-kernel==0.8.6 jupyter_server
-          root="$PWD"
-          for demo in contents/demos/*/; do
-            # Separate build directories keep the JupyterLite build caches apart.
-            (cd "$(mktemp -d)" && jupyter lite build --no-sourcemaps \
-              --contents "$root/$demo" --output-dir "$root/_site/$demo")
-          done
+          scripts/build_demos.sh
 
       - name: Publish rendered site
         uses: quarto-dev/quarto-actions/publish@v2
