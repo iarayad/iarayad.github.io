@@ -2,11 +2,11 @@
   "content": [
     {
       "content": null,
-      "created": "2026-10-16T12:05:30.332245Z",
+      "created": "2026-10-16T12:07:30.762751Z",
       "format": null,
       "hash": null,
       "hash_algorithm": null,
-      "last_modified": "2026-10-16T12:04:52.486546Z",
+      "last_modified": "2026-10-16T12:07:00.881627Z",
       "mimetype": null,
       "name": "bilayer_dot.ipynb",
       "path": "bilayer_dot.ipynb",
@@ -16,11 +16,11 @@
     },
     {
       "content": null,
-      "created": "2026-10-16T12:05:30.332778Z",
+      "created": "2026-10-16T12:07:30.763246Z",
       "format": null,
       "hash": null,
       "hash_algorithm": null,
-      "last_modified": "2026-10-16T12:04:52.487481Z",
+      "last_modified": "2026-10-16T12:07:00.882341Z",
       "mimetype": null,
       "name": "graphene_multilayers.ipynb",
       "path": "graphene_multilayers.ipynb",
@@ -29,11 +29,11 @@
       "writable": true
     }
   ],
-  "created": "2026-10-16T12:05:30.332778Z",
+  "created": "2026-10-16T12:07:30.763246Z",
   "format": "json",
   "hash": null,
   "hash_algorithm": null,
-  "last_modified": "2026-10-16T12:05:30.332778Z",
+  "last_modified": "2026-10-16T12:07:30.763246Z",
   "mimetype": null,
   "name": "",
   "path": "",
