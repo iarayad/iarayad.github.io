@@ -23,7 +23,7 @@
     <div class="entry-body">
       <span class="entry-title"><%- item.title %></span><span class="entry-role">, <%- item.status === 'forthcoming' ? 'upcoming ' : '' %><%- roleLabel(item) %></span>
       <% if (item.slides) { %> ·&nbsp;<a href="<%- item.slides %>">slides</a><% } %>
-      <% if (item.notebooks) { %> ·&nbsp;notebooks: <%- item.notebooks.map((nb) => `<a href="${nb.path}">${nb.label}</a>`).join(', ') %><% } %>
+      <% if (item.notebooks) { %> ·&nbsp;notebooks:<% item.notebooks.forEach((nb, i) => { %><%- i ? ',' : '' %> <a href="<%- nb.path %>"><%- nb.label %></a><% }) %><% } %>
       <div class="entry-people"><%- where %></div>
     </div>
   </li>
