@@ -1,0 +1,28 @@
+{
+  "pymablock": {
+    "releases": {
+      "2.2.2.dev152+g59d9994f9": [
+        {
+          "comment_text": "",
+          "digests": {
+            "md5": "6f0ea19fe863e2f8a6c52dbedd4ce790",
+            "sha256": "754e66a62936d7e5825a55ff4cc4172ece1deece6bd577d05cff1a7683dd81e8"
+          },
+          "downloads": -1,
+          "filename": "pymablock-2.2.2.dev152+g59d9994f9-py3-none-any.whl",
+          "has_sig": false,
+          "md5_digest": "6f0ea19fe863e2f8a6c52dbedd4ce790",
+          "packagetype": "bdist_wheel",
+          "python_version": "py3",
+          "requires_python": ">=3.12",
+          "size": 115384,
+          "upload_time": "2026-10-16T12:05:29.218324Z",
+          "upload_time_iso_8601": "2026-10-16T12:05:29.218324Z",
+          "url": "./pymablock-2.2.2.dev152+g59d9994f9-py3-none-any.whl",
+          "yanked": false,
+          "yanked_reason": null
+        }
+      ]
+    }
+  }
+}
