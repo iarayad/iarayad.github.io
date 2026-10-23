@@ -15,13 +15,21 @@
 #     path: repository-relative link
 # Allowed format/role pairs: conference/invited, conference/contributed,
 # online_series/contributed, public/speaker, and seminar/speaker.
+- date: 2026-10-23
+  event: "Joint ICTP–WE Heraeus College on Advances in Topological Quantum Matter"
+  venue: Abdus Salam International Centre for Theoretical Physics
+  city: Trieste
+  country: Italy
+  format: conference
+  role: invited
+  title: "Using agents in scientific research"
+  slides: "slides/ictp-23-10-2026/slides.html"
 - date: 2026-10-17
   event: "Numerical methods for quantum matter: From nanographenes to moiré materials"
   city: San Sebastián
   country: Spain
   format: conference
   role: contributed
-  status: forthcoming
   title: "Pymablock software demo"
   slides: "slides/nm4qm-17-10-2026/slides.html"
   notebooks:
