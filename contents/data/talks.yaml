@@ -32,11 +32,12 @@
   role: contributed
   title: "Pymablock software demo"
   slides: "slides/nm4qm-17-10-2026/slides.html"
-  notebooks:
-    - label: graphene multilayers
-      path: "demos/nm4qm-17-10-2026/notebooks/index.html?path=graphene_multilayers.ipynb"
-    - label: quantum dot
-      path: "demos/nm4qm-17-10-2026/notebooks/index.html?path=bilayer_dot.ipynb"
+  # Notebooks hidden while the JupyterLite build is disabled (see .github/workflows/publish.yml).
+  # notebooks:
+  #   - label: graphene multilayers
+  #     path: "demos/nm4qm-17-10-2026/notebooks/index.html?path=graphene_multilayers.ipynb"
+  #   - label: quantum dot
+  #     path: "demos/nm4qm-17-10-2026/notebooks/index.html?path=bilayer_dot.ipynb"
 - date: 2026-09-21
   event: "Annual Meeting of the Austrian Physical Society"
   city: Graz

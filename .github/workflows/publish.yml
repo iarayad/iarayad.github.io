@@ -22,12 +22,17 @@ jobs:
 
       # Interactive notebooks run in the browser with JupyterLite (Pyodide).
       # Each folder in contents/demos becomes a JupyterLite site at the same path.
+      # Hidden for now: the build needs gitlab.kwant-project.org, which GitHub runners
+      # cannot reach. Remove both `if: false` lines (and restore the notebook links in
+      # contents/data/talks.yaml) to bring the demos back.
       - name: Set up Python
+        if: false
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
 
       - name: Build JupyterLite demos
+        if: false
         run: |
           pip install jupyterlite-core==0.8.6 jupyterlite-pyodide-kernel==0.8.6 jupyter_server
           scripts/build_demos.sh
