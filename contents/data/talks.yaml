@@ -96,6 +96,7 @@
   format: seminar
   role: speaker
   title: "Chiral adiabatic transmission protected by Fermi surface topology"
+  slides: "slides/cat-cnrs-21-02-2025/slides.html"
 - date: 2024-08-16
   event: "CCMR Symposium on Hybrid Superconductivity"
   venue: Cornell University
