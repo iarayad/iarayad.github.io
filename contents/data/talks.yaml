@@ -2,7 +2,7 @@
 # - date: YYYY-MM-DD
 #   title: full talk title
 #   event: full event name
-#   format: conference | seminar | public | online_series
+#   format: conference | lecture | seminar | public | online_series
 #   role: invited | contributed | speaker
 #   status: forthcoming (optional)
 #   venue: full venue or institution name (optional)
@@ -14,7 +14,7 @@
 #     label: short link text
 #     path: repository-relative link
 # Allowed format/role pairs: conference/invited, conference/contributed,
-# online_series/contributed, public/speaker, and seminar/speaker.
+# online_series/contributed, lecture/speaker, public/speaker, and seminar/speaker.
 - date: 2026-10-27
   event: "Joint ICTP–WE Heraeus College on Advances in Topological Quantum Matter"
   venue: ICTP
@@ -28,8 +28,8 @@
   venue: ICTP
   city: Trieste
   country: Italy
-  format: conference
-  role: invited
+  format: lecture
+  role: speaker
   title: "Using agents in scientific research"
   slides: "slides/ictp-23-10-2026/slides.html"
 - date: 2026-10-17
