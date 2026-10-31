@@ -15,6 +15,14 @@
 #     path: repository-relative link
 # Allowed format/role pairs: conference/invited, conference/contributed,
 # online_series/contributed, public/speaker, and seminar/speaker.
+- date: 2026-10-27
+  event: "Joint ICTP–WE Heraeus College on Advances in Topological Quantum Matter"
+  venue: ICTP
+  city: Trieste
+  country: Italy
+  format: conference
+  role: contributed
+  title: "Fractional Chern insulator in an amorphous lattice"
 - date: 2026-10-23
   event: "Joint ICTP–WE Heraeus College on Advances in Topological Quantum Matter"
   venue: ICTP
