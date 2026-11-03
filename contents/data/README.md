@@ -21,7 +21,7 @@ abbreviations, but they must derive those choices from the same records here.
 
 ## Structured records
 
-- `talks.yaml` separates `format` (`conference`, `lecture`, `seminar`, `public`, or
+- `talks.yaml` separates `format` (`conference`, `lecture`, `tutorial`, `seminar`, `public`, or
   `online_series`) from `role` (`invited`, `contributed`, or `speaker`).
 - `teaching.yml` separates `category` (`course` or `workshop`), `role`, and
   course `level`. Extra duties belong in `details`; programmes such as EdV

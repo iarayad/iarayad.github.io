@@ -1,5 +1,6 @@
 <%
   const roleLabel = (item) => {
+    if (item.format === 'tutorial') return 'tutorial';
     if (item.format === 'lecture') return 'lecture';
     if (item.format === 'public') return 'public talk';
     if (item.format === 'seminar') return 'seminar';
