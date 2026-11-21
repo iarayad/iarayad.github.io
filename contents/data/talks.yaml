@@ -15,6 +15,14 @@
 #     path: repository-relative link
 # Allowed format/role pairs: conference/invited, conference/contributed,
 # online_series/contributed, lecture/speaker, tutorial/speaker, public/speaker, and seminar/speaker.
+- date: 2026-11-21
+  event: "CRC 183 November Workshop"
+  city: Berlin
+  country: Germany
+  format: conference
+  role: invited
+  title: "Using agents in scientific research"
+  slides: "slides/crc183-21-11-2026/slides.html"
 - date: 2026-11-03
   event: "Agents in scientific research"
   venue: University of Basel
