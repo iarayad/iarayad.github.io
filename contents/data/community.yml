@@ -1,6 +1,7 @@
 # Entry schema (list):
 # - title: string
-#   date: YYYY-MM-DD
+#   date: YYYY-MM-DD (event date, or start date of a term)
+#   end: YYYY-MM-DD (optional; end date of a term)
 #   organization: full organization name
 #   role: lowercase snake_case value, for example organizer
 #   city: full city name
@@ -9,5 +10,12 @@
   date: 2025-12-19
   organization: University of Chile
   role: organizer
+  city: Santiago
+  country: Chile
+- title: Faculty council
+  date: 2017-01-01
+  end: 2017-12-31
+  organization: Faculty of Physical and Mathematical Sciences, University of Chile
+  role: elected_student_representative
   city: Santiago
   country: Chile
